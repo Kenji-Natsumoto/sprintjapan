@@ -6,12 +6,14 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
 const RFI = () => {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     company: '',
     department: '',
@@ -38,7 +40,7 @@ const RFI = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -62,14 +64,32 @@ const RFI = () => {
       return;
     }
 
-    // In a real app, this would send the data to a backend
-    console.log('Form submitted:', formData);
-    
-    setIsSubmitted(true);
-    toast({
-      title: "送信完了",
-      description: "資料請求を受け付けました。1営業日以内にご連絡いたします。",
-    });
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-rfi-email', {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      console.log('Email sent successfully:', data);
+      
+      setIsSubmitted(true);
+      toast({
+        title: "送信完了",
+        description: "資料請求を受け付けました。1営業日以内にご連絡いたします。",
+      });
+    } catch (error: any) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "送信エラー",
+        description: "送信中にエラーが発生しました。もう一度お試しください。",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -236,8 +256,9 @@ const RFI = () => {
                 size="lg" 
                 className="w-full"
                 aria-label="資料を請求する"
+                disabled={isSubmitting}
               >
-                資料を請求する
+                {isSubmitting ? '送信中...' : '資料を請求する'}
               </Button>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

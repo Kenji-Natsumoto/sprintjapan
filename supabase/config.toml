@@ -1,1 +1,4 @@
 project_id = "mhngabubbfflsoeriglz"
+
+[functions.send-rfi-email]
+verify_jwt = false
