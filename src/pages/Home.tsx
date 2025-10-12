@@ -12,34 +12,48 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        {/* Background with mesh gradient */}
+        <div className="absolute inset-0 mesh-gradient" />
         <div 
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 opacity-40"
           style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(10, 11, 14, 0.7), rgba(10, 11, 14, 0.9)), url(${heroImage})`,
+            backgroundImage: `linear-gradient(to bottom, rgba(10, 11, 14, 0.85), rgba(10, 11, 14, 0.95)), url(${heroImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
         
+        {/* Floating elements */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+        
         <div className="container mx-auto px-4 z-10 max-w-7xl">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-              事業開発を、もっと"動くソフト"にできる？
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-block mb-6 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 animate-fade-in">
+              <span className="text-sm font-medium text-primary">AI-Powered Development Platform</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-up leading-tight" style={{ animationDelay: '0.1s' }}>
+              事業開発を、もっと<br />
+              <span className="gradient-text">"動くソフト"</span>にできる？
             </h1>
-            <p className="text-xl md:text-2xl text-primary mb-4 font-semibold animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              会議の知を即ソフトへ。AI搭載「ProSprint」
-            </p>
-            <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto animate-fade-in leading-relaxed" style={{ animationDelay: '0.2s' }}>
-              2025年、スプリントジャパンは「プラットフォームを運営する会社」へ。<br />
-              VIBEコーディング×AIで、要件→MVP→本番を一気通貫。<br />
-              まずは国内大企業を中心に、地方中核都市から実装を加速。
+            
+            <p className="text-2xl md:text-3xl mb-6 font-semibold animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <span className="text-primary">会議の知を即ソフトへ</span>
+              <span className="text-foreground/90">。AI搭載「ProSprint」</span>
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              <Button variant="hero" size="lg" asChild>
+            <p className="text-lg md:text-xl text-foreground/70 mb-14 max-w-3xl mx-auto animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
+              2025年、スプリントジャパンは「プラットフォームを運営する会社」へ<br />
+              VIBEコーディング×AIで、要件→MVP→本番を一気通貫<br />
+              まずは国内大企業を中心に、地方中核都市から実装を加速
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-scale-in" style={{ animationDelay: '0.4s' }}>
+              <Button variant="hero" size="lg" asChild className="group">
                 <Link to="/rfi">
                   ミニMVP（90分）を予約
-                  <ArrowRight className="ml-2" size={20} />
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                 </Link>
               </Button>
               <Button variant="outline-glow" size="lg" asChild>
@@ -50,14 +64,18 @@ const Home = () => {
               </Button>
             </div>
             
-            <div className="mt-16 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <p className="mb-2">国内60社以上の導入実績</p>
-              <div className="flex flex-wrap justify-center gap-4 text-xs">
-                <span className="glass-card px-4 py-2">製造業</span>
-                <span className="glass-card px-4 py-2">IT・通信</span>
-                <span className="glass-card px-4 py-2">レジャー</span>
-                <span className="glass-card px-4 py-2">B2B SaaS</span>
-                <span className="glass-card px-4 py-2">新規事業</span>
+            <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <p className="text-sm text-muted-foreground mb-6">国内60社以上の導入実績</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {['製造業', 'IT・通信', 'レジャー', 'B2B SaaS', '新規事業'].map((industry, i) => (
+                  <span 
+                    key={industry}
+                    className="glass-card px-5 py-2 text-sm font-medium hover-lift cursor-default"
+                    style={{ animationDelay: `${0.6 + i * 0.1}s` }}
+                  >
+                    {industry}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -65,38 +83,63 @@ const Home = () => {
       </section>
 
       {/* Value Proposition */}
-      <section className="py-24 bg-elevated">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-elevated" />
+        <div className="absolute inset-0 mesh-gradient opacity-50" />
+        
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              なぜProSprintなのか？
+            </h2>
+            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+              開発スピード、可視性、拡張性を同時に実現
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="glass-card p-8 hover-scale">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 glow-primary">
-                <Zap className="text-primary" size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-4">すぐ動く</h3>
-              <p className="text-muted-foreground">
-                要件→MVP→本番を最短で。会議の知をAIが即座にソフトウェアへ翻訳します。
-              </p>
-            </div>
-
-            <div className="glass-card p-8 hover-scale">
-              <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center mb-6 glow-secondary">
-                <Eye className="text-secondary" size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-4">見える</h3>
-              <p className="text-muted-foreground">
-                SKU単位で成果・売上帰属を可視化。事業の成果を明確に追跡できます。
-              </p>
-            </div>
-
-            <div className="glass-card p-8 hover-scale">
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-6">
-                <Network className="text-accent" size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-4">広がる</h3>
-              <p className="text-muted-foreground">
-                共通部品を在庫化し横展開。一度作った資産が組織全体で再利用できます。
-              </p>
-            </div>
+            {[
+              {
+                icon: Zap,
+                title: "すぐ動く",
+                description: "要件→MVP→本番を最短で。会議の知をAIが即座にソフトウェアへ翻訳します。",
+                color: "primary",
+                delay: "0s"
+              },
+              {
+                icon: Eye,
+                title: "見える",
+                description: "SKU単位で成果・売上帰属を可視化。事業の成果を明確に追跡できます。",
+                color: "secondary",
+                delay: "0.1s"
+              },
+              {
+                icon: Network,
+                title: "広がる",
+                description: "共通部品を在庫化し横展開。一度作った資産が組織全体で再利用できます。",
+                color: "accent",
+                delay: "0.2s"
+              }
+            ].map((feature) => {
+              const Icon = feature.icon;
+              const glowClass = `glow-${feature.color}`;
+              
+              return (
+                <div 
+                  key={feature.title}
+                  className="glass-card-strong p-10 hover-lift group"
+                  style={{ animationDelay: feature.delay }}
+                >
+                  <div className={`w-16 h-16 rounded-2xl bg-${feature.color}/10 flex items-center justify-center mb-8 ${glowClass} group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className={`text-${feature.color}`} size={32} />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-5">{feature.title}</h3>
+                  <p className="text-foreground/70 leading-relaxed text-lg">
+                    {feature.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

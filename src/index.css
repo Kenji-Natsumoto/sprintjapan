@@ -72,6 +72,10 @@ All colors MUST be HSL.
     @apply backdrop-blur-sm bg-card/80 border border-border rounded-xl shadow-lg;
   }
   
+  .glass-card-strong {
+    @apply backdrop-blur-md bg-card/90 border border-border/50 rounded-2xl shadow-2xl;
+  }
+  
   .glow-primary {
     box-shadow: var(--shadow-glow);
   }
@@ -80,7 +84,51 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-glow-secondary);
   }
   
+  .glow-accent {
+    box-shadow: var(--shadow-glow-accent);
+  }
+  
   .hover-scale {
-    @apply transition-transform duration-200 ease-out hover:scale-[1.02];
+    @apply transition-transform duration-300 ease-out hover:scale-[1.02];
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-2xl;
+  }
+  
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  
+  .gradient-border {
+    position: relative;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  
+  .mesh-gradient {
+    background: 
+      radial-gradient(at 27% 37%, hsl(var(--primary) / 0.12) 0px, transparent 50%),
+      radial-gradient(at 97% 21%, hsl(var(--secondary) / 0.1) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, hsl(var(--accent) / 0.08) 0px, transparent 50%),
+      radial-gradient(at 10% 29%, hsl(var(--primary) / 0.1) 0px, transparent 50%),
+      radial-gradient(at 97% 96%, hsl(var(--secondary) / 0.12) 0px, transparent 50%),
+      radial-gradient(at 33% 50%, hsl(var(--accent) / 0.1) 0px, transparent 50%),
+      radial-gradient(at 79% 53%, hsl(var(--primary) / 0.08) 0px, transparent 50%);
+  }
+  
+  .spotlight {
+    background: radial-gradient(circle at center, hsl(var(--primary) / 0.15), transparent 70%);
   }
 }

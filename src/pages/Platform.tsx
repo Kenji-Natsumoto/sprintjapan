@@ -1,4 +1,4 @@
-import { Brain, Code, BarChart3, FileCheck } from 'lucide-react';
+import { Brain, Code, BarChart3, FileCheck, Zap } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import dashboardImage from '@/assets/prosprint-dashboard.png';
@@ -8,77 +8,117 @@ const Platform = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <div className="pt-32 pb-24">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <div className="pt-32 pb-24 relative">
+        <div className="absolute inset-0 mesh-gradient opacity-30" />
+        
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
           {/* Question Section */}
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              ProSprintとは何？
+          <div className="text-center mb-20 animate-fade-in-up">
+            <div className="inline-block mb-6 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+              <span className="text-sm font-medium text-primary">Platform Overview</span>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+              ProSprintとは<span className="gradient-text">何</span>？
             </h1>
-            <p className="text-2xl text-primary font-semibold mb-8">
-              要件から本番までをAIで一気通貫
+            <p className="text-2xl md:text-3xl font-semibold mb-4">
+              <span className="text-primary">要件から本番まで</span>
+              <span className="text-foreground/90">をAIで一気通貫</span>
+            </p>
+            <p className="text-lg text-foreground/60 max-w-3xl mx-auto">
+              会議の知を構造化し、AIが実装を支援。成果を可視化して、次のプロジェクトへ展開
             </p>
           </div>
 
           {/* Dashboard Preview */}
-          <div className="mb-24 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <img 
-              src={dashboardImage} 
-              alt="ProSprintダッシュボードの概観" 
-              className="w-full rounded-2xl shadow-2xl border border-border"
-            />
+          <div className="mb-32 animate-scale-in" style={{ animationDelay: '0.2s' }}>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
+              <img 
+                src={dashboardImage} 
+                alt="ProSprintダッシュボードの概観" 
+                className="relative w-full rounded-2xl shadow-2xl border border-border/50"
+              />
+            </div>
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="glass-card p-8 hover-scale">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 glow-primary">
-                <Brain className="text-primary" size={28} />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">A. AI仕様生成</h3>
-              <p className="text-foreground/80 leading-relaxed">
-                会議の知を構造化。曖昧な要件を明確な仕様書へ自動変換し、チーム全体で共有できる形に整理します。
-              </p>
-            </div>
-
-            <div className="glass-card p-8 hover-scale">
-              <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 glow-secondary">
-                <Code className="text-secondary" size={28} />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">B. AI実装補助</h3>
-              <p className="text-foreground/80 leading-relaxed">
-                VIBEコーディングで試作～実装。AIがコードを生成し、開発者は本質的な部分に集中できます。
-              </p>
-            </div>
-
-            <div className="glass-card p-8 hover-scale">
-              <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                <BarChart3 className="text-accent" size={28} />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">C. SKUトラッキング</h3>
-              <p className="text-foreground/80 leading-relaxed">
-                成果物と売上を紐付け。各機能・プロダクトの事業貢献度を定量的に測定し、意思決定を支援します。
-              </p>
-            </div>
-
-            <div className="glass-card p-8 hover-scale">
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 glow-primary">
-                <FileCheck className="text-primary" size={28} />
-              </div>
-              <h3 className="text-2xl font-bold mb-4">D. 監査レポート</h3>
-              <p className="text-foreground/80 leading-relaxed">
-                Cap/Floor・監査ログで法務/経営に耐える。コンプライアンスとガバナンスを担保する完全なトレーサビリティ。
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+            {[
+              {
+                icon: Brain,
+                title: "A. AI仕様生成",
+                description: "会議の知を構造化。曖昧な要件を明確な仕様書へ自動変換し、チーム全体で共有できる形に整理します。",
+                color: "primary",
+                delay: "0s"
+              },
+              {
+                icon: Code,
+                title: "B. AI実装補助",
+                description: "VIBEコーディングで試作～実装。AIがコードを生成し、開発者は本質的な部分に集中できます。",
+                color: "secondary",
+                delay: "0.1s"
+              },
+              {
+                icon: BarChart3,
+                title: "C. SKUトラッキング",
+                description: "成果物と売上を紐付け。各機能・プロダクトの事業貢献度を定量的に測定し、意思決定を支援します。",
+                color: "accent",
+                delay: "0.2s"
+              },
+              {
+                icon: FileCheck,
+                title: "D. 監査レポート",
+                description: "Cap/Floor・監査ログで法務/経営に耐える。コンプライアンスとガバナンスを担保する完全なトレーサビリティ。",
+                color: "primary",
+                delay: "0.3s"
+              }
+            ].map((feature) => {
+              const Icon = feature.icon;
+              const glowClass = `glow-${feature.color}`;
+              
+              return (
+                <div 
+                  key={feature.title}
+                  className="glass-card-strong p-10 hover-lift group animate-fade-in-up"
+                  style={{ animationDelay: feature.delay }}
+                >
+                  <div className={`w-16 h-16 rounded-2xl bg-${feature.color}/10 flex items-center justify-center mb-8 ${glowClass} group-hover:scale-110 transition-all duration-300`}>
+                    <Icon className={`text-${feature.color}`} size={32} />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-5">{feature.title}</h3>
+                  <p className="text-foreground/70 leading-relaxed text-lg">
+                    {feature.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
 
           {/* Progress Note */}
-          <div className="glass-card p-8 border-l-4 border-primary">
-            <h3 className="text-xl font-bold mb-3">開発状況</h3>
-            <p className="text-foreground/80">
-              現在開発進捗50%。自社VIBE内製により、β版準備中です。<br />
-              2025年内のフル稼働を目指し、順次機能を追加しています。
-            </p>
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-20" />
+            <div className="relative glass-card-strong p-10 border-l-4 border-primary">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0 glow-primary">
+                  <Zap className="text-primary" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-4">開発状況</h3>
+                  <p className="text-foreground/80 leading-relaxed text-lg">
+                    現在開発進捗50%。自社VIBE内製により、β版準備中です。<br />
+                    2025年内のフル稼働を目指し、順次機能を追加しています。
+                  </p>
+                  <div className="mt-6 flex gap-3">
+                    <div className="px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-sm">
+                      <span className="text-primary font-semibold">β版準備中</span>
+                    </div>
+                    <div className="px-4 py-2 rounded-lg bg-secondary/10 border border-secondary/20 text-sm">
+                      <span className="text-secondary font-semibold">2025年フル稼働予定</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
