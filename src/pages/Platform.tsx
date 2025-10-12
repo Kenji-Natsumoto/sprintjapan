@@ -18,14 +18,13 @@ const Platform = () => {
               <span className="text-sm font-medium text-primary">Platform Overview</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-              ProSprintとは<span className="gradient-text">何</span>？
+              「ProSprint」とは？
             </h1>
             <p className="text-2xl md:text-3xl font-semibold mb-4">
-              <span className="text-primary">要件から本番まで</span>
-              <span className="text-foreground/90">をAIで一気通貫</span>
+              企業のイノベーションを加速させるAIツール。
             </p>
             <p className="text-lg text-foreground/60 max-w-3xl mx-auto">
-              会議の知を構造化し、AIが実装を支援。成果を可視化して、次のプロジェクトへ展開
+              事業開発の4つのステージを高速に正しく実行できるAI搭載プラットフォームです。
             </p>
           </div>
 
