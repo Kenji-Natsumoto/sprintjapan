@@ -30,23 +30,22 @@ const Home = () => {
         <div className="container mx-auto px-4 z-10 max-w-7xl">
           <div className="max-w-5xl mx-auto text-center">
             <div className="inline-block mb-6 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 animate-fade-in">
-              <span className="text-sm font-medium text-primary">AI-Powered Development Platform</span>
+              <span className="text-sm font-medium text-primary">AI DRIVEN COMPANY</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-up leading-tight" style={{ animationDelay: '0.1s' }}>
-              事業開発を、もっと<br />
-              <span className="gradient-text">"動くソフト"</span>にできる？
+              会議の知を<br />
+              <span className="gradient-text">プラットフォーム化。</span>
             </h1>
             
             <p className="text-2xl md:text-3xl mb-6 font-semibold animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <span className="text-primary">会議の知を即ソフトへ</span>
-              <span className="text-foreground/90">。AI搭載「ProSprint」</span>
+              <span className="gradient-text">「ProSprint」でイノベーションを加速せよ。</span>
             </p>
             
             <p className="text-lg md:text-xl text-foreground/70 mb-14 max-w-3xl mx-auto animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
-              2025年、スプリントジャパンは「プラットフォームを運営する会社」へ<br />
-              VIBEコーディング×AIで、要件→MVP→本番を一気通貫<br />
-              まずは国内大企業を中心に、地方中核都市から実装を加速
+              2025年、スプリントジャパンは研修会社から「プラットフォームを創造・運営する会社」へ代わります。<br />
+              VIBEコーディング（AI起動開発）で、事業開発のプロセスをSaaS化。<br />
+              まずは首都圏大企業と地方中堅企業から実装を加速。
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-scale-in" style={{ animationDelay: '0.4s' }}>
@@ -57,7 +56,7 @@ const Home = () => {
                 </Link>
               </Button>
               <Button variant="outline-glow" size="lg" asChild>
-                <Link to="/rfi">2週間PoCを相談</Link>
+                <Link to="/rfi">無料サインアップ</Link>
               </Button>
               <Button variant="ghost" size="lg" asChild>
                 <Link to="/platform">デモを見る</Link>
