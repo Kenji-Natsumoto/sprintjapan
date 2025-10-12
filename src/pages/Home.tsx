@@ -43,7 +43,7 @@ const Home = () => {
             </p>
             
             <p className="text-lg md:text-xl text-foreground/70 mb-14 max-w-3xl mx-auto animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
-              2025年、スプリントジャパンは研修会社から「プラットフォームを創造・運営する会社」へ代わります。<br />
+              2025年、スプリントジャパンは研修会社から「プラットフォームを創造・運営する会社」へ変わります。<br />
               VIBEコーディング（AI起動開発）で、事業開発のプロセスをSaaS化。<br />
               まずは首都圏大企業と地方中堅企業から実装を加速。
             </p>
