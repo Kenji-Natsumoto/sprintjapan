@@ -18,7 +18,7 @@ const Platform = () => {
               <span className="text-sm font-medium text-primary">Platform Overview</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-              「ProSprint」とは？
+              「<span className="gradient-text">ProSprint</span>」とは？
             </h1>
             <p className="text-2xl md:text-3xl font-semibold mb-4">
               企業のイノベーションを加速させるAIツール。
