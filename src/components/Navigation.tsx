@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/spj-logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,13 +35,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 hover-scale">
-            <div className="flex gap-0.5">
-              <div className="w-1 h-6 bg-primary rounded-sm"></div>
-              <div className="w-1 h-6 bg-secondary rounded-sm"></div>
-              <div className="w-1 h-6 bg-accent rounded-sm"></div>
-              <div className="w-1 h-6 bg-primary rounded-sm"></div>
-            </div>
-            <span className="text-xl font-bold">ProSprint</span>
+            <img src={logo} alt="Sprint Japan Logo" className="h-8" />
           </Link>
 
           {/* Desktop Navigation */}

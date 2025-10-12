@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from '@/assets/spj-logo.png';
 
 const Footer = () => {
   return (
@@ -6,14 +7,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex gap-0.5">
-                <div className="w-1 h-6 bg-primary rounded-sm"></div>
-                <div className="w-1 h-6 bg-secondary rounded-sm"></div>
-                <div className="w-1 h-6 bg-accent rounded-sm"></div>
-                <div className="w-1 h-6 bg-primary rounded-sm"></div>
-              </div>
-              <span className="text-lg font-bold">ProSprint</span>
+            <div className="mb-4">
+              <img src={logo} alt="Sprint Japan Logo" className="h-8" />
             </div>
             <p className="text-sm text-muted-foreground">
               会議の知を、即ソフトへ。
