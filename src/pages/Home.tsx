@@ -34,18 +34,16 @@ const Home = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-up leading-tight" style={{ animationDelay: '0.1s' }}>
-              会議の知を<br />
-              <span className="gradient-text">プラットフォーム化。</span>
+              9年の事業開発の叡智を<br />
+              <span className="gradient-text">AIプラットフォーム化。</span>
             </h1>
             
             <p className="text-2xl md:text-3xl mb-6 font-semibold animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <span className="gradient-text">「ProSprint」でイノベーションを加速せよ。</span>
+              <span className="gradient-text">3つのAIプラットフォームで市場を再定義します。</span>
             </p>
             
             <p className="text-lg md:text-xl text-foreground/70 mb-14 max-w-3xl mx-auto animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
-              2025年、スプリントジャパンは研修会社から「プラットフォームを創造・運営する会社」へ変わります。<br />
-              VIBEコーディング（AI起動開発）を駆使し、事業開発のプロセスを高度にSaaS化。<br />
-              まずは首都圏大企業と地方中堅企業から実装を加速しています。
+              2025年、スプリントジャパンは研修会社から「事業創造のプラットフォーム企画・運営会社」へ変わります。
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-scale-in" style={{ animationDelay: '0.4s' }}>
