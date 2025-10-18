@@ -16,7 +16,7 @@ export interface NewsItem {
 export const newsData: NewsItem[] = [
   {
     id: "transformx-release",
-    title: "組織の理念をMTPとAIで素早く正しく言語化できる無料アプリ「TransformX」をリリース",
+    title: "組織の理念をMTPとAIで素早く正しく言語化できる無料アプリ「TransformX」をリリースしました。",
     date: "2025年10月17日",
     readTime: "5分",
     category: "プロダクト",
