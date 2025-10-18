@@ -296,7 +296,7 @@ const Company = () => {
                 </div>
                 <div className="flex border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">主要顧客</span>
-                  <span className="text-foreground/90">国内上場企業12社、大手大学6、大企業・地方中核企業60社</span>
+                  <span className="text-foreground/90">国内上場企業12社、大手大学6校、大企業・地方中核企業60社</span>
                 </div>
               </div>
             </div>
@@ -335,7 +335,7 @@ const Company = () => {
                   </p>
                 </div>
                 <div className="flex gap-4">
-                  <span className="text-primary font-bold text-sm">2022</span>
+                  <span className="text-primary font-bold text-sm">2024</span>
                   <p className="text-sm text-foreground/80">
                     国内60社への導入実績を達成
                   </p>
