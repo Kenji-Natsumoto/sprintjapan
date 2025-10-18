@@ -57,14 +57,10 @@ const Company = () => {
                     <span className="text-sm font-medium text-primary">Vision & Strategy</span>
                   </div>
                   <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-                    なぜ<span className="gradient-text">プラットフォーム</span>なのか？
+                    <span className="gradient-text">AIプラットフォーム</span>にナレッジの全てを注ぎ込む
                   </h2>
-                  <p className="text-2xl md:text-3xl font-semibold mb-4">
-                    <span className="text-primary">"作って終わらせない"</span>
-                    <span className="text-foreground/90">土台が成長を生む</span>
-                  </p>
-                  <p className="text-lg text-foreground/60 max-w-3xl mx-auto">
-                    運用・収益まで見据えた設計が、近い将来の伸びを担保
+                  <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto">
+                    事業開発ノウハウとフレームワークをどこよりも精度高くAI化
                   </p>
                 </div>
 
