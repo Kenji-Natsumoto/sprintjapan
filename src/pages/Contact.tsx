@@ -131,7 +131,7 @@ const Contact = () => {
             <p className="text-xl text-primary font-semibold mb-4">
               お気軽にお問い合わせください
             </p>
-            <div className="flex items-start justify-center gap-3 text-foreground/80">
+            <div className="flex items-start justify-center text-foreground/80" style={{ gap: '7px' }}>
               <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
               <p>
                 当社プロダクトやソリューションに関するご質問がありましたら、お気軽にお問い合わせください。担当者より1営業日以内にご連絡いたします。
