@@ -10,6 +10,7 @@ import CaseStudies from "./pages/CaseStudies";
 import Vision from "./pages/Vision";
 import Company from "./pages/Company";
 import RFI from "./pages/RFI";
+import Contact from "./pages/Contact";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import NotFound from "./pages/NotFound";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/vision" element={<Vision />} />
           <Route path="/company" element={<Company />} />
           <Route path="/rfi" element={<RFI />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

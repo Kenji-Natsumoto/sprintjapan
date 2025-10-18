@@ -48,6 +48,9 @@ const Footer = () => {
               <Link to="/rfi" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 資料請求
               </Link>
+              <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                お問い合わせ
+              </Link>
             </div>
           </div>
         </div>
