@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Check } from 'lucide-react';
+import { Check, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -131,10 +131,12 @@ const Contact = () => {
             <p className="text-xl text-primary font-semibold mb-4">
               お気軽にお問い合わせください
             </p>
-            <p className="text-foreground/80">
-              ProSprintに関するご質問やご相談など、<br />
-              お気軽にお問い合わせください。担当者より1営業日以内にご連絡いたします。
-            </p>
+            <div className="flex items-start justify-center gap-3 text-foreground/80">
+              <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
+              <p>
+                当社プロダクトやソリューションに関するご質問がありましたら、お気軽にお問い合わせください。担当者より1営業日以内にご連絡いたします。
+              </p>
+            </div>
           </div>
 
           {/* Form */}
