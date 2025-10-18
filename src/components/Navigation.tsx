@@ -22,7 +22,6 @@ const Navigation = () => {
     { path: '/platform', label: 'プラットフォーム' },
     { path: '/solutions', label: 'ソリューション' },
     { path: '/case-studies', label: '導入実績' },
-    { path: '/vision', label: 'ビジョン' },
     { path: '/company', label: '会社情報' },
     { path: '/news', label: 'ニュース' },
   ];

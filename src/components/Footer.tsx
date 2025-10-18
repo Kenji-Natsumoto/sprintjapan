@@ -33,7 +33,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">企業情報</h3>
             <div className="flex flex-col gap-2">
-              <Link to="/vision" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/company#vision" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 ビジョン
               </Link>
               <Link to="/company" className="text-sm text-muted-foreground hover:text-primary transition-colors">
