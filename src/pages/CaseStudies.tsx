@@ -1,7 +1,7 @@
 import { Award, TrendingUp, MapPin } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import clientLogos from '@/assets/client-logos.png';
+import clientLogos from '@/assets/client-logos.jpg';
 
 const CaseStudies = () => {
   return (
