@@ -89,10 +89,10 @@ const NewsDetail = () => {
               className="prose prose-lg prose-invert max-w-none
                 prose-headings:font-bold prose-headings:mb-6 prose-headings:mt-10
                 prose-h2:text-3xl prose-h3:text-2xl
-                prose-p:mb-12 prose-p:leading-[1.8]
-                prose-ul:my-8 prose-li:my-2
+                prose-p:mb-7 prose-p:leading-[1.8]
+                prose-ul:my-6 prose-li:my-2
                 prose-strong:text-primary
-                [&>p]:mb-12"
+                [&>p]:mb-7"
               dangerouslySetInnerHTML={{ __html: news.content }}
             />
             
