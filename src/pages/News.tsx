@@ -4,39 +4,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock } from "lucide-react";
-import transformxImage from "@/assets/news-transformx.jpg";
-import websiteImage from "@/assets/news-website.jpg";
-import businessPlanImage from "@/assets/news-business-plan.jpg";
-
-const newsData = [
-  {
-    id: "transformx-release",
-    title: "組織の理念をMTPとAIで素早く正しく言語化するアプリ「TransformX」をリリース",
-    date: "2025年1月15日",
-    readTime: "5分",
-    category: "プロダクト",
-    image: transformxImage,
-    excerpt: "組織の理念やMTP（Massive Transformative Purpose）を、AIの力を活用して効率的に言語化するアプリケーション「TransformX」をリリースしました。",
-  },
-  {
-    id: "website-launch",
-    title: "新ウェブサイトを公開・運用開始",
-    date: "2024年12月22日",
-    readTime: "3分",
-    category: "企業情報",
-    image: websiteImage,
-    excerpt: "スプリントジャパン株式会社の新しいウェブサイトを公開しました。より分かりやすく、私たちのビジョンとサービスをお伝えします。",
-  },
-  {
-    id: "business-plan-2025",
-    title: "2025年事業計画のお知らせ",
-    date: "2024年12月1日",
-    readTime: "7分",
-    category: "企業情報",
-    image: businessPlanImage,
-    excerpt: "2025年の事業計画を発表しました。AIとイノベーションを軸に、企業の成長を加速させる新しいサービスを展開します。",
-  },
-];
+import { newsData } from "@/data/newsData";
 
 const News = () => {
   return (
