@@ -343,7 +343,7 @@ const Company = () => {
                 <div className="flex gap-4">
                   <span className="text-primary font-bold text-sm">2025</span>
                   <p className="text-sm text-foreground/80">
-                    プラットフォーム運営企業へのピボットを宣言
+                    プラットフォーム運営企業へビジネスモデル変更を宣言
                   </p>
                 </div>
               </div>
