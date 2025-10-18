@@ -31,7 +31,7 @@ export const newsData: NewsItem[] = [
       
       <p>これにより、組織の一体感を高め、イノベーションを加速させます。</p>
       
-      <h2><strong>主な機能</strong></h2>
+      <h2>主な機能</h2>
       <ul>
         <li>✓ 日本語・英語の両言語対応</li>
         <li>✓ MTP定義のステップバイステップガイド</li>
