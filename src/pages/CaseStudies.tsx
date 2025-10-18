@@ -24,7 +24,7 @@ const CaseStudies = () => {
               <img 
                 src={clientLogos} 
                 alt="導入実績企業ロゴ" 
-                className="max-w-4xl w-full h-auto"
+                className="max-w-4xl w-full h-auto rounded-[15px] border"
               />
             </div>
           </div>
