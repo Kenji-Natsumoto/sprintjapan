@@ -128,15 +128,15 @@ const Contact = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               お問い合わせ
             </h1>
-            <p className="text-xl text-primary font-semibold mb-4">
-              お気軽にお問い合わせください
-            </p>
-            <div className="flex items-start justify-center gap-2 text-foreground/80">
-              <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
-              <p>
-                当社プロダクトやソリューションに関するご質問がありましたら、お気軽にお問い合わせください。担当者より1営業日以内にご連絡いたします。
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+              <p className="text-xl text-primary font-semibold">
+                お気軽にお問い合わせください
               </p>
             </div>
+            <p className="text-foreground/80">
+              当社プロダクトやソリューションに関するご質問がありましたら、お気軽にお問い合わせください。担当者より1営業日以内にご連絡いたします。
+            </p>
           </div>
 
           {/* Form */}
