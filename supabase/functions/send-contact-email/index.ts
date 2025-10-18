@@ -32,7 +32,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending contact email for:", { company, name, email });
 
-    // Send email to company
+    // Send email to company (test mode: sends to verified email)
     const companyEmailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -41,7 +41,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "Sprint Japan <onboarding@resend.dev>",
-        to: ["info@sprintjapan.jp"],
+        to: ["kn@sprintjapan.com"], // Resend test mode: must use verified email
         subject: `【お問い合わせ】${company} ${name}様より`,
         html: `
           <h2>新しいお問い合わせが届きました</h2>
@@ -52,6 +52,11 @@ const handler = async (req: Request): Promise<Response> => {
           ${phone ? `<p><strong>電話番号：</strong>${phone}</p>` : ''}
           <p><strong>お問い合わせ内容：</strong></p>
           <p>${message.replace(/\n/g, '<br>')}</p>
+          <hr style="margin: 20px 0;" />
+          <p style="color: #666; font-size: 12px;">
+            ※テストモード：本番環境では info@sprintjapan.jp に送信されます。<br>
+            本番環境で使用するには、Resendでドメイン認証が必要です。
+          </p>
         `,
       }),
     });
