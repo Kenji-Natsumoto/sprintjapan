@@ -272,19 +272,31 @@ const Company = () => {
               <div className="space-y-4 text-sm">
                 <div className="flex border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">会社名</span>
-                  <span className="text-foreground/90">株式会社スプリントジャパン</span>
+                  <span className="text-foreground/90">スプリントジャパン株式会社</span>
                 </div>
                 <div className="flex border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">設立</span>
-                  <span className="text-foreground/90">2020年</span>
+                  <span className="text-foreground/90">2019年9月15日</span>
+                </div>
+                <div className="flex border-b border-border pb-3">
+                  <span className="text-muted-foreground w-32">代表者</span>
+                  <span className="text-foreground/90">夏本 健司</span>
+                </div>
+                <div className="flex border-b border-border pb-3">
+                  <span className="text-muted-foreground w-32">資本金</span>
+                  <span className="text-foreground/90">10,000,000円</span>
+                </div>
+                <div className="flex border-b border-border pb-3">
+                  <span className="text-muted-foreground w-32">所在地</span>
+                  <span className="text-foreground/90">東京都渋谷区代々木1-36-6 929</span>
                 </div>
                 <div className="flex border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">事業内容</span>
-                  <span className="text-foreground/90">AI搭載事業開発プラットフォームの運営</span>
+                  <span className="text-foreground/90">AIプラットフォームの創造と運営</span>
                 </div>
                 <div className="flex border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">主要顧客</span>
-                  <span className="text-foreground/90">国内大企業・地方中核企業</span>
+                  <span className="text-foreground/90">国内上場企業12社、大手大学6、大企業・地方中核企業60社</span>
                 </div>
               </div>
             </div>
@@ -293,9 +305,21 @@ const Company = () => {
               <h3 className="text-xl font-bold mb-6">沿革</h3>
               <div className="space-y-4">
                 <div className="flex gap-4">
+                  <span className="text-primary font-bold text-sm">2017</span>
+                  <p className="text-sm text-foreground/80">
+                    デザインスプリントのワークショップを開始
+                  </p>
+                </div>
+                <div className="flex gap-4">
+                  <span className="text-primary font-bold text-sm">2019</span>
+                  <p className="text-sm text-foreground/80">
+                    デザインスプリントの研修会社として法人設立
+                  </p>
+                </div>
+                <div className="flex gap-4">
                   <span className="text-primary font-bold text-sm">2020</span>
                   <p className="text-sm text-foreground/80">
-                    事業開発コンサルティング会社として創業
+                    オンラインプログラムの提供開始
                   </p>
                 </div>
                 <div className="flex gap-4">
@@ -305,16 +329,21 @@ const Company = () => {
                   </p>
                 </div>
                 <div className="flex gap-4">
-                  <span className="text-primary font-bold text-sm">2024</span>
+                  <span className="text-primary font-bold text-sm">2023</span>
                   <p className="text-sm text-foreground/80">
-                    ProSprint開発開始、VIBE技術の内製化に着手
+                    顧客開発モデルをベースにコンサルティング事業を開始
+                  </p>
+                </div>
+                <div className="flex gap-4">
+                  <span className="text-primary font-bold text-sm">2022</span>
+                  <p className="text-sm text-foreground/80">
+                    国内60社への導入実績を達成
                   </p>
                 </div>
                 <div className="flex gap-4">
                   <span className="text-primary font-bold text-sm">2025</span>
                   <p className="text-sm text-foreground/80">
-                    プラットフォーム企業へのピボットを宣言<br />
-                    国内60社以上の導入実績
+                    プラットフォーム運営企業へのピボットを宣言
                   </p>
                 </div>
               </div>
