@@ -48,16 +48,13 @@ const Home = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-scale-in" style={{ animationDelay: '0.4s' }}>
               <Button variant="hero" size="lg" asChild className="group">
-                <Link to="/rfi">
-                  ミニMVP（90分）を予約
+                <Link to="/company#vision">
+                  なぜ今ビジネスモデルを変えるのか？
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                 </Link>
               </Button>
               <Button variant="outline-glow" size="lg" asChild>
-                <Link to="/rfi">無料サインアップ</Link>
-              </Button>
-              <Button variant="ghost" size="lg" asChild>
-                <Link to="/platform">デモを見る</Link>
+                <Link to="/solutions">勝算はあるか？</Link>
               </Button>
             </div>
             
