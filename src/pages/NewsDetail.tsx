@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, ArrowLeft } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, ExternalLink } from "lucide-react";
 import transformxImage from "@/assets/news-transformx.jpg";
 import websiteImage from "@/assets/news-website.jpg";
 import businessPlanImage from "@/assets/news-business-plan.jpg";
@@ -198,6 +198,22 @@ const NewsDetail = () => {
                 prose-strong:text-primary"
               dangerouslySetInnerHTML={{ __html: news.content }}
             />
+            
+            {/* TransformX Link Button */}
+            {id === "transformx-release" && (
+              <div className="mt-12 pt-8 border-t">
+                <a 
+                  href="https://purpose-setting-app-4r2c4yfk.devinapps.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" size="lg" className="w-full md:w-auto">
+                    「TransformX」はこちら
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Button>
+                </a>
+              </div>
+            )}
           </div>
         </section>
 
