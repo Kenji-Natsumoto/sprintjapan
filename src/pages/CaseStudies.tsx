@@ -72,7 +72,7 @@ const CaseStudies = () => {
           {/* Note */}
           <div className="glass-card p-8 text-center">
             <p className="text-muted-foreground">
-              事例の具体例や数値は守秘義務により非公開ですが、許可が得られている案件に関しては、資料請求にてご提供しております。
+              事例は守秘義務により非公開ですが、許可が得られている案件に限り、資料請求にてご提供しております。
             </p>
           </div>
         </div>
