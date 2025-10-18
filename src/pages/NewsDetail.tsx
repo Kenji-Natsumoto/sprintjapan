@@ -87,10 +87,10 @@ const NewsDetail = () => {
           <div className="container mx-auto max-w-4xl">
             <article 
               className="prose prose-lg prose-invert max-w-none
-                prose-headings:font-bold prose-headings:mb-4 prose-headings:mt-8
+                prose-headings:font-bold prose-headings:mb-6 prose-headings:mt-10
                 prose-h2:text-3xl prose-h3:text-2xl
-                prose-p:mb-[15px] prose-p:leading-relaxed
-                prose-ul:my-[15px] prose-li:my-[10px]
+                prose-p:mb-8 prose-p:leading-relaxed
+                prose-ul:my-6 prose-li:my-2
                 prose-strong:text-primary"
               dangerouslySetInnerHTML={{ __html: news.content }}
             />
