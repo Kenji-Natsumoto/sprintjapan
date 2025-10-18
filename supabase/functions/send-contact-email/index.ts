@@ -41,7 +41,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "Sprint Japan <noreply@sprintjapan.net>",
-        to: ["info@sprintjapan.jp"],
+        to: ["kn@sprintjapan.net"],
         subject: `【お問い合わせ】${company} ${name}様より`,
         html: `
           <h2>新しいお問い合わせが届きました</h2>
@@ -98,7 +98,7 @@ const handler = async (req: Request): Promise<Response> => {
           
           <p style="margin-top: 30px;">
             スプリントジャパン株式会社<br>
-            https://sprintjapan.jp
+            https://sprintjapan.net
           </p>
         `,
       }),
