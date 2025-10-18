@@ -31,66 +31,33 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to the user
     const userEmailResponse = await resend.emails.send({
-      from: "ProSprint <onboarding@resend.dev>",
+      from: "Sprint Japan <noreply@sprintjapan.net>",
       to: [email],
-      subject: "【ProSprint】資料請求ありがとうございます",
+      subject: "資料請求を受け付けました - Sprint Japan",
       html: `
-        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-          <h1 style="color: #0ea5e9; border-bottom: 2px solid #0ea5e9; padding-bottom: 10px;">
-            資料請求ありがとうございます
-          </h1>
-          
-          <p>
-            ${name} 様
-          </p>
-          
-          <p>
-            この度はProSprintにご関心をお持ちいただき、誠にありがとうございます。<br>
-            資料請求を受け付けました。
-          </p>
-          
-          <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h2 style="color: #374151; margin-top: 0;">ご登録内容</h2>
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280; width: 120px;">会社名：</td>
-                <td style="padding: 8px 0;">${company}</td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280;">部署・役職：</td>
-                <td style="padding: 8px 0;">${department}</td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280;">ご担当者名：</td>
-                <td style="padding: 8px 0;">${name}</td>
-              </tr>
-              ${interests.length > 0 ? `
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280;">ご関心の内容：</td>
-                <td style="padding: 8px 0;">${interests.join(", ")}</td>
-              </tr>
-              ` : ''}
-              ${message ? `
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280; vertical-align: top;">メッセージ：</td>
-                <td style="padding: 8px 0;">${message}</td>
-              </tr>
-              ` : ''}
-            </table>
-          </div>
-          
-          <p>
-            担当者より1営業日以内にご連絡させていただきます。<br>
-            今しばらくお待ちください。
-          </p>
-          
-          <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
-            <p style="color: #6b7280; font-size: 14px; margin: 5px 0;">
-              ProSprint - 事業開発AIプラットフォーム<br>
-              お問い合わせ：info@prosprint.example
-            </p>
-          </div>
-        </div>
+        <h2>${name}様</h2>
+        <p>この度は、スプリントジャパン株式会社にお問い合わせいただき、誠にありがとうございます。</p>
+        <p>以下の内容で資料請求を受け付けました。</p>
+        
+        <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;" />
+        
+        <p><strong>ご登録内容</strong></p>
+        <p><strong>会社名：</strong>${company}</p>
+        <p><strong>部署・役職：</strong>${department}</p>
+        <p><strong>お名前：</strong>${name}</p>
+        <p><strong>メールアドレス：</strong>${email}</p>
+        ${interests.length > 0 ? `<p><strong>ご関心の内容：</strong>${interests.join(", ")}</p>` : ''}
+        ${message ? `<p><strong>メッセージ：</strong></p><p>${message.replace(/\n/g, '<br>')}</p>` : ''}
+        
+        <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;" />
+        
+        <p>担当者より1営業日以内にご連絡させていただきます。</p>
+        <p>今しばらくお待ちくださいますようお願い申し上げます。</p>
+        
+        <p style="margin-top: 30px;">
+          スプリントジャパン株式会社<br>
+          https://sprintjapan.net
+        </p>
       `,
     });
 
@@ -98,51 +65,17 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification email to the company
     const adminEmailResponse = await resend.emails.send({
-      from: "ProSprint RFI <onboarding@resend.dev>",
-      to: ["admin@prosprint.example"], // Replace with your company email
-      subject: `【新規RFI】${company} - ${name}様`,
+      from: "Sprint Japan <noreply@sprintjapan.net>",
+      to: ["kn@sprintjapan.net"],
+      subject: `【資料請求】${company} - ${name}様`,
       html: `
-        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-          <h1 style="color: #0ea5e9;">新規資料請求</h1>
-          
-          <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h2 style="color: #374151; margin-top: 0;">お客様情報</h2>
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280; width: 120px;">会社名：</td>
-                <td style="padding: 8px 0; font-weight: bold;">${company}</td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280;">部署・役職：</td>
-                <td style="padding: 8px 0;">${department}</td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280;">ご担当者名：</td>
-                <td style="padding: 8px 0; font-weight: bold;">${name}</td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280;">メールアドレス：</td>
-                <td style="padding: 8px 0;"><a href="mailto:${email}">${email}</a></td>
-              </tr>
-              ${interests.length > 0 ? `
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280;">ご関心の内容：</td>
-                <td style="padding: 8px 0;"><strong>${interests.join(", ")}</strong></td>
-              </tr>
-              ` : ''}
-              ${message ? `
-              <tr>
-                <td style="padding: 8px 0; color: #6b7280; vertical-align: top;">メッセージ：</td>
-                <td style="padding: 8px 0;">${message}</td>
-              </tr>
-              ` : ''}
-            </table>
-          </div>
-          
-          <p style="color: #dc2626; font-weight: bold;">
-            1営業日以内にお客様へご連絡をお願いいたします。
-          </p>
-        </div>
+        <h2>新しい資料請求が届きました</h2>
+        <p><strong>会社名：</strong>${company}</p>
+        <p><strong>部署・役職：</strong>${department}</p>
+        <p><strong>お名前：</strong>${name}</p>
+        <p><strong>メールアドレス：</strong>${email}</p>
+        ${interests.length > 0 ? `<p><strong>ご関心の内容：</strong>${interests.join(", ")}</p>` : ''}
+        ${message ? `<p><strong>メッセージ：</strong></p><p>${message.replace(/\n/g, '<br>')}</p>` : ''}
       `,
     });
 
