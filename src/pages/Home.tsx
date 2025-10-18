@@ -60,21 +60,6 @@ const Home = () => {
                 </Link>
               </Button>
             </div>
-            
-            <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
-              <p className="text-sm text-muted-foreground mb-6">国内60社以上の導入実績</p>
-              <div className="flex flex-wrap justify-center gap-3">
-                {['製造業', 'IT・通信', 'レジャー', 'B2B SaaS', '新規事業'].map((industry, i) => (
-                  <span 
-                    key={industry}
-                    className="glass-card px-5 py-2 text-sm font-medium hover-lift cursor-default"
-                    style={{ animationDelay: `${0.6 + i * 0.1}s` }}
-                  >
-                    {industry}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
