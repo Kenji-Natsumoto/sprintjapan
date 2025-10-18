@@ -10,14 +10,23 @@ const CaseStudies = () => {
       
       <div className="pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-7xl">
-          {/* Question Section */}
+          {/* Title Section */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              これまでの優位性は何？
+              導入実績
             </h1>
-            <p className="text-2xl text-primary font-semibold mb-8">
-              会議の知と事業開発の知を"資産化"
+            <p className="text-xl text-muted-foreground mb-12">
+              国内60社以上の大手企業・中堅企業、5つ以上の有名大学など多数
             </p>
+            
+            {/* Client Logos */}
+            <div className="flex justify-center">
+              <img 
+                src={clientLogos} 
+                alt="導入実績企業ロゴ" 
+                className="max-w-4xl w-full h-auto"
+              />
+            </div>
           </div>
 
           {/* Main Value Proposition */}
@@ -58,32 +67,6 @@ const CaseStudies = () => {
               <p className="text-foreground/80 leading-relaxed">
                 中核都市での実績を基に、大企業の地方拠点でも素早く導入。地域特性に合わせたカスタマイズも柔軟に対応。
               </p>
-            </div>
-          </div>
-
-          {/* Client Logos */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold mb-4 text-center">導入実績企業</h2>
-            <p className="text-center text-muted-foreground mb-12">
-              国内60社以上の大手企業・中堅企業での導入実績
-            </p>
-            
-            <div className="glass-card-strong p-12 overflow-hidden">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
-                <div className="flex animate-scroll-logos">
-                  <img 
-                    src={clientLogos} 
-                    alt="導入実績企業ロゴ" 
-                    className="h-auto w-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
-                  />
-                  <img 
-                    src={clientLogos} 
-                    alt="導入実績企業ロゴ" 
-                    className="h-auto w-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300 ml-8"
-                  />
-                </div>
-              </div>
             </div>
           </div>
 
