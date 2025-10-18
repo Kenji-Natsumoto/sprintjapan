@@ -53,7 +53,7 @@ const Home = () => {
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
                 </Link>
               </Button>
-              <Button variant="outline-glow" size="lg" asChild>
+              <Button variant="accent-solid" size="lg" asChild>
                 <Link to="/solutions">勝算はあるか？</Link>
               </Button>
             </div>
