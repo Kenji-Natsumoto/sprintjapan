@@ -270,31 +270,31 @@ const Company = () => {
             <div className="glass-card p-8">
               <h3 className="text-xl font-bold mb-6">会社概要</h3>
               <div className="space-y-4 text-sm">
-                <div className="flex border-b border-border pb-3">
+                <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">会社名</span>
                   <span className="text-foreground/90">スプリントジャパン株式会社</span>
                 </div>
-                <div className="flex border-b border-border pb-3">
+                <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">設立</span>
                   <span className="text-foreground/90">2019年9月15日</span>
                 </div>
-                <div className="flex border-b border-border pb-3">
+                <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">代表者</span>
                   <span className="text-foreground/90">夏本 健司</span>
                 </div>
-                <div className="flex border-b border-border pb-3">
+                <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">資本金</span>
                   <span className="text-foreground/90">10,000,000円</span>
                 </div>
-                <div className="flex border-b border-border pb-3">
+                <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">所在地</span>
                   <span className="text-foreground/90">東京都渋谷区代々木1-36-6 929</span>
                 </div>
-                <div className="flex border-b border-border pb-3">
+                <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">事業内容</span>
                   <span className="text-foreground/90">AIプラットフォームの創造と運営</span>
                 </div>
-                <div className="flex border-b border-border pb-3">
+                <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">主要顧客</span>
                   <span className="text-foreground/90">国内上場企業12社、大手大学6校、大企業・地方中核企業60社</span>
                 </div>
