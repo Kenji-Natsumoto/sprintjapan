@@ -32,7 +32,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending contact email for:", { company, name, email });
 
-    // Send email to company (test mode: sends to verified email)
+    // Send email to company
     const companyEmailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -40,8 +40,8 @@ const handler = async (req: Request): Promise<Response> => {
         "Authorization": `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Sprint Japan <onboarding@resend.dev>",
-        to: ["kn@sprintjapan.com"], // Resend test mode: must use verified email
+        from: "Sprint Japan <noreply@sprintjapan.net>",
+        to: ["info@sprintjapan.jp"],
         subject: `【お問い合わせ】${company} ${name}様より`,
         html: `
           <h2>新しいお問い合わせが届きました</h2>
@@ -52,11 +52,6 @@ const handler = async (req: Request): Promise<Response> => {
           ${phone ? `<p><strong>電話番号：</strong>${phone}</p>` : ''}
           <p><strong>お問い合わせ内容：</strong></p>
           <p>${message.replace(/\n/g, '<br>')}</p>
-          <hr style="margin: 20px 0;" />
-          <p style="color: #666; font-size: 12px;">
-            ※テストモード：本番環境では info@sprintjapan.jp に送信されます。<br>
-            本番環境で使用するには、Resendでドメイン認証が必要です。
-          </p>
         `,
       }),
     });
@@ -78,7 +73,7 @@ const handler = async (req: Request): Promise<Response> => {
         "Authorization": `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Sprint Japan <onboarding@resend.dev>",
+        from: "Sprint Japan <noreply@sprintjapan.net>",
         to: [email],
         subject: "お問い合わせを受け付けました - Sprint Japan",
         html: `
