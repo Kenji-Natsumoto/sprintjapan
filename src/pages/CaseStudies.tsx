@@ -1,6 +1,7 @@
 import { Award, TrendingUp, MapPin } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import clientLogos from '@/assets/client-logos.png';
 
 const CaseStudies = () => {
   return (
@@ -57,6 +58,32 @@ const CaseStudies = () => {
               <p className="text-foreground/80 leading-relaxed">
                 中核都市での実績を基に、大企業の地方拠点でも素早く導入。地域特性に合わせたカスタマイズも柔軟に対応。
               </p>
+            </div>
+          </div>
+
+          {/* Client Logos */}
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold mb-4 text-center">導入実績企業</h2>
+            <p className="text-center text-muted-foreground mb-12">
+              国内60社以上の大手企業・中堅企業での導入実績
+            </p>
+            
+            <div className="glass-card-strong p-12 overflow-hidden">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
+                <div className="flex animate-scroll-logos">
+                  <img 
+                    src={clientLogos} 
+                    alt="導入実績企業ロゴ" 
+                    className="h-auto w-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+                  />
+                  <img 
+                    src={clientLogos} 
+                    alt="導入実績企業ロゴ" 
+                    className="h-auto w-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300 ml-8"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 

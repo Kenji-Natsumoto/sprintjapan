@@ -131,6 +131,14 @@ export default {
             transform: "translateY(-10px)",
           },
         },
+        "scroll-logos": {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(-50%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -141,6 +149,7 @@ export default {
         "slide-in-right": "slide-in-right 0.6s ease-out forwards",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
         "float": "float 3s ease-in-out infinite",
+        "scroll-logos": "scroll-logos 40s linear infinite",
       },
     },
   },
