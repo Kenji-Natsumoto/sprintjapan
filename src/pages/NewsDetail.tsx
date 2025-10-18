@@ -11,7 +11,7 @@ import businessPlanImage from "@/assets/news-business-plan.jpg";
 const newsContent = {
   "transformx-release": {
     title: "組織の理念をMTPとAIで素早く正しく言語化するアプリ「TransformX」をリリース",
-    date: "2025年1月15日",
+    date: "2025年10月17日",
     readTime: "5分",
     category: "プロダクト",
     image: transformxImage,
