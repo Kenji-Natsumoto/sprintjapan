@@ -296,7 +296,7 @@ const Company = () => {
                 </div>
                 <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">主要顧客</span>
-                  <span className="text-foreground/90">国内上場企業12社、大手大学6校、大企業・地方中核企業60社</span>
+                  <span className="text-foreground/90">大企業・中堅企業60社、大手大学6校</span>
                 </div>
               </div>
             </div>
