@@ -98,7 +98,7 @@ const NewsDetail = () => {
               dangerouslySetInnerHTML={{ __html: news.content }}
             />
             
-            {/* TransformX Link Button */}
+            {/* TRAITH Link Button */}
             {id === "transformx-release" && (
               <div className="mt-12 pt-8 border-t">
                 <a 
@@ -107,7 +107,7 @@ const NewsDetail = () => {
                   rel="noopener noreferrer"
                 >
                   <Button variant="outline" size="lg" className="w-full md:w-auto">
-                    「TransformX」はこちら
+                    「TRAITH」はこちら
                     <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
                 </a>
