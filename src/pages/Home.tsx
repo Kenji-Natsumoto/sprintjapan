@@ -78,10 +78,10 @@ const Home = () => {
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[5px] auto-rows-[280px]">
             {/* ProSprint - Large Card */}
             <div 
-              className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-3xl animate-fade-in hover-lift"
+              className="md:col-span-2 md:row-span-2 group relative overflow-hidden animate-fade-in hover-lift"
               style={{ animationDelay: '0s' }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 via-teal-500/30 to-cyan-500/30" />
@@ -101,7 +101,7 @@ const Home = () => {
 
             {/* TransformX - Medium Card */}
             <div 
-              className="md:row-span-1 group relative overflow-hidden rounded-3xl animate-fade-in hover-lift"
+              className="md:row-span-1 group relative overflow-hidden animate-fade-in hover-lift"
               style={{ animationDelay: '0.1s' }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 via-violet-500/30 to-fuchsia-500/30" />
@@ -121,7 +121,7 @@ const Home = () => {
 
             {/* MissionModeler - Medium Card */}
             <div 
-              className="md:row-span-1 group relative overflow-hidden rounded-3xl animate-fade-in hover-lift"
+              className="md:row-span-1 group relative overflow-hidden animate-fade-in hover-lift"
               style={{ animationDelay: '0.2s' }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-indigo-500/30 to-purple-500/30" />
