@@ -136,7 +136,7 @@ const Company = () => {
                       
                       <div className="prose prose-lg max-w-4xl mx-auto">
                         <p className="text-xl text-foreground/80 leading-relaxed mb-6">
-                          青臭い話かもしれませんが、生成AIや関連技術の急激な発展により、すべての業界、すべての業種の変革が余儀なくされようとしています。デザインスプリント顧客開発モデルをベースに研修・コンサルティングしてきた当社にとってもこれは例外ではありません。
+                          青臭い話かもしれませんが、生成AIや関連技術の急激な発展により、すべての業界、すべての業種において変革が余儀なくされようとしています。これまでデザインスプリント・顧客開発モデルをベースに研修・コンサルティングしてきた当社にとってもこれは例外ではありません。
                         </p>
                         
                         <p className="text-xl text-foreground/80 leading-relaxed mb-6">
