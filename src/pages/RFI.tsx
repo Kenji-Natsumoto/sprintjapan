@@ -134,14 +134,14 @@ const RFI = () => {
           {/* Question Section */}
           <div className="text-center mb-12 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              どの資料を請求できる？
+              資料請求
             </h1>
             <p className="text-xl text-primary font-semibold mb-4">
-              ProSprintの機能・事例をまとめた資料を送付
+              SMATSTA、TRAITH、SOLVISTAいずれにご興味がありますか？
             </p>
             <p className="text-foreground/80">
-              事業開発AIプラットフォーム「ProSprint」の機能や事例を紹介した<br />
-              詳しい資料を無料でご提供いたします。
+              下記にご記入・送信いただければ、それぞれの機能や事例を紹介した<br />
+              詳しい資料をお送り致します。
             </p>
           </div>
 
