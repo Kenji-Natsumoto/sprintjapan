@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Eye, Network } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/prosprint-lp.png';
+import prosprintDashboard from '@/assets/prosprint-dashboard.png';
+import transformxScreenshot from '@/assets/transformx-screenshot.png';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -82,9 +84,13 @@ const Home = () => {
               className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-3xl animate-fade-in hover-lift"
               style={{ animationDelay: '0s' }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-teal-500/20 to-cyan-500/20" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 via-teal-500/30 to-cyan-500/30" />
+              <img 
+                src={prosprintDashboard} 
+                alt="ProSprint Platform" 
+                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
               
               <div className="relative h-full flex items-end p-10">
                 <h3 className="text-5xl md:text-6xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
@@ -98,9 +104,13 @@ const Home = () => {
               className="md:row-span-1 group relative overflow-hidden rounded-3xl animate-fade-in hover-lift"
               style={{ animationDelay: '0.1s' }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-violet-500/20 to-fuchsia-500/20" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 via-violet-500/30 to-fuchsia-500/30" />
+              <img 
+                src={transformxScreenshot} 
+                alt="TransformX Platform" 
+                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
               
               <div className="relative h-full flex items-end p-8">
                 <h3 className="text-4xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
@@ -114,9 +124,13 @@ const Home = () => {
               className="md:row-span-1 group relative overflow-hidden rounded-3xl animate-fade-in hover-lift"
               style={{ animationDelay: '0.2s' }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-indigo-500/20 to-purple-500/20" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-indigo-500/30 to-purple-500/30" />
+              <img 
+                src={prosprintDashboard} 
+                alt="MissionModeler Platform" 
+                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
               
               <div className="relative h-full flex items-end p-8">
                 <h3 className="text-3xl md:text-4xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
