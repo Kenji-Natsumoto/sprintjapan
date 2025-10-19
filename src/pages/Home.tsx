@@ -74,7 +74,7 @@ const Home = () => {
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold gradient-text">
-              3つのAIプラットフォーム
+              すべての叡智を3つのモデルに集約
             </h2>
           </div>
           
