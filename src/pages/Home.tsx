@@ -3,6 +3,7 @@ import { ArrowRight, Zap, Eye, Network } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/prosprint-lp.png';
 import prosprintDashboard from '@/assets/prosprint-dashboard.png';
+import smatstaImage from '@/assets/smatsta-eyecatch.png';
 import transformxScreenshot from '@/assets/news-traith-app.png';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -86,7 +87,7 @@ const Home = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 via-teal-500/30 to-cyan-500/30" />
               <img 
-                src={prosprintDashboard} 
+                src={smatstaImage} 
                 alt="Smatsta Platform" 
                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
               />
@@ -117,7 +118,7 @@ const Home = () => {
               
               <div className="relative h-full flex flex-col justify-end p-8">
                 <h3 className="text-4xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
-                  TRAITH<span className="text-xl md:text-2xl ml-2">（トレイス）</span>
+                  TRAITH<span className="text-xl md:text-2xl ml-2">（トライス）</span>
                 </h3>
                 <p className="text-lg md:text-xl text-foreground/70 mt-2">
                   組織の理念を変革するAIプラットフォーム
