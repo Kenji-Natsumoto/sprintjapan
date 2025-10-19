@@ -23,7 +23,7 @@ export const newsData: NewsItem[] = [
     image: transformxImage,
     excerpt: "組織の理念やMTP（Massive Transformative Purpose）を、AIの力を活用して効率的に言語化するアプリケーション「TRAITH」をリリースしました。",
     content: `
-      <p>スプリントジャパン株式会社は、2025年10月17日、組織の理念やMTP（Massive Transformative Purpose）を、AIの力を活用して効率的に言語化するアプリケーション「TRAITH」をリリースしました。</p>
+      <p>スプリントジャパン株式会社は、2025年10月17日、組織の理念やMTP（Massive Transformative Purpose）を、AIの力を活用して効率的に言語化するアプリケーション「TRAITH（トレイス）」をリリースしました。</p>
       
       <p>MTP（Massive Transformative Purpose）とは、「野心的な変革目的」と訳されている、かつて成長前のGoogleやMeta、Uber、Airbnbなどの新興企業が「世界に途方もない変化をもたらすゴール」として定めた組織の理念で、これらの会社が成長する強固な指針になった旗印です。</p>
       
