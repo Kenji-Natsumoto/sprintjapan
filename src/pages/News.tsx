@@ -13,7 +13,7 @@ const News = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="pt-[35px] pb-16 px-4 bg-gradient-to-b from-background to-background/50">
+        <section className="pt-[70px] pb-16 px-4 bg-gradient-to-b from-background to-background/50">
           <div className="container mx-auto max-w-7xl">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-center">
               ニュース
