@@ -1,7 +1,7 @@
 import { Brain, Code, BarChart3, FileCheck, Zap } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import dashboardImage from '@/assets/prosprint-dashboard.png';
+import heroImage from '@/assets/smatsta-eyecatch.png';
 
 const Platform = () => {
   return (
@@ -33,9 +33,9 @@ const Platform = () => {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
               <img 
-                src={dashboardImage} 
+                src={heroImage} 
                 alt="ProSprintダッシュボードの概観" 
-                className="relative w-full rounded-2xl shadow-2xl border border-border/50"
+                className="relative w-full shadow-2xl border border-border/50"
               />
             </div>
           </div>
