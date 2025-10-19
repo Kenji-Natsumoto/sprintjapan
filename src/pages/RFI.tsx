@@ -248,7 +248,7 @@ const RFI = () => {
               />
             </div>
 
-            <div className="pt-6 space-y-4">
+            <div className="pt-6">
               <Button 
                 type="submit" 
                 variant="hero" 
@@ -259,33 +259,6 @@ const RFI = () => {
               >
                 {isSubmitting ? '送信中...' : '資料を請求する'}
               </Button>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Button 
-                  type="button"
-                  variant="outline-glow" 
-                  size="lg"
-                  className="w-full"
-                  onClick={() => {
-                    setFormData({ ...formData, interests: [...formData.interests, 'ミニMVP（90分）'] });
-                  }}
-                  aria-label="ミニMVPを予約"
-                >
-                  ミニMVP（90分）を予約
-                </Button>
-                <Button 
-                  type="button"
-                  variant="outline-glow" 
-                  size="lg"
-                  className="w-full"
-                  onClick={() => {
-                    setFormData({ ...formData, interests: [...formData.interests, '2週間PoC'] });
-                  }}
-                  aria-label="2週間PoCを相談"
-                >
-                  2週間PoCを相談
-                </Button>
-              </div>
             </div>
           </form>
 
