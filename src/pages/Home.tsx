@@ -143,7 +143,7 @@ const Home = () => {
                   Solvista
                 </h3>
                 <p className="text-lg md:text-xl text-foreground/70 mt-2">
-                  釈迦課題言語化AIプラットフォーム
+                  社会課題解決AIプラットフォーム
                 </p>
               </div>
             </div>
