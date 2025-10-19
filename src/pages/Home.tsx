@@ -3,7 +3,7 @@ import { ArrowRight, Zap, Eye, Network } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/prosprint-lp.png';
 import prosprintDashboard from '@/assets/prosprint-dashboard.png';
-import transformxScreenshot from '@/assets/transformx-screenshot.png';
+import transformxScreenshot from '@/assets/news-traith-app.png';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
