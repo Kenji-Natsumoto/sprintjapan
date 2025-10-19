@@ -24,10 +24,9 @@ const RFI = () => {
   });
 
   const interestOptions = [
-    'ミニMVP（90分）',
-    '2週間PoC',
-    'デモ',
-    '導入相談',
+    'SMATSTA',
+    'TRAITH',
+    'SOLVISTA',
     'その他',
   ];
 
@@ -213,7 +212,7 @@ const RFI = () => {
 
             <div>
               <Label className="text-base mb-3 block">
-                ご関心の内容
+                ご関心のプロダクト
               </Label>
               <div className="space-y-3">
                 {interestOptions.map((option) => (
