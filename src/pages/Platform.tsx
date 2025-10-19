@@ -1,4 +1,3 @@
-import { Brain, Code, BarChart3, FileCheck, Zap } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import heroImage from '@/assets/smatsta-eyecatch.png';
@@ -63,85 +62,6 @@ const Platform = () => {
             </div>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
-            {[
-              {
-                icon: Brain,
-                title: "A. AI仕様生成",
-                description: "会議の知を構造化。曖昧な要件を明確な仕様書へ自動変換し、チーム全体で共有できる形に整理します。",
-                color: "primary",
-                delay: "0s"
-              },
-              {
-                icon: Code,
-                title: "B. AI実装補助",
-                description: "VIBEコーディングで試作～実装。AIがコードを生成し、開発者は本質的な部分に集中できます。",
-                color: "secondary",
-                delay: "0.1s"
-              },
-              {
-                icon: BarChart3,
-                title: "C. SKUトラッキング",
-                description: "成果物と売上を紐付け。各機能・プロダクトの事業貢献度を定量的に測定し、意思決定を支援します。",
-                color: "accent",
-                delay: "0.2s"
-              },
-              {
-                icon: FileCheck,
-                title: "D. 監査レポート",
-                description: "Cap/Floor・監査ログで法務/経営に耐える。コンプライアンスとガバナンスを担保する完全なトレーサビリティ。",
-                color: "primary",
-                delay: "0.3s"
-              }
-            ].map((feature) => {
-              const Icon = feature.icon;
-              const glowClass = `glow-${feature.color}`;
-              
-              return (
-                <div 
-                  key={feature.title}
-                  className="glass-card-strong p-10 hover-lift group animate-fade-in-up"
-                  style={{ animationDelay: feature.delay }}
-                >
-                  <div className={`w-16 h-16 rounded-2xl bg-${feature.color}/10 flex items-center justify-center mb-8 ${glowClass} group-hover:scale-110 transition-all duration-300`}>
-                    <Icon className={`text-${feature.color}`} size={32} />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-5">{feature.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed text-lg">
-                    {feature.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Progress Note */}
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-20" />
-            <div className="relative glass-card-strong p-10 border-l-4 border-primary">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0 glow-primary">
-                  <Zap className="text-primary" size={24} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-4">開発状況</h3>
-                  <p className="text-foreground/80 leading-relaxed text-lg">
-                    現在開発進捗50%。自社VIBE内製により、β版準備中です。<br />
-                    2025年内のフル稼働を目指し、順次機能を追加しています。
-                  </p>
-                  <div className="mt-6 flex gap-3">
-                    <div className="px-4 py-2 rounded-lg bg-primary/10 border border-primary/20 text-sm">
-                      <span className="text-primary font-semibold">β版準備中</span>
-                    </div>
-                    <div className="px-4 py-2 rounded-lg bg-secondary/10 border border-secondary/20 text-sm">
-                      <span className="text-secondary font-semibold">2025年フル稼働予定</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
