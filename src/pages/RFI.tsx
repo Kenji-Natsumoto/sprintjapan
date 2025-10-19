@@ -96,7 +96,7 @@ const RFI = () => {
       <div className="min-h-screen">
         <Navigation />
         
-        <div className="pt-32 pb-24">
+        <div className="pt-[100px] pb-24">
           <div className="container mx-auto px-4 max-w-2xl">
             <div className="glass-card p-12 text-center">
               <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6 glow-primary">
@@ -128,7 +128,7 @@ const RFI = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <div className="pt-32 pb-24">
+      <div className="pt-[100px] pb-24">
         <div className="container mx-auto px-4 max-w-3xl">
           {/* Question Section */}
           <div className="text-center mb-12 animate-fade-in">
