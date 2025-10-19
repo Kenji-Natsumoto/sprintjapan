@@ -64,64 +64,66 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Value Proposition */}
+      {/* AI Platforms Section */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-elevated" />
-        <div className="absolute inset-0 mesh-gradient opacity-50" />
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute inset-0 mesh-gradient opacity-30" />
         
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              なぜProSprintなのか？
+            <h2 className="text-5xl md:text-6xl font-bold gradient-text">
+              3つのAIプラットフォーム
             </h2>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-              開発スピード、可視性、拡張性を同時に実現
-            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Zap,
-                title: "すぐ動く",
-                description: "要件→MVP→本番を最短で。会議の知をAIが即座にソフトウェアへ翻訳します。",
-                color: "primary",
-                delay: "0s"
-              },
-              {
-                icon: Eye,
-                title: "見える",
-                description: "SKU単位で成果・売上帰属を可視化。事業の成果を明確に追跡できます。",
-                color: "secondary",
-                delay: "0.1s"
-              },
-              {
-                icon: Network,
-                title: "広がる",
-                description: "共通部品を在庫化し横展開。一度作った資産が組織全体で再利用できます。",
-                color: "accent",
-                delay: "0.2s"
-              }
-            ].map((feature) => {
-              const Icon = feature.icon;
-              const glowClass = `glow-${feature.color}`;
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
+            {/* ProSprint - Large Card */}
+            <div 
+              className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-3xl animate-fade-in hover-lift"
+              style={{ animationDelay: '0s' }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-teal-500/20 to-cyan-500/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
               
-              return (
-                <div 
-                  key={feature.title}
-                  className="glass-card-strong p-10 hover-lift group"
-                  style={{ animationDelay: feature.delay }}
-                >
-                  <div className={`w-16 h-16 rounded-2xl bg-${feature.color}/10 flex items-center justify-center mb-8 ${glowClass} group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className={`text-${feature.color}`} size={32} />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-5">{feature.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed text-lg">
-                    {feature.description}
-                  </p>
-                </div>
-              );
-            })}
+              <div className="relative h-full flex items-end p-10">
+                <h3 className="text-5xl md:text-6xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
+                  ProSprint
+                </h3>
+              </div>
+            </div>
+
+            {/* TransformX - Medium Card */}
+            <div 
+              className="md:row-span-1 group relative overflow-hidden rounded-3xl animate-fade-in hover-lift"
+              style={{ animationDelay: '0.1s' }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-violet-500/20 to-fuchsia-500/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+              
+              <div className="relative h-full flex items-end p-8">
+                <h3 className="text-4xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
+                  TransformX
+                </h3>
+              </div>
+            </div>
+
+            {/* MissionModeler - Medium Card */}
+            <div 
+              className="md:row-span-1 group relative overflow-hidden rounded-3xl animate-fade-in hover-lift"
+              style={{ animationDelay: '0.2s' }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-indigo-500/20 to-purple-500/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+              
+              <div className="relative h-full flex items-end p-8">
+                <h3 className="text-3xl md:text-4xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
+                  MissionModeler
+                </h3>
+              </div>
+            </div>
           </div>
         </div>
       </section>
