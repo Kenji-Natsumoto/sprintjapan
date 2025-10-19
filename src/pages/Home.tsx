@@ -79,7 +79,7 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[5px] auto-rows-[280px]">
-            {/* ProSprint - Large Card */}
+            {/* Smatsta - Large Card */}
             <div 
               className="md:col-span-2 md:row-span-2 group relative overflow-hidden animate-fade-in hover-lift"
               style={{ animationDelay: '0s' }}
@@ -87,19 +87,22 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 via-teal-500/30 to-cyan-500/30" />
               <img 
                 src={prosprintDashboard} 
-                alt="ProSprint Platform" 
+                alt="Smatsta Platform" 
                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
               
-              <div className="relative h-full flex items-end p-10">
+              <div className="relative h-full flex flex-col justify-end p-10">
                 <h3 className="text-5xl md:text-6xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
-                  ProSprint
+                  Smatsta
                 </h3>
+                <p className="text-xl md:text-2xl text-foreground/70 mt-4">
+                  事業創造AIプラットフォーム
+                </p>
               </div>
             </div>
 
-            {/* TransformX - Medium Card */}
+            {/* Traith - Medium Card */}
             <div 
               className="md:row-span-1 group relative overflow-hidden animate-fade-in hover-lift"
               style={{ animationDelay: '0.1s' }}
@@ -107,19 +110,22 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 via-violet-500/30 to-fuchsia-500/30" />
               <img 
                 src={transformxScreenshot} 
-                alt="TransformX Platform" 
+                alt="Traith Platform" 
                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
               
-              <div className="relative h-full flex items-end p-8">
+              <div className="relative h-full flex flex-col justify-end p-8">
                 <h3 className="text-4xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
-                  TransformX
+                  Traith
                 </h3>
+                <p className="text-lg md:text-xl text-foreground/70 mt-2">
+                  組織の理念を変革するAIプラットフォーム
+                </p>
               </div>
             </div>
 
-            {/* MissionModeler - Medium Card */}
+            {/* Solvista - Medium Card */}
             <div 
               className="md:row-span-1 group relative overflow-hidden animate-fade-in hover-lift"
               style={{ animationDelay: '0.2s' }}
@@ -127,15 +133,18 @@ const Home = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-indigo-500/30 to-purple-500/30" />
               <img 
                 src={prosprintDashboard} 
-                alt="MissionModeler Platform" 
+                alt="Solvista Platform" 
                 className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
               
-              <div className="relative h-full flex items-end p-8">
+              <div className="relative h-full flex flex-col justify-end p-8">
                 <h3 className="text-3xl md:text-4xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
-                  MissionModeler
+                  Solvista
                 </h3>
+                <p className="text-lg md:text-xl text-foreground/70 mt-2">
+                  釈迦課題言語化AIプラットフォーム
+                </p>
               </div>
             </div>
           </div>
