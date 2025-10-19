@@ -64,64 +64,6 @@ const Company = () => {
                   </p>
                 </div>
 
-                {/* Main Vision Statement */}
-                <div className="relative mb-24 animate-scale-in" style={{ animationDelay: '0.2s' }}>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-xl opacity-20" />
-                  <div className="relative glass-card-strong p-12 border-l-4 border-primary">
-                    <p className="text-xl text-foreground/80 leading-relaxed">
-                      運用・収益まで見据えた設計が、近い将来の伸びを担保。<br />
-                      作るほど速く・安く・賢くなる「再利用のループ」を実現し、<br />
-                      会議の知を即ソフトへ翻訳する文化を組織に定着させます。
-                    </p>
-                  </div>
-                </div>
-
-                {/* Core Principles */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-32">
-                  {[
-                    {
-                      icon: Repeat,
-                      title: "再利用性",
-                      description: "一度作った部品は、全プロジェクトで活用可能",
-                      color: "primary",
-                      delay: "0s"
-                    },
-                    {
-                      icon: Network,
-                      title: "ネットワーク効果",
-                      description: "利用者が増えるほど、知の資産が増幅",
-                      color: "secondary",
-                      delay: "0.1s"
-                    },
-                    {
-                      icon: Sparkles,
-                      title: "継続的進化",
-                      description: "AIと人の協働で、常に最適な解を更新",
-                      color: "accent",
-                      delay: "0.2s"
-                    }
-                  ].map((principle) => {
-                    const Icon = principle.icon;
-                    const glowClass = `glow-${principle.color}`;
-                    
-                    return (
-                      <div 
-                        key={principle.title}
-                        className="glass-card-strong p-10 hover-lift group text-center animate-fade-in-up"
-                        style={{ animationDelay: principle.delay }}
-                      >
-                        <div className={`w-20 h-20 rounded-full bg-${principle.color}/10 flex items-center justify-center mx-auto mb-8 ${glowClass} group-hover:scale-110 transition-all duration-300`}>
-                          <Icon className={`text-${principle.color}`} size={40} />
-                        </div>
-                        <h3 className="text-2xl font-bold mb-5">{principle.title}</h3>
-                        <p className="text-foreground/70 leading-relaxed text-lg">
-                          {principle.description}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
-
                 {/* Why Change Business Model Section */}
                 <div id="why-change-model" className="mb-32 scroll-mt-32">
                   <div className="relative">
