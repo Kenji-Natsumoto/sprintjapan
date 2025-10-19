@@ -1,4 +1,4 @@
-import { Waves, Building2, Lightbulb, ArrowRight } from 'lucide-react';
+import { Layers, Code, Users, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
@@ -11,60 +11,67 @@ const Solutions = () => {
       
       <div className="pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-7xl">
-          {/* Question Section */}
+          {/* Header Section */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              どこで効く？
+              ソリューション
             </h1>
-            <p className="text-2xl text-primary font-semibold mb-8">
-              現場と経営を、同じ土台で前へ
+            <p className="text-xl text-foreground/80 leading-relaxed max-w-4xl mx-auto">
+              9年間の事業開発支援のナレッジと最先端AI技術を組み合わせ、お客様のビジネス成長を加速させます。
             </p>
           </div>
 
-          {/* Use Cases */}
+          {/* Solutions */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            {/* Platform Business */}
             <div className="glass-card p-8 hover-scale">
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 glow-primary">
-                <Waves className="text-primary" size={28} />
+                <Layers className="text-primary" size={28} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">レジャー</h3>
-              <p className="text-foreground/80 leading-relaxed mb-4">
-                現場オペの即時反映と短期MVP。季節変動や顧客ニーズに素早く対応し、サービス品質を維持しながら新機能を追加。
+              <h3 className="text-2xl font-bold mb-4">プラットフォーム運営事業</h3>
+              <p className="text-foreground/80 leading-relaxed mb-6">
+                最新のAI技術を活用し、ユーザー体験を革新するアプリケーションを自社開発しています。３つのプラットフォームに分けて事業開発のすべての分野をカバーしています。
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
-                <li>• 予約システムの迅速な改善</li>
-                <li>• 現場フィードバックの即時反映</li>
-                <li>• シーズン対応の短期開発</li>
+                <li>• SMATSTA（スマトスタ）</li>
+                <li>• SOLVISTA（ソルヴィスタ）</li>
+                <li>• TRAITH（トライス）</li>
               </ul>
             </div>
 
+            {/* Enterprise App Development */}
             <div className="glass-card p-8 hover-scale">
               <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 glow-secondary">
-                <Building2 className="text-secondary" size={28} />
+                <Code className="text-secondary" size={28} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">B2B IT</h3>
-              <p className="text-foreground/80 leading-relaxed mb-4">
-                複雑要件の分解とSKU別収益管理。エンタープライズ向けの高度な要求を整理し、各機能の事業貢献を可視化。
+              <h3 className="text-2xl font-bold mb-4">エンタープライズ系カスタマイズアプリ開発事業</h3>
+              <p className="text-foreground/80 leading-relaxed mb-6">
+                お客様のビジネス要件に完全にマッチしたカスタムアプリケーションをAI駆動開発によってフルスタック開発し、短納期かつ低予算で実装。スケーラブルかつセキュリティも担保しつつ、保守性の高いシステムをお届けします。
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
-                <li>• 大規模システムの段階的開発</li>
-                <li>• 機能ごとの収益性分析</li>
-                <li>• 顧客要望の優先順位付け</li>
+                <li>• 要件定義</li>
+                <li>• 設計</li>
+                <li>• フルスタック開発</li>
+                <li>• クラウドインフラ保守</li>
+                <li>• 運用サポート</li>
               </ul>
             </div>
 
+            {/* Business Development Mentoring */}
             <div className="glass-card p-8 hover-scale">
               <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
-                <Lightbulb className="text-accent" size={28} />
+                <Users className="text-accent" size={28} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">企画/新規事業</h3>
-              <p className="text-foreground/80 leading-relaxed mb-4">
-                会議の知→プロト→本番の定着。アイデアを素早く形にし、市場検証を繰り返しながら事業化を加速。
+              <h3 className="text-2xl font-bold mb-4">事業開発メンタリング</h3>
+              <p className="text-foreground/80 leading-relaxed mb-6">
+                テック企業としての豊富な経験を活かし、事業戦略からプロダクト開発まで包括的なメンタリングサービスを提供します。
               </p>
               <ul className="text-sm text-muted-foreground space-y-2">
-                <li>• アイデアの迅速なプロトタイピング</li>
-                <li>• 仮説検証サイクルの高速化</li>
-                <li>• 本番環境への円滑な移行</li>
+                <li>• 事業戦略策定</li>
+                <li>• プロダクト設計・開発</li>
+                <li>• プロジェクトリーダーシップ</li>
+                <li>• 技術選定支援</li>
+                <li>• チーム組成支援</li>
               </ul>
             </div>
           </div>
