@@ -1,4 +1,4 @@
-import transformxImage from "@/assets/news-traith.jpg";
+import transformxImage from "@/assets/news-traith-app.png";
 import websiteImage from "@/assets/news-website.jpg";
 import businessPlanImage from "@/assets/news-business-plan.jpg";
 
