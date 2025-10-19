@@ -122,6 +122,47 @@ const Company = () => {
                   })}
                 </div>
 
+                {/* Why Change Business Model Section */}
+                <div id="why-change-model" className="mb-32 scroll-mt-32">
+                  <div className="relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-2xl opacity-20" />
+                    
+                    <div className="relative glass-card-strong p-12 md:p-16 border-l-4 border-primary">
+                      <div className="text-center mb-12">
+                        <h3 className="text-4xl md:text-5xl font-bold mb-8">
+                          なぜ今<span className="gradient-text">ビジネスモデル</span>を変えるのか？
+                        </h3>
+                      </div>
+                      
+                      <div className="prose prose-lg max-w-4xl mx-auto">
+                        <p className="text-xl text-foreground/80 leading-relaxed mb-6">
+                          青臭い話かもしれませんが、生成AIや関連技術の急激な発展により、すべての業界、すべての業種の変革が余儀なくされようとしています。デザインスプリント顧客開発モデルをベースに研修・コンサルティングしてきた当社にとってもこれは例外ではありません。
+                        </p>
+                        
+                        <p className="text-xl text-foreground/80 leading-relaxed mb-6">
+                          そこで「言うだけ番長」を返上するため、当社のさらなる成長を加速させるため、自ら変わることにしました。
+                        </p>
+                        
+                        <p className="text-xl text-foreground/80 leading-relaxed mb-8">
+                          では「いつやるの？」と突っ込まれそうなので、そこは「今すぐ！」と答えます。実は、2025年前半はかなりトライ＆エラーをしていました。しかし、夏過ぎから現在のアクションが確信へと変わってきたので、コーポレートサイトを新たに立ち上げ、本格的に広報していくことにしました。
+                        </p>
+                        
+                        <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 border border-primary/20 mb-10">
+                          <p className="text-xl text-foreground/90 leading-relaxed text-center font-medium">
+                            「sprintjapan.net」。このサイトをご覧になって、当社の本気度と確信を感じていただき、後に続く人や企業が１つでも増えてくれらたらと願っています。
+                          </p>
+                        </div>
+                        
+                        <div className="text-right mt-12">
+                          <p className="text-2xl font-bold gradient-text inline-block border-b-2 border-primary pb-2">
+                            夏本 健司
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Future Vision */}
                 <div className="space-y-10 mb-32">
                   <div className="text-center mb-16">
