@@ -23,9 +23,9 @@ export const newsData: NewsItem[] = [
     image: transformxImage,
     excerpt: "組織の理念やMTP（Massive Transformative Purpose）を、AIの力を活用して効率的に言語化するアプリケーション「TRAITH」をリリースしました。",
     content: `
-      <p>スプリントジャパン株式会社は、2025年10月17日、組織の理念やMTP（Massive Transformative Purpose）を、AIの力を活用して効率的に言語化するアプリケーション「TRAITH（トライス）」を正式リリースしました。</p>
+      <p>スプリントジャパン株式会社は、2025年10月17日、組織の理念を「MTP」とAIを使って素早く正しく言語化する全く新しい業務アプリ「TRAITH（トライス）」をリリースしました。</p>
       
-      <p>MTP（Massive Transformative Purposeの略）とは、「野心的な変革目的」と訳されている、かつて成長前のGoogleやMeta、Uber、Airbnbなどの新興企業が「世界に途方もない変化をもたらすゴール」として定めた組織の理念を言語化したものです。別の言い方をすると、これらの会社がのちに大きく成長する指針になった旗印です。</p>
+      <p>「MTP」とは Massive Transformative Purpose の略で、「野心的な変革目的」と訳されます。成長前のGoogleやMeta、Uber、Airbnbなどの新興企業が「世界に途方もない変化をもたらすゴール」として定めた組織の理念を言語化したもので、別の言い方をすると、これらの会社がのちに成長する指針になった「旗印」です。</p>
       
       <p>「TRAITH」は、このメソッドやナレッジをベースに組織の「パーパス」を素早く正しく言語化することができます。専用に学習させたAIのアドバイスを利用することで、組織の目指す方向性を、ズレなくブレなく、ステークホルダー全員が理解しやすい言葉で言語化できます。</p>
       
