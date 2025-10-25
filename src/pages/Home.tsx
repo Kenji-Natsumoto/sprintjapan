@@ -5,6 +5,7 @@ import heroImage from '@/assets/prosprint-lp.png';
 import prosprintDashboard from '@/assets/prosprint-dashboard.png';
 import smatstaImage from '@/assets/smatsta-eyecatch.png';
 import transformxScreenshot from '@/assets/news-traith-app.png';
+import solvistaScreenshot from '@/assets/solvista-screenshot.png';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -133,7 +134,7 @@ const Home = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-indigo-500/30 to-purple-500/30" />
               <img 
-                src={prosprintDashboard} 
+                src={solvistaScreenshot} 
                 alt="Solvista Platform" 
                 className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
               />
