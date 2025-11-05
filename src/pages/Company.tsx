@@ -82,7 +82,7 @@ const Company = () => {
                         </p>
                         
                         <p className="text-xl text-foreground/80 leading-relaxed mb-6">
-                          そこで「言うだけ番長」を返上するため、当社のさらなる成長を加速させるため、自ら変わることにしました。
+                          そこでコンサルティングするだけでなく、自ら変わることでこの大きな波に乗り方を示そうと考え、実行に移しました。
                         </p>
                         
                         <p className="text-xl text-foreground/80 leading-relaxed mb-8">
