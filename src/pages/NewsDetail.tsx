@@ -94,7 +94,15 @@ const NewsDetail = () => {
                 [&>ul+h2]:mt-12
                 prose-strong:text-primary
                 [&>p]:mb-7
-                [&_h2]:!text-[32px] [&_h2]:!font-bold"
+                [&_h2]:!text-[32px] [&_h2]:!font-bold
+                [&_a]:text-primary [&_a]:underline [&_a]:decoration-1 [&_a]:underline-offset-4
+                [&_a]:hover:text-primary/80 [&_a]:transition-colors
+                [&_a]:inline-flex [&_a]:items-center [&_a]:gap-1
+                [&_a[target='_blank']]:after:content-[''] 
+                [&_a[target='_blank']]:after:inline-block
+                [&_a[target='_blank']]:after:w-4 [&_a[target='_blank']]:after:h-4
+                [&_a[target='_blank']]:after:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xOCAxM3Y2YTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0yVjhhMiAyIDAgMCAxIDItMmg2Ii8+PHBvbHlsaW5lIHBvaW50cz0iMTUgMyAyMSAzIDIxIDkiLz48bGluZSB4MT0iMTAiIHgyPSIyMSIgeTE9IjE0IiB5Mj0iMyIvPjwvc3ZnPg==')]
+                [&_a[target='_blank']]:after:bg-contain [&_a[target='_blank']]:after:bg-no-repeat"
               dangerouslySetInnerHTML={{ __html: news.content }}
             />
             
