@@ -86,7 +86,7 @@ const Company = () => {
                         </p>
                         
                         <p className="text-xl text-foreground/80 leading-relaxed mb-8">
-                          では「いつやるの？」と突っ込まれそうなので、そこは「今すぐ！」と答えます。実は、2025年前半はかなりトライ＆エラーをしていました。しかし、夏過ぎから現在のアクションが確信へと変わってきたので、コーポレートサイトを新たに立ち上げ、本格的に広報していくことにしました。
+                          実は、今年前半から着々と準備を進めていました。正直、まだ準備は完全ではありませんが、"最初は恥ずかしいようなレベルでもローンチして改善しながら質を上げていく"というリーンスタートアップの理念に従い、今、まさにトライ＆エラーを繰り返しながら実践しています。
                         </p>
                         
                         <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 border border-primary/20 mb-10">
