@@ -1,6 +1,7 @@
 import transformxImage from "@/assets/news-traith-app.png";
 import websiteImage from "@/assets/news-website.jpg";
 import businessPlanImage from "@/assets/news-business-plan.jpg";
+import techTrendsImage from "@/assets/news-tech-trends.png";
 
 export interface NewsItem {
   id: string;
@@ -14,6 +15,31 @@ export interface NewsItem {
 }
 
 export const newsData: NewsItem[] = [
+  {
+    id: "tech-trends-report",
+    title: "バイブコーディング・AI駆動開発の最新動向をレポートにしました。",
+    date: "2025年10月16日",
+    readTime: "3分",
+    category: "テクノロジー",
+    image: techTrendsImage,
+    excerpt: "当社で標榜している「バイブコーディング」と「AI駆動開発」及びスタートアップ界隈の最新動向を集めたレポートを作成しました。",
+    content: `
+      <p>当社で標榜している「バイブコーディング」と「AI駆動開発」及びスタートアップ界隈の最新動向を集めたレポートを「<a href="https://bit.ly/47EIJ7d" target="_blank" rel="noopener noreferrer">テックトレンド速報11月5日号</a>」と題して作成しました。</p>
+      
+      <p>下記は、その主なトピックです。</p>
+      
+      <h2>2025年10月16日時点での情報：</h2>
+      <ul>
+        <li>バイブコーディングツールのトップ6が開発現場を席巻</li>
+        <li>CLI型AIコーディングエージェントが2025年のヒット商品に</li>
+        <li>バイブコーディングは減速傾向も、実用化は着実に進行</li>
+        <li>買収経験者が集結：YCの次世代支援体制が強化される</li>
+        <li>AI開発ツールは「実験」から「標準」へ</li>
+      </ul>
+      
+      <p>興味深いことは、米国ではバイブコーディングは実用フェーズへ移行し、AIエージェント向けインフラが急速に整備されていることです。CLI型AIコーディングエージェントが2025年のヒット商品となり、開発者の働き方が根本から変わりつつあるようです。</p>
+    `,
+  },
   {
     id: "transformx-release",
     title: "組織の理念をMTPとAIで素早く正しく言語化できる無料アプリ「TRAITH」をリリースしました。",
