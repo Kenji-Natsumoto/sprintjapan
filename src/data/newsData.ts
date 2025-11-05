@@ -58,7 +58,7 @@ export const newsData: NewsItem[] = [
   {
     id: "website-launch",
     title: "新ウェブサイトを公開・運用開始",
-    date: "2024年12月22日",
+    date: "2025年10月16日",
     readTime: "3分",
     category: "企業情報",
     image: websiteImage,
@@ -92,7 +92,7 @@ export const newsData: NewsItem[] = [
   {
     id: "business-plan-2025",
     title: "2025年事業計画のお知らせ",
-    date: "2024年12月1日",
+    date: "2025年10月3日",
     readTime: "7分",
     category: "企業情報",
     image: businessPlanImage,
