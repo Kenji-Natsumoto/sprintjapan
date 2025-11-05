@@ -24,7 +24,9 @@ export const newsData: NewsItem[] = [
     image: techTrendsImage,
     excerpt: "当社で標榜している「バイブコーディング」と「AI駆動開発」及びスタートアップ界隈の最新動向を集めたレポートを作成しました。",
     content: `
-      <p>当社で標榜している「バイブコーディング」と「AI駆動開発」及びスタートアップ界隈の最新動向を集めたレポートを「<a href="https://bit.ly/47EIJ7d" target="_blank" rel="noopener noreferrer">テックトレンド速報11月5日号</a>」と題して作成しました。</p>
+      <p>当社で標榜している「バイブコーディング」と「AI駆動開発」及びスタートアップ界隈の最新動向を集めたレポートを「<a href="https://bit.ly/47EIJ7d" target="_blank" rel="noopener noreferrer">テックトレンド速報10月16日号</a>」として作成しました。</p>
+      
+      <p>ご興味のある方はぜひご一読ください。</p>
       
       <p>下記は、その主なトピックです。</p>
       
