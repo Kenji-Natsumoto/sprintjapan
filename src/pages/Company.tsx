@@ -91,7 +91,7 @@ const Company = () => {
                         
                         <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 border border-primary/20 mb-10">
                           <p className="text-xl text-foreground/90 leading-relaxed text-center font-medium">
-                            「sprintjapan.net」。このサイトをご覧になって、当社の本気度と確信を感じていただき、後に続く人や企業が１つでも増えてくれらたらと願っています。
+                            この新しいコーポレートサイトをご覧いただき、"変わるべきは、今"を感じていただき、後に続く方や企業さまが１つでも増えてくれらたらと切に願っています。
                           </p>
                         </div>
                         
