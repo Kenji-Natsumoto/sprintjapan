@@ -197,7 +197,7 @@ const Company = () => {
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-2xl opacity-20" />
                   <div className="relative text-center glass-card-strong p-16">
                     <div className="inline-block mb-8 px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
-                      <span className="text-sm font-medium text-primary">Our Mission</span>
+                      <span className="text-sm font-medium text-primary">Our MTP</span>
                     </div>
                     <h3 className="text-3xl md:text-4xl font-bold mb-8">
                       私たちが目指す<span className="gradient-text">世界</span>
