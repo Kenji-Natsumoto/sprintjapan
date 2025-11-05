@@ -205,7 +205,7 @@ const Company = () => {
                     <p className="text-xl text-foreground/70 leading-relaxed max-w-4xl mx-auto">
                       すべての企業と人が、アイデアを即座に形にできる世界。<br />
                       会議や雑談から生まれた「発想」が、その日のうちに動くソフトウェアになる世界。<br />
-                      <span className="text-primary font-semibold">そんな未来を、ProSprintは実現します</span>
+                      <span className="text-primary font-semibold">"イノベーションは思ったより簡単だ"と実感できる社会を実現します</span>
                     </p>
                   </div>
                 </div>
