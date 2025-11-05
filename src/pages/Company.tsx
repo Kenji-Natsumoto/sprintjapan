@@ -216,7 +216,7 @@ const Company = () => {
           {/* Question Section */}
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              スプリントジャパンは何者？
+              2026年、スプリントジャパンの変革
             </h1>
             <p className="text-2xl text-primary font-semibold mb-8">
               プラットフォームを運営する会社へ
