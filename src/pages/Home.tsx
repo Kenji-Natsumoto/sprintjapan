@@ -47,7 +47,7 @@ const Home = () => {
             </p>
             
             <p className="text-lg md:text-xl text-foreground/70 mb-14 max-w-3xl mx-auto animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
-              2025年、スプリントジャパンは研修会社から「事業創造のプラットフォーム企画・運営会社」へ変わります。
+              2025年11月、スプリントジャパンは研修会社から「事業創造のプラットフォーム運営会社」へ変わりました。
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-scale-in" style={{ animationDelay: '0.4s' }}>
