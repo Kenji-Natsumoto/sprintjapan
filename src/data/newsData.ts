@@ -2,6 +2,7 @@ import transformxImage from "@/assets/news-traith-app.png";
 import websiteImage from "@/assets/news-website.jpg";
 import businessPlanImage from "@/assets/news-business-plan.jpg";
 import techTrendsImage from "@/assets/news-tech-trends.png";
+import techTrendsNovImage from "@/assets/news-tech-trends-nov.png";
 
 export interface NewsItem {
   id: string;
@@ -15,6 +16,34 @@ export interface NewsItem {
 }
 
 export const newsData: NewsItem[] = [
+  {
+    id: "tech-trends-nov-2025",
+    title: "テックトレンド速報11月5日号を公開しました。",
+    date: "2025年11月5日",
+    readTime: "4分",
+    category: "テクノロジー",
+    image: techTrendsNovImage,
+    excerpt: "バイブコーディングとAI駆動開発の最新動向を速読できるレポート「テックトレンド速報11月5日号」を公開致します。",
+    content: `
+      <p>バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://bit.ly/4pdFxab" target="_blank" rel="noopener noreferrer">テックトレンド速報11月5日号</a>」を公開致します。</p>
+      
+      <p>主なトピックは次の通りです。</p>
+      
+      <h2>2025年11月5日時点の動向：</h2>
+      <ul>
+        <li>バイブコーディング検索数が3ヶ月で6,700%増加</li>
+        <li>「ハネムーン期間は終わった」バイブコーディング6ヶ月後の現実と成熟化</li>
+        <li>Product Hunt トップ7のうち 6製品が収益化フェーズへ</li>
+        <li>トレンドカテゴリが示す2025年の開発者ニーズ</li>
+        <li>バイブコーディングは「成長」から「成熟」へ 他、全16ページ</li>
+      </ul>
+      
+      <br />
+      <br />
+      
+      <p>興味深いことは、米国では「AI実験の時代」を終え、「AI実用化と収益化の時代」へと移行していることです。バイブコーディングはその象徴であり、今後の成熟化が鍵となります。</p>
+    `,
+  },
   {
     id: "tech-trends-report",
     title: "バイブコーディング・AI駆動開発の最新動向をレポートにしました。",
