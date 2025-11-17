@@ -26,7 +26,7 @@ export const newsData: NewsItem[] = [
     image: techTrendsNov15Image,
     excerpt: "バイブコーディングとAI駆動開発の最新動向を速読できるレポート「テックトレンド速報11月15日号」を公開致します。",
     content: `
-      <p>バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://bit.ly/news_TechTrends_BreakingNews251115" target="_blank" rel="noopener noreferrer">テックトレンド速報11月15日号</a>」を公開致します。</p>
+      <p>バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="/pdfs/tech-trends-nov-15-2025.pdf" target="_blank" rel="noopener noreferrer">テックトレンド速報11月15日号</a>」を公開致します。</p>
       
       <p>主なトピックは次の通りです。</p>
       
@@ -44,7 +44,7 @@ export const newsData: NewsItem[] = [
       
       <p>ここ10日間の興味深い出来事としては、「Vibe Coding」が 英語辞典の「2025年の言葉」に選定されたことです。また、AIは国家規模のインフラとなり、いよいよロボットが家庭に入り始めたことです。</p>
       
-      <p><a href="https://bit.ly/news_TechTrends_BreakingNews251115" target="_blank" rel="noopener noreferrer">https://bit.ly/news_TechTrends_BreakingNews251115</a></p>
+      <p><a href="/pdfs/tech-trends-nov-15-2025.pdf" target="_blank" rel="noopener noreferrer">テックトレンド速報11月15日号（PDF）</a></p>
     `,
   },
   {
