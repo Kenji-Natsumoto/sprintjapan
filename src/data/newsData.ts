@@ -56,7 +56,7 @@ export const newsData: NewsItem[] = [
     image: techTrendsNovImage,
     excerpt: "バイブコーディングとAI駆動開発の最新動向を速読できるレポート「テックトレンド速報11月5日号」を公開致します。",
     content: `
-      <p>バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://bit.ly/4pdFxab" target="_blank" rel="noopener noreferrer">テックトレンド速報11月5日号</a>」を公開致します。</p>
+      <p>バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://sprintjapan.com/rep/fin_spj_TechTrends_BreakingNews251105.pdf" target="_blank" rel="noopener noreferrer">テックトレンド速報11月5日号</a>」を公開致します。</p>
       
       <p>主なトピックは次の通りです。</p>
       
