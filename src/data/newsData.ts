@@ -3,6 +3,7 @@ import websiteImage from "@/assets/news-website.jpg";
 import businessPlanImage from "@/assets/news-business-plan.jpg";
 import techTrendsImage from "@/assets/news-tech-trends.png";
 import techTrendsNovImage from "@/assets/news-tech-trends-nov.png";
+import techTrendsNov15Image from "@/assets/news-tech-trends-nov-15.jpg";
 
 export interface NewsItem {
   id: string;
@@ -22,7 +23,7 @@ export const newsData: NewsItem[] = [
     date: "2025年11月15日",
     readTime: "5分",
     category: "テクノロジー",
-    image: techTrendsNovImage,
+    image: techTrendsNov15Image,
     excerpt: "バイブコーディングとAI駆動開発の最新動向を速読できるレポート「テックトレンド速報11月15日号」を公開致します。",
     content: `
       <p>バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://bit.ly/news_TechTrends_BreakingNews251115" target="_blank" rel="noopener noreferrer">テックトレンド速報11月15日号</a>」を公開致します。</p>
