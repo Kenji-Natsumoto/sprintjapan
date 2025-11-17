@@ -17,6 +17,36 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: "tech-trends-nov-15-2025",
+    title: "テックトレンド速報11月15日号を公開しました。",
+    date: "2025年11月15日",
+    readTime: "5分",
+    category: "テクノロジー",
+    image: techTrendsNovImage,
+    excerpt: "バイブコーディングとAI駆動開発の最新動向を速読できるレポート「テックトレンド速報11月15日号」を公開致します。",
+    content: `
+      <p>バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://bit.ly/news_TechTrends_BreakingNews251115" target="_blank" rel="noopener noreferrer">テックトレンド速報11月15日号</a>」を公開致します。</p>
+      
+      <p>主なトピックは次の通りです。</p>
+      
+      <h2>2025年11月15日時点の動向：</h2>
+      <ul>
+        <li>・全14個の「AI開発プラットフォーム」最新情報を掲載</li>
+        <li>・Product Hunt AI製品比率</li>
+        <li>・Y Combinator Winter 2026バッチ</li>
+        <li>・トレンドカテゴリが示す2025年の開発者ニーズ</li>
+        <li>・Jordan Fisher氏の発言、全36ページ</li>
+      </ul>
+      
+      <br />
+      <br />
+      
+      <p>ここ10日間の興味深い出来事としては、「Vibe Coding」が 英語辞典の「2025年の言葉」に選定されたことです。また、AIは国家規模のインフラとなり、いよいよロボットが家庭に入り始めたことです。</p>
+      
+      <p><a href="https://bit.ly/news_TechTrends_BreakingNews251115" target="_blank" rel="noopener noreferrer">https://bit.ly/news_TechTrends_BreakingNews251115</a></p>
+    `,
+  },
+  {
     id: "tech-trends-nov-2025",
     title: "テックトレンド速報11月5日号を公開しました。",
     date: "2025年11月5日",
