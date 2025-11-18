@@ -26,7 +26,7 @@ export const newsData: NewsItem[] = [
     image: techTrendsNov15Image,
     excerpt: "バイブコーディングとAI駆動開発の最新動向を速読できるレポート「テックトレンド速報11月15日号」を公開致します。",
     content: `
-      <p>バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://sprintjapan.com/rep/fin_spj_TechTrends_BreakingNews251115%20(1).pdf" target="_blank" rel="noopener noreferrer">テックトレンド速報11月15日号</a>」を公開致します。</p>
+      <p>バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://sprintjapan.com/rep/fin_spj_TechTrends_BreakingNews251115.pdf" target="_blank" rel="noopener noreferrer">テックトレンド速報11月15日号</a>」を公開致します。</p>
       
       <p>主なトピックは次の通りです。</p>
       
@@ -44,7 +44,7 @@ export const newsData: NewsItem[] = [
       
       <p>ここ10日間の興味深い出来事としては、「Vibe Coding」が 英語辞典の「2025年の言葉」に選定されたことです。また、AIは国家規模のインフラとなり、いよいよロボットが家庭に入り始めたことです。</p>
       
-      <p><a href="https://sprintjapan.com/rep/fin_spj_TechTrends_BreakingNews251115%20(1).pdf" target="_blank" rel="noopener noreferrer">https://sprintjapan.com/rep/fin_spj_TechTrends_BreakingNews251115%20(1).pdf</a></p>
+      <p><a href="https://sprintjapan.com/rep/fin_spj_TechTrends_BreakingNews251115.pdf" target="_blank" rel="noopener noreferrer">https://sprintjapan.com/rep/fin_spj_TechTrends_BreakingNews251115.pdf</a></p>
     `,
   },
   {
