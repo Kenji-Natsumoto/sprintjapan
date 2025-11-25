@@ -47,7 +47,7 @@ export const newsData: NewsItem[] = [
       
       <br />
       
-      <h2>▼最新8バイブコーディングプラットにてベンチマークを行いました。</h2>
+      <h2>▼最新8バイブコーディングプラットフォームにてベンチマークを行いました。</h2>
       
       <ul>
         <li>・Google Antigravity</li>
