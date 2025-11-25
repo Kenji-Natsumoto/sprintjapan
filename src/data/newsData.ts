@@ -27,7 +27,7 @@ export const newsData: NewsItem[] = [
     image: techTrendsNov25Image,
     excerpt: "バイブコーディングとAI駆動開発の最新動向を速読できるレポート「テックトレンド速報11月25日号」を公開致しました。",
     content: `
-      <p>本日、バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://bit.ly/tt4" target="_blank" rel="noopener noreferrer">テックトレンド速報11月25日号</a>」を公開致しました。</p>
+      <p>本日、バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://sprintjapan.com/tt2025/TT4.pdf" target="_blank" rel="noopener noreferrer">テックトレンド速報11月25日号</a>」を公開致しました。</p>
       
       <br />
       
@@ -68,7 +68,7 @@ export const newsData: NewsItem[] = [
       
       <h2>▼「テックトレンド速報11月25日号」はこちら</h2>
       
-      <p><a href="https://bit.ly/tt4" target="_blank" rel="noopener noreferrer">https://bit.ly/tt4</a></p>
+      <p><a href="https://sprintjapan.com/tt2025/TT4.pdf" target="_blank" rel="noopener noreferrer">https://sprintjapan.com/tt2025/TT4.pdf</a></p>
       
       <br />
       
