@@ -4,6 +4,7 @@ import businessPlanImage from "@/assets/news-business-plan.jpg";
 import techTrendsImage from "@/assets/news-tech-trends.png";
 import techTrendsNovImage from "@/assets/news-tech-trends-nov.png";
 import techTrendsNov15Image from "@/assets/news-tech-trends-nov-15.jpg";
+import techTrendsNov25Image from "@/assets/news-tech-trends-nov-25.jpg";
 
 export interface NewsItem {
   id: string;
@@ -17,6 +18,63 @@ export interface NewsItem {
 }
 
 export const newsData: NewsItem[] = [
+  {
+    id: "tech-trends-nov-25-2025",
+    title: "テックトレンド速報 #4 11月25日号を公開しました。",
+    date: "2025年11月25日",
+    readTime: "5分",
+    category: "テクノロジー",
+    image: techTrendsNov25Image,
+    excerpt: "バイブコーディングとAI駆動開発の最新動向を速読できるレポート「テックトレンド速報11月25日号」を公開致しました。",
+    content: `
+      <p>本日、バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://bit.ly/tt4" target="_blank" rel="noopener noreferrer">テックトレンド速報11月25日号</a>」を公開致しました。</p>
+      
+      <br />
+      
+      <p>このレポートは、主にこのような方々向けに編集しています。</p>
+      <ul>
+        <li>・"バイブコーディング"、"AI駆動開発"に関心のある方</li>
+        <li>・新規事業立ち上げの関係者</li>
+        <li>・オープンイノベーションに従事されている方</li>
+        <li>・スモールビジネスの経営者</li>
+        <li>・スタートアップのCEO</li>
+        <li>・副業・起業を考えている方</li>
+      </ul>
+      
+      <br />
+      
+      <p>今回の主なトピックは次の通りです。</p>
+      
+      <br />
+      
+      <h2>▼最新8バイブコーディングプラットにてベンチマークを行いました。</h2>
+      
+      <ul>
+        <li>・Google Antigravity</li>
+        <li>・ParaFlow</li>
+        <li>・Lovable</li>
+        <li>・bolt.new</li>
+        <li>・v0</li>
+        <li>・Gemini 3.0</li>
+        <li>・ChatGPT 5.1</li>
+        <li>・Claude Sonnet4.5</li>
+      </ul>
+      
+      <br />
+      
+      <p>また、「作ってみよう！本格的バイブコーディング」や「企業導入ガイド」などの記事も掲載しています。</p>
+      
+      <br />
+      
+      <h2>▼「テックトレンド速報11月25日号」はこちら</h2>
+      
+      <p><a href="https://bit.ly/tt4" target="_blank" rel="noopener noreferrer">https://bit.ly/tt4</a></p>
+      
+      <br />
+      
+      <p>もしご興味がおありでしたら、ぜひご高覧ください。</p>
+    `,
+  },
   {
     id: "tech-trends-nov-15-2025",
     title: "テックトレンド速報11月15日号を公開しました。",
