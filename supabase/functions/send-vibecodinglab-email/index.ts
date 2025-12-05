@@ -31,7 +31,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification email to company
     const companyEmailResponse = await resend.emails.send({
-      from: "Sprint Japan <onboarding@resend.dev>",
+      from: "Sprint Japan <noreply@sprintjapan.net>",
       to: ["kn@sprintjapan.net"],
       subject: `【バイブコーディング・ラボ 第0期】新規エントリー: ${company} ${name}様`,
       html: `
@@ -70,7 +70,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to user
     const userEmailResponse = await resend.emails.send({
-      from: "Sprint Japan <onboarding@resend.dev>",
+      from: "Sprint Japan <noreply@sprintjapan.net>",
       to: [email],
       subject: "【バイブコーディング・ラボ 第0期】エントリーを受け付けました",
       html: `
