@@ -1,14 +1,77 @@
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { format } from "date-fns";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft, ExternalLink, Share2 } from "lucide-react";
 import { newsData } from "@/data/newsData";
+import { supabase } from "@/integrations/supabase/client";
+import { NewsArticle } from "@/hooks/useNewsArticles";
 
 const NewsDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const news = newsData.find((item) => item.id === id);
+  const [dbArticle, setDbArticle] = useState<NewsArticle | null>(null);
+  const [loading, setLoading] = useState(false);
+  
+  // Check if this is a database article (prefixed with "db-")
+  const isDbArticle = id?.startsWith('db-');
+  const dbId = isDbArticle ? id?.replace('db-', '') : null;
+  
+  // Find static news article
+  const staticNews = !isDbArticle ? newsData.find((item) => item.id === id) : null;
+
+  useEffect(() => {
+    const fetchDbArticle = async () => {
+      if (!dbId) return;
+      
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('news_articles')
+        .select('*')
+        .eq('id', dbId)
+        .maybeSingle();
+      
+      if (!error && data) {
+        setDbArticle(data);
+      }
+      setLoading(false);
+    };
+
+    if (isDbArticle) {
+      fetchDbArticle();
+    }
+  }, [dbId, isDbArticle]);
+
+  // Prepare news data for display
+  const news = staticNews ? {
+    title: staticNews.title,
+    date: staticNews.date,
+    readTime: staticNews.readTime,
+    category: staticNews.category,
+    image: staticNews.image,
+    content: staticNews.content,
+  } : dbArticle ? {
+    title: dbArticle.title,
+    date: format(new Date(dbArticle.published_at), 'yyyy年MM月dd日'),
+    readTime: '3分',
+    category: dbArticle.category,
+    image: dbArticle.image_url || '/placeholder.svg',
+    content: dbArticle.content,
+  } : null;
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navigation />
+        <main className="flex-1 flex items-center justify-center">
+          <div className="text-center text-muted-foreground">読み込み中...</div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!news) {
     return (
