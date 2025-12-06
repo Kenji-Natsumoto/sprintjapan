@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Check, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -104,8 +105,8 @@ const VibeCodingLab = () => {
                 <p className="text-sm text-muted-foreground">
                   お急ぎの場合は、以下のお問い合わせ先までご連絡ください。
                 </p>
-                <Button variant="hero" onClick={() => setIsSubmitted(false)}>
-                  フォームに戻る
+                <Button variant="hero" asChild>
+                  <Link to="/contact">お問い合わせフォームに戻る</Link>
                 </Button>
               </div>
             </div>
