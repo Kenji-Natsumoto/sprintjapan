@@ -12,6 +12,7 @@ import RFI from "./pages/RFI";
 import Contact from "./pages/Contact";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
+import NewsAdmin from "./pages/NewsAdmin";
 import VibeCodingLab from "./pages/VibeCodingLab";
 import NotFound from "./pages/NotFound";
 import { Navigate } from "react-router-dom";
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
+          <Route path="/admin/news" element={<NewsAdmin />} />
           <Route path="/vibe-coding-lab" element={<VibeCodingLab />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
