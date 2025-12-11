@@ -9,6 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { trackFormSubmission } from '@/hooks/useAnalytics';
 import { z } from 'zod';
 
 const entrySchema = z.object({
@@ -69,6 +70,7 @@ const VibeCodingLab = () => {
       if (error) throw error;
 
       setIsSubmitted(true);
+      trackFormSubmission('vibe_coding_lab_entry');
       toast({
         title: "エントリー完了",
         description: "参加エントリーを受け付けました。担当者よりご連絡いたします。",

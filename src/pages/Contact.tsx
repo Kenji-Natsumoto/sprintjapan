@@ -9,6 +9,7 @@ import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { z } from 'zod';
+import { trackFormSubmission } from '@/hooks/useAnalytics';
 
 const contactSchema = z.object({
   company: z.string().trim().min(1, { message: "会社名を入力してください" }).max(100, { message: "会社名は100文字以内で入力してください" }),
@@ -68,6 +69,7 @@ const Contact = () => {
       if (error) throw error;
 
       setIsSubmitted(true);
+      trackFormSubmission('contact_form');
       toast({
         title: "送信完了",
         description: "お問い合わせを受け付けました。1営業日以内にご連絡いたします。",
