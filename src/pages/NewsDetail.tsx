@@ -9,6 +9,7 @@ import { Calendar, Clock, ArrowLeft, ExternalLink, Share2 } from "lucide-react";
 import { newsData } from "@/data/newsData";
 import { supabase } from "@/integrations/supabase/client";
 import { NewsArticle } from "@/hooks/useNewsArticles";
+import { trackExternalLink, trackDownload } from "@/hooks/useAnalytics";
 
 const NewsDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -60,6 +61,30 @@ const NewsDetail = () => {
     image: dbArticle.image_url || '/placeholder.svg',
     content: dbArticle.content,
   } : null;
+
+  // Track PDF downloads and external links in article content
+  useEffect(() => {
+    const handleLinkClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const link = target.closest('a') as HTMLAnchorElement;
+      if (!link) return;
+
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      if (href.endsWith('.pdf')) {
+        trackDownload(href.split('/').pop() || 'unknown.pdf');
+      } else if (href.startsWith('http') && !href.includes(window.location.hostname)) {
+        trackExternalLink(href);
+      }
+    };
+
+    const articleElement = document.querySelector('article');
+    if (articleElement) {
+      articleElement.addEventListener('click', handleLinkClick);
+      return () => articleElement.removeEventListener('click', handleLinkClick);
+    }
+  }, [news]);
 
   if (loading) {
     return (
@@ -176,6 +201,7 @@ const NewsDetail = () => {
                   href="https://purpose-setting-app-4r2c4yfk.devinapps.com/" 
                   target="_blank" 
                   rel="noopener noreferrer"
+                  onClick={() => trackExternalLink('TRAITH App')}
                 >
                   <Button variant="outline" size="lg" className="w-full md:w-auto">
                     「TRAITH」はこちら
@@ -201,6 +227,7 @@ const NewsDetail = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
+                  onClick={() => trackExternalLink('Twitter Share')}
                 >
                   <Button variant="outline" size="lg" className="gap-2 hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] transition-colors">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -214,6 +241,7 @@ const NewsDetail = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
+                  onClick={() => trackExternalLink('Facebook Share')}
                 >
                   <Button variant="outline" size="lg" className="gap-2 hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-colors">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -227,6 +255,7 @@ const NewsDetail = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
+                  onClick={() => trackExternalLink('LinkedIn Share')}
                 >
                   <Button variant="outline" size="lg" className="gap-2 hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-colors">
                     <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
