@@ -1,8 +1,18 @@
-import { Layers, Code, Users, ArrowRight } from 'lucide-react';
+import { Layers, Code, Users, ArrowRight, ExternalLink, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { newsData } from '@/data/newsData';
+import { trackDownload } from '@/hooks/useAnalytics';
+
+// テックトレンド速報のPDFリンクマッピング
+const techTrendsPdfLinks: Record<string, string> = {
+  'tech-trends-nov-25-2025': 'https://sprintjapan.com/tt2025/TT4.pdf',
+  'tech-trends-nov-15-2025': 'https://sprintjapan.com/rep/fin_spj_TechTrends_BreakingNews251115.pdf',
+  'tech-trends-nov-2025': 'https://sprintjapan.com/rep/fin_spj_TechTrends_BreakingNews251105.pdf',
+  'tech-trends-report': 'https://bit.ly/47EIJ7d',
+};
 
 const Solutions = () => {
   return (
@@ -141,9 +151,55 @@ const Solutions = () => {
                   <ArrowRight className="ml-2" size={20} />
                 </Link>
               </Button>
+          </div>
+
+          {/* Tech Trends Express Section */}
+          <div className="mt-20">
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <FileText className="text-primary" size={32} />
+                <h2 className="text-3xl font-bold">テックトレンド速報</h2>
+              </div>
+              <p className="text-foreground/80 max-w-2xl mx-auto">
+                バイブコーディングとAI駆動開発の最新動向を速読できるレポートを定期的に発行しています。
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {newsData
+                .filter(item => item.id.startsWith('tech-trends'))
+                .sort((a, b) => new Date(b.date.replace(/年|月/g, '-').replace('日', '')).getTime() - new Date(a.date.replace(/年|月/g, '-').replace('日', '')).getTime())
+                .map((article) => (
+                  <a
+                    key={article.id}
+                    href={techTrendsPdfLinks[article.id] || `/news/${article.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackDownload(article.title)}
+                    className="group glass-card overflow-hidden hover-scale"
+                  >
+                    <div className="aspect-video relative overflow-hidden">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute top-3 right-3 bg-background/90 backdrop-blur-sm rounded-full p-2">
+                        <ExternalLink className="w-4 h-4 text-primary" />
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <p className="text-xs text-muted-foreground mb-2">{article.date}</p>
+                      <h3 className="font-semibold text-sm leading-snug line-clamp-2 group-hover:text-primary transition-colors">
+                        {article.title}
+                      </h3>
+                    </div>
+                  </a>
+                ))}
             </div>
           </div>
         </div>
+      </div>
       </div>
 
       <Footer />
