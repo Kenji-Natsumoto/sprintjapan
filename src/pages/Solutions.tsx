@@ -8,6 +8,7 @@ import { trackDownload } from '@/hooks/useAnalytics';
 
 // テックトレンド速報のPDFリンクマッピング
 const techTrendsPdfLinks: Record<string, string> = {
+  'tech-trends-dec-05-2025': 'https://sprintjapan.com/tt2025/TT5.pdf',
   'tech-trends-nov-25-2025': 'https://sprintjapan.com/tt2025/TT4.pdf',
   'tech-trends-nov-15-2025': 'https://sprintjapan.com/rep/fin_spj_TechTrends_BreakingNews251115.pdf',
   'tech-trends-nov-2025': 'https://sprintjapan.com/rep/fin_spj_TechTrends_BreakingNews251105.pdf',
