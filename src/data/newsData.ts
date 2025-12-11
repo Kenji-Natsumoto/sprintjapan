@@ -19,6 +19,40 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    id: "tech-trends-dec-05-2025",
+    title: "テックトレンド速報 #5 12月05日号を公開しました。",
+    date: "2025年12月05日",
+    readTime: "5分",
+    category: "テクノロジー",
+    image: techTrendsNov25Image,
+    excerpt: "バイブコーディングとAI駆動開発の最新動向を速読できるレポート「テックトレンド速報 #5 12月05日号」を公開致しました。",
+    content: `
+      <p>本日、バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://sprintjapan.com/tt2025/TT5.pdf" target="_blank" rel="noopener noreferrer">テックトレンド速報 #5 12月05日号</a>」を公開致しました。</p>
+      
+      <br />
+      
+      <p>このレポートは、主にこのような方々向けに編集しています。</p>
+      <ul>
+        <li>・"バイブコーディング"、"AI駆動開発"に関心のある方</li>
+        <li>・新規事業立ち上げの関係者</li>
+        <li>・オープンイノベーションに従事されている方</li>
+        <li>・スモールビジネスの経営者</li>
+        <li>・スタートアップのCEO</li>
+        <li>・副業・起業を考えている方</li>
+      </ul>
+      
+      <br />
+      
+      <h2>▼「テックトレンド速報 #5 12月05日号」はこちら</h2>
+      
+      <p><a href="https://sprintjapan.com/tt2025/TT5.pdf" target="_blank" rel="noopener noreferrer">https://sprintjapan.com/tt2025/TT5.pdf</a></p>
+      
+      <br />
+      
+      <p>もしご興味がおありでしたら、ぜひご高覧ください。</p>
+    `,
+  },
+  {
     id: "tech-trends-nov-25-2025",
     title: "テックトレンド速報 #4 11月25日号を公開しました。",
     date: "2025年11月25日",
