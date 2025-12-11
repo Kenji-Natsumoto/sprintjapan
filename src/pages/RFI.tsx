@@ -9,6 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { trackFormSubmission } from '@/hooks/useAnalytics';
 
 const RFI = () => {
   const { toast } = useToast();
@@ -75,6 +76,7 @@ const RFI = () => {
       console.log('Email sent successfully:', data);
       
       setIsSubmitted(true);
+      trackFormSubmission('rfi_form');
       toast({
         title: "送信完了",
         description: "資料請求を受け付けました。1営業日以内にご連絡いたします。",
