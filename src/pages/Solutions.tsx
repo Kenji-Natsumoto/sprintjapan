@@ -155,7 +155,7 @@ const Solutions = () => {
           </div>
 
           {/* Tech Trends Express Section */}
-          <div className="mt-20">
+          <div id="techtrends" className="mt-20 scroll-mt-32">
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <FileText className="text-primary" size={32} />
