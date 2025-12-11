@@ -5,6 +5,7 @@ import techTrendsImage from "@/assets/news-tech-trends.png";
 import techTrendsNovImage from "@/assets/news-tech-trends-nov.png";
 import techTrendsNov15Image from "@/assets/news-tech-trends-nov-15.jpg";
 import techTrendsNov25Image from "@/assets/news-tech-trends-nov-25.jpg";
+import techTrendsDec05Image from "@/assets/news-tech-trends-dec-05.jpg";
 
 export interface NewsItem {
   id: string;
@@ -24,7 +25,7 @@ export const newsData: NewsItem[] = [
     date: "2025年12月05日",
     readTime: "5分",
     category: "テクノロジー",
-    image: techTrendsNov25Image,
+    image: techTrendsDec05Image,
     excerpt: "バイブコーディングとAI駆動開発の最新動向を速読できるレポート「テックトレンド速報 #5 12月05日号」を公開致しました。",
     content: `
       <p>本日、バイブコーディングとAI駆動開発の最新動向を速読できるレポート「<a href="https://sprintjapan.com/tt2025/TT5.pdf" target="_blank" rel="noopener noreferrer">テックトレンド速報 #5 12月05日号</a>」を公開致しました。</p>
