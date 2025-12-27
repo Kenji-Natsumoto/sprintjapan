@@ -16,6 +16,7 @@ import NewsAdmin from "./pages/NewsAdmin";
 import VibeCodingLab from "./pages/VibeCodingLab";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
+import ChatPopup from "./components/ChatPopup";
 import { Navigate } from "react-router-dom";
 
 const queryClient = new QueryClient();
@@ -43,6 +44,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ChatPopup />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
