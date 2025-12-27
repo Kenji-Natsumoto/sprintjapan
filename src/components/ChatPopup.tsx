@@ -325,7 +325,8 @@ const ChatPopup = () => {
                 variant="ghost"
                 size="icon"
                 className="h-7 w-7 text-primary-foreground hover:bg-primary-foreground/20"
-                onClick={() => setIsDismissed(true)}
+                onClick={() => setIsOpen(false)}
+                title="閉じる"
               >
                 <X size={16} />
               </Button>
