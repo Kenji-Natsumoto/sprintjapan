@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from "react";
-import { Send, Bot, User, Loader2, Plus, History, Trash2, MessageSquare } from "lucide-react";
+import { useState, useRef, useEffect, useMemo } from "react";
+import { Send, Bot, User, Loader2, Plus, History, Trash2, MessageSquare, Search, X } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -33,6 +33,8 @@ const Chat = () => {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
   const [showHistory, setShowHistory] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [conversationMessages, setConversationMessages] = useState<Record<string, string[]>>({});
   const scrollRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
@@ -59,7 +61,41 @@ const Chat = () => {
       return;
     }
     setConversations(data || []);
+
+    // Load message contents for search
+    if (data && data.length > 0) {
+      const conversationIds = data.map((c) => c.id);
+      const { data: messagesData } = await supabase
+        .from("chat_messages")
+        .select("conversation_id, content")
+        .in("conversation_id", conversationIds);
+
+      if (messagesData) {
+        const msgMap: Record<string, string[]> = {};
+        messagesData.forEach((m) => {
+          if (!msgMap[m.conversation_id]) {
+            msgMap[m.conversation_id] = [];
+          }
+          msgMap[m.conversation_id].push(m.content);
+        });
+        setConversationMessages(msgMap);
+      }
+    }
   };
+
+  const filteredConversations = useMemo(() => {
+    if (!searchQuery.trim()) return conversations;
+
+    const query = searchQuery.toLowerCase();
+    return conversations.filter((conv) => {
+      // Search in title
+      if (conv.title.toLowerCase().includes(query)) return true;
+
+      // Search in messages
+      const msgs = conversationMessages[conv.id] || [];
+      return msgs.some((msg) => msg.toLowerCase().includes(query));
+    });
+  }, [conversations, conversationMessages, searchQuery]);
 
   const loadConversation = async (conversationId: string) => {
     const { data, error } = await supabase
@@ -249,12 +285,34 @@ const Chat = () => {
                   <span>履歴</span>
                 </div>
 
+                <div className="relative mb-3">
+                  <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                  <Input
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="履歴を検索..."
+                    className="pl-9 pr-8 h-9 text-sm"
+                  />
+                  {searchQuery && (
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="absolute right-1 top-1/2 -translate-y-1/2 h-6 w-6"
+                      onClick={() => setSearchQuery("")}
+                    >
+                      <X size={14} />
+                    </Button>
+                  )}
+                </div>
+
                 <ScrollArea className="flex-1">
-                  {conversations.length === 0 ? (
-                    <p className="text-sm text-muted-foreground text-center py-4">履歴がありません</p>
+                  {filteredConversations.length === 0 ? (
+                    <p className="text-sm text-muted-foreground text-center py-4">
+                      {searchQuery ? "検索結果がありません" : "履歴がありません"}
+                    </p>
                   ) : (
                     <div className="space-y-2">
-                      {conversations.map((conv) => (
+                      {filteredConversations.map((conv) => (
                         <div
                           key={conv.id}
                           className={`group flex items-center gap-2 p-2 rounded-lg cursor-pointer hover:bg-muted transition-colors ${
