@@ -55,6 +55,34 @@ const playPopSound = () => {
   }
 };
 
+// Unlock audio on mobile by creating a silent audio context on first interaction
+let audioUnlocked = false;
+const unlockAudio = () => {
+  if (audioUnlocked) return;
+  try {
+    const audioContext = new (window.AudioContext || (window as typeof window & { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+    const buffer = audioContext.createBuffer(1, 1, 22050);
+    const source = audioContext.createBufferSource();
+    source.buffer = buffer;
+    source.connect(audioContext.destination);
+    source.start(0);
+    audioUnlocked = true;
+  } catch (e) {
+    console.log("Audio unlock failed");
+  }
+};
+
+// Add global touch/click listener to unlock audio
+if (typeof window !== "undefined") {
+  const handleFirstInteraction = () => {
+    unlockAudio();
+    window.removeEventListener("touchstart", handleFirstInteraction);
+    window.removeEventListener("click", handleFirstInteraction);
+  };
+  window.addEventListener("touchstart", handleFirstInteraction, { passive: true });
+  window.addEventListener("click", handleFirstInteraction, { passive: true });
+}
+
 type Message = { role: "user" | "assistant"; content: string };
 type Conversation = { id: string; title: string; created_at: string };
 
@@ -320,7 +348,7 @@ const ChatPopup = () => {
       {!isOpen ? (
         <Button
           onClick={() => setIsOpen(true)}
-          className="h-14 w-14 rounded-full shadow-lg hover:scale-105 transition-transform animate-in slide-in-from-bottom-8 fade-in duration-500"
+          className="h-14 w-14 rounded-full shadow-lg hover:scale-105 transition-transform animate-in slide-in-from-bottom-8 fade-in duration-500 chat-icon-pulse"
         >
           <MessageCircle size={24} />
         </Button>

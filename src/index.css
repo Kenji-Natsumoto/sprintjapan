@@ -131,4 +131,18 @@ All colors MUST be HSL.
   .spotlight {
     background: radial-gradient(circle at center, hsl(var(--primary) / 0.15), transparent 70%);
   }
+  
+  /* Chat popup pulse animation */
+  @keyframes chat-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 12px hsl(var(--primary) / 0);
+    }
+  }
+  
+  .chat-icon-pulse {
+    animation: chat-pulse 2s ease-in-out infinite;
+  }
 }
