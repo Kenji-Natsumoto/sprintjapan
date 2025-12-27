@@ -113,14 +113,16 @@ const ChatPopup = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hasPlayedPopSound, setHasPlayedPopSound] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const latestMessageRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
   // Check if current path should show the popup
   const shouldShow = !EXCLUDED_PATHS.some(path => location.pathname.startsWith(path));
 
+  // Scroll to latest message when messages update
   useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    if (latestMessageRef.current) {
+      latestMessageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [messages]);
 
@@ -464,7 +466,11 @@ const ChatPopup = () => {
               ) : (
                 <div className="space-y-3">
                   {messages.map((msg, i) => (
-                    <div key={i} className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+                    <div 
+                      key={i} 
+                      ref={i === messages.length - 1 ? latestMessageRef : null}
+                      className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                    >
                       {msg.role === "assistant" && (
                         <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <Bot size={14} className="text-primary" />
