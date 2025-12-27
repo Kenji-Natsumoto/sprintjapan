@@ -97,6 +97,22 @@ const Chat = () => {
     });
   }, [conversations, conversationMessages, searchQuery]);
 
+  const highlightMatch = (text: string, query: string) => {
+    if (!query.trim()) return text;
+    
+    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    const parts = text.split(regex);
+    
+    return parts.map((part, i) => 
+      regex.test(part) ? (
+        <mark key={i} className="bg-primary/30 text-foreground rounded px-0.5">
+          {part}
+        </mark>
+      ) : (
+        part
+      )
+    );
+  };
   const loadConversation = async (conversationId: string) => {
     const { data, error } = await supabase
       .from("chat_messages")
@@ -321,7 +337,7 @@ const Chat = () => {
                           onClick={() => loadConversation(conv.id)}
                         >
                           <MessageSquare size={16} className="text-muted-foreground flex-shrink-0" />
-                          <span className="text-sm truncate flex-1">{conv.title}</span>
+                          <span className="text-sm truncate flex-1">{highlightMatch(conv.title, searchQuery)}</span>
                           <Button
                             variant="ghost"
                             size="icon"
