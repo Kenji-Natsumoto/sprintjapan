@@ -1,10 +1,33 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
-import { Send, Bot, User, Loader2, MessageCircle, X, Minimize2 } from "lucide-react";
+import { Send, Bot, User, Loader2, MessageCircle, X, Minimize2, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { supabase } from "@/integrations/supabase/client";
+
+// Web Audio API notification sound generator
+const playNotificationSound = () => {
+  try {
+    const audioContext = new (window.AudioContext || (window as typeof window & { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    oscillator.frequency.setValueAtTime(880, audioContext.currentTime); // A5 note
+    oscillator.frequency.setValueAtTime(1100, audioContext.currentTime + 0.1); // C#6 note
+    
+    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.3);
+  } catch (e) {
+    console.log("Audio notification not supported");
+  }
+};
 
 type Message = { role: "user" | "assistant"; content: string };
 
@@ -29,6 +52,7 @@ const ChatPopup = () => {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
+  const [soundEnabled, setSoundEnabled] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   // Check if current path should show the popup
@@ -154,6 +178,10 @@ const ChatPopup = () => {
 
       if (assistantContent) {
         await saveMessage(conversationId, "assistant", assistantContent);
+        // Play notification sound when response is complete
+        if (soundEnabled) {
+          playNotificationSound();
+        }
       }
     } catch (error) {
       console.error("Chat error:", error);
@@ -190,6 +218,15 @@ const ChatPopup = () => {
               <span className="font-medium">AIチャット</span>
             </div>
             <div className="flex items-center gap-1">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-7 w-7 text-primary-foreground hover:bg-primary-foreground/20"
+                onClick={() => setSoundEnabled(!soundEnabled)}
+                title={soundEnabled ? "通知音をオフにする" : "通知音をオンにする"}
+              >
+                {soundEnabled ? <Volume2 size={16} /> : <VolumeX size={16} />}
+              </Button>
               <Button
                 variant="ghost"
                 size="icon"
