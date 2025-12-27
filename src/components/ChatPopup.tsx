@@ -30,6 +30,31 @@ const playNotificationSound = () => {
   }
 };
 
+// Pop sound for icon appearance
+const playPopSound = () => {
+  try {
+    const audioContext = new (window.AudioContext || (window as typeof window & { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    oscillator.type = "sine";
+    oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+    oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.08);
+    oscillator.frequency.exponentialRampToValueAtTime(800, audioContext.currentTime + 0.15);
+    
+    gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.15);
+  } catch (e) {
+    console.log("Audio not supported");
+  }
+};
+
 type Message = { role: "user" | "assistant"; content: string };
 type Conversation = { id: string; title: string; created_at: string };
 
@@ -57,6 +82,8 @@ const ChatPopup = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showHistory, setShowHistory] = useState(false);
   const [conversations, setConversations] = useState<Conversation[]>([]);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [hasPlayedPopSound, setHasPlayedPopSound] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
@@ -72,7 +99,30 @@ const ChatPopup = () => {
   // Reset dismissed state when navigating to a new page
   useEffect(() => {
     setIsDismissed(false);
+    setHasPlayedPopSound(false);
+    setIsScrolled(false);
   }, [location.pathname]);
+
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 200; // Show after scrolling 200px
+      const scrolled = window.scrollY > scrollThreshold;
+      
+      if (scrolled && !isScrolled) {
+        setIsScrolled(true);
+        if (!hasPlayedPopSound && soundEnabled) {
+          playPopSound();
+          setHasPlayedPopSound(true);
+        }
+      } else if (!scrolled && isScrolled) {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isScrolled, hasPlayedPopSound, soundEnabled]);
 
   // Load conversations when popup opens
   useEffect(() => {
@@ -131,7 +181,7 @@ const ChatPopup = () => {
     toast({ title: "会話を削除しました" });
   };
 
-  if (!shouldShow || isDismissed) return null;
+  
 
   const saveMessage = async (conversationId: string, role: "user" | "assistant", content: string) => {
     await supabase.from("chat_messages").insert({ conversation_id: conversationId, role, content });
@@ -262,12 +312,15 @@ const ChatPopup = () => {
     }
   };
 
+  // Don't show until scrolled (unless already open)
+  if (!shouldShow || isDismissed || (!isScrolled && !isOpen)) return null;
+
   return (
     <div className="fixed bottom-4 right-4 z-50">
       {!isOpen ? (
         <Button
           onClick={() => setIsOpen(true)}
-          className="h-14 w-14 rounded-full shadow-lg hover:scale-105 transition-transform"
+          className="h-14 w-14 rounded-full shadow-lg hover:scale-105 transition-transform animate-in slide-in-from-bottom-8 fade-in duration-500"
         >
           <MessageCircle size={24} />
         </Button>
