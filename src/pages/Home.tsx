@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Eye, Network } from 'lucide-react';
+import { ArrowRight, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/prosprint-lp.png';
-import prosprintDashboard from '@/assets/prosprint-dashboard.png';
 import smatstaImage from '@/assets/smatsta-eyecatch.png';
 import transformxScreenshot from '@/assets/news-traith-app.png';
 import solvistaScreenshot from '@/assets/solvista-screenshot.png';
@@ -14,9 +13,55 @@ const Home = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        {/* Background with mesh gradient */}
+      {/* Hero Section - 超バイブコーディング講座 */}
+      <section className="pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient opacity-30" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-4xl mx-auto animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
+              <Rocket className="w-4 h-4" />
+              <span className="text-sm font-medium">全10回の実践講座</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              未来を創る！
+              <br />
+              <span className="gradient-text">超バイブコーディング講座</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
+              アイデアを形に。プロダクトを収益に。
+              <br />
+              <span className="text-primary font-semibold">あなたの未来を、自分の手で創り出す。</span>
+            </p>
+            
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <div className="glass-card px-6 py-3">
+                <span className="text-2xl font-bold text-primary">10</span>
+                <span className="text-foreground/70 ml-2">回の実践講座</span>
+              </div>
+              <div className="glass-card px-6 py-3">
+                <span className="text-2xl font-bold text-primary">0→1</span>
+                <span className="text-foreground/70 ml-2">プロダクト開発</span>
+              </div>
+              <div className="glass-card px-6 py-3">
+                <span className="text-2xl font-bold text-primary">収益化</span>
+                <span className="text-foreground/70 ml-2">まで完全サポート</span>
+              </div>
+            </div>
+
+            <Button variant="hero" size="lg" asChild className="group">
+              <Link to="/super-vibe-coding">
+                講座の詳細を見る
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Second Section - 会社紹介 */}
+      <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 mesh-gradient" />
         <div 
           className="absolute inset-0 z-0 opacity-40"
@@ -31,16 +76,16 @@ const Home = () => {
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
         
-        <div className="container mx-auto px-4 z-10 max-w-7xl">
+        <div className="container mx-auto px-4 z-10 max-w-7xl relative">
           <div className="max-w-5xl mx-auto text-center">
             <div className="inline-block mb-6 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 animate-fade-in">
               <span className="text-sm font-medium text-primary">AI DRIVEN COMPANY</span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-up leading-tight" style={{ animationDelay: '0.1s' }}>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-up leading-tight" style={{ animationDelay: '0.1s' }}>
               9年の事業開発の叡智を<br />
               <span className="gradient-text">AIプラットフォーム化。</span>
-            </h1>
+            </h2>
             
             <p className="text-2xl md:text-3xl mb-6 font-semibold animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <span className="gradient-text">3つのAIプラットフォームで市場を再定義します。</span>
