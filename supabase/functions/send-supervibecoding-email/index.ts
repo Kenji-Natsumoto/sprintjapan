@@ -193,8 +193,8 @@ const handler = async (req: Request): Promise<Response> => {
             <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
             
             <p style="color: #6b7280; font-size: 12px; line-height: 1.6;">
-              Sprint Japan株式会社<br>
-              〒150-0013 東京都渋谷区恵比寿1丁目15番9号 シルク恵比寿403<br>
+              スプリントジャパン株式会社<br>
+              〒151-0053 東京都渋谷区代々木1丁目36番6号 代々木駅前ビル929<br>
               <a href="https://sprintjapan.net" style="color: #6366f1;">https://sprintjapan.net</a>
             </p>
             
