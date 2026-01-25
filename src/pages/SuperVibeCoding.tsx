@@ -81,14 +81,40 @@ const SuperVibeCoding = () => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement form submission
-    setIsSubmitted(true);
-    toast({
-      title: "仮登録完了",
-      description: "開講のお知らせをお送りします。",
-    });
+    
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-supervibecoding-email`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || '送信に失敗しました');
+      }
+
+      setIsSubmitted(true);
+      toast({
+        title: "仮登録完了",
+        description: "開講のお知らせをお送りします。",
+      });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "エラー",
+        description: error instanceof Error ? error.message : "送信に失敗しました。もう一度お試しください。",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -238,7 +264,7 @@ const SuperVibeCoding = () => {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
               'アイデアはあるけど、形にできていない方',
-              'プログラミングを学んだけど挫折した経験がある方',
+              '何か新しいことを始めたい方',
               '新規事業やスタートアップに興味がある方',
               '自分のプロダクトで収益を得たい方',
               'AIを使った開発に興味がある方',
