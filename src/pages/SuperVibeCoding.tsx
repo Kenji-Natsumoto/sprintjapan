@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, Rocket, Sparkles, Target, Users, Zap, Code, DollarSign, Eye, Lightbulb } from 'lucide-react';
+import { Check, Rocket, Sparkles, Target, Users, Zap, Code, DollarSign, Eye, Lightbulb, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -281,8 +282,89 @@ const SuperVibeCoding = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
+              <HelpCircle className="w-4 h-4" />
+              <span className="text-sm font-medium">よくある質問</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              FAQ
+            </h2>
+          </div>
+          
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="glass-card px-6 border-none">
+                <AccordionTrigger className="text-left text-lg font-medium hover:no-underline">
+                  プログラミング経験がなくても参加できますか？
+                </AccordionTrigger>
+                <AccordionContent className="text-foreground/70 leading-relaxed">
+                  はい、プログラミング経験は一切不要です。バイブコーディングはAIと対話しながら開発を行う新しい手法なので、
+                  技術的な知識よりも「何を作りたいか」というアイデアと情熱が重要です。
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="glass-card px-6 border-none">
+                <AccordionTrigger className="text-left text-lg font-medium hover:no-underline">
+                  講座の形式はオンラインですか？
+                </AccordionTrigger>
+                <AccordionContent className="text-foreground/70 leading-relaxed">
+                  はい、全セッションオンラインで実施予定です。リアルタイムでの参加が難しい場合も、
+                  録画を後から視聴いただけるよう検討しています。詳細は開講時にご案内します。
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="glass-card px-6 border-none">
+                <AccordionTrigger className="text-left text-lg font-medium hover:no-underline">
+                  どのようなアプリが作れるようになりますか？
+                </AccordionTrigger>
+                <AccordionContent className="text-foreground/70 leading-relaxed">
+                  Webアプリケーションを中心に、SaaSサービス、業務効率化ツール、コミュニティプラットフォームなど、
+                  様々なタイプのアプリケーションを作成できるようになります。講座では実際に課金システムまで実装し、
+                  収益化できるプロダクトを完成させることを目指します。
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="glass-card px-6 border-none">
+                <AccordionTrigger className="text-left text-lg font-medium hover:no-underline">
+                  受講に必要なものは何ですか？
+                </AccordionTrigger>
+                <AccordionContent className="text-foreground/70 leading-relaxed">
+                  インターネットに接続できるパソコン（Windows/Mac）があれば参加可能です。
+                  特別なソフトウェアのインストールは不要で、ブラウザ上で開発を行います。
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="glass-card px-6 border-none">
+                <AccordionTrigger className="text-left text-lg font-medium hover:no-underline">
+                  講座の料金はいくらですか？
+                </AccordionTrigger>
+                <AccordionContent className="text-foreground/70 leading-relaxed">
+                  料金は現在調整中です。開講お知らせにご登録いただいた方には、
+                  正式な料金と早期申込特典を優先的にご案内いたします。
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="glass-card px-6 border-none">
+                <AccordionTrigger className="text-left text-lg font-medium hover:no-underline">
+                  サポート体制はありますか？
+                </AccordionTrigger>
+                <AccordionContent className="text-foreground/70 leading-relaxed">
+                  講座期間中は専用のコミュニティで質問や相談が可能です。
+                  また、進捗に応じた個別フィードバックも予定しています。
+                  仲間と一緒に学びながら、確実にプロダクトを完成させられる環境を整えています。
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
       {/* Entry Form */}
-      <section id="entry" className="py-20">
+      <section id="entry" className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
