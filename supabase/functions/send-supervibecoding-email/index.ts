@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 
 const ALLOWED_ORIGINS = [
   "https://sprintjapan.lovable.app",
+  "https://preview--sprintjapan.lovable.app",
   "https://sprintjapan.net",
   "https://www.sprintjapan.net",
   "http://localhost:5173",
