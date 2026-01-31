@@ -309,7 +309,7 @@ const SuperVibeCoding = () => {
                 <h3 className="text-2xl md:text-3xl font-bold mb-2">夏本 健司</h3>
                 <p className="text-primary font-semibold text-lg mb-4">Vibe Code Fixer</p>
                 <p className="text-foreground/80 leading-relaxed">
-                  複数企業の事業創造コンサルタントであり、自身でバイブコーディング／AI駆動開発によりプロダクト開発・運用・リーダーをしています。
+                  複数企業の事業創造コンサルタントであり、自身でバイブコーディング／AI駆動開発によるプロダクト開発・運用・リーダーをしています。
                   <br />
                   また、子供向けバイブコーディング ワークショップや地域活性化・社会課題解決のためのバイブコーディングチーム創りを支援しています。
                 </p>
