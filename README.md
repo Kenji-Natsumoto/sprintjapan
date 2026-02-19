@@ -2,6 +2,6 @@
 
 ## Our Corporate Site.
 
-**URL**: [https://lovable.dev/projects/33af0bc4-10a3-41c0-a878-0fd1cdd455e0](https://sprintjapan.net/)
+**URL**: [https://sprintjapan.net/](https://sprintjapan.net/)
 
-### This data is used for the management and operation of the site.
+Sorry, the language is Japanese only because it is information aimed at Japanese people.
