@@ -15,6 +15,7 @@ import NewsDetail from "./pages/NewsDetail";
 import NewsAdmin from "./pages/NewsAdmin";
 import VibeCodingLab from "./pages/VibeCodingLab";
 import SuperVibeCoding from "./pages/SuperVibeCoding";
+import SuperVibeCodingV2 from "./pages/SuperVibeCodingV2";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import ChatPopup from "./components/ChatPopup";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/admin/news" element={<NewsAdmin />} />
           <Route path="/vibe-coding-lab" element={<VibeCodingLab />} />
           <Route path="/super-vibe-coding" element={<SuperVibeCoding />} />
+          <Route path="/super-vibe-coding-v2" element={<SuperVibeCodingV2 />} />
           <Route path="/chat" element={<Chat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
