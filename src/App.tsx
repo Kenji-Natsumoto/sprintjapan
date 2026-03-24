@@ -43,6 +43,7 @@ const App = () => (
           <Route path="/admin/news" element={<NewsAdmin />} />
           <Route path="/vibe-coding-lab" element={<VibeCodingLab />} />
           <Route path="/super-vibe-coding" element={<SuperVibeCoding />} />
+          <Route path="/super-vibe-coding-v2" element={<SuperVibeCodingV2 />} />
           <Route path="/chat" element={<Chat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
