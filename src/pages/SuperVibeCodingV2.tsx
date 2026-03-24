@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import yukawaPortrait from '@/assets/yukawa-portrait.jpg';
-import natsumotoPortrait from '@/assets/kenji_natsumoto_portfolio2025-2.png';
+import natsumotoPortrait from '@/assets/instructor-natsumoto.png';
 
 /* ─── Typewriter component ─── */
 const Typewriter = ({ text, delay = 0, speed = 80, className = '' }: { text: string; delay?: number; speed?: number; className?: string }) => {
