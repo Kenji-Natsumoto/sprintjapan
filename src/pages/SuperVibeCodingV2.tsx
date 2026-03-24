@@ -238,16 +238,6 @@ const SlashItem = ({ text, delay }: { text: string; delay: number }) => {
 const SuperVibeCodingV2 = () => {
   return (
     <div className="h-screen overflow-y-scroll snap-y snap-mandatory bg-black text-white" style={{ scrollBehavior: 'smooth' }}>
-      {/* Floating Action Button */}
-      <a
-        href="https://docs.google.com/spreadsheets/d/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-[#D4AF37] text-black font-bold px-4 py-3 rounded-full shadow-lg hover:scale-105 transition-transform text-sm md:text-base"
-        style={{ boxShadow: '0 0 20px rgba(212,175,55,0.5)' }}
-      >
-        📋 カリキュラム詳細
-      </a>
 
       {/* ═══ Screen 1: The Hook ═══ */}
       <Screen className="bg-black">
