@@ -15,6 +15,7 @@ import NewsDetail from "./pages/NewsDetail";
 import NewsAdmin from "./pages/NewsAdmin";
 import VibeCodingLab from "./pages/VibeCodingLab";
 import SuperVibeCoding from "./pages/SuperVibeCoding";
+import SuperVibeCodingV2 from "./pages/SuperVibeCodingV2";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import ChatPopup from "./components/ChatPopup";
