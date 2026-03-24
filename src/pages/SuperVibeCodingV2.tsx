@@ -425,7 +425,7 @@ const SuperVibeCodingV2 = () => {
             <motion.p
               className="text-xl md:text-2xl font-bold text-[#D4AF37] border-2 border-[#D4AF37] inline-block px-6 py-3 rounded-lg"
               initial={{ rotate: -5 }}
-              animate={{ rotate: [−5, 0, -5] }}
+              animate={{ rotate: [-5, 0, -5] }}
               transition={{ duration: 0.5 }}
             >
               先着10名限定：湯川塾・関係者優待
