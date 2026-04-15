@@ -1,8 +1,18 @@
-import { ArrowLeft, ExternalLink, Sparkles, Briefcase, GraduationCap, Rocket, Users, Brain, Cpu } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Sparkles, Briefcase, GraduationCap, Rocket, Users, Brain, Cpu, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import natsumotoPortrait from '@/assets/instructor-natsumoto.png';
+import { SiX, SiFacebook, SiYoutube, SiTiktok, SiInstagram, SiMedium } from 'react-icons/si';
+import { FaLinkedinIn } from 'react-icons/fa';
+
+const NoteIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+    <path d="M19.5 3h-15A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h15a1.5 1.5 0 001.5-1.5v-15A1.5 1.5 0 0019.5 3zM12 17.25a5.25 5.25 0 110-10.5 5.25 5.25 0 010 10.5z"/>
+  </svg>
+);
 
 const stats = [
   { label: 'AI導入コンサル並行', value: '4社', icon: Briefcase },
@@ -13,7 +23,7 @@ const stats = [
 
 const aiClients = [
   { name: '善都（ZENT）', desc: 'AI活用コンサルティング' },
-  { name: 'USEN＝ALMEX', desc: 'AI活用コンサルティング' },
+  { name: 'USEN-ALMEX', desc: 'AI活用コンサルティング' },
   { name: '湯川塾', desc: 'AIセミナー・分科会' },
 ];
 
@@ -45,23 +55,34 @@ const vibeBoard = [
 ];
 
 const socials = [
-  { platform: 'X', url: 'https://x.com/natsuken1' },
-  { platform: 'note', url: 'https://note.com/vibe_coding' },
-  { platform: 'Facebook', url: 'https://www.facebook.com/na2ken/' },
-  { platform: 'YouTube', url: 'https://www.youtube.com/@THE-AI-COMPANY-STORY' },
-  { platform: 'TikTok', url: 'https://www.tiktok.com/@kenjinatsumoto' },
-  { platform: 'Instagram', url: 'https://www.instagram.com/kenjinatsumoto/' },
-  { platform: 'Medium', url: 'https://medium.com/@kenji_Natsumoto' },
-  { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/kenji-viberush/' },
+  { platform: 'X', url: 'https://x.com/natsuken1', icon: SiX },
+  { platform: 'note', url: 'https://note.com/vibe_coding', icon: NoteIcon },
+  { platform: 'Facebook', url: 'https://www.facebook.com/na2ken/', icon: SiFacebook },
+  { platform: 'YouTube', url: 'https://www.youtube.com/@THE-AI-COMPANY-STORY', icon: SiYoutube },
+  { platform: 'TikTok', url: 'https://www.tiktok.com/@kenjinatsumoto', icon: SiTiktok },
+  { platform: 'Instagram', url: 'https://www.instagram.com/kenjinatsumoto/', icon: SiInstagram },
+  { platform: 'Medium', url: 'https://medium.com/@kenji_Natsumoto', icon: SiMedium },
+  { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/kenji-viberush/', icon: FaLinkedinIn },
 ];
 
 const ProfileNatsumoto = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
+      <section id="top" className="relative pt-32 pb-24 overflow-hidden scroll-mt-0">
         <div className="absolute inset-0 mesh-gradient opacity-30" />
         <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px]" />
@@ -93,9 +114,17 @@ const ProfileNatsumoto = () => {
               <p className="text-lg text-foreground/70">
                 スプリントジャパン株式会社 代表取締役
               </p>
-              <p className="text-lg text-foreground/70">
+              <p className="text-lg text-foreground/70 mb-4">
                 「AI-Native COMPANY-Lab」主宰
               </p>
+              <a
+                href="https://github.com/Kenji-Natsumoto/AI-Company/blob/main/README.ja.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
+              >
+                AIが意思決定に「署名する」組織モデルの理論的考察 <ExternalLink size={14} />
+              </a>
             </div>
           </div>
         </div>
@@ -116,7 +145,7 @@ const ProfileNatsumoto = () => {
           <div className="mt-6 glass-card p-5 text-center border-l-4 border-accent">
             <p className="text-foreground/80">
               毎月<span className="text-accent font-bold text-xl mx-1">30万円</span>がAIに溶けている →
-              <span className="text-primary font-bold text-xl mx-1">7人分</span>の労働成果に相当
+              <span className="text-primary font-bold text-xl mx-1">人間7人分</span>の労働成果
             </p>
           </div>
         </div>
@@ -133,7 +162,7 @@ const ProfileNatsumoto = () => {
                 <h2 className="text-3xl md:text-4xl font-bold">AIに対する<span className="gradient-text">考え方</span></h2>
               </div>
               <blockquote className="text-2xl md:text-3xl font-bold text-primary mb-8 pl-6 border-l-4 border-primary">
-                「これから成長する企業は、AI-Nativeカンパニーを目指せ」
+                「成長したい企業は、AI-Nativeカンパニーを目指せ」
               </blockquote>
               <p className="text-lg text-foreground/75 leading-relaxed mb-4">
                 「効率化」を目的にAIを導入する企業は半年で陳腐化する。必要なのは、パーパスから逆算し、2年後の組織を今設計すること。
@@ -187,7 +216,7 @@ const ProfileNatsumoto = () => {
           <p className="text-sm text-muted-foreground">
             東京藝術大学美術学部卒 ―{' '}
             <a href="https://ja.wikipedia.org/wiki/%E5%A4%8F%E6%9C%AC%E5%81%A5%E5%8F%B8" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1">
-              Wikipedia <ExternalLink size={12} />
+              Wikipedia ー夏本健司 <ExternalLink size={12} />
             </a>
           </p>
         </div>
@@ -246,7 +275,7 @@ const ProfileNatsumoto = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-3">
               半年で<span className="gradient-text">35アプリ</span>を制作
             </h2>
-            <p className="text-muted-foreground">2025.10〜2026.3 バイブコーディング制作実績（一部）</p>
+            <p className="text-muted-foreground">2025.10〜2026.3 バイブコーディング制作実績</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -276,12 +305,37 @@ const ProfileNatsumoto = () => {
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card px-6 py-3 hover-lift inline-flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
+                className="glass-card px-6 py-3 hover-lift inline-flex items-center gap-3 text-sm font-medium hover:text-primary transition-colors"
               >
+                <s.icon className="w-5 h-5" />
                 {s.platform}
                 <ExternalLink size={14} className="text-muted-foreground" />
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-2xl opacity-10" />
+            <div className="relative glass-card-strong p-12 md:p-16 text-center">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <Mail className="text-primary" size={28} />
+                <h2 className="text-3xl md:text-4xl font-bold">お問い合わせ</h2>
+              </div>
+              <p className="text-lg text-foreground/75 leading-relaxed max-w-3xl mx-auto mb-8">
+                AI導入コンサルティング、AI駆動アプリ開発、役員向けAIトレーニング、社員向けAI社内研修、新規事業創出プログラムのインストールなど、AI活用に関するご相談は、お問い合わせフォームよりご連絡ください。
+              </p>
+              <Link
+                to="/contact#top"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors text-lg"
+              >
+                お問い合わせフォームへ
+              </Link>
+            </div>
           </div>
         </div>
       </section>
