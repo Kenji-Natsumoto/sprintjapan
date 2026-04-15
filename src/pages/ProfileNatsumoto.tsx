@@ -5,7 +5,8 @@ import { useLocation } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import natsumotoPortrait from '@/assets/instructor-natsumoto.png';
-import { SiX, SiFacebook, SiYoutube, SiTiktok, SiInstagram, SiMedium, SiLinkedin } from 'react-icons/si';
+import { SiX, SiFacebook, SiYoutube, SiTiktok, SiInstagram, SiMedium } from 'react-icons/si';
+import { FaLinkedinIn } from 'react-icons/fa';
 
 const NoteIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
