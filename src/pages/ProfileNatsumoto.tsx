@@ -1,6 +1,6 @@
 import { ArrowLeft, ExternalLink, Sparkles, Briefcase, GraduationCap, Rocket, Users, Brain, Cpu, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -78,6 +78,18 @@ const socials = [
 
 const ProfileNatsumoto = () => {
   const location = useLocation();
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Eagerly preload the portrait image
+    const img = new Image();
+    img.src = natsumotoPortrait;
+    if (img.complete) {
+      setImageLoaded(true);
+    } else {
+      img.onload = () => setImageLoaded(true);
+    }
+  }, []);
 
   useEffect(() => {
     if (location.hash) {
@@ -108,8 +120,16 @@ const ProfileNatsumoto = () => {
             {/* Portrait */}
             <div className="relative flex-shrink-0">
               <div className="absolute -inset-3 bg-gradient-to-br from-primary via-secondary to-accent rounded-full blur-xl opacity-40 animate-pulse" />
-              <div className="relative w-56 h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl">
-                <img src={natsumotoPortrait} alt="夏本 健司" className="w-full h-full object-cover" />
+              <div className="relative w-56 h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl bg-muted">
+                <img
+                  src={natsumotoPortrait}
+                  alt="夏本 健司"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                  onLoad={() => setImageLoaded(true)}
+                />
               </div>
             </div>
 
