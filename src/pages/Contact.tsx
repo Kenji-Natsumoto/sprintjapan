@@ -123,7 +123,7 @@ const Contact = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <div className="pt-32 pb-24">
+      <div id="top" className="pt-32 pb-24 scroll-mt-0">
         <div className="container mx-auto px-4 max-w-3xl">
           {/* Header Section */}
           <div className="text-center mb-12 animate-fade-in">
