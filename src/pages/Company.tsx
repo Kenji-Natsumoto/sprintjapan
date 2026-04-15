@@ -96,7 +96,7 @@ const Company = () => {
                         </div>
                         
                         <div className="text-right mt-12">
-                          <Link to="/profile/natsumoto#top" className="text-2xl font-bold gradient-text inline-block border-b-2 border-primary pb-2 hover:opacity-80 transition-opacity">
+                          <Link to="/profile/kenji_natsumoto#top" className="text-2xl font-bold gradient-text inline-block border-b-2 border-primary pb-2 hover:opacity-80 transition-opacity">
                             夏本 健司 →
                           </Link>
                         </div>
@@ -282,7 +282,7 @@ const Company = () => {
                 </div>
                 <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">代表者</span>
-                  <Link to="/profile/natsumoto#top" className="text-primary hover:underline">夏本 健司</Link>
+                  <Link to="/profile/kenji_natsumoto#top" className="text-primary hover:underline">夏本 健司</Link>
                 </div>
                 <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">資本金</span>
