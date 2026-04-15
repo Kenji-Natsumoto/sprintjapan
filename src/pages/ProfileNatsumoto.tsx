@@ -31,27 +31,38 @@ const sprintClients = [
   '本田技研工業（Honda）', '日産自動車', 'アルク', 'ウイングアーク1st', '東急',
 ];
 
-const vibeBoard = [
-  { num: 1, name: 'SOLVISTA', desc: '社会課題解決プラットフォーム' },
-  { num: 2, name: 'SMATSTA', desc: '事業創造プラットフォーム' },
-  { num: 3, name: 'TRAITH', desc: '企業理念（パーパス）言語化ツール' },
-  { num: 4, name: 'Vibe Manager', desc: 'AIネイティブアプリ企画・運営管理ツール' },
-  { num: 5, name: 'Vyse', desc: 'AI CEO＋証跡管理プラットフォーム' },
-  { num: 6, name: 'FinHabit', desc: '投資家育成・営業支援アプリ' },
-  { num: 7, name: 'Lumora', desc: '糖尿病患者向け生活管理ダッシュボード' },
-  { num: 8, name: '和菓座', desc: '和菓子教室用レシピ共有アプリ' },
-  { num: 9, name: 'W.S. KOKORO', desc: '個人サロン向け予約管理アプリ' },
-  { num: 10, name: '未来の扉', desc: '占い系・将来像イメージングアプリ' },
-  { num: 11, name: "Vibe O'Clock", desc: 'カスタマイズ世界時計' },
-  { num: 12, name: 'VibeCodingX', desc: 'バイブコーディング情報配信' },
-  { num: 13, name: '3D TPS Game', desc: '3Dシューティングゲーム' },
-  { num: 14, name: 'GrindIRL', desc: 'ゲーム型 習慣化トラッカー' },
-  { num: 15, name: 'HabitFlow CEO', desc: '経営者向け習慣トラッカー' },
-  { num: 16, name: 'スロゼン Mobile', desc: 'AI搭載パチスロ情報アプリ' },
-  { num: 17, name: 'ギャラクシアン', desc: 'アーケードゲーム再現' },
-  { num: 18, name: 'インベーダー', desc: 'テーブルゲーム再現' },
-  { num: 19, name: 'VibeRush', desc: 'AIアプリの公開プラットフォーム' },
-  { num: 20, name: 'NA-NA-SHI', desc: 'スライド編集・配布' },
+type Category = 'Enterprise' | 'Life/Health' | 'Habit/Game';
+
+const categoryConfig: Record<Category, { label: string; color: string; bg: string; border: string }> = {
+  'Enterprise': { label: 'Enterprise', color: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/30' },
+  'Life/Health': { label: 'Life / Health', color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/30' },
+  'Habit/Game': { label: 'Habit / Game', color: 'text-amber-400', bg: 'bg-amber-500/10', border: 'border-amber-500/30' },
+};
+
+const vibeBoard: { num: number; name: string; desc: string; url: string; category: Category }[] = [
+  // Enterprise
+  { num: 1, name: 'SOLVISTA', desc: '社会課題解決プラットフォーム', url: 'https://solvista-spj.lovable.app/', category: 'Enterprise' },
+  { num: 2, name: 'SMATSTA', desc: '事業創造プラットフォーム', url: 'https://smatsta.lovable.app/', category: 'Enterprise' },
+  { num: 3, name: 'TRAITH', desc: '企業理念（パーパス）言語化ツール', url: 'https://purpose-setting-app-4r2c4yfk.devinapps.com/', category: 'Enterprise' },
+  { num: 4, name: 'Vibe Manager', desc: 'AIネイティブアプリ企画・運営管理ツール', url: 'https://dev-ops-insight.replit.app/', category: 'Enterprise' },
+  { num: 5, name: 'Vyse', desc: 'AI CEO＋証跡管理プラットフォーム', url: 'https://vyse-is-the-ai-ceo.replit.app/', category: 'Enterprise' },
+  { num: 6, name: 'FinHabit', desc: '投資家育成・営業支援アプリ', url: 'https://fin-habit-learn--kn78.replit.app/', category: 'Enterprise' },
+  // Life/Health
+  { num: 7, name: 'Lumora', desc: '糖尿病患者向け血糖値管理', url: 'https://glucodash.replit.app/', category: 'Life/Health' },
+  { num: 8, name: '和菓座', desc: '和菓子教室レシピ共有アプリ', url: 'https://wagaza.replit.app/', category: 'Life/Health' },
+  { num: 9, name: 'W.S. KOKORO', desc: '個人サロン予約管理アプリ', url: 'https://reserve-flow--kn78.replit.app/', category: 'Life/Health' },
+  { num: 10, name: '未来の扉', desc: '将来像イメージング（占い風）', url: 'https://future-muse.lovable.app/', category: 'Life/Health' },
+  { num: 11, name: "Vibe O'Clock", desc: '世界時計比較ツール', url: 'https://vibe-o-clock.manus.space/', category: 'Life/Health' },
+  { num: 12, name: 'VibeCodingX', desc: 'VibeCoding情報プラットフォーム', url: 'https://vibecodingx.life/', category: 'Life/Health' },
+  // Habit/Game
+  { num: 13, name: '3D TPS Game', desc: '3Dシューティングゲーム', url: 'https://3d-tps-game-prototype.replit.app/', category: 'Habit/Game' },
+  { num: 14, name: 'GrindIRL', desc: 'ゲーム型 習慣化トラッカー', url: 'https://grindirl2026.lovable.app/', category: 'Habit/Game' },
+  { num: 15, name: 'HabitFlow CEO', desc: '経営者向け習慣トラッカー', url: 'https://manus.im/app-preview/GUfPNdDDSQw65KAxZVUSRd?sessionId=2AgWCXJJWXGgiRU1MXUIsU', category: 'Habit/Game' },
+  { num: 16, name: 'スロゼン Mobile', desc: '次世代パチスロ情報アプリ', url: 'https://zent-mobile.lovable.app/', category: 'Habit/Game' },
+  { num: 17, name: 'ギャラクシアン', desc: '懐かしのテーブル型ゲーム', url: 'https://galaxy-war--kn78.replit.app/', category: 'Habit/Game' },
+  { num: 18, name: 'インベーダー', desc: '懐かしのテーブル型ゲーム', url: 'https://retro-invaders.replit.app', category: 'Habit/Game' },
+  { num: 19, name: 'VibeRush', desc: 'AIネイティブアプリの公開プラットフォーム', url: 'https://viberush.io/', category: 'Habit/Game' },
+  { num: 20, name: 'NA-NA-SHI', desc: 'セミナースライド編集・配布アプリ', url: 'https://slidetexteditor-3fe8g9jw.manus.space/seminar/', category: 'Habit/Game' },
 ];
 
 const socials = [
@@ -278,19 +289,40 @@ const ProfileNatsumoto = () => {
             <p className="text-muted-foreground">2025.10〜2026.3 バイブコーディング制作実績</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {vibeBoard.map((app) => (
-              <div key={app.num} className="glass-card p-5 hover-lift group cursor-default">
-                <div className="flex items-start gap-3">
-                  <span className="text-xs font-bold text-primary/50 mt-0.5">#{String(app.num).padStart(2, '0')}</span>
-                  <div>
-                    <p className="font-bold text-sm group-hover:text-primary transition-colors">{app.name}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">{app.desc}</p>
-                  </div>
+          {(Object.keys(categoryConfig) as Category[]).map((cat) => {
+            const cfg = categoryConfig[cat];
+            const apps = vibeBoard.filter((a) => a.category === cat);
+            return (
+              <div key={cat} className="mb-10 last:mb-0">
+                <div className={`inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full ${cfg.bg} border ${cfg.border}`}>
+                  <div className={`w-2 h-2 rounded-full ${cfg.color.replace('text-', 'bg-')}`} />
+                  <span className={`text-xs font-bold tracking-wider ${cfg.color}`}>{cfg.label}</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {apps.map((app) => (
+                    <a
+                      key={app.num}
+                      href={app.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="glass-card p-5 hover-lift group cursor-pointer block"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span className={`text-xs font-bold mt-0.5 ${cfg.color} opacity-60`}>#{String(app.num).padStart(2, '0')}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <p className="font-bold text-sm group-hover:text-primary transition-colors">{app.name}</p>
+                            <ExternalLink size={12} className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                          </div>
+                          <p className="text-xs text-muted-foreground mt-0.5">{app.desc}</p>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
