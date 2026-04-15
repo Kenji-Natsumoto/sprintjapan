@@ -45,7 +45,7 @@ const App = () => (
           <Route path="/vibe-coding-lab" element={<VibeCodingLab />} />
           <Route path="/super-vibe-coding" element={<SuperVibeCoding />} />
           <Route path="/super-vibe-coding-full" element={<SuperVibeCodingV2 />} />
-          <Route path="/profile/natsumoto" element={<ProfileNatsumoto />} />
+          <Route path="/profile/kenji_natsumoto" element={<ProfileNatsumoto />} />
           <Route path="/chat" element={<Chat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
