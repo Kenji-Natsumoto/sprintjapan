@@ -289,19 +289,40 @@ const ProfileNatsumoto = () => {
             <p className="text-muted-foreground">2025.10〜2026.3 バイブコーディング制作実績</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {vibeBoard.map((app) => (
-              <div key={app.num} className="glass-card p-5 hover-lift group cursor-default">
-                <div className="flex items-start gap-3">
-                  <span className="text-xs font-bold text-primary/50 mt-0.5">#{String(app.num).padStart(2, '0')}</span>
-                  <div>
-                    <p className="font-bold text-sm group-hover:text-primary transition-colors">{app.name}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">{app.desc}</p>
-                  </div>
+          {(Object.keys(categoryConfig) as Category[]).map((cat) => {
+            const cfg = categoryConfig[cat];
+            const apps = vibeBoard.filter((a) => a.category === cat);
+            return (
+              <div key={cat} className="mb-10 last:mb-0">
+                <div className={`inline-flex items-center gap-2 mb-5 px-4 py-1.5 rounded-full ${cfg.bg} border ${cfg.border}`}>
+                  <div className={`w-2 h-2 rounded-full ${cfg.color.replace('text-', 'bg-')}`} />
+                  <span className={`text-xs font-bold tracking-wider ${cfg.color}`}>{cfg.label}</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {apps.map((app) => (
+                    <a
+                      key={app.num}
+                      href={app.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="glass-card p-5 hover-lift group cursor-pointer block"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span className={`text-xs font-bold mt-0.5 ${cfg.color} opacity-60`}>#{String(app.num).padStart(2, '0')}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <p className="font-bold text-sm group-hover:text-primary transition-colors">{app.name}</p>
+                            <ExternalLink size={12} className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                          </div>
+                          <p className="text-xs text-muted-foreground mt-0.5">{app.desc}</p>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
