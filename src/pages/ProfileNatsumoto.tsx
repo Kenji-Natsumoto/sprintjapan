@@ -179,7 +179,7 @@ const ProfileNatsumoto = () => {
                 「効率化」を目的にAIを導入する企業は半年で陳腐化する。必要なのは、パーパスから逆算し、2年後の組織を今設計すること。
               </p>
               <p className="text-lg text-foreground/75 leading-relaxed mb-8">
-                AIは業務ツールではなく、<span className="text-primary font-semibold">経営戦略のブレーンに据え、組織構造と業務プロセスを再定義する技術</span>である。
+                AIは、業務効率化ツールではなく<span className="text-primary font-semibold">経営戦略のブレーンに据え、組織構造と業務プロセスを再定義する技術</span>である。
               </p>
               <a
                 href="https://github.com/Kenji-Natsumoto/AI-Company/blob/main/docs/ja/effectiveness-over-efficiency-v0.1.md"
