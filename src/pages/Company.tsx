@@ -1,6 +1,6 @@
 import { Building, Target, History, Network, Repeat, Sparkles } from 'lucide-react';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -96,9 +96,9 @@ const Company = () => {
                         </div>
                         
                         <div className="text-right mt-12">
-                          <p className="text-2xl font-bold gradient-text inline-block border-b-2 border-primary pb-2">
-                            夏本 健司
-                          </p>
+                          <Link to="/profile/natsumoto" className="text-2xl font-bold gradient-text inline-block border-b-2 border-primary pb-2 hover:opacity-80 transition-opacity">
+                            夏本 健司 →
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -282,7 +282,7 @@ const Company = () => {
                 </div>
                 <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">代表者</span>
-                  <span className="text-foreground/90">夏本 健司</span>
+                  <Link to="/profile/natsumoto" className="text-primary hover:underline">夏本 健司</Link>
                 </div>
                 <div className="flex items-start border-b border-border pb-3">
                   <span className="text-muted-foreground w-32">資本金</span>
