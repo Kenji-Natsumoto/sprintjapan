@@ -245,7 +245,6 @@ const ProfileNatsumoto = () => {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            東京藝術大学美術学部卒 ―{' '}
             <a href="https://ja.wikipedia.org/wiki/%E5%A4%8F%E6%9C%AC%E5%81%A5%E5%8F%B8" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1">
               Wikipedia ー夏本健司 <ExternalLink size={12} />
             </a>
