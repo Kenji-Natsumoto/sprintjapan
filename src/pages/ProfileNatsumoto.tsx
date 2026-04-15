@@ -62,7 +62,7 @@ const socials = [
   { platform: 'TikTok', url: 'https://www.tiktok.com/@kenjinatsumoto', icon: SiTiktok },
   { platform: 'Instagram', url: 'https://www.instagram.com/kenjinatsumoto/', icon: SiInstagram },
   { platform: 'Medium', url: 'https://medium.com/@kenji_Natsumoto', icon: SiMedium },
-  { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/kenji-viberush/', icon: SiLinkedin },
+  { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/kenji-viberush/', icon: FaLinkedinIn },
 ];
 
 const ProfileNatsumoto = () => {
