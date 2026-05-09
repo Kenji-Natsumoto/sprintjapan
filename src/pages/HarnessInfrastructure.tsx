@@ -601,6 +601,14 @@ const HarnessInfrastructure = () => {
           >
             {content}
           </ReactMarkdown>
+          <div className="mt-12 pt-6 border-t border-border">
+            <a
+              href="/ai-native-company/"
+              className="text-primary underline underline-offset-2 hover:opacity-80"
+            >
+              ← 前のページに戻る
+            </a>
+          </div>
         </article>
       </main>
       <Footer />
