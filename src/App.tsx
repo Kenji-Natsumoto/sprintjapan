@@ -21,6 +21,7 @@ import AINativeCompany from "./pages/AINativeCompany";
 import HarnessInfrastructure from "./pages/HarnessInfrastructure";
 import EffectivenessOverEfficiency from "./pages/EffectivenessOverEfficiency";
 import OrganizationOptimization from "./pages/OrganizationOptimization";
+import ToolIntegrationGuide from "./pages/ToolIntegrationGuide";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import ChatPopup from "./components/ChatPopup";
