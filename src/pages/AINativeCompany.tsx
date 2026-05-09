@@ -235,14 +235,17 @@ const AINativeCompany = () => {
                 <blockquote className="border-l-4 border-border pl-4 my-4 italic text-muted-foreground" {...props} />
               ),
               hr: () => <hr className="my-8 border-border" />,
-              a: ({ node, ...props }) => (
-                <a
-                  className="text-primary underline underline-offset-2 hover:opacity-80"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  {...props}
-                />
-              ),
+              a: ({ node, href, ...props }) => {
+                const isInternal = href?.startsWith('/');
+                return (
+                  <a
+                    href={href}
+                    className="text-primary underline underline-offset-2 hover:opacity-80"
+                    {...(isInternal ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+                    {...props}
+                  />
+                );
+              },
               strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
             }}
           >
