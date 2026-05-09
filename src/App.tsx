@@ -18,6 +18,7 @@ import SuperVibeCoding from "./pages/SuperVibeCoding";
 import SuperVibeCodingV2 from "./pages/SuperVibeCodingV2";
 import ProfileNatsumoto from "./pages/ProfileNatsumoto";
 import AINativeCompany from "./pages/AINativeCompany";
+import HarnessInfrastructure from "./pages/HarnessInfrastructure";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import ChatPopup from "./components/ChatPopup";
@@ -49,6 +50,8 @@ const App = () => (
           <Route path="/profile/kenji_natsumoto" element={<ProfileNatsumoto />} />
           <Route path="/ai-native-company" element={<AINativeCompany />} />
           <Route path="/ai-native-company/" element={<AINativeCompany />} />
+          <Route path="/ai-native-company/harness-infrastructure" element={<HarnessInfrastructure />} />
+          <Route path="/ai-native-company/harness-infrastructure/" element={<HarnessInfrastructure />} />
           <Route path="/chat" element={<Chat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
