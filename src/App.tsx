@@ -59,6 +59,8 @@ const App = () => (
           <Route path="/ai-native-company/effectiveness-over-efficiency/" element={<EffectivenessOverEfficiency />} />
           <Route path="/ai-native-company/organization-optimization" element={<OrganizationOptimization />} />
           <Route path="/ai-native-company/organization-optimization/" element={<OrganizationOptimization />} />
+          <Route path="/ai-native-company/tool-integration-guide" element={<ToolIntegrationGuide />} />
+          <Route path="/ai-native-company/tool-integration-guide/" element={<ToolIntegrationGuide />} />
           <Route path="/chat" element={<Chat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
