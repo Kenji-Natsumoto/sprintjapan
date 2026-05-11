@@ -148,14 +148,12 @@ const ProfileNatsumoto = () => {
               <p className="text-lg text-foreground/70 mb-4">
                 「AI-Native COMPANY-Lab」主宰
               </p>
-              <a
-                href="https://github.com/Kenji-Natsumoto/AI-Company/blob/main/README.ja.md"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/ai-native-company/"
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
               >
                 AIが意思決定に「署名する」組織モデルの理論的考察 <ExternalLink size={14} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
