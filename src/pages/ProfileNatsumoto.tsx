@@ -148,14 +148,12 @@ const ProfileNatsumoto = () => {
               <p className="text-lg text-foreground/70 mb-4">
                 「AI-Native COMPANY-Lab」主宰
               </p>
-              <a
-                href="https://github.com/Kenji-Natsumoto/AI-Company/blob/main/README.ja.md"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/ai-native-company/"
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
               >
                 AIが意思決定に「署名する」組織モデルの理論的考察 <ExternalLink size={14} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -201,14 +199,12 @@ const ProfileNatsumoto = () => {
               <p className="text-lg text-foreground/75 leading-relaxed mb-8">
                 AIは、業務効率化ツールではなく<span className="text-primary font-semibold">経営戦略のブレーンに据え、組織構造と業務プロセスを再定義する技術</span>である。
               </p>
-              <a
-                href="https://github.com/Kenji-Natsumoto/AI-Company/blob/main/docs/ja/effectiveness-over-efficiency-v0.1.md"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/ai-native-company/effectiveness-over-efficiency/"
                 className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
               >
                 論文: なぜ「AI業務効率化」は失敗するのか <ExternalLink size={14} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
