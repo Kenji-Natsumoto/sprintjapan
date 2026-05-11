@@ -25,6 +25,7 @@ import ToolIntegrationGuide from "./pages/ToolIntegrationGuide";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import ChatPopup from "./components/ChatPopup";
+import ScrollToTop from "./components/ScrollToTop";
 import { Navigate } from "react-router-dom";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/platform" element={<Platform />} />
