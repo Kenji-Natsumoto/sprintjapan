@@ -109,6 +109,24 @@ const AIDiscoveryHome = () => {
                 ワークシート一覧へ
               </a>
             </div>
+
+            {/* Session 1 slides link */}
+            <a
+              href="https://docs.google.com/presentation/d/144nki5XFti3qBUjxyW3MgIKfqWgwCCtq/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 group inline-flex items-center gap-4 p-4 rounded-2xl bg-white/70 border border-[#e8dfc9] hover:bg-white hover:border-[#ea580c]/40 hover:-translate-y-0.5 transition-all max-w-xl"
+            >
+              <div className="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-[#fef3df] to-[#fde4cf] border border-[#e8dfc9] grid place-items-center text-2xl">
+                📊
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[11px] tracking-[0.15em] uppercase text-[#ea580c] font-semibold">Google Slides ↗</div>
+                <div className="serif-jp text-[15px] font-semibold text-[#1a1409] mt-0.5">第1回スライド資料を見る</div>
+                <div className="text-[12.5px] text-[#6b5d44] mt-0.5 truncate">As-Is 可視化セッションの当日資料</div>
+              </div>
+              <span className="text-[#ea580c] text-xl group-hover:translate-x-1 transition-transform">→</span>
+            </a>
           </div>
 
           {/* Dark right panel */}
