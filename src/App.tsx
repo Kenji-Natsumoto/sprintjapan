@@ -22,6 +22,8 @@ import HarnessInfrastructure from "./pages/HarnessInfrastructure";
 import EffectivenessOverEfficiency from "./pages/EffectivenessOverEfficiency";
 import OrganizationOptimization from "./pages/OrganizationOptimization";
 import ToolIntegrationGuide from "./pages/ToolIntegrationGuide";
+import AIDiscoveryHome from "./pages/ai-discovery/Home";
+import { Session2, Session3, Session4, Session5, Session6 } from "./pages/ai-discovery/Worksheet";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import ChatPopup from "./components/ChatPopup";
@@ -63,6 +65,13 @@ const App = () => (
           <Route path="/ai-native-company/organization-optimization/" element={<OrganizationOptimization />} />
           <Route path="/ai-native-company/tool-integration-guide" element={<ToolIntegrationGuide />} />
           <Route path="/ai-native-company/tool-integration-guide/" element={<ToolIntegrationGuide />} />
+          <Route path="/ai-discovery-community" element={<AIDiscoveryHome />} />
+          <Route path="/ai-discovery-community/" element={<AIDiscoveryHome />} />
+          <Route path="/ai-discovery-community/worksheets/session-2" element={<Session2 />} />
+          <Route path="/ai-discovery-community/worksheets/session-3" element={<Session3 />} />
+          <Route path="/ai-discovery-community/worksheets/session-4" element={<Session4 />} />
+          <Route path="/ai-discovery-community/worksheets/session-5" element={<Session5 />} />
+          <Route path="/ai-discovery-community/worksheets/session-6" element={<Session6 />} />
           <Route path="/chat" element={<Chat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
