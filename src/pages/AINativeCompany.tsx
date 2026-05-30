@@ -288,7 +288,7 @@ const AINativeCompany = () => {
                 <ul className="space-y-2 text-sm md:text-base">
                   <li>
                     夏本健司『AIエージェント集合体による「意思決定生成企業」の提案』{' '}
-                    <a href="#top" className="text-primary underline underline-offset-2 hover:opacity-80">本ページ上部</a>
+                    <a href="#top" className="text-primary underline underline-offset-2 hover:opacity-80">本ページ下部</a>
                   </li>
                   <li>
                     夏本健司『
