@@ -227,7 +227,7 @@ const AINativeCompany = () => {
               </div>
 
               <h2 id="latest-paper-title" className="text-3xl md:text-4xl font-bold leading-tight mb-3 gradient-text">
-                Closed Loop と「学習する組織」
+                Closed Loop と「学習するAI組織」
               </h2>
               <p className="text-lg md:text-xl text-foreground/90 mb-1">― 人格は分けろ、プロセスは分けるな ―</p>
               <p className="text-sm md:text-base text-muted-foreground mb-6">
