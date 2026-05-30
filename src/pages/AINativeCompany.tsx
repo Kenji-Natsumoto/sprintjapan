@@ -220,7 +220,146 @@ const AINativeCompany = () => {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-1 pt-24 pb-16">
-        <article className="container mx-auto px-4 max-w-3xl">
+        <section className="container mx-auto px-4 max-w-3xl mb-16" aria-labelledby="latest-paper-title">
+          <div className="glass-card-strong gradient-border p-6 md:p-10 relative overflow-hidden">
+            <div className="mesh-gradient absolute inset-0 opacity-40 pointer-events-none" aria-hidden="true" />
+            <div className="relative">
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary text-primary-foreground glow-primary">
+                  NEW
+                </span>
+                <span className="text-xs font-medium text-muted-foreground tracking-wider">
+                  2026-05-30 公開 ・ 最新論文
+                </span>
+                <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold border border-primary/40 text-primary">
+                  LOCKED
+                </span>
+              </div>
+
+              <h2 id="latest-paper-title" className="text-3xl md:text-4xl font-bold leading-tight mb-3 gradient-text">
+                Closed Loop と「学習する組織」
+              </h2>
+              <p className="text-lg md:text-xl text-foreground/90 mb-1">― 人格は分けろ、プロセスは分けるな ―</p>
+              <p className="text-sm md:text-base text-muted-foreground mb-6">
+                AI-Native Company における実行アーキテクチャの選択
+              </p>
+              <p className="text-xs text-muted-foreground mb-8">
+                著者: 夏本健司（株式会社スプリントジャパン 代表取締役）
+              </p>
+
+              <blockquote className="border-l-4 border-primary pl-5 my-6 text-foreground/95">
+                <p className="font-bold text-lg md:text-xl mb-4 leading-relaxed">
+                  「人格は分けろ、プロセスは分けるな。代わりに Closed Loop を分けろ。」
+                </p>
+                <p className="leading-relaxed">
+                  これは AI-Native Company（signity）の実装段階で得られた、世界的にも稀少な設計原則である。本稿は、AI界隈で常識化しつつある「Agent Team を独立プロセスとして分離する」という直感に正面から反論し、単一 Orchestrator + Closed Loop 並走という代替アーキテクチャを理論化する。
+                </p>
+              </blockquote>
+
+              <div className="mt-10">
+                <h3 className="text-xl md:text-2xl font-bold mb-4">要旨（Abstract）</h3>
+                <div className="space-y-4 leading-relaxed text-foreground/90">
+                  <p>
+                    本稿は、AI-Native Company（signity）の実装段階において直面する「AIエージェントを独立プロセスとして分離すべきか否か」という設計問題を扱う。
+                  </p>
+                  <p>
+                    近年、AI界隈では「Agent Team」「マルチエージェント」「エージェント協調」が高度なAI活用の代名詞として語られている。しかし筆者が Phase 2（Traction）に至る過程で観測した結論は、その直感とは反対方向である。
+                  </p>
+                  <p>
+                    本稿は、AI-Native Company の実装層を <strong>(A) 人格（Persona）／(B) 実行主体（Process）／(C) 自律ジョブ（Closed Loop）</strong> の三層に分離し、それぞれの「分け方」を独立に決定すべきことを示す。さらに、世間で語られる「ワークフロー」と本稿でいう「Closed Loop」が機構・機能・目的のいずれにおいても別概念であることを明らかにし、現在各社が鎬を削る「学習するAI」「成長するAI」との接続点を提示する。
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  {
+                    title: '三層分離モデル',
+                    body: 'AI-Native Company の実装層を「人格 / 実行主体 / Closed Loop」の三層に分離する。人格は分けろ（例: ZENT PM 鷹野誠、VibeRush PM レオ・ヴァンス、SPJ広報 PM 岬航 など、役割ごとに異なるレンズを設計する）、実行主体は分けるな、Closed Loop は積極的に分けろ。Agent Team 神話に対する根本的反論。',
+                  },
+                  {
+                    title: 'ワークフロー ≠ Closed Loop',
+                    body: 'ワークフローは PDCA の P と D を自動化する仕組み。Closed Loop は C と A まで含めた循環全体を自動化する。Closed Loop ⊃ ワークフロー + 観測 + 履歴 + 次回反映。世間の「自動化」議論はワークフローしか語っていない。',
+                  },
+                  {
+                    title: '学習を組織構造に置く',
+                    body: '現在各社が鎬を削る「学習するAI」はモデル内部の重みの更新を議論する。本稿の Closed Loop は、学習をモデル内部ではなく組織構造（git・蓄積ログ・意思決定履歴）に置く。モデル切替に耐える長期記憶を組織側に蓄積する。',
+                  },
+                ].map((c) => (
+                  <div key={c.title} className="glass-card p-5 hover-lift">
+                    <h4 className="text-base md:text-lg font-bold mb-3 text-primary">{c.title}</h4>
+                    <p className="text-sm leading-relaxed text-foreground/85">{c.body}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-12">
+                <h3 className="text-xl md:text-2xl font-bold mb-4">参考文献・関連ドキュメント</h3>
+                <ul className="space-y-2 text-sm md:text-base">
+                  <li>
+                    夏本健司『AIエージェント集合体による「意思決定生成企業」の提案』{' '}
+                    <a href="#top" className="text-primary underline underline-offset-2 hover:opacity-80">本ページ上部</a>
+                  </li>
+                  <li>
+                    夏本健司『
+                    <a href="/ai-native-company/harness-infrastructure/" className="text-primary underline underline-offset-2 hover:opacity-80">
+                      AI-Native Company のためのハーネス・インフラ設計
+                    </a>
+                    』
+                  </li>
+                  <li>
+                    夏本健司『
+                    <a href="/ai-native-company/effectiveness-over-efficiency/" className="text-primary underline underline-offset-2 hover:opacity-80">
+                      なぜ「AI業務効率化」は失敗するのか ― 効率性ではなく効果性を
+                    </a>
+                    』
+                  </li>
+                  <li>
+                    夏本健司『
+                    <a href="/ai-native-company/organization-optimization/" className="text-primary underline underline-offset-2 hover:opacity-80">
+                      ジャック・ドーシーモデルのAIネイティブカンパニーへの応用
+                    </a>
+                    』
+                  </li>
+                  <li>
+                    夏本健司『
+                    <a href="/ai-native-company/tool-integration-guide/" className="text-primary underline underline-offset-2 hover:opacity-80">
+                      AI-Nativeスタートアップ ツール連携設計ガイド
+                    </a>
+                    』
+                  </li>
+                  <li className="text-muted-foreground">Anthropic『Harness Design』（外部Evaluator分離パターン）</li>
+                  <li className="text-muted-foreground">Teresa Torres『Continuous Discovery Habits』（PDCA循環の参考）</li>
+                </ul>
+              </div>
+
+              <div className="mt-12 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://github.com/Kenji-Natsumoto/AI-Company/blob/main/docs/ja/closed-loop-architecture-v0.1.md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity glow-primary"
+                >
+                  論文全文を読む（GitHub） →
+                </a>
+                <a
+                  href="#papers"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-border text-foreground font-semibold hover:bg-muted transition-colors"
+                >
+                  他の論文を見る
+                </a>
+              </div>
+
+              <p className="mt-6 text-xs text-muted-foreground">
+                2026-05-30 公開 / AI Signature により LOCKED / Building in Public 対応稿
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <article id="papers" className="container mx-auto px-4 max-w-3xl">
+          <span id="top" />
+
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
