@@ -239,7 +239,7 @@ const AINativeCompany = () => {
 
               <blockquote className="border-l-4 border-primary pl-5 my-6 text-foreground/95">
                 <p className="font-bold text-lg md:text-xl mb-4 leading-relaxed">
-                  「人格は分けろ、プロセスは分けるな。代わりに Closed Loop を分けろ。」
+                  「AI人格は分けろ、プロセスは分けるな。代わりに Closed Loop を分けろ。」
                 </p>
                 <p className="leading-relaxed">
                   これは AI-Native Company（signity）の実装段階で得られた、世界的にも稀少な設計原則である。本稿は、AI界隈で常識化しつつある「Agent Team を独立プロセスとして分離する」という直感に正面から反論し、単一 Orchestrator + Closed Loop 並走という代替アーキテクチャを理論化する。
@@ -256,7 +256,7 @@ const AINativeCompany = () => {
                     近年、AI界隈では「Agent Team」「マルチエージェント」「エージェント協調」が高度なAI活用の代名詞として語られている。しかし筆者が Phase 2（Traction）に至る過程で観測した結論は、その直感とは反対方向である。
                   </p>
                   <p>
-                    本稿は、AI-Native Company の実装層を <strong>(A) 人格（Persona）／(B) 実行主体（Process）／(C) 自律ジョブ（Closed Loop）</strong> の三層に分離し、それぞれの「分け方」を独立に決定すべきことを示す。さらに、世間で語られる「ワークフロー」と本稿でいう「Closed Loop」が機構・機能・目的のいずれにおいても別概念であることを明らかにし、現在各社が鎬を削る「学習するAI」「成長するAI」との接続点を提示する。
+                    本稿は、AI-Native Company の実装層を <strong>(A) AI人格（Persona）／(B) 実行主体（Process）／(C) 自律ジョブ（Closed Loop）</strong> の三層に分離し、それぞれの「分け方」を独立に決定すべきことを示す。さらに、世間で語られる「ワークフロー」と本稿でいう「Closed Loop」が機構・機能・目的のいずれにおいても別概念であることを明らかにし、現在各社が鎬を削る「学習するAI」「成長するAI」との接続点を提示する。
                   </p>
                 </div>
               </div>
@@ -265,15 +265,15 @@ const AINativeCompany = () => {
                 {[
                   {
                     title: '三層分離モデル',
-                    body: 'AI-Native Company の実装層を「人格 / 実行主体 / Closed Loop」の三層に分離する。人格は分けろ（例: ZENT PM 鷹野誠、VibeRush PM レオ・ヴァンス、SPJ広報 PM 岬航 など、役割ごとに異なるレンズを設計する）、実行主体は分けるな、Closed Loop は積極的に分けろ。Agent Team 神話に対する根本的反論。',
+                    body: 'AI-Native Company の実装層を「AI人格 / 実行主体 / Closed Loop」の三層に分離する。AI人格は分けろ（例: クライアントPJのPM 鷹野誠、VibeRush PJのPM レオ・ヴァンス、自社サイトの広報PJのPM 岬航 など、役割ごとに異なるレンズを設計する）、実行主体は分けるな、Closed Loop は積極的に分けろ。Agent Team 神話に対する根本的反論。',
                   },
                   {
                     title: 'ワークフロー ≠ Closed Loop',
                     body: 'ワークフローは PDCA の P と D を自動化する仕組み。Closed Loop は C と A まで含めた循環全体を自動化する。Closed Loop ⊃ ワークフロー + 観測 + 履歴 + 次回反映。世間の「自動化」議論はワークフローしか語っていない。',
                   },
                   {
-                    title: '学習を組織構造に置く',
-                    body: '現在各社が鎬を削る「学習するAI」はモデル内部の重みの更新を議論する。本稿の Closed Loop は、学習をモデル内部ではなく組織構造（git・蓄積ログ・意思決定履歴）に置く。モデル切替に耐える長期記憶を組織側に蓄積する。',
+                    title: '学習をAI組織構造に置く',
+                    body: '現在各社が鎬を削る「学習するAI」はモデル内部の重みの更新を議論する。本稿の Closed Loop は、学習をモデル内部ではなくAI組織構造（git・蓄積ログ・意思決定履歴）に置く。モデル切替に耐える長期記憶をAI組織側に蓄積する。',
                   },
                 ].map((c) => (
                   <div key={c.title} className="glass-card p-5 hover-lift">
