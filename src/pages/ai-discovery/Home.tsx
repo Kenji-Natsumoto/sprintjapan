@@ -1,65 +1,103 @@
 import { Link } from 'react-router-dom';
 import { HubShell, HubHeader, HubFooter, StatusChip, usePageMeta } from './shared';
 
+const FB_MESSENGER_URL = '{{FB_MESSENGER_URL}}';
+
 const sessions = [
   {
     number: '02',
-    phase: 'To-Be / GAP',
-    title: 'To-Be策定とGAP算定',
-    body: '前半で MTP を理解し、TRAITH を使って To-Be を言語化。後半で As-Is と並べて GAP を算定します。',
-    link: 'https://purpose-setting-app-4r2c4yfk.devinapps.com/',
-    list: ['成果物: To-Be 文、MTP 仮説、GAP マップ', '機能実装: AIプロフィール'],
+    phase: 'To-Be',
+    title: 'To-Be策定（北極星：MTPと目標）',
+    body: 'その場で：①フォルダ構成を決める ②自分専用のAI人格を作る ③TRAITH-Pで北極星（MTPと目標）を言語化。デスクトップアプリ（Codex / Claude Code）の基本操作を手で覚えながら、成果を traith.md に保存。最後にロードマップ／マイルストーンを軽く出力して締めます。',
+    link: 'https://traith-p.lovable.app',
+    list: ['持ち帰り: persona.md（AI人格）', '持ち帰り: traith.md（北極星＋見通し）'],
   },
   {
     number: '03',
-    phase: 'Plan',
-    title: '最優先GAPの設計と基礎ハーネス',
-    body: '一番大きい GAP を 1 つ選び、その GAP を埋める最小ワークフローを設計します。',
-    list: ['成果物: Workflow Spec、AI Working Spec', '機能実装: フォルダ構造、テンプレート、運用ルール'],
+    phase: 'GAP / Plan',
+    title: 'GAP（AIマップ）→ Plan',
+    body: 'AIマップでギャップを「緊急度×重要度＋AIでどう解決するか」に整理し、最初の一歩を1つ選択。選んだ一歩を「動く計画（最小ワークフロー）」へ設計します。',
+    list: ['持ち帰り: AIマップ', '持ち帰り: 最初の一歩／最小ワークフロー'],
   },
   {
     number: '04',
     phase: 'Do',
-    title: '習慣ワークフローを回す',
-    body: '朝のブリーフ、会議前準備、夜の振り返りなどを題材に、実際に回して観察します。',
-    list: ['成果物: 日次または週次ワークフロー、実行ログ', '機能実装: 習慣の半自動化'],
+    title: 'Do（習慣ワークフローを回す）',
+    body: '設計したワークフローを実際に回し、観察サイクルを始める。',
+    list: ['成果物: 日次または週次ワークフロー、実行ログ'],
   },
   {
     number: '05',
     phase: 'Check',
-    title: '検証と定期見回りの設計',
-    body: '効果検証を行い、定期見回りや自動化に向く部分と、人が持つべき部分を見分けます。',
-    list: ['成果物: 検証レポート、自動化候補', '機能実装: 定期見回り仕様、接続方針'],
+    title: 'Check（検証と自動化候補の特定）',
+    body: '回した結果を検証し、AIに任せられる自動化候補を洗い出す。',
+    list: ['成果物: 検証レポート、自動化候補'],
   },
   {
     number: '06',
     phase: 'Act',
-    title: '定着と90日運用計画',
-    body: '仕事ワークフローを 1 本完成させ、部分自動化の仕様と 90 日運用計画を決めます。',
-    list: ['成果物: 完成ワークフロー、90日運用計画', '機能実装: 運用標準、部分自動化'],
+    title: 'Act（定着と90日運用計画）',
+    body: '運用標準を確定。90日で“続く仕組み”に着地させ、クロージング。',
+    list: ['成果物: 運用標準、90日運用計画'],
   },
 ];
 
-const pdca = [
-  { label: 'Plan', body: '最優先GAPを埋める設計をする' },
-  { label: 'Do', body: '日常や仕事で実際に回す' },
-  { label: 'Check', body: 'To-Be に効いているかを点検する' },
-  { label: 'Act', body: '次の運用に耐える形へ直す' },
+const tools = [
+  {
+    name: 'Soul Seasons Guide',
+    role: 'As-Is（現在地）を可視化',
+    output: '現在地の言語化（統合プロンプト）',
+    link: 'https://soulseasonsguide.lovable.app',
+  },
+  {
+    name: 'TRAITH-P',
+    role: '北極星（MTPと目標）を言語化',
+    output: 'To-Be／MTP／SMART目標 →『traith.md』へ',
+    link: 'https://traith-p.lovable.app',
+  },
+  {
+    name: 'AIマップ（第3回〜）',
+    role: 'ギャップを「緊急度×重要度＋AIでどう解決するか」で整理',
+    output: '最初の一歩／90日計画の起点',
+    link: '',
+  },
+];
+
+const tracks = [
+  {
+    label: 'A系統',
+    lean: '寄り：生き方・To-Be発見',
+    focus: '主眼：北極星（MTPと目標）の言語化',
+  },
+  {
+    label: 'B系統',
+    lean: '寄り：Vibe Coding・実装',
+    focus: '主眼：作りたいものを形にする',
+  },
+];
+
+const eventInfo = [
+  { k: '料金', v: '3,000円/回（税込・当日現金）' },
+  { k: '定員', v: '6名限定' },
+  { k: '頻度', v: '月次開催（全6回・3ヶ月で完結／第一期）' },
+  { k: '対象', v: '非エンジニア・AI初心者〜中級者' },
+  { k: '共催', v: '夏本健司 × 湯川鶴章' },
 ];
 
 const indexCards: { status: '公開中' | '準備中'; title: string; body: string; href: string }[] = [
   { status: '公開中', title: 'カリキュラム概要', body: 'このページです。第2回から第6回までの全体像を確認できます。', href: '/ai-discovery-community' },
-  { status: '準備中', title: '第2回ワークシート', body: 'To-Be、MTP、GAP 算定の詳細ページ。', href: '/ai-discovery-community/worksheets/session-2' },
-  { status: '準備中', title: '第3回ワークシート', body: '最優先 GAP と基礎ハーネスの設計ページ。', href: '/ai-discovery-community/worksheets/session-3' },
+  { status: '準備中', title: '第2回ワークシート', body: 'AI人格づくりと北極星（MTPと目標）の言語化の詳細ページ。', href: '/ai-discovery-community/worksheets/session-2' },
+  { status: '準備中', title: '第3回ワークシート', body: 'AIマップでギャップを整理し、最初の一歩を選ぶ詳細ページ。', href: '/ai-discovery-community/worksheets/session-3' },
   { status: '準備中', title: '第4回ワークシート', body: '習慣ワークフロー実行と観察の詳細ページ。', href: '/ai-discovery-community/worksheets/session-4' },
-  { status: '準備中', title: '第5回ワークシート', body: '検証、定期見回り、自動化候補の整理ページ。', href: '/ai-discovery-community/worksheets/session-5' },
-  { status: '準備中', title: '第6回ワークシート', body: '定着、仕事ワークフロー、90日運用の詳細ページ。', href: '/ai-discovery-community/worksheets/session-6' },
+  { status: '準備中', title: '第5回ワークシート', body: '検証と自動化候補の整理ページ。', href: '/ai-discovery-community/worksheets/session-5' },
+  { status: '準備中', title: '第6回ワークシート', body: '定着と90日運用計画の詳細ページ。', href: '/ai-discovery-community/worksheets/session-6' },
 ];
 
 const faqs = [
-  { q: 'エンジニアでなくても参加できますか？', a: 'はい。v4.0 は非エンジニア向けに設計されています。コードを書くことよりも、 AI に何を任せるか、どう生活や仕事に組み込むかを重視します。' },
-  { q: 'Codex と Claude Code のどちらを使っても大丈夫ですか？', a: 'はい。A/B とも内容は同じで、Codex と Claude Code のどちらでも進められるように設計しています。' },
-  { q: '第2回までに準備しておくものは何ですか？', a: '第1回の As-Is メモ、または Soul Seasons Guide の結果、そして Codex か Claude Code を使える環境があるとスムーズです。' },
+  { q: 'エンジニアでなくても大丈夫？', a: 'はい。コードを書くより「AIに何を任せるか」を学ぶ会です。操作は日本語で頼めばOK。' },
+  { q: 'Codex と Claude Code、どちらでも参加できる？', a: 'どちらでも同じように進められます（操作思想は共通）。デスクトップアプリとしてお使いください。' },
+  { q: 'パソコンがなくても参加できる？', a: '思考パート（As-Is／北極星の言語化）はスマホでも可能です。ファイルとして固定する部分だけ、ペアでの代行や後日対応で補えます。' },
+  { q: '準備は？', a: '第1回の As-Is（Soul Seasons Guide の結果）をお持ちください。' },
 ];
 
 const SectionEyebrow = ({ children }: { children: React.ReactNode }) => (
@@ -74,8 +112,8 @@ const Card = ({ children, className = '' }: { children: React.ReactNode; classNa
 
 const AIDiscoveryHome = () => {
   usePageMeta(
-    'AIでやりたいこと発見コミュニティ v4.0 | Sprint Japan',
-    'AIでやりたいこと発見コミュニティ A/B の第2回以降を案内する参加者向けページ。To-Be、GAP、ワークフロー設計、習慣化、自動化、90日運用までの全体像を紹介します。'
+    'AIでやりたいこと発見コミュニティ | Sprint Japan',
+    'AIに、自分の北極星を語らせる。第1回で可視化したAs-Isを土台に、北極星（MTPと目標）を言語化し、デスクトップアプリ（Codex / Claude Code）で自分のパソコンにファイルとして残すコミュニティ。'
   );
 
   return (
@@ -88,31 +126,32 @@ const AIDiscoveryHome = () => {
           <div>
             <SectionEyebrow>AIでやりたいこと発見コミュニティ A/B</SectionEyebrow>
             <h1 className="serif-jp text-4xl md:text-5xl lg:text-6xl leading-[1.25] font-semibold text-[#1a1409]">
-              第2回以降の進め方を、<br />この1ページで。
+              AIに、<br />自分の北極星を語らせる。
             </h1>
             <p className="mt-6 text-[17px] leading-[1.9] text-[#3a3225] max-w-2xl">
-              第1回で可視化した As-Is を起点に、
-              <strong className="text-[#c2410c] font-semibold">To-Be を言語化し、GAP を設計し、Codex や Claude Code で日常に落とし込む</strong>
-              ための参加者向けガイドです。
+              第2回以降の進め方を、この1ページで。第1回で可視化した「現在地（As-Is）」を土台に、自分だけの
+              <strong className="text-[#c2410c] font-semibold">北極星（＝MTPと目標）を言語化</strong>
+              し、それを<strong className="text-[#c2410c] font-semibold">デスクトップアプリ（Codex / Claude Code）</strong>
+              で自分のパソコンに“ファイルとして”残します。AIを「借りた頭」で終わらせず、自分の隣に置く秘書・相棒にしていくコミュニティです。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#sessions"
+                href={FB_MESSENGER_URL}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#ea580c] to-[#c2410c] text-white font-medium shadow-lg shadow-[#ea580c]/30 hover:shadow-xl hover:-translate-y-0.5 transition-all"
               >
-                カリキュラムを見る →
+                次回に参加する →
               </a>
               <a
-                href="#index"
+                href={FB_MESSENGER_URL}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 border border-[#e8dfc9] text-[#3a3225] font-medium hover:bg-white transition-all"
               >
-                ワークシート一覧へ
+                内容を相談する
               </a>
             </div>
 
-            {/* Session 1 slides link */}
+            {/* Session 2 slides link */}
             <a
-              href="https://docs.google.com/presentation/d/144nki5XFti3qBUjxyW3MgIKfqWgwCCtq/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true"
+              href="https://docs.google.com/presentation/d/1PLRXl-DmiaHedDhGf8cNs8f9fngV6PiP/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 group inline-flex items-center gap-4 p-4 rounded-2xl bg-white/70 border border-[#e8dfc9] hover:bg-white hover:border-[#ea580c]/40 hover:-translate-y-0.5 transition-all max-w-xl"
@@ -122,8 +161,8 @@ const AIDiscoveryHome = () => {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="text-[11px] tracking-[0.15em] uppercase text-[#ea580c] font-semibold">Google Slides ↗</div>
-                <div className="serif-jp text-[15px] font-semibold text-[#1a1409] mt-0.5">第1回スライド資料を見る</div>
-                <div className="text-[12.5px] text-[#6b5d44] mt-0.5 truncate">As-Is 可視化セッションの当日資料</div>
+                <div className="serif-jp text-[15px] font-semibold text-[#1a1409] mt-0.5">第2回(6/5)のスライドを見る</div>
+                <div className="text-[12.5px] text-[#6b5d44] mt-0.5 truncate">当日の流れ：AI人格づくり × 北極星の言語化</div>
               </div>
               <span className="text-[#ea580c] text-xl group-hover:translate-x-1 transition-transform">→</span>
             </a>
@@ -134,14 +173,14 @@ const AIDiscoveryHome = () => {
             <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#ea580c]/20 blur-3xl" />
             <div className="relative">
               <div className="text-[11px] tracking-wider uppercase text-[#d4a84c]">最終更新</div>
-              <div className="text-lg font-medium mt-1">2026年5月27日</div>
+              <div className="text-lg font-medium mt-1">2026年6月3日</div>
               <div className="my-6 h-px bg-white/10" />
               <ul className="space-y-3.5 text-[14px]">
                 {[
                   '第1回は終了済み',
-                  'A/B は同一カリキュラム',
-                  '第2回で To-Be と GAP まで進行',
-                  '第3回以降は PDCA で改善',
+                  'A/B は同一カリキュラム（重心が異なる）',
+                  '第2回で AI人格 と 北極星 を言語化',
+                  '第3回以降は GAP→PDCA で改善',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="text-[#d4a84c] mt-0.5">◆</span>
@@ -157,46 +196,73 @@ const AIDiscoveryHome = () => {
       {/* Overview */}
       <section id="overview" className="container mx-auto max-w-6xl px-5 py-16">
         <SectionEyebrow>Overview</SectionEyebrow>
-        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">このプログラムでやること</h2>
+        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-4 text-[#1a1409]">
+          効率化の先へ。「何をやるか（北極星）」を先に決める。
+        </h2>
+        <p className="text-[15px] leading-[1.9] text-[#3a3225] mb-10 max-w-3xl">
+          速く走るより、正しい方向に走る。AIで“やりたいこと”を見つけ、形にするために2つのレイヤーで進めます。
+        </p>
         <div className="grid md:grid-cols-2 gap-6">
           <Card>
-            <h3 className="serif-jp text-xl font-semibold mb-3 text-[#c2410c]">戦略レイヤー</h3>
-            <p className="text-[15px] leading-[1.85] text-[#3a3225]">
-              まずは「何を効率化するか」ではなく、
-              <strong className="text-[#1a1409] font-semibold">As-Is と To-Be の差分をどう埋めるか</strong>
-              を見ます。
-            </p>
-            <ul className="mt-5 space-y-2.5 text-[14px] text-[#4a3f2a]">
+            <h3 className="serif-jp text-xl font-semibold mb-3 text-[#c2410c]">戦略レイヤー（生き方・方向性）</h3>
+            <ul className="mt-2 space-y-2.5 text-[14px] text-[#4a3f2a]">
               {[
-                '第1回で可視化した As-Is を持ち寄る',
-                '第2回で To-Be と MTP を言語化する',
-                'As-Is と To-Be の GAP を AI に構造化させる',
-                'GAP を埋めるワークフローを PDCA で磨く',
+                'As-Is（現在地）を可視化する … Soul Seasons Guide',
+                '北極星（MTPと目標）を言語化する … TRAITH-P',
+                'ギャップ（=次の一歩）を選び、90日運用へ落とす … AIマップ（第3回〜）',
               ].map((i) => (
                 <li key={i} className="flex gap-2.5"><span className="text-[#ea580c]">•</span>{i}</li>
               ))}
             </ul>
           </Card>
           <Card>
-            <h3 className="serif-jp text-xl font-semibold mb-3 text-[#c2410c]">機能レイヤー</h3>
-            <p className="text-[15px] leading-[1.85] text-[#3a3225]">
-              考え方だけで終わらせず、毎回
-              <strong className="text-[#1a1409] font-semibold">持ち帰って使える形</strong>
-              まで作ります。
-            </p>
-            <ul className="mt-5 space-y-2.5 text-[14px] text-[#4a3f2a]">
+            <h3 className="serif-jp text-xl font-semibold mb-3 text-[#c2410c]">機能レイヤー（手元に残る成果物）</h3>
+            <ul className="mt-2 space-y-2.5 text-[14px] text-[#4a3f2a]">
               {[
-                'AIプロフィール',
-                '基礎ハーネス',
-                '日次・週次の習慣ワークフロー',
-                '定期見回りと自動化候補',
-                '仕事ワークフローと90日運用計画',
+                '自分専用の AI人格（persona.md）＝あなたの秘書・相棒の設定書',
+                'traith.md（As-Is ＋ To-Be/MTP・目標 ＋ ロードマップ/マイルストーンの総称＝traith）',
+                '日々の運用ワークフロー／自動化候補／90日運用計画',
               ].map((i) => (
                 <li key={i} className="flex gap-2.5"><span className="text-[#ea580c]">•</span>{i}</li>
               ))}
             </ul>
           </Card>
         </div>
+        <p className="mt-6 text-[14px] leading-[1.85] text-[#6b5d44] max-w-3xl">
+          すべて自分のパソコンに <code className="text-[#c2410c]">.md</code> ファイルとして残る＝今日で終わらない・明日も使える。
+        </p>
+      </section>
+
+      {/* Tools */}
+      <section className="container mx-auto max-w-6xl px-5 py-16">
+        <SectionEyebrow>Tools</SectionEyebrow>
+        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">使う道具（3つのアプリ）</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {tools.map((t) => (
+            <Card key={t.name}>
+              <h3 className="serif-jp text-lg font-semibold mb-3 text-[#c2410c]">{t.name}</h3>
+              <p className="text-[14px] leading-[1.85] text-[#3a3225]">
+                <span className="text-[#1a1409] font-semibold">役割：</span>{t.role}
+              </p>
+              <p className="mt-2 text-[14px] leading-[1.85] text-[#3a3225]">
+                <span className="text-[#1a1409] font-semibold">出力：</span>{t.output}
+              </p>
+              {t.link && (
+                <a
+                  href={t.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 text-sm text-[#ea580c] hover:underline break-all"
+                >
+                  {t.link.replace(/^https?:\/\//, '')} ↗
+                </a>
+              )}
+            </Card>
+          ))}
+        </div>
+        <p className="mt-6 text-[13px] leading-[1.85] text-[#6b5d44] max-w-4xl">
+          注記：traith とは「AIと人の対話による変革の道」。TRAITH-Pで作る成果（As-Is＋To-Be＋ロードマップ）の総称です。／各アプリは情報をブラウザに保存します。PCとスマホで保存先は別になる点にご注意ください。
+        </p>
       </section>
 
       {/* Starting Point */}
@@ -227,7 +293,7 @@ const AIDiscoveryHome = () => {
           <Card>
             <h3 className="serif-jp text-lg font-semibold mb-3 text-[#c2410c]">第2回の主題</h3>
             <p className="text-[14px] leading-[1.85] text-[#3a3225]">
-              ここから先は、現在地の最適化ではなく、To-Be と GAP の設計に進みます。
+              AI人格づくりと、北極星（MTPと目標）の言語化に進みます。
             </p>
           </Card>
         </div>
@@ -236,7 +302,7 @@ const AIDiscoveryHome = () => {
       {/* Curriculum */}
       <section id="sessions" className="container mx-auto max-w-6xl px-5 py-16">
         <SectionEyebrow>Curriculum</SectionEyebrow>
-        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">第2回から第6回の流れ</h2>
+        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">各回の流れ</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {sessions.map((s) => (
             <Card key={s.number} className="flex flex-col">
@@ -270,26 +336,46 @@ const AIDiscoveryHome = () => {
         </div>
       </section>
 
-      {/* How We Work */}
+      {/* Tracks */}
       <section className="container mx-auto max-w-6xl px-5 py-16">
-        <SectionEyebrow>How We Work</SectionEyebrow>
-        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">
-          第3回以降は、毎回ミニPDCAを回します
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {pdca.map((p, i) => (
-            <div
-              key={p.label}
-              className="rounded-2xl p-6 bg-white/70 border border-white/80 backdrop-blur-sm relative overflow-hidden"
-            >
-              <div className="absolute top-3 right-4 serif-jp text-5xl font-semibold text-[#f5ecd8]">{i + 1}</div>
-              <div className="relative">
-                <div className="text-xs tracking-[0.2em] uppercase text-[#ea580c] font-semibold mb-2">{p.label}</div>
-                <div className="text-[14px] leading-[1.7] text-[#3a3225]">{p.body}</div>
-              </div>
-            </div>
+        <SectionEyebrow>Tracks</SectionEyebrow>
+        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">A系統 / B系統の違い</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {tracks.map((t) => (
+            <Card key={t.label}>
+              <h3 className="serif-jp text-xl font-semibold mb-3 text-[#c2410c]">{t.label}</h3>
+              <p className="text-[14px] leading-[1.85] text-[#3a3225]">{t.lean}</p>
+              <p className="text-[14px] leading-[1.85] text-[#3a3225]">{t.focus}</p>
+            </Card>
           ))}
         </div>
+        <p className="mt-6 text-[13px] leading-[1.85] text-[#6b5d44] max-w-3xl">
+          注記：どちらも土台は共通（As-Is → To-Be → ギャップ）。回ごとに重心が異なります。
+        </p>
+      </section>
+
+      {/* Event Info */}
+      <section className="container mx-auto max-w-6xl px-5 py-16">
+        <SectionEyebrow>Event</SectionEyebrow>
+        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">開催情報・申込</h2>
+        <Card>
+          <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+            {eventInfo.map((e) => (
+              <div key={e.k} className="flex gap-3 text-[14.5px] leading-[1.85]">
+                <dt className="text-[#c2410c] font-semibold shrink-0 w-16">{e.k}</dt>
+                <dd className="text-[#3a3225]">{e.v}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-7">
+            <a
+              href={FB_MESSENGER_URL}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#ea580c] to-[#c2410c] text-white font-medium shadow-lg shadow-[#ea580c]/30 hover:shadow-xl hover:-translate-y-0.5 transition-all"
+            >
+              次回に参加する →
+            </a>
+          </div>
+        </Card>
       </section>
 
       {/* Index */}
