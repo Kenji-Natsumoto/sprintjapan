@@ -23,7 +23,7 @@ import EffectivenessOverEfficiency from "./pages/EffectivenessOverEfficiency";
 import OrganizationOptimization from "./pages/OrganizationOptimization";
 import ToolIntegrationGuide from "./pages/ToolIntegrationGuide";
 import AIDiscoveryHome from "./pages/ai-discovery/Home";
-import { Session2, Session3, Session4, Session5, Session6 } from "./pages/ai-discovery/Worksheet";
+import { Session1, Session2, Session3, Session4, Session5, Session6 } from "./pages/ai-discovery/Worksheet";
 import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import ChatPopup from "./components/ChatPopup";
