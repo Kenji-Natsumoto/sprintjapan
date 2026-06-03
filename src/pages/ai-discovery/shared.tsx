@@ -60,10 +60,8 @@ export const HubFooter = () => (
   <footer className="border-t border-[#e8dfc9] mt-24">
     <div className="container mx-auto max-w-6xl px-5 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm text-[#6b5d44]">
       <div>
-        <div className="font-medium text-[#3a3225]">AIでやりたいこと発見コミュニティ v4.0 participant hub</div>
-        <div className="mt-1">
-          <a href="https://sprintjapan.net/" className="hover:text-[#ea580c] transition-colors">Sprint Japan</a>
-        </div>
+        <div className="font-medium text-[#3a3225]">AIでやりたいこと発見コミュニティ</div>
+        <div className="mt-1">共催：夏本健司 × 湯川鶴章 ／ <a href="https://sprintjapan.net/" className="hover:text-[#ea580c] transition-colors">SPRINT Japan</a></div>
       </div>
       <a href="#top" className="hover:text-[#ea580c] transition-colors">このページの先頭へ ↑</a>
     </div>
