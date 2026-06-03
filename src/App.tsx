@@ -67,6 +67,7 @@ const App = () => (
           <Route path="/ai-native-company/tool-integration-guide/" element={<ToolIntegrationGuide />} />
           <Route path="/ai-discovery-community" element={<AIDiscoveryHome />} />
           <Route path="/ai-discovery-community/" element={<AIDiscoveryHome />} />
+          <Route path="/ai-discovery-community/worksheets/session-1" element={<Session1 />} />
           <Route path="/ai-discovery-community/worksheets/session-2" element={<Session2 />} />
           <Route path="/ai-discovery-community/worksheets/session-3" element={<Session3 />} />
           <Route path="/ai-discovery-community/worksheets/session-4" element={<Session4 />} />
