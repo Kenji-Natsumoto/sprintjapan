@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { HubShell, HubHeader, HubFooter, StatusChip, usePageMeta } from './shared';
 
-const FB_MESSENGER_URL = '{{FB_MESSENGER_URL}}';
+const SLIDE_S1 = 'https://docs.google.com/presentation/d/144nki5XFti3qBUjxyW3MgIKfqWgwCCtq/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true';
+const SLIDE_S2 = 'https://docs.google.com/presentation/d/1PLRXl-DmiaHedDhGf8cNs8f9fngV6PiP/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true';
 
 const sessions = [
   {
@@ -63,19 +64,6 @@ const tools = [
   },
 ];
 
-const tracks = [
-  {
-    label: 'A系統',
-    lean: '寄り：生き方・To-Be発見',
-    focus: '主眼：北極星（MTPと目標）の言語化',
-  },
-  {
-    label: 'B系統',
-    lean: '寄り：Vibe Coding・実装',
-    focus: '主眼：作りたいものを形にする',
-  },
-];
-
 const eventInfo = [
   { k: '料金', v: '3,000円/回（税込・当日現金）' },
   { k: '定員', v: '6名限定' },
@@ -86,6 +74,7 @@ const eventInfo = [
 
 const indexCards: { status: '公開中' | '準備中'; title: string; body: string; href: string }[] = [
   { status: '公開中', title: 'カリキュラム概要', body: 'このページです。第2回から第6回までの全体像を確認できます。', href: '/ai-discovery-community' },
+  { status: '準備中', title: '第1回ワークシート', body: 'Soul Seasons Guide で As-Is（現在地）を可視化する詳細ページ。', href: '/ai-discovery-community/worksheets/session-1' },
   { status: '準備中', title: '第2回ワークシート', body: 'AI人格づくりと北極星（MTPと目標）の言語化の詳細ページ。', href: '/ai-discovery-community/worksheets/session-2' },
   { status: '準備中', title: '第3回ワークシート', body: 'AIマップでギャップを整理し、最初の一歩を選ぶ詳細ページ。', href: '/ai-discovery-community/worksheets/session-3' },
   { status: '準備中', title: '第4回ワークシート', body: '習慣ワークフロー実行と観察の詳細ページ。', href: '/ai-discovery-community/worksheets/session-4' },
@@ -94,8 +83,8 @@ const indexCards: { status: '公開中' | '準備中'; title: string; body: stri
 ];
 
 const faqs = [
-  { q: 'エンジニアでなくても大丈夫？', a: 'はい。コードを書くより「AIに何を任せるか」を学ぶ会です。操作は日本語で頼めばOK。' },
-  { q: 'Codex と Claude Code、どちらでも参加できる？', a: 'どちらでも同じように進められます（操作思想は共通）。デスクトップアプリとしてお使いください。' },
+  { q: 'エンジニアでなくても大丈夫？', a: 'はい。「AIに何を任せるか」を学ぶ会です。操作は日本語で頼めばOK。' },
+  { q: 'Codex と Claude Code、どちらでも参加できる？', a: 'どちらでも同じように進められます。デスクトップアプリとしてお使いください。' },
   { q: 'パソコンがなくても参加できる？', a: '思考パート（As-Is／北極星の言語化）はスマホでも可能です。ファイルとして固定する部分だけ、ペアでの代行や後日対応で補えます。' },
   { q: '準備は？', a: '第1回の As-Is（Soul Seasons Guide の結果）をお持ちください。' },
 ];
@@ -108,6 +97,25 @@ const Card = ({ children, className = '' }: { children: React.ReactNode; classNa
   <div className={`backdrop-blur-sm bg-white/70 border border-white/80 rounded-3xl p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${className}`}>
     {children}
   </div>
+);
+
+const SlideLink = ({ href, label, sub }: { href: string; label: string; sub: string }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group inline-flex items-center gap-4 p-4 rounded-2xl bg-white/70 border border-[#e8dfc9] hover:bg-white hover:border-[#ea580c]/40 hover:-translate-y-0.5 transition-all w-full"
+  >
+    <div className="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-[#fef3df] to-[#fde4cf] border border-[#e8dfc9] grid place-items-center text-2xl">
+      📊
+    </div>
+    <div className="flex-1 min-w-0">
+      <div className="text-[11px] tracking-[0.15em] uppercase text-[#ea580c] font-semibold">Google Slides ↗</div>
+      <div className="serif-jp text-[15px] font-semibold text-[#1a1409] mt-0.5">{label}</div>
+      <div className="text-[12.5px] text-[#6b5d44] mt-0.5 truncate">{sub}</div>
+    </div>
+    <span className="text-[#ea580c] text-xl group-hover:translate-x-1 transition-transform">→</span>
+  </a>
 );
 
 const AIDiscoveryHome = () => {
@@ -124,48 +132,25 @@ const AIDiscoveryHome = () => {
       <section className="container mx-auto max-w-6xl px-5 pt-14 md:pt-20 pb-16">
         <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 items-stretch">
           <div>
-            <SectionEyebrow>AIでやりたいこと発見コミュニティ A/B</SectionEyebrow>
+            <SectionEyebrow>AIでやりたいこと発見コミュニティ</SectionEyebrow>
             <h1 className="serif-jp text-4xl md:text-5xl lg:text-6xl leading-[1.25] font-semibold text-[#1a1409]">
               AIに、<br />自分の北極星を語らせる。
             </h1>
+            <p className="mt-4 text-[15px] text-[#6b5d44]">第2回以降の進め方を、この1ページで。</p>
             <p className="mt-6 text-[17px] leading-[1.9] text-[#3a3225] max-w-2xl">
-              第2回以降の進め方を、この1ページで。第1回で可視化した「現在地（As-Is）」を土台に、自分だけの
+              第1回で可視化した「現在地（As-Is）」を土台に、自分だけの
               <strong className="text-[#c2410c] font-semibold">北極星（＝MTPと目標）を言語化</strong>
               し、それを<strong className="text-[#c2410c] font-semibold">デスクトップアプリ（Codex / Claude Code）</strong>
               で自分のパソコンに“ファイルとして”残します。AIを「借りた頭」で終わらせず、自分の隣に置く秘書・相棒にしていくコミュニティです。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={FB_MESSENGER_URL}
+                href="#sessions"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#ea580c] to-[#c2410c] text-white font-medium shadow-lg shadow-[#ea580c]/30 hover:shadow-xl hover:-translate-y-0.5 transition-all"
               >
-                次回に参加する →
-              </a>
-              <a
-                href={FB_MESSENGER_URL}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 border border-[#e8dfc9] text-[#3a3225] font-medium hover:bg-white transition-all"
-              >
-                内容を相談する
+                カリキュラムを見る →
               </a>
             </div>
-
-            {/* Session 2 slides link */}
-            <a
-              href="https://docs.google.com/presentation/d/1PLRXl-DmiaHedDhGf8cNs8f9fngV6PiP/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 group inline-flex items-center gap-4 p-4 rounded-2xl bg-white/70 border border-[#e8dfc9] hover:bg-white hover:border-[#ea580c]/40 hover:-translate-y-0.5 transition-all max-w-xl"
-            >
-              <div className="w-14 h-14 shrink-0 rounded-xl bg-gradient-to-br from-[#fef3df] to-[#fde4cf] border border-[#e8dfc9] grid place-items-center text-2xl">
-                📊
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="text-[11px] tracking-[0.15em] uppercase text-[#ea580c] font-semibold">Google Slides ↗</div>
-                <div className="serif-jp text-[15px] font-semibold text-[#1a1409] mt-0.5">第2回(6/5)のスライドを見る</div>
-                <div className="text-[12.5px] text-[#6b5d44] mt-0.5 truncate">当日の流れ：AI人格づくり × 北極星の言語化</div>
-              </div>
-              <span className="text-[#ea580c] text-xl group-hover:translate-x-1 transition-transform">→</span>
-            </a>
           </div>
 
           {/* Dark right panel */}
@@ -178,9 +163,9 @@ const AIDiscoveryHome = () => {
               <ul className="space-y-3.5 text-[14px]">
                 {[
                   '第1回は終了済み',
-                  'A/B は同一カリキュラム（重心が異なる）',
                   '第2回で AI人格 と 北極星 を言語化',
                   '第3回以降は GAP→PDCA で改善',
+                  '全6回・3ヶ月で完結',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="text-[#d4a84c] mt-0.5">◆</span>
@@ -265,6 +250,19 @@ const AIDiscoveryHome = () => {
         </p>
       </section>
 
+      {/* Slides */}
+      <section className="container mx-auto max-w-6xl px-5 py-16">
+        <SectionEyebrow>Slides</SectionEyebrow>
+        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-4 text-[#1a1409]">当日のスライド</h2>
+        <p className="text-[15px] leading-[1.9] text-[#3a3225] mb-8 max-w-3xl">
+          当日の流れ（第2回＝AI人格づくり × 北極星の言語化）をスライドで確認できます。
+        </p>
+        <div className="grid md:grid-cols-2 gap-5">
+          <SlideLink href={SLIDE_S1} label="第1回のスライドを見る" sub="As-Is（現在地）の可視化" />
+          <SlideLink href={SLIDE_S2} label="第2回のスライドを見る" sub="AI人格づくり × 北極星の言語化" />
+        </div>
+      </section>
+
       {/* Starting Point */}
       <section className="container mx-auto max-w-6xl px-5 py-16">
         <SectionEyebrow>Starting Point</SectionEyebrow>
@@ -302,7 +300,7 @@ const AIDiscoveryHome = () => {
       {/* Curriculum */}
       <section id="sessions" className="container mx-auto max-w-6xl px-5 py-16">
         <SectionEyebrow>Curriculum</SectionEyebrow>
-        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">各回の流れ</h2>
+        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">各回の流れ（第2回〜第6回｜PDCAで90日着地）</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {sessions.map((s) => (
             <Card key={s.number} className="flex flex-col">
@@ -336,28 +334,10 @@ const AIDiscoveryHome = () => {
         </div>
       </section>
 
-      {/* Tracks */}
-      <section className="container mx-auto max-w-6xl px-5 py-16">
-        <SectionEyebrow>Tracks</SectionEyebrow>
-        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">A系統 / B系統の違い</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {tracks.map((t) => (
-            <Card key={t.label}>
-              <h3 className="serif-jp text-xl font-semibold mb-3 text-[#c2410c]">{t.label}</h3>
-              <p className="text-[14px] leading-[1.85] text-[#3a3225]">{t.lean}</p>
-              <p className="text-[14px] leading-[1.85] text-[#3a3225]">{t.focus}</p>
-            </Card>
-          ))}
-        </div>
-        <p className="mt-6 text-[13px] leading-[1.85] text-[#6b5d44] max-w-3xl">
-          注記：どちらも土台は共通（As-Is → To-Be → ギャップ）。回ごとに重心が異なります。
-        </p>
-      </section>
-
       {/* Event Info */}
       <section className="container mx-auto max-w-6xl px-5 py-16">
         <SectionEyebrow>Event</SectionEyebrow>
-        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">開催情報・申込</h2>
+        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">開催情報</h2>
         <Card>
           <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
             {eventInfo.map((e) => (
@@ -367,14 +347,7 @@ const AIDiscoveryHome = () => {
               </div>
             ))}
           </dl>
-          <div className="mt-7">
-            <a
-              href={FB_MESSENGER_URL}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#ea580c] to-[#c2410c] text-white font-medium shadow-lg shadow-[#ea580c]/30 hover:shadow-xl hover:-translate-y-0.5 transition-all"
-            >
-              次回に参加する →
-            </a>
-          </div>
+          <p className="mt-7 text-[12.5px] text-[#6b5d44]">※次回の参加募集はMessengerグループ内で行います。</p>
         </Card>
       </section>
 
