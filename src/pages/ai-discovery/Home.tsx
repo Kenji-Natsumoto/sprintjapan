@@ -155,7 +155,7 @@ const AIDiscoveryHome = () => {
             <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#ea580c]/20 blur-3xl" />
             <div className="relative">
               <div className="text-[11px] tracking-wider uppercase text-[#d4a84c]">最終更新</div>
-              <div className="text-lg font-medium mt-1">2026年6月3日</div>
+              <div className="text-lg font-medium mt-1">2026年6月29日</div>
               <div className="my-6 h-px bg-white/10" />
               <ul className="space-y-3.5 text-[14px]">
                 {[
