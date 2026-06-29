@@ -187,6 +187,7 @@ const AIDiscoveryHome = () => {
 
 
       {/* Slides */}
+      <section id="slides" className="container mx-auto max-w-6xl px-5 py-16">
       <section className="container mx-auto max-w-6xl px-5 py-16">
         <SectionEyebrow>Slides</SectionEyebrow>
         <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-4 text-[#1a1409]">当日のスライド</h2>

@@ -49,7 +49,7 @@ export const HubHeader = ({ subtitle = 'Participant Guide' }: { subtitle?: strin
       <nav className="hidden md:flex items-center gap-7 text-sm text-[#3a3225]">
         <a href="#overview" className="hover:text-[#ea580c] transition-colors">概要</a>
         <a href="#sessions" className="hover:text-[#ea580c] transition-colors">各回の流れ</a>
-        <a href="#index" className="hover:text-[#ea580c] transition-colors">インデックス</a>
+        <a href="#slides" className="hover:text-[#ea580c] transition-colors">当日のスライド</a>
         <a href="#faq" className="hover:text-[#ea580c] transition-colors">FAQ</a>
       </nav>
     </div>
