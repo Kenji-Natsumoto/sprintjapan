@@ -134,7 +134,7 @@ const AIDiscoveryHome = () => {
           <div>
             <SectionEyebrow>AIでやりたいこと発見コミュニティ</SectionEyebrow>
             <h1 className="serif-jp text-4xl md:text-5xl lg:text-6xl leading-[1.25] font-semibold text-[#1a1409]">
-              AIに、<br />自分の北極星を語らせる。
+              AIに、毎日を回す<br />“ループ”を設計させる。
             </h1>
             <p className="mt-4 text-[15px] text-[#6b5d44]">第2回以降の進め方を、この1ページで。</p>
             <p className="mt-6 text-[17px] leading-[1.9] text-[#3a3225] max-w-2xl">
