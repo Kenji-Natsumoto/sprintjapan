@@ -138,10 +138,7 @@ const AIDiscoveryHome = () => {
             </h1>
             <p className="mt-4 text-[15px] text-[#6b5d44]">第2回以降の進め方を、この1ページで。</p>
             <p className="mt-6 text-[17px] leading-[1.9] text-[#3a3225] max-w-2xl">
-              第1回で可視化した「現在地（As-Is）」を土台に、自分だけの
-              <strong className="text-[#c2410c] font-semibold">北極星（＝MTPと目標）を言語化</strong>
-              し、それを<strong className="text-[#c2410c] font-semibold">デスクトップアプリ（Codex / Claude Code）</strong>
-              で自分のパソコンに“ファイルとして”残します。AIを「借りた頭」で終わらせず、自分の隣に置く秘書・相棒にしていくコミュニティです。
+              第1回の現在地（As-Is）、第2回の北極星（To-Be＝MTPと目標）とギャップ（ロードマップ／マイルストーン）。それらを土台に、第3回では毎日を前へ進める“最初のループ”を、自分の手で設計します（ループエンジニアリング）。型は2つ——①記事投稿ループ（マーケ／顧客サポートのコンテンツ発信を自動で回す）か、②モーニング・ブリーフ／ナイト・デブリーフ（マイルストーンに向けた日々のタスク管理）。AIを「借りた頭」で終わらせず、毎日となりで回る秘書・相棒にしていくコミュニティです。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
