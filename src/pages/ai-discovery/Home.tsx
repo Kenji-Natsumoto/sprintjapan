@@ -43,26 +43,6 @@ const sessions = [
   },
 ];
 
-const tools = [
-  {
-    name: 'Soul Seasons Guide',
-    role: 'As-Is（現在地）を可視化',
-    output: '現在地の言語化（統合プロンプト）',
-    link: 'https://soulseasonsguide.lovable.app',
-  },
-  {
-    name: 'TRAITH-P',
-    role: '北極星（MTPと目標）を言語化',
-    output: 'To-Be／MTP／SMART目標 →『traith.md』へ',
-    link: 'https://traith-p.lovable.app',
-  },
-  {
-    name: 'AIマップ（第3回〜）',
-    role: 'ギャップを「緊急度×重要度＋AIでどう解決するか」で整理',
-    output: '最初の一歩／90日計画の起点',
-    link: '',
-  },
-];
 
 const eventInfo = [
   { k: '料金', v: '3,000円/回（税込・当日現金）' },
