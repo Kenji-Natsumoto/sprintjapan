@@ -43,31 +43,11 @@ const sessions = [
   },
 ];
 
-const tools = [
-  {
-    name: 'Soul Seasons Guide',
-    role: 'As-Is（現在地）を可視化',
-    output: '現在地の言語化（統合プロンプト）',
-    link: 'https://soulseasonsguide.lovable.app',
-  },
-  {
-    name: 'TRAITH-P',
-    role: '北極星（MTPと目標）を言語化',
-    output: 'To-Be／MTP／SMART目標 →『traith.md』へ',
-    link: 'https://traith-p.lovable.app',
-  },
-  {
-    name: 'AIマップ（第3回〜）',
-    role: 'ギャップを「緊急度×重要度＋AIでどう解決するか」で整理',
-    output: '最初の一歩／90日計画の起点',
-    link: '',
-  },
-];
 
 const eventInfo = [
   { k: '料金', v: '3,000円/回（税込・当日現金）' },
   { k: '定員', v: '6名限定' },
-  { k: '頻度', v: '月次開催（全6回・3ヶ月で完結／第一期）' },
+  { k: '頻度', v: '月一回開催（全6回・10月まで）' },
   { k: '対象', v: '非エンジニア・AI初心者〜中級者' },
   { k: '共催', v: '夏本健司 × 湯川鶴章' },
 ];
@@ -214,37 +194,6 @@ const AIDiscoveryHome = () => {
         </p>
       </section>
 
-      {/* Tools */}
-      <section className="container mx-auto max-w-6xl px-5 py-16">
-        <SectionEyebrow>Tools</SectionEyebrow>
-        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">使う道具（3つのアプリ）</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {tools.map((t) => (
-            <Card key={t.name}>
-              <h3 className="serif-jp text-lg font-semibold mb-3 text-[#c2410c]">{t.name}</h3>
-              <p className="text-[14px] leading-[1.85] text-[#3a3225]">
-                <span className="text-[#1a1409] font-semibold">役割：</span>{t.role}
-              </p>
-              <p className="mt-2 text-[14px] leading-[1.85] text-[#3a3225]">
-                <span className="text-[#1a1409] font-semibold">出力：</span>{t.output}
-              </p>
-              {t.link && (
-                <a
-                  href={t.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-4 text-sm text-[#ea580c] hover:underline break-all"
-                >
-                  {t.link.replace(/^https?:\/\//, '')} ↗
-                </a>
-              )}
-            </Card>
-          ))}
-        </div>
-        <p className="mt-6 text-[13px] leading-[1.85] text-[#6b5d44] max-w-4xl">
-          注記：traith とは「AIと人の対話による変革の道」。TRAITH-Pで作る成果（As-Is＋To-Be＋ロードマップ）の総称です。／各アプリは情報をブラウザに保存します。PCとスマホで保存先は別になる点にご注意ください。
-        </p>
-      </section>
 
       {/* Slides */}
       <section className="container mx-auto max-w-6xl px-5 py-16">
