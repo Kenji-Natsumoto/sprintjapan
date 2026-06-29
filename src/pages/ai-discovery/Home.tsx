@@ -105,9 +105,9 @@ const AIDiscoveryHome = () => {
           <div>
             <SectionEyebrow>AIでやりたいこと発見コミュニティ</SectionEyebrow>
             <h1 className="serif-jp text-4xl md:text-5xl lg:text-6xl leading-[1.25] font-semibold text-[#1a1409]">
-              AIに、毎日を回す<br />“ループ”を設計させる。
+              AIに、毎日回す<br />“ループ”を設計させる。
             </h1>
-            <p className="mt-4 text-[15px] text-[#6b5d44]">第3回目で学ぶこと</p>
+            <p className="mt-4 text-[15px] text-[#6b5d44]">第3回目</p>
             <p className="mt-6 text-[17px] leading-[1.9] text-[#3a3225] max-w-2xl">
               第1回の現在地（As-Is）、第2回の北極星（To-Be＝MTPと目標）とギャップ（ロードマップ／マイルストーン）。それらを土台に、第3回では毎日を前へ進める“最初のループ”を、自分の手で設計します（ループエンジニアリング）。型は2つ——①記事投稿ループ（マーケ／顧客サポートのコンテンツ発信を自動で回す）か、②モーニング・ブリーフ／ナイト・デブリーフ（マイルストーンに向けた日々のタスク管理）。AIを「借りた頭」で終わらせず、毎日となりで回る秘書・相棒にしていくコミュニティです。
             </p>
