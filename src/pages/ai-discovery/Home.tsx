@@ -159,10 +159,9 @@ const AIDiscoveryHome = () => {
               <div className="my-6 h-px bg-white/10" />
               <ul className="space-y-3.5 text-[14px]">
                 {[
-                  '第1回は終了済み',
-                  '第2回で 北極星（MTPと目標）を言語化',
-                  '第3回で 最初のループ（ループエンジニアリング）を設計',
-                  '第4回以降は PDCA で90日着地',
+                  '第1回と第2回は終了済み',
+                  '第3回では 最初のループ（ループエンジニアリング）を設計',
+                  '第4回以降はループの改善と成果創出',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="text-[#d4a84c] mt-0.5">◆</span>
