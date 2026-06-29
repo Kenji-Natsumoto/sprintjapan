@@ -52,15 +52,6 @@ const eventInfo = [
   { k: '共催', v: '夏本健司 × 湯川鶴章' },
 ];
 
-const indexCards: { status: '公開中' | '準備中'; title: string; body: string; href: string }[] = [
-  { status: '公開中', title: 'カリキュラム概要', body: 'このページです。第2回から第6回までの全体像を確認できます。', href: '/ai-discovery-community' },
-  { status: '準備中', title: '第1回ワークシート', body: 'Soul Seasons Guide で As-Is（現在地）を可視化する詳細ページ。', href: '/ai-discovery-community/worksheets/session-1' },
-  { status: '準備中', title: '第2回ワークシート', body: 'AI人格づくりと北極星（MTPと目標）の言語化の詳細ページ。', href: '/ai-discovery-community/worksheets/session-2' },
-  { status: '準備中', title: '第3回ワークシート', body: 'AIマップでギャップを整理し、最初の一歩を選ぶ詳細ページ。', href: '/ai-discovery-community/worksheets/session-3' },
-  { status: '準備中', title: '第4回ワークシート', body: '習慣ワークフロー実行と観察の詳細ページ。', href: '/ai-discovery-community/worksheets/session-4' },
-  { status: '準備中', title: '第5回ワークシート', body: '検証と自動化候補の整理ページ。', href: '/ai-discovery-community/worksheets/session-5' },
-  { status: '準備中', title: '第6回ワークシート', body: '定着と90日運用計画の詳細ページ。', href: '/ai-discovery-community/worksheets/session-6' },
-];
 
 const faqs = [
   { q: 'エンジニアでなくても大丈夫？', a: 'はい。「AIに何を任せるか」を学ぶ会です。操作は日本語で頼めばOK。' },
@@ -296,27 +287,6 @@ const AIDiscoveryHome = () => {
         </Card>
       </section>
 
-      {/* Index */}
-      <section id="index" className="container mx-auto max-w-6xl px-5 py-16">
-        <SectionEyebrow>Index</SectionEyebrow>
-        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">参加者向けインデックス</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {indexCards.map((c) => (
-            <Link
-              key={c.href + c.title}
-              to={c.href}
-              className="group rounded-3xl p-6 bg-white/70 border border-white/80 backdrop-blur-sm hover:bg-white hover:-translate-y-1 hover:shadow-xl transition-all"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <StatusChip status={c.status} />
-                <span className="text-[#ea580c] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-              </div>
-              <h3 className="serif-jp text-lg font-semibold mb-2 text-[#1a1409]">{c.title}</h3>
-              <p className="text-[13.5px] leading-[1.8] text-[#3a3225]">{c.body}</p>
-            </Link>
-          ))}
-        </div>
-      </section>
 
       {/* FAQ */}
       <section id="faq" className="container mx-auto max-w-3xl px-5 py-16">
