@@ -18,7 +18,7 @@ const sessions = [
     phase: 'Loop',
     title: 'ループを設計する（ループエンジニアリング）',
     body: 'As-Is・To-Be・ギャップ（ロードマップ／マイルストーン）を土台に、毎日を回す“最初のループ”を設計。①記事投稿ループ（マーケ／顧客サポート）か、②モーニング・ブリーフ／ナイト・デブリーフ（日々のタスク管理）から1つを選ぶ。',
-    list: ['持ち帰り: AIマップ', '持ち帰り: 最初の一歩／最小ワークフロー'],
+    list: ['持ち帰り: ループ設計（①記事投稿ループ または ②ブリーフ）', '持ち帰り: 最小ワークフロー'],
   },
   {
     number: '04',
@@ -155,14 +155,14 @@ const AIDiscoveryHome = () => {
             <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#ea580c]/20 blur-3xl" />
             <div className="relative">
               <div className="text-[11px] tracking-wider uppercase text-[#d4a84c]">最終更新</div>
-              <div className="text-lg font-medium mt-1">2026年6月3日</div>
+              <div className="text-lg font-medium mt-1">2026年6月29日</div>
               <div className="my-6 h-px bg-white/10" />
               <ul className="space-y-3.5 text-[14px]">
                 {[
                   '第1回は終了済み',
-                  '第2回で AI人格 と 北極星 を言語化',
-                  '第3回以降は GAP→PDCA で改善',
-                  '全6回・3ヶ月で完結',
+                  '第2回で 北極星（MTPと目標）を言語化',
+                  '第3回で 最初のループ（ループエンジニアリング）を設計',
+                  '第4回以降は PDCA で90日着地',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="text-[#d4a84c] mt-0.5">◆</span>
