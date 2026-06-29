@@ -15,9 +15,9 @@ const sessions = [
   },
   {
     number: '03',
-    phase: 'GAP / Plan',
-    title: 'GAP（AIマップ）→ Plan',
-    body: 'AIマップでギャップを「緊急度×重要度＋AIでどう解決するか」に整理し、最初の一歩を1つ選択。選んだ一歩を「動く計画（最小ワークフロー）」へ設計します。',
+    phase: 'Loop',
+    title: 'ループを設計する（ループエンジニアリング）',
+    body: 'As-Is・To-Be・ギャップ（ロードマップ／マイルストーン）を土台に、毎日を回す“最初のループ”を設計。①記事投稿ループ（マーケ／顧客サポート）か、②モーニング・ブリーフ／ナイト・デブリーフ（日々のタスク管理）から1つを選ぶ。',
     list: ['持ち帰り: AIマップ', '持ち帰り: 最初の一歩／最小ワークフロー'],
   },
   {
@@ -134,14 +134,11 @@ const AIDiscoveryHome = () => {
           <div>
             <SectionEyebrow>AIでやりたいこと発見コミュニティ</SectionEyebrow>
             <h1 className="serif-jp text-4xl md:text-5xl lg:text-6xl leading-[1.25] font-semibold text-[#1a1409]">
-              AIに、<br />自分の北極星を語らせる。
+              AIに、毎日を回す<br />“ループ”を設計させる。
             </h1>
             <p className="mt-4 text-[15px] text-[#6b5d44]">第2回以降の進め方を、この1ページで。</p>
             <p className="mt-6 text-[17px] leading-[1.9] text-[#3a3225] max-w-2xl">
-              第1回で可視化した「現在地（As-Is）」を土台に、自分だけの
-              <strong className="text-[#c2410c] font-semibold">北極星（＝MTPと目標）を言語化</strong>
-              し、それを<strong className="text-[#c2410c] font-semibold">デスクトップアプリ（Codex / Claude Code）</strong>
-              で自分のパソコンに“ファイルとして”残します。AIを「借りた頭」で終わらせず、自分の隣に置く秘書・相棒にしていくコミュニティです。
+              第1回の現在地（As-Is）、第2回の北極星（To-Be＝MTPと目標）とギャップ（ロードマップ／マイルストーン）。それらを土台に、第3回では毎日を前へ進める“最初のループ”を、自分の手で設計します（ループエンジニアリング）。型は2つ——①記事投稿ループ（マーケ／顧客サポートのコンテンツ発信を自動で回す）か、②モーニング・ブリーフ／ナイト・デブリーフ（マイルストーンに向けた日々のタスク管理）。AIを「借りた頭」で終わらせず、毎日となりで回る秘書・相棒にしていくコミュニティです。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
