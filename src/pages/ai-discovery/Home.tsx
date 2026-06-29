@@ -287,27 +287,6 @@ const AIDiscoveryHome = () => {
         </Card>
       </section>
 
-      {/* Index */}
-      <section id="index" className="container mx-auto max-w-6xl px-5 py-16">
-        <SectionEyebrow>Index</SectionEyebrow>
-        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">参加者向けインデックス</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {indexCards.map((c) => (
-            <Link
-              key={c.href + c.title}
-              to={c.href}
-              className="group rounded-3xl p-6 bg-white/70 border border-white/80 backdrop-blur-sm hover:bg-white hover:-translate-y-1 hover:shadow-xl transition-all"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <StatusChip status={c.status} />
-                <span className="text-[#ea580c] opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-              </div>
-              <h3 className="serif-jp text-lg font-semibold mb-2 text-[#1a1409]">{c.title}</h3>
-              <p className="text-[13.5px] leading-[1.8] text-[#3a3225]">{c.body}</p>
-            </Link>
-          ))}
-        </div>
-      </section>
 
       {/* FAQ */}
       <section id="faq" className="container mx-auto max-w-3xl px-5 py-16">
