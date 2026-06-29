@@ -194,37 +194,6 @@ const AIDiscoveryHome = () => {
         </p>
       </section>
 
-      {/* Tools */}
-      <section className="container mx-auto max-w-6xl px-5 py-16">
-        <SectionEyebrow>Tools</SectionEyebrow>
-        <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-10 text-[#1a1409]">使う道具（3つのアプリ）</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {tools.map((t) => (
-            <Card key={t.name}>
-              <h3 className="serif-jp text-lg font-semibold mb-3 text-[#c2410c]">{t.name}</h3>
-              <p className="text-[14px] leading-[1.85] text-[#3a3225]">
-                <span className="text-[#1a1409] font-semibold">役割：</span>{t.role}
-              </p>
-              <p className="mt-2 text-[14px] leading-[1.85] text-[#3a3225]">
-                <span className="text-[#1a1409] font-semibold">出力：</span>{t.output}
-              </p>
-              {t.link && (
-                <a
-                  href={t.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-4 text-sm text-[#ea580c] hover:underline break-all"
-                >
-                  {t.link.replace(/^https?:\/\//, '')} ↗
-                </a>
-              )}
-            </Card>
-          ))}
-        </div>
-        <p className="mt-6 text-[13px] leading-[1.85] text-[#6b5d44] max-w-4xl">
-          注記：traith とは「AIと人の対話による変革の道」。TRAITH-Pで作る成果（As-Is＋To-Be＋ロードマップ）の総称です。／各アプリは情報をブラウザに保存します。PCとスマホで保存先は別になる点にご注意ください。
-        </p>
-      </section>
 
       {/* Slides */}
       <section className="container mx-auto max-w-6xl px-5 py-16">
