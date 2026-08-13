@@ -1,204 +1,193 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Rocket } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/prosprint-lp.png';
-import smatstaImage from '@/assets/smatsta-eyecatch.png';
-import transformxScreenshot from '@/assets/news-traith-app.png';
-import solvistaScreenshot from '@/assets/solvista-screenshot.png';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import logo from '@/assets/spj-logo.png';
+import './home.css';
+
+const THEME_KEY = 'sj-theme';
 
 const Home = () => {
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
+  useEffect(() => {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === 'light' || saved === 'dark') setTheme(saved);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    return () => {
+      document.documentElement.removeAttribute('data-theme');
+    };
+  }, [theme]);
+
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    localStorage.setItem(THEME_KEY, next);
+  };
+
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      
-      {/* Hero Section - 超バイブコーディング講座 */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 mesh-gradient opacity-30" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
-              <Rocket className="w-4 h-4" />
-              <span className="text-sm font-medium">全10回の実践講座</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              未来を創る！
-              <br />
-              <span className="gradient-text">超バイブコーディング講座</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
-              アイデアを形に。プロダクトを収益に。
-              <br />
-              <span className="text-primary font-semibold">あなたの未来を、自分の手で創り出す。</span>
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <div className="glass-card px-6 py-3">
-                <span className="text-2xl font-bold text-primary">10</span>
-                <span className="text-foreground/70 ml-2">回の実践講座</span>
-              </div>
-              <div className="glass-card px-6 py-3">
-                <span className="text-2xl font-bold text-primary">0→1</span>
-                <span className="text-foreground/70 ml-2">プロダクト開発</span>
-              </div>
-              <div className="glass-card px-6 py-3">
-                <span className="text-2xl font-bold text-primary">収益化</span>
-                <span className="text-foreground/70 ml-2">まで完全サポート</span>
-              </div>
-            </div>
+    <div className="sj-home">
+      <header>
+        <div className="wrap nav">
+          <Link to="/">
+            <img src={logo} alt="スプリントジャパン株式会社" />
+          </Link>
+          <ul>
+            <li>
+              <button className="theme-btn" onClick={toggleTheme} aria-label="テーマ切替">
+                {theme === 'dark' ? '○ ライト' : '○ ダーク'}
+              </button>
+            </li>
+            <li><Link to="/company">会社情報</Link></li>
+            <li><Link to="/contact" className="cta">お問い合わせ</Link></li>
+          </ul>
+        </div>
+      </header>
 
-            <Button variant="hero" size="lg" asChild className="group">
-              <Link to="/super-vibe-coding">
-                講座の詳細を見る
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-              </Link>
-            </Button>
+      <div className="hero">
+        <div className="wrap">
+          <span className="label">AI-Native Company / Forward Deployed Engineering</span>
+          <h1>企業に、考えるAIを。<br />現場に、動くAIを。</h1>
+          <p>
+            SPRINT Japanは、AIの「導入」で終わらせず、経営の判断と現場の業務にAIを実装する会社です。経営者への1対1伴走から、現場に入り込むFDE（Forward Deployed Engineering）まで——動く仕組みになるまで並走します。
+          </p>
+          <div className="btns">
+            <a href="#services" className="btn btn-primary">サービスを見る</a>
+            <Link to="/contact" className="btn btn-ghost">お問い合わせ</Link>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Second Section - 会社紹介 */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 mesh-gradient" />
-        <div 
-          className="absolute inset-0 z-0 opacity-40"
-          style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(10, 11, 14, 0.85), rgba(10, 11, 14, 0.95)), url(${heroImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        
-        {/* Floating elements */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
-        
-        <div className="container mx-auto px-4 z-10 max-w-7xl relative">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-block mb-6 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 animate-fade-in">
-              <span className="text-sm font-medium text-primary">AI DRIVEN COMPANY</span>
+      <div className="stats">
+        <div className="wrap">
+          <div className="stat">
+            <b>9<small>年</small></b>
+            <span>事業開発・組織開発の現場実績</span>
+          </div>
+          <div className="stat">
+            <b>60<small>社以上</small></b>
+            <span>国内企業への実装支援</span>
+          </div>
+          <div className="stat">
+            <b>5<small>大学以上</small></b>
+            <span>教育・研究機関での実績</span>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="label">How We Work</span>
+            <h2>AIを「導入」ではなく、「実装」する。</h2>
+          </div>
+          <div className="steps">
+            <div className="step">
+              <span className="no">01 / UNDERSTAND</span>
+              <h3>現在地を解像する</h3>
+              <p>業務の要件だけでなく、判断の傾向や組織の暗黙知までを構造化し、AIが働くための土台をつくります。</p>
             </div>
-            
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-up leading-tight" style={{ animationDelay: '0.1s' }}>
-              9年の事業開発の叡智を<br />
-              <span className="gradient-text">AIプラットフォーム化。</span>
-            </h2>
-            
-            <p className="text-2xl md:text-3xl mb-6 font-semibold animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-              <span className="gradient-text">3つのAIプラットフォームで市場を再定義します。</span>
-            </p>
-            
-            <p className="text-lg md:text-xl text-foreground/70 mb-14 max-w-3xl mx-auto animate-fade-in-up leading-relaxed" style={{ animationDelay: '0.3s' }}>
-              2025年11月、スプリントジャパンは研修会社から「事業創造のプラットフォーム運営会社」へ変わりました。
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-scale-in" style={{ animationDelay: '0.4s' }}>
-              <Button variant="hero" size="lg" asChild className="group">
-                <Link to="/company#why-change-model">
-                  なぜ今ビジネスモデルを変えるのか？
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                </Link>
-              </Button>
-              <Button variant="accent-solid" size="lg" asChild className="group">
-                <Link to="/solutions">
-                  勝算はあるか？
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                </Link>
-              </Button>
+            <div className="step">
+              <span className="no">02 / ALIGN</span>
+              <h3>目的と意思決定をつなぐ</h3>
+              <p>会社の目的から目標・判断・責任までを一本の線でつなぎ、AIが出す案に人が責任を持てる形に整えます。</p>
+            </div>
+            <div className="step">
+              <span className="no">03 / OPERATE</span>
+              <h3>現場で動くまで実装する</h3>
+              <p>資料で終わらせず、業務フロー・AIエージェント・データをつないで現場で動く仕組みにし、改善まで伴走します。</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* AI Platforms Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 mesh-gradient opacity-30" />
-        
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold gradient-text">
-              すべての叡智を3つのモデルに集約
-            </h2>
+      <section id="services">
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="label">Services</span>
+            <h2>いま提供している、3つのこと。</h2>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[5px] auto-rows-[280px]">
-            {/* Smatsta - Large Card */}
-            <div 
-              className="md:col-span-2 md:row-span-2 group relative overflow-hidden animate-fade-in hover-lift"
-              style={{ animationDelay: '0s' }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 via-teal-500/30 to-cyan-500/30" />
-              <img 
-                src={smatstaImage} 
-                alt="Smatsta Platform" 
-                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-              
-              <div className="relative h-full flex flex-col justify-end p-10">
-                <h3 className="text-5xl md:text-6xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
-                  SMATSTA<span className="text-2xl md:text-3xl ml-2">（スマトスタ）</span>
-                </h3>
-                <p className="text-xl md:text-2xl text-foreground/70 mt-4">
-                  事業創造AIプラットフォーム
-                </p>
-              </div>
+          <div className="cards">
+            <div className="card">
+              <span className="no">01 / Enterprise AI FDE</span>
+              <h3>企業のAI実装（FDE）</h3>
+              <p>経営と現場のあいだに入り込み、業務にAIエージェントを組み込む伴走型エンジニアリング。課題の定義から実装・運用・改善まで、同じチームが並走します。</p>
+              <dl>
+                <div><dt>対象</dt><dd>企業（チームでAIを使いたい会社）</dd></div>
+                <div><dt>形</dt><dd>現場伴走・月額</dd></div>
+              </dl>
             </div>
-
-            {/* Traith - Medium Card */}
-            <div 
-              className="md:row-span-1 group relative overflow-hidden animate-fade-in hover-lift"
-              style={{ animationDelay: '0.1s' }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 via-violet-500/30 to-fuchsia-500/30" />
-              <img 
-                src={transformxScreenshot} 
-                alt="Traith Platform" 
-                className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-              
-              <div className="relative h-full flex flex-col justify-end p-8">
-                <h3 className="text-4xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
-                  TRAITH<span className="text-xl md:text-2xl ml-2">（トライス）</span>
-                </h3>
-                <p className="text-lg md:text-xl text-foreground/70 mt-2">
-                  組織の理念を変革するAIプラットフォーム
-                </p>
-              </div>
+            <div className="card">
+              <span className="no">02 / Executive AI Coaching</span>
+              <h3>経営者向けAIコーチング</h3>
+              <p>経営者本人が「事業を動かすAIチーム」を持てるようになる、1対1の伴走。会社全体へ広げる前の、最初の一歩をここから始めます。</p>
+              <dl>
+                <div><dt>対象</dt><dd>経営者個人</dd></div>
+                <div><dt>形</dt><dd>1対1・月次伴走</dd></div>
+              </dl>
             </div>
-
-            {/* Solvista - Medium Card */}
-            <div 
-              className="md:row-span-1 group relative overflow-hidden animate-fade-in hover-lift"
-              style={{ animationDelay: '0.2s' }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-indigo-500/30 to-purple-500/30" />
-              <img 
-                src={solvistaScreenshot} 
-                alt="Solvista Platform" 
-                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-              
-              <div className="relative h-full flex flex-col justify-end p-8">
-                <h3 className="text-3xl md:text-4xl font-bold text-foreground group-hover:scale-105 transition-transform duration-300">
-                  SOLVISTA<span className="text-xl md:text-2xl ml-2">（ソルヴィスタ）</span>
-                </h3>
-                <p className="text-lg md:text-xl text-foreground/70 mt-2">
-                  社会課題解決AIプラットフォーム
-                </p>
-              </div>
+            <div className="card">
+              <span className="no">03 / AI Education &amp; Community</span>
+              <h3>AI実践教育・コミュニティ</h3>
+              <p>湯川塾分科会をはじめ、経営とAIの実践知を学び合う場を運営しています。学びから実装へつながる入口です。</p>
+              <dl>
+                <div><dt>対象</dt><dd>経営とAIを学びたい方</dd></div>
+                <div><dt>形</dt><dd>分科会・コミュニティ</dd></div>
+              </dl>
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
+      <section className="signity">
+        <div className="wrap">
+          <span className="label">Powered by Signity</span>
+          <h2>自分たちが、最初のユーザーケース。</h2>
+          <p>私たちは、AI経営戦略OS「Signity」のユーザーケース#1です。自社の経営そのものをAIネイティブに運営し、その毎日の実運用から得た実装知を、お客様の現場へ届けています。</p>
+          <div className="links">
+            <Link to="/platform">Signityを見る →</Link>
+            <Link to="/ai-native-company">AIネイティブ経営の実践 →</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="company">
+        <div className="wrap">
+          <div className="sec-head">
+            <span className="label">Company</span>
+            <h2>会社情報</h2>
+          </div>
+          <table>
+            <tbody>
+              <tr><th>社名</th><td>スプリントジャパン株式会社</td></tr>
+              <tr><th>代表</th><td>夏本 健司</td></tr>
+              <tr><th>事業内容</th><td>企業向けAI実装（FDE）／経営者向けAIコーチング／AI実践教育</td></tr>
+            </tbody>
+          </table>
+          <div className="links">
+            <Link to="/company">会社概要・代表プロフィール →</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact">
+        <div className="wrap">
+          <h2>まずは、いまの経営課題を<br />お聞かせください。</h2>
+          <p>ご紹介・情報交換からのご連絡も歓迎です。</p>
+          <Link to="/contact" className="btn btn-primary">お問い合わせ</Link>
+        </div>
+      </section>
+
+      <footer>
+        <div className="wrap">
+          <ul>
+            <li><Link to="/company">会社情報</Link></li>
+            <li><Link to="/contact">お問い合わせ</Link></li>
+          </ul>
+          <small>© 2026 Sprint Japan. All rights reserved.</small>
+        </div>
+      </footer>
     </div>
   );
 };
