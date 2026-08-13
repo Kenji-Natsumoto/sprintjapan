@@ -132,6 +132,27 @@ All colors MUST be HSL.
     background: radial-gradient(circle at center, hsl(var(--primary) / 0.15), transparent 70%);
   }
   
+  /* AI Chat UI — Corporate Color: 電光藍（ジャパンブルー） */
+  .sj-chat {
+    --background: 223 24% 6%;
+    --foreground: 60 5% 95%;
+    --card: 231 48% 13%;
+    --card-foreground: 60 5% 95%;
+    --popover: 231 48% 13%;
+    --popover-foreground: 60 5% 95%;
+    --primary: 232 100% 59%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 231 48% 13%;
+    --secondary-foreground: 60 5% 95%;
+    --accent: 232 100% 69%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 231 40% 18%;
+    --muted-foreground: 221 18% 66%;
+    --border: 225 29% 19%;
+    --input: 225 29% 19%;
+    --ring: 232 100% 59%;
+  }
+
   /* Chat popup pulse animation */
   @keyframes chat-pulse {
     0%, 100% {
