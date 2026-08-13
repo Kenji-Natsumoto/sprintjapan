@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
-import { Send, Bot, User, Loader2, MessageCircle, X, Minimize2, Volume2, VolumeX, History, Plus, Trash2, MessageSquare, ChevronLeft } from "lucide-react";
+import { Send, Bot, User, Loader2, X, Minimize2, Volume2, VolumeX, History, Plus, Trash2, MessageSquare, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";

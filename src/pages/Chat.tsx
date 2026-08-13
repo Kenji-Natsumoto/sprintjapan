@@ -278,7 +278,7 @@ const Chat = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="sj-chat min-h-screen bg-background text-foreground flex flex-col">
       <Navigation />
       <main className="flex-1 container mx-auto px-4 py-8 pt-24">
         <div className="max-w-4xl mx-auto">
