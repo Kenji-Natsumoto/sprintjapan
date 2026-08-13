@@ -54,9 +54,10 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
 .sj-home .nav img{height:26px; display:block}
 .sj-home .nav ul{display:flex; gap:32px; list-style:none; align-items:center}
 .sj-home .theme-btn{background:none; border:1px solid var(--line); color:var(--muted);
-  border-radius:8px; padding:7px 14px; font-size:12px; cursor:pointer; font-family:inherit}
+  border-radius:8px; padding:7px 14px; font-size:12px; cursor:pointer; font-family:inherit; white-space:nowrap}
+.sj-home .theme-btn .tlabel{margin-left:6px}
 .sj-home .theme-btn:hover{border-color:var(--accent); color:var(--text)}
-.sj-home .nav ul a{font-size:14px; color:var(--muted)}
+.sj-home .nav ul a{font-size:14px; color:var(--muted); white-space:nowrap}
 .sj-home .nav ul a:hover{color:var(--text)}
 .sj-home .nav ul a.cta{color:var(--text); border:1px solid var(--line); padding:8px 18px; border-radius:8px}
 .sj-home .nav ul a.cta:hover{border-color:var(--accent)}
@@ -149,5 +150,10 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
   .sj-home .stat + .stat{border-left:none; border-top:1px solid var(--line)}
   .sj-home .steps,.sj-home .cards{grid-template-columns:1fr}
   .sj-home section{padding:64px 0}
-  .sj-home .nav ul{gap:16px}
+  .sj-home .nav img{height:21px}
+  .sj-home .nav ul{gap:8px}
+  .sj-home .nav ul a{font-size:12.5px}
+  .sj-home .nav ul a.cta{padding:7px 10px}
+  .sj-home .theme-btn{padding:6px 9px; font-size:12px}
+  .sj-home .theme-btn .tlabel{display:none}
 }

@@ -6,8 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import SjShell from '@/components/SjShell';
 import { z } from 'zod';
 import { trackFormSubmission } from '@/hooks/useAnalytics';
 
@@ -88,10 +87,8 @@ const Contact = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen">
-        <Navigation />
-        
-        <div className="pt-32 pb-24">
+      <SjShell>
+        <div className="pt-16 pb-24">
           <div className="container mx-auto px-4 max-w-2xl">
             <div className="glass-card p-12 text-center">
               <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6 glow-primary">
@@ -113,17 +110,13 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
-        <Footer />
-      </div>
+    </SjShell>
     );
   }
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      
-      <div id="top" className="pt-32 pb-24 scroll-mt-0">
+    <SjShell>
+      <div id="top" className="pt-16 pb-24 scroll-mt-0">
         <div className="container mx-auto px-4 max-w-3xl">
           {/* Header Section */}
           <div className="text-center mb-12 animate-fade-in">
@@ -137,7 +130,7 @@ const Contact = () => {
               </p>
             </div>
             <p className="text-foreground/80">
-              当社プロダクトやソリューションに関するご質問がありましたら、下のフォームよりお問い合わせください。担当者より1営業日以内にご連絡いたします。
+              お気軽にお問い合わせください。ご紹介・情報交換からのご連絡も歓迎です。担当者より1営業日以内にご連絡いたします。
             </p>
           </div>
 
@@ -275,8 +268,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <Footer />
-    </div>
+    </SjShell>
   );
 };
 
