@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import SjShell from '@/components/SjShell';
 
 const content = `# AIエージェント集合体による「意思決定生成企業（Customer-Generating AI Company）」の提案
 
@@ -207,9 +206,8 @@ const AINativeCompany = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation />
-      <main className="flex-1 pt-24 pb-16">
+    <SjShell>
+      <main className="sj-paper flex-1 pt-16 pb-16">
         <section className="container mx-auto px-4 max-w-3xl mb-16" aria-labelledby="latest-paper-title">
           <div className="glass-card-strong gradient-border p-6 md:p-10 relative overflow-hidden">
             <div className="mesh-gradient absolute inset-0 opacity-40 pointer-events-none" aria-hidden="true" />
@@ -382,8 +380,7 @@ const AINativeCompany = () => {
           </ReactMarkdown>
         </article>
       </main>
-      <Footer />
-    </div>
+    </SjShell>
   );
 };
 

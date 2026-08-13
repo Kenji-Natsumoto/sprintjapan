@@ -2,8 +2,7 @@ import { ArrowLeft, ExternalLink, Sparkles, Briefcase, GraduationCap, Rocket, Us
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import SjShell from '@/components/SjShell';
 import natsumotoPortrait from '@/assets/instructor-natsumoto.png';
 import { SiX, SiFacebook, SiYoutube, SiTiktok, SiInstagram, SiMedium } from 'react-icons/si';
 import { FaLinkedinIn } from 'react-icons/fa';
@@ -16,13 +15,13 @@ const NoteIcon = () => (
 
 const stats = [
   { label: 'AI導入コンサル並行', value: '4社', icon: Briefcase },
-  { label: '半年で創ったAIアプリ', value: '35個', icon: Rocket },
-  { label: '雇っているAIエージェント', value: '7名', icon: Cpu },
+  { label: '創ったAIアプリ', value: '35個', icon: Rocket },
+  { label: '雇っているAIエージェント', value: '10名', icon: Cpu },
   { label: '使い分けているAI', value: '65+', icon: Brain },
 ];
 
 const aiClients = [
-  { name: '善都（ZENT）', desc: 'AI活用コンサルティング' },
+  { name: '善都（ZENT）', desc: 'プロジェクト推進パートナー（FDE）' },
   { name: 'USEN-ALMEX', desc: 'AI活用コンサルティング' },
   { name: '湯川塾', desc: 'AIセミナー・分科会' },
 ];
@@ -101,8 +100,8 @@ const ProfileNatsumoto = () => {
   }, [location]);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    <SjShell>
+      <div className="bg-background">
 
       {/* Hero */}
       <section id="top" className="relative pt-32 pb-24 overflow-hidden scroll-mt-0">
@@ -171,13 +170,7 @@ const ProfileNatsumoto = () => {
               </div>
             ))}
           </div>
-          <div className="mt-6 glass-card p-5 text-center border-l-4 border-accent">
-            <p className="text-foreground/80">
-              毎月<span className="text-accent font-bold text-xl mx-1">30万円</span>がAIに溶けている →
-              <span className="text-primary font-bold text-xl mx-1">人間7人分</span>の労働成果
-            </p>
           </div>
-        </div>
       </section>
 
       {/* Philosophy */}
@@ -228,6 +221,7 @@ const ProfileNatsumoto = () => {
               { period: '2019年', org: 'スプリントジャパン設立', desc: '上場企業12社をはじめ60組織以上で研修およびファシリテーター養成を展開' },
               { period: '2024年〜', org: 'AI専門家として始動', desc: '企業コンサルテーションおよびAI駆動開発の現場指揮を開始' },
               { period: '2025年〜', org: 'バイブコーディング特化', desc: 'バイブコーディングとAIエージェントに専門性を特化' },
+              { period: '2026年〜', org: 'AIネイティブカンパニー経営を実践', desc: 'スプリントジャパンをFDE（Forward Deployed Engineering）企業へ転換' },
             ].map((item, i) => (
               <div key={i} className="relative">
                 <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-background" />
@@ -301,7 +295,7 @@ const ProfileNatsumoto = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-3">
               半年で<span className="gradient-text">35アプリ</span>を制作
             </h2>
-            <p className="text-muted-foreground">2025.10〜2026.3 バイブコーディング制作実績</p>
+            <p className="text-muted-foreground">2025.10〜 バイブコーディング制作実績</p>
           </div>
 
           {(Object.keys(categoryConfig) as Category[]).map((cat) => {
@@ -374,7 +368,7 @@ const ProfileNatsumoto = () => {
                 <h2 className="text-3xl md:text-4xl font-bold">お問い合わせ</h2>
               </div>
               <p className="text-lg text-foreground/75 leading-relaxed max-w-3xl mx-auto mb-8">
-                AI導入コンサルティング、AI駆動アプリ開発、役員向けAIトレーニング、社員向けAI社内研修、新規事業創出プログラムのインストールなど、AI活用に関するご相談は、お問い合わせフォームよりご連絡ください。
+                企業のAI実装（FDE）、経営者向けAIコーチング、AI実践教育に関するご相談は、お問い合わせフォームよりご連絡ください。ご紹介・情報交換からのご連絡も歓迎です。
               </p>
               <Link
                 to="/contact#top"
@@ -387,8 +381,8 @@ const ProfileNatsumoto = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+      </div>
+    </SjShell>
   );
 };
 
