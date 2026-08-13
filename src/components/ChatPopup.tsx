@@ -357,9 +357,10 @@ const ChatPopup = () => {
         </Button>
 
       ) : (
-        <div className="bg-card border border-border rounded-xl shadow-2xl w-80 sm:w-96 flex flex-col overflow-hidden animate-in slide-in-from-bottom-4 duration-300">
+        <div className="bg-card text-foreground border border-border rounded-xl shadow-2xl w-80 sm:w-96 flex flex-col overflow-hidden animate-in slide-in-from-bottom-4 duration-300">
           {/* Header */}
           <div className="flex items-center justify-between p-3 border-b border-border bg-primary text-primary-foreground">
+
             <div className="flex items-center gap-2">
               {showHistory ? (
                 <Button
