@@ -131,8 +131,29 @@ html[data-theme="light"] .sj-page .nav img{filter:invert(1)}
   .sj-page .sj-native .hist li{gap:16px}
 }
 
-/* 本文を明るい紙面で固定するエリア（長文論文向け） */
+/* 論文・長文本文エリア（テーマ追随／既定はダーク） */
 .sj-page .sj-paper{
+  --background:225 26% 6%;
+  --foreground:60 5% 95%;
+  --card:230 48% 13%;
+  --card-foreground:60 5% 95%;
+  --popover:230 48% 13%;
+  --popover-foreground:60 5% 95%;
+  --primary:231 100% 69%;
+  --primary-foreground:225 26% 6%;
+  --secondary:231 100% 59%;
+  --secondary-foreground:0 0% 100%;
+  --accent:231 100% 59%;
+  --accent-foreground:0 0% 100%;
+  --muted:228 26% 16%;
+  --muted-foreground:220 20% 72%;
+  --border:224 28% 20%;
+  --input:224 28% 20%;
+  --ring:231 100% 69%;
+  background:var(--bg);
+  color:hsl(var(--foreground));
+}
+html[data-theme="light"] .sj-page .sj-paper{
   --background:0 0% 100%;
   --foreground:222 20% 10%;
   --card:220 30% 98%;
@@ -151,6 +172,10 @@ html[data-theme="light"] .sj-page .nav img{filter:invert(1)}
   --input:220 20% 88%;
   --ring:231 100% 59%;
   background:#FFFFFF;
-  color:hsl(var(--foreground));
 }
 .sj-page .sj-paper *{box-sizing:border-box}
+.sj-page .sj-paper a{color:hsl(var(--primary))}
+.sj-page .sj-paper pre,.sj-page .sj-paper code{background:hsl(var(--muted)); color:hsl(var(--foreground))}
+.sj-page .sj-paper table th{background:hsl(var(--muted))}
+.sj-page .sj-paper table th,.sj-page .sj-paper table td{border-color:hsl(var(--border))}
+
