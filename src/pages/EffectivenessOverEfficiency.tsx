@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import SjShell from '@/components/SjShell';
 
 const content = `# なぜ「AI業務効率化」は失敗するのか
 
@@ -358,9 +357,8 @@ const EffectivenessOverEfficiency = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation />
-      <main className="flex-1 pt-24 pb-16">
+    <SjShell>
+      <main className="sj-paper flex-1 pt-16 pb-16">
         <article className="container mx-auto px-4 max-w-3xl">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
@@ -411,8 +409,7 @@ const EffectivenessOverEfficiency = () => {
           </div>
         </article>
       </main>
-      <Footer />
-    </div>
+    </SjShell>
   );
 };
 
