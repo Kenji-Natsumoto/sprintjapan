@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ExternalLink } from 'lucide-react';
 import logo from '@/assets/spj-logo.png';
 import './home.css';
 
@@ -146,7 +147,9 @@ const Home = () => {
           <h2>自分たちが、最初のユーザーケース。</h2>
           <p>私たちは、AI経営戦略OS「Signity」のユーザーケース#1です。自社の経営そのものをAIネイティブに運営し、その毎日の実運用から得た実装知を、お客様の現場へ届けています。</p>
           <div className="links">
-            <Link to="/platform">Signityを見る →</Link>
+            <a href="https://signityos.io/ja" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
+              Signity を見る <ExternalLink size={16} aria-hidden="true" />
+            </a>
             <Link to="/ai-native-company">AIネイティブ経営の実践 →</Link>
           </div>
         </div>
