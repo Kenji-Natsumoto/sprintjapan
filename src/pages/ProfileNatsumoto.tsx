@@ -111,7 +111,7 @@ const ProfileNatsumoto = () => {
               src={natsumotoPortrait}
               alt="夏本 健司"
               loading="eager"
-              fetchpriority="high"
+              fetchPriority="high"
               decoding="async"
               style={{ opacity: imageLoaded ? 1 : 0, transition: 'opacity .3s' }}
               onLoad={() => setImageLoaded(true)}
