@@ -106,20 +106,19 @@ const AIDiscoveryHome = () => {
       <section className="container mx-auto max-w-6xl px-5 pt-14 md:pt-20 pb-16">
         <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 items-stretch">
           <div>
-            <SectionEyebrow>AIでやりたいこと発見コミュニティ</SectionEyebrow>
-            <p className="serif-jp text-[30px] md:text-[36px] text-[#6b5d44] mb-2">第3回目</p>
+            <SectionEyebrow>学習資料</SectionEyebrow>
             <h1 className="serif-jp text-4xl md:text-5xl lg:text-6xl leading-[1.25] font-semibold text-[#1a1409]">
-              AIに、毎日回す<br />“ループ”を設計させる。
+              GitHub と Obsidian の活用について
             </h1>
             <p className="mt-6 text-[17px] leading-[1.9] text-[#3a3225] max-w-2xl">
-              第1回の現在地（As-Is）、第2回の北極星（To-Be＝MTPと目標）とギャップ（ロードマップ／マイルストーン）。それらを土台に、第3回では毎日を前へ進める“最初のループ”を、自分の手で設計します（ループエンジニアリング）。型は2つ——①記事投稿ループ（マーケ／顧客サポートのコンテンツ発信を自動で回す）か、②モーニング・ブリーフ／ナイト・デブリーフ（マイルストーンに向けた日々のタスク管理）。AIを「借りた頭」で終わらせず、毎日となりで回る秘書・相棒にしていくコミュニティです。
+              GitHubで管理し、Obsidianで結ぶ、ファイル運用の基礎。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#sessions"
+                href="#slides"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#ea580c] to-[#c2410c] text-white font-medium shadow-lg shadow-[#ea580c]/30 hover:shadow-xl hover:-translate-y-0.5 transition-all"
               >
-                カリキュラムを見る →
+                スライドを見る →
               </a>
             </div>
           </div>
@@ -129,13 +128,14 @@ const AIDiscoveryHome = () => {
             <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#ea580c]/20 blur-3xl" />
             <div className="relative">
               <div className="text-[11px] tracking-wider uppercase text-[#d4a84c]">最終更新</div>
-              <div className="text-lg font-medium mt-1">2026年6月29日</div>
+              <div className="text-lg font-medium mt-1">2026年9月4日</div>
               <div className="my-6 h-px bg-white/10" />
               <ul className="space-y-3.5 text-[14px]">
                 {[
-                  '第1回と第2回は終了済み',
-                  '第3回では 最初のループ（ループエンジニアリング）を設計',
-                  '第4回以降はループの改善と成果創出',
+                  'GitHub とは',
+                  'Obsidian とは',
+                  'GitHub の基礎知識',
+                  'Obsidian の基礎知識',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="text-[#d4a84c] mt-0.5">◆</span>
@@ -147,6 +147,7 @@ const AIDiscoveryHome = () => {
           </aside>
         </div>
       </section>
+
 
       {/* Overview */}
       <section id="overview" className="container mx-auto max-w-6xl px-5 py-16">
