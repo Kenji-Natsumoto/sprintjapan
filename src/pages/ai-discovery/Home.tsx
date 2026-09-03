@@ -3,6 +3,9 @@ import { HubShell, HubHeader, HubFooter, StatusChip, usePageMeta } from './share
 
 const SLIDE_S1 = 'https://docs.google.com/presentation/d/144nki5XFti3qBUjxyW3MgIKfqWgwCCtq/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true';
 const SLIDE_S2 = 'https://docs.google.com/presentation/d/1PLRXl-DmiaHedDhGf8cNs8f9fngV6PiP/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true';
+const SLIDE_S3 = 'https://docs.google.com/presentation/d/15UWXB_3V1wQfJhYuvhPRY_2OEuFs8CPL/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true';
+const SLIDE_S4 = 'https://docs.google.com/presentation/d/1DfGfhrGzfly42cPkdEsL4R6EdoRoNbdL/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true';
+
 
 const sessions = [
   {
