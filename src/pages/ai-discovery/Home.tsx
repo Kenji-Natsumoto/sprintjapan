@@ -3,6 +3,9 @@ import { HubShell, HubHeader, HubFooter, StatusChip, usePageMeta } from './share
 
 const SLIDE_S1 = 'https://docs.google.com/presentation/d/144nki5XFti3qBUjxyW3MgIKfqWgwCCtq/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true';
 const SLIDE_S2 = 'https://docs.google.com/presentation/d/1PLRXl-DmiaHedDhGf8cNs8f9fngV6PiP/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true';
+const SLIDE_S3 = 'https://docs.google.com/presentation/d/15UWXB_3V1wQfJhYuvhPRY_2OEuFs8CPL/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true';
+const SLIDE_S4 = 'https://docs.google.com/presentation/d/1DfGfhrGzfly42cPkdEsL4R6EdoRoNbdL/edit?usp=sharing&ouid=114095741537537337376&rtpof=true&sd=true';
+
 
 const sessions = [
   {
@@ -191,13 +194,16 @@ const AIDiscoveryHome = () => {
         <SectionEyebrow>Slides</SectionEyebrow>
         <h2 className="serif-jp text-3xl md:text-4xl font-semibold mb-4 text-[#1a1409]">当日のスライド</h2>
         <p className="text-[15px] leading-[1.9] text-[#3a3225] mb-8 max-w-3xl">
-          当日の流れ（第2回＝AI人格づくり × 北極星の言語化）をスライドで確認できます。
+          第2回〜第4回の流れ（AI人格づくり・北極星の言語化・ループ設計・実践）をスライドで確認できます。
         </p>
         <div className="grid md:grid-cols-2 gap-5">
           <SlideLink href={SLIDE_S1} label="第1回のスライドを見る" sub="As-Is（現在地）の可視化" />
           <SlideLink href={SLIDE_S2} label="第2回のスライドを見る" sub="AI人格づくり × 北極星の言語化" />
+          <SlideLink href={SLIDE_S3} label="第3回のスライドを見る" sub="ループ設計（ループエンジニアリング）" />
+          <SlideLink href={SLIDE_S4} label="第4回のスライドを見る" sub="Do：習慣ワークフローを回す" />
         </div>
       </section>
+
 
       {/* Starting Point */}
       <section className="container mx-auto max-w-6xl px-5 py-16">
