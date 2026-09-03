@@ -106,7 +106,7 @@ const AIDiscoveryHome = () => {
       <section className="container mx-auto max-w-6xl px-5 pt-14 md:pt-20 pb-16">
         <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 items-stretch">
           <div>
-            <SectionEyebrow>学習資料</SectionEyebrow>
+            <SectionEyebrow>第5回目テーマ</SectionEyebrow>
             <h1 className="serif-jp text-4xl md:text-5xl lg:text-6xl leading-[1.25] font-semibold text-[#1a1409]">
               GitHub と Obsidian の活用について
             </h1>
