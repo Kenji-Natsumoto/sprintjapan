@@ -6,6 +6,12 @@ import techTrendsNovImage from "@/assets/news-tech-trends-nov.png";
 import techTrendsNov15Image from "@/assets/news-tech-trends-nov-15.jpg";
 import techTrendsNov25Image from "@/assets/news-tech-trends-nov-25.jpg";
 import techTrendsDec05Image from "@/assets/news-tech-trends-dec-05.jpg";
+import soulSeasonsImage from "@/assets/news-2026-soul-seasons.png";
+import aiDiscoveryImage from "@/assets/news-2026-ai-discovery-community.png";
+import traithPImage from "@/assets/news-2026-traith-p.png";
+import mtpMoonshotImage from "@/assets/news-2026-mtp-moonshot.png";
+import hidoriImage from "@/assets/news-2026-hidori.png";
+import siteRenewalImage from "@/assets/news-2026-site-renewal.png";
 
 export interface NewsItem {
   id: string;
@@ -19,6 +25,126 @@ export interface NewsItem {
 }
 
 export const newsData: NewsItem[] = [
+  {
+    id: "site-renewal-2026",
+    title: "コーポレートサイトを刷新し、ニュースを常設しました。",
+    date: "2026年09月06日",
+    readTime: "2分",
+    category: "企業情報",
+    image: siteRenewalImage,
+    excerpt: "サイト全体のデザインを統一し、ニュースをグローバルメニューに常設しました。カテゴリで記事を絞り込めるようにしています。",
+    content: `
+      <p>コーポレートサイトの刷新を行いました。</p>
+      <br />
+      <p><b>ニュースをグローバルメニューに常設</b>し、ニュース一覧と記事ページのデザインをサイト全体と統一しました。あわせて、記事を<b>カテゴリ</b>（テクノロジー／プロダクト／企業情報 ほか）で絞り込めるようにしています。</p>
+      <br />
+      <p>これまで当社の取り組みは、その都度お伝えするに留まっていました。<b>やったことが積み上がって見える場所</b>を、サイトの中に置きます。</p>
+      <br />
+      <p>今後、プロダクトの公開や勉強会の開催などを、こちらでお知らせしていきます。</p>
+    `,
+  },
+  {
+    id: "hidori-release",
+    title: "無料の日程調整アプリ「HI-DO-RI」を公開しました。",
+    date: "2026年09月03日",
+    readTime: "2分",
+    category: "プロダクト",
+    image: hidoriImage,
+    excerpt: "集まる日を「なるはや」で決めたい——そのための日程調整アプリ「HI-DO-RI」を公開しました。候補日を出して、URLを配って、○△×で集めるだけです。",
+    content: `
+      <p>無料の日程調整アプリ「<a href="https://hi-do-ri.replit.app/" target="_blank" rel="noopener noreferrer">HI-DO-RI</a>」を公開しました。<b>集まる日を「なるはや」で決めたい</b>——そのためのアプリです。</p>
+      <br />
+      <p>使い方は3つだけです。<b>候補日を並べて出欠表をつくる。出てきたURLを参加者に配る。○△×が集まったら、主催者が1日を決める。</b></p>
+      <br />
+      <p><b>回答する側にログインは要りません。</b>主催者から届いたURLを開けば、その場で○△×を入力できます（出欠表をつくる側は、主催者アカウントでのログインが必要です）。</p>
+      <br />
+      <p>もともとは自社の勉強会の日程を決めるために作ったものです。実際に使ってみて、他の方にも役立ちそうだったので公開しました。</p>
+      <br />
+      <p>絶賛フィードバックをお待ちしています。<a href="https://hi-do-ri.replit.app/" target="_blank" rel="noopener noreferrer">https://hi-do-ri.replit.app/</a></p>
+    `,
+  },
+  {
+    id: "mtp-moonshot-2026",
+    title: "MTP（変革目的）とムーンショットを制定しました。",
+    date: "2026年08月09日",
+    readTime: "3分",
+    category: "企業情報",
+    image: mtpMoonshotImage,
+    excerpt: "「日本国内でAIネイティブカンパニーを当たり前にする」というMTPと、2027年8月10日を期限とするムーンショットを制定しました。",
+    content: `
+      <p>2026年8月9日、当社はMTP（Massive Transformative Purpose＝野心的な変革目的）とムーンショットを制定しました。</p>
+      <br />
+      <h2>▼ MTP</h2>
+      <p><b>日本国内でAIネイティブカンパニーを当たり前にして、日本の経済界・産業界を世界レベルへと押し上げる。</b></p>
+      <br />
+      <h2>▼ ムーンショット</h2>
+      <p><b>2027年8月10日までに、スモールビジネス・スタートアップ経営者100人以上がAIネイティブカンパニーの仕組みを運用し、「思い描いた未来が実現できている」と宣言できている。</b></p>
+      <br />
+      <p>2025年に「AIドリブン企業へのビジネスモデル転換」を宣言してから、次に決めるべきは<b>どこへ向かうか</b>でした。それがこの2つです。あわせて、対象を<b>日本市場に絞る</b>ことも決めています。「日本を元気にするための会社」であるという線を、はっきりさせるためです。</p>
+      <br />
+      <p>私たちはまず、自分たちがその最初の実例になります。</p>
+    `,
+  },
+  {
+    id: "traith-p-release",
+    title: "個人のMTPと目標を30〜40分で言語化するアプリ「TRAITH-P」を公開しました。",
+    date: "2026年06月05日",
+    readTime: "3分",
+    category: "プロダクト",
+    image: traithPImage,
+    excerpt: "2025年10月に公開した組織向けの「TRAITH」に続き、その個人版となる「TRAITH-P」を公開しました。",
+    content: `
+      <p>個人のMTP（Massive Transformative Purpose＝野心的な変革目的）と目標を、30〜40分かけて言語化するアプリ「<a href="https://traith-p.lovable.app/" target="_blank" rel="noopener noreferrer">TRAITH-P</a>」を公開しました。</p>
+      <br />
+      <p>2025年10月に公開した「TRAITH」は<b>組織の理念</b>を言語化するものでした。TRAITH-P はその<b>個人版</b>です。</p>
+      <br />
+      <p>ステップに沿って進めるだけで言葉になります。途中の候補出しをAIが担うので、<b>白紙の前で止まりません。</b>「Soul Seasons Guide」で整えた現在地（AS-IS）を引き継いで始めることも、まっさらから始めることもできます。</p>
+      <br />
+      <p><b>現在地と目的地を、別々の道具で、続けて言葉にする。</b>2本のアプリはそのように繋がっています。</p>
+      <br />
+      <p>登録もログインも不要です。<a href="https://traith-p.lovable.app/" target="_blank" rel="noopener noreferrer">https://traith-p.lovable.app/</a></p>
+    `,
+  },
+  {
+    id: "ai-discovery-community-first",
+    title: "「AI実践教育・コミュニティ」の１形態として「湯川塾分科会：AIでやりたいこと発見コミュニティ」をオープンしました。",
+    date: "2026年05月04日",
+    readTime: "4分",
+    category: "イベント",
+    image: aiDiscoveryImage,
+    excerpt: "2026年5月4日、東京・阿佐ヶ谷にて第1回を開催しました。AIの操作を覚える会ではなく、「AIで何をやりたいのか」を自分の言葉にする会です。",
+    content: `
+      <p>2026年5月4日、東京・阿佐ヶ谷にて「<b>AIでやりたいこと発見コミュニティ</b>」の第1回を開催しました。7名の方にご参加いただきました。共催は湯川鶴章氏です。</p>
+      <br />
+      <p>当社のサービス「AI実践教育＆コミュニティ」の1つの形態にあたります。<b>AIの操作を覚える会ではありません。「AIで何をやりたいのか」を、自分の言葉にする会です。</b></p>
+      <br />
+      <p>第1回では3つをお話ししました。<b>効率性より効果性が先である</b>こと（「どうやるか」より「何をやるか」）。<b>AIには4つの型がある</b>こと（生成AI・CLI・バイブコーディング・AIエージェント）。そして<b>「本当にやりたいこと」は、いまの延長線上にはない</b>こと。</p>
+      <br />
+      <p>後半は、前日に公開したアプリで参加者それぞれの現在地を可視化し、2人1組で30分の相互コーチングを行いました。聞き手のルールは2つだけです。<b>解決策を出さない。ジャッジしない。</b></p>
+      <br />
+      <p>月に1回・全6回。以後は新宿・渋谷でも開催しています。詳細は <a href="/ai-discovery-community">こちら</a>。</p>
+    `,
+  },
+  {
+    id: "soul-seasons-guide-release",
+    title: "生年月日から「いまの自分」がわかる無料アプリ「Soul Seasons Guide」を公開しました。",
+    date: "2026年05月03日",
+    readTime: "3分",
+    category: "プロダクト",
+    image: soulSeasonsImage,
+    excerpt: "生年月日を入れるだけで、いまの自分の運気とライフステージがわかる無料アプリを公開しました。AIに相談する前に、自分の現在地を言葉にするための道具です。",
+    content: `
+      <p>生年月日を入れるだけで、いまの自分の運気とライフステージがわかる無料アプリ「<a href="https://soulseasonsguide.lovable.app/" target="_blank" rel="noopener noreferrer">Soul Seasons Guide</a>」を公開しました。</p>
+      <br />
+      <p>狙いは、占うことそのものではありません。<b>AIに相談するとき、多くの方が「いまの自分」をうまく言葉にできない</b>——そこを埋めるための道具です。</p>
+      <br />
+      <p>素質論・西洋占星術・四柱推命の3つから多面的に読み取り、結果を「AS-IS（現在地）」の文章にまとめます。その文章をコピー1回で ChatGPT / Claude / Gemini に貼れば、そのまま相談を続けられます。</p>
+      <br />
+      <p><b>自分の現在地を言葉にしてから相談すると、AIの返答は一般論から具体へ変わります。</b></p>
+      <br />
+      <p>登録もログインも不要です。<a href="https://soulseasonsguide.lovable.app/" target="_blank" rel="noopener noreferrer">https://soulseasonsguide.lovable.app/</a></p>
+    `,
+  },
   {
     id: "tech-trends-dec-05-2025",
     title: "テックトレンド速報 #5 12月05日号を公開しました。",
