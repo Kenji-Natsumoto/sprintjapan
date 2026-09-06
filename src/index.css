@@ -132,8 +132,11 @@ All colors MUST be HSL.
     background: radial-gradient(circle at center, hsl(var(--primary) / 0.15), transparent 70%);
   }
   
-  /* AI Chat UI — Corporate Color: 電光藍（ジャパンブルー） */
-  .sj-chat {
+  /* コーポレートカラー（電光藍／ジャパンブルー）を shadcn のトークンに当てる範囲。
+     .sj-chat = AIチャットUI ／ .sj-brand = 新UIへ揃えたページ（/news ほか）。
+     ⚠️ 値は1か所にしか無い。増やすときは名前をここへ足すこと（値を複製しない）。 */
+  .sj-chat,
+  .sj-brand {
     --background: 223 24% 6%;
     --foreground: 60 5% 95%;
     --card: 231 48% 13%;
@@ -150,6 +153,30 @@ All colors MUST be HSL.
     --muted-foreground: 221 18% 66%;
     --border: 225 29% 19%;
     --input: 225 29% 19%;
+    --ring: 232 100% 59%;
+  }
+
+  /* ライトテーマのときの .sj-brand。値は sj-shell.css のライト側と同じ色を HSL にしたもの
+     （bg #FAFBFF／card #FFFFFF／line #DFE4F0／text #15181F／muted #5B6472／
+       accent indigo-500 #2E49FF・indigo-600 #2338D6）。
+     ⚠️ .sj-chat には当てない（チャットUIは暗いままが正）。 */
+  [data-theme="light"] .sj-brand {
+    --background: 228 100% 99%;
+    --foreground: 222 19% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 19% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 19% 10%;
+    --primary: 232 100% 59%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 225 40% 96%;
+    --secondary-foreground: 222 19% 10%;
+    --accent: 233 72% 49%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 225 40% 96%;
+    --muted-foreground: 217 11% 40%;
+    --border: 222 36% 91%;
+    --input: 222 36% 91%;
     --ring: 232 100% 59%;
   }
 

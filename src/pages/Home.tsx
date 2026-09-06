@@ -41,6 +41,7 @@ const Home = () => {
               </button>
             </li>
             <li><Link to="/company">会社情報</Link></li>
+            <li><Link to="/news">ニュース</Link></li>
             <li><Link to="/contact" className="cta">お問い合わせ</Link></li>
           </ul>
         </div>

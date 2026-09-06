@@ -1,8 +1,7 @@
 import { useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { format } from "date-fns";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import SjShell from "@/components/SjShell";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -77,12 +76,10 @@ const News = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation />
-      
-      <main className="flex-1">
+    <SjShell>
+      <main className="sj-brand">
         {/* Hero Section */}
-        <section className="pt-[100px] pb-16 px-4 bg-gradient-to-b from-background to-background/50">
+        <section className="pt-16 pb-12 px-4 bg-gradient-to-b from-background to-background/50">
           <div className="container mx-auto max-w-7xl">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-center">
               ニュース
@@ -187,9 +184,7 @@ const News = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </SjShell>
   );
 };
 

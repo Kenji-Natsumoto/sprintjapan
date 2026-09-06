@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { format } from "date-fns";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import SjShell from "@/components/SjShell";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowLeft, ExternalLink, Share2 } from "lucide-react";
@@ -89,21 +88,18 @@ const NewsDetail = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col">
-        <Navigation />
-        <main className="flex-1 flex items-center justify-center">
+      <SjShell>
+        <main className="sj-brand flex items-center justify-center min-h-[50vh]">
           <div className="text-center text-muted-foreground">読み込み中...</div>
         </main>
-        <Footer />
-      </div>
+      </SjShell>
     );
   }
 
   if (!news) {
     return (
-      <div className="min-h-screen flex flex-col">
-        <Navigation />
-        <main className="flex-1 flex items-center justify-center">
+      <SjShell>
+        <main className="sj-brand flex items-center justify-center min-h-[50vh]">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">記事が見つかりません</h1>
             <Link to="/news">
@@ -114,16 +110,13 @@ const NewsDetail = () => {
             </Link>
           </div>
         </main>
-        <Footer />
-      </div>
+      </SjShell>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation />
-      
-      <main className="flex-1">
+    <SjShell>
+      <main className="sj-brand">
         {/* Back Button */}
         <section className="pt-32 pb-8 px-4">
           <div className="container mx-auto max-w-4xl">
@@ -288,9 +281,7 @@ const NewsDetail = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </SjShell>
   );
 };
 
