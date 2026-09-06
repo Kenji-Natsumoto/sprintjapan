@@ -10,6 +10,7 @@ import { newsData } from "@/data/newsData";
 import { supabase } from "@/integrations/supabase/client";
 import { NewsArticle } from "@/hooks/useNewsArticles";
 import { trackExternalLink, trackDownload } from "@/hooks/useAnalytics";
+import { CATEGORY_PARAM } from "@/lib/newsCategories";
 
 const NewsDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -138,9 +139,15 @@ const NewsDetail = () => {
         {/* Article Header */}
         <section className="pb-8 px-4">
           <div className="container mx-auto max-w-4xl">
-            <Badge variant="secondary" className="mb-4">
-              {news.category}
-            </Badge>
+            <Link
+              to={`/news?${CATEGORY_PARAM}=${encodeURIComponent(news.category)}`}
+              className="inline-block mb-4"
+              aria-label={`${news.category}の記事一覧へ`}
+            >
+              <Badge variant="secondary" className="hover:bg-secondary/80 transition-colors">
+                {news.category}
+              </Badge>
+            </Link>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               {news.title}
             </h1>

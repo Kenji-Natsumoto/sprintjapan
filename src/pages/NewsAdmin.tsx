@@ -17,6 +17,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
+import { NEWS_CATEGORIES } from '@/lib/newsCategories';
 import {
   useNewsArticles,
   useNewsTemplates,
@@ -49,7 +50,8 @@ const templateSchema = z.object({
 type ArticleFormData = z.infer<typeof articleSchema>;
 type TemplateFormData = z.infer<typeof templateSchema>;
 
-const categories = ['テクノロジー', 'プロダクト', '企業情報', 'イベント', 'お知らせ'];
+// カテゴリ定義は src/lib/newsCategories.ts が正本（一覧側と同じものを使う）
+const categories = NEWS_CATEGORIES;
 
 const NewsAdmin = () => {
   const { toast } = useToast();
