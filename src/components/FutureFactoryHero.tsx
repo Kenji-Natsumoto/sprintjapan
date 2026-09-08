@@ -64,7 +64,7 @@ function Box({
   opacity?: number;
 }) {
   return (
-    <mesh position={position} castShadow opacity={opacity} receiveShadow>
+    <mesh position={position} castShadow receiveShadow>
       <boxGeometry args={scale} />
       <meshStandardMaterial
         color={color}
