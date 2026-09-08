@@ -86,9 +86,9 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
   -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), transparent 85%);
 }
 .sj-home .hero .wrap{position:relative; z-index:1}
-.sj-home .hero-layout{display:grid; grid-template-columns:minmax(0,1.02fr) minmax(440px,.98fr); gap:34px; align-items:center; max-width:1240px}
+.sj-home .hero-layout{display:grid; grid-template-columns:minmax(0,2fr) minmax(0,3fr); gap:28px; align-items:center; max-width:1240px}
 .sj-home .hero-copy{min-width:0}
-.sj-home .hero h1{font-size:clamp(30px,5.6vw,58px); letter-spacing:.02em; margin-bottom:28px}
+.sj-home .hero h1{font-size:clamp(34px,4vw,50px); letter-spacing:.02em; margin-bottom:28px}
 .sj-home .hero p{max-width:640px; color:var(--muted); margin-bottom:40px}
 .sj-home .btns{display:flex; gap:16px; flex-wrap:wrap}
 .sj-home .btn{display:inline-block; padding:14px 34px; border-radius:8px; font-size:15px; font-weight:600}
@@ -109,13 +109,15 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
   filter:blur(34px); transform:scale(1.08);
 }
 .sj-home .factory-visual::after{
-  content:""; position:absolute; inset:-1px; z-index:3; pointer-events:none;
-  background:
-    linear-gradient(90deg,var(--bg) 0%,transparent 14%,transparent 90%,var(--bg) 100%),
-    linear-gradient(180deg,var(--bg) 0%,transparent 12%,transparent 82%,var(--bg) 100%),
-    radial-gradient(ellipse 86% 78% at 54% 48%,transparent 44%,color-mix(in srgb,var(--bg) 42%,transparent) 72%,var(--bg) 100%);
+  content:""; position:absolute; inset:4% 3% 6%; z-index:0; pointer-events:none;
+  background:radial-gradient(ellipse at 55% 46%,var(--hero-glow),transparent 72%);
+  filter:blur(48px);
 }
-.sj-home .factory-canvas{position:absolute!important; z-index:1; inset:0; width:100%!important; height:100%!important; opacity:1; transition:opacity .35s ease}
+.sj-home .factory-canvas{
+  position:absolute!important; z-index:1; inset:0; width:100%!important; height:100%!important; opacity:1; transition:opacity .35s ease;
+  mask-image:radial-gradient(ellipse 92% 88% at 52% 48%,#000 50%,rgba(0,0,0,.94) 62%,rgba(0,0,0,.48) 78%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 92% 88% at 52% 48%,#000 50%,rgba(0,0,0,.94) 62%,rgba(0,0,0,.48) 78%,transparent 100%);
+}
 .sj-home .factory-visual:not(.is-interactive) .factory-canvas{touch-action:pan-y}
 .sj-home .factory-scan{
   position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.42;
@@ -218,11 +220,9 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
   .sj-home .hero .btns{gap:10px; flex-wrap:nowrap}
   .sj-home .hero .btn{padding:12px 21px; font-size:13px; white-space:nowrap}
   .sj-home .factory-visual{height:390px; width:calc(100% + 48px); margin-left:-24px}
-  .sj-home .factory-visual::after{
-    background:
-      linear-gradient(90deg,var(--bg) 0%,transparent 8%,transparent 92%,var(--bg) 100%),
-      linear-gradient(180deg,var(--bg) 0%,transparent 10%,transparent 84%,var(--bg) 100%),
-      radial-gradient(ellipse 94% 82% at 50% 48%,transparent 48%,color-mix(in srgb,var(--bg) 34%,transparent) 74%,var(--bg) 100%);
+  .sj-home .factory-canvas{
+    mask-image:radial-gradient(ellipse 98% 90% at 50% 48%,#000 54%,rgba(0,0,0,.88) 70%,transparent 100%);
+    -webkit-mask-image:radial-gradient(ellipse 98% 90% at 50% 48%,#000 54%,rgba(0,0,0,.88) 70%,transparent 100%);
   }
   .sj-home .factory-toolbar{top:10px; left:12px; right:12px; max-width:calc(100% - 24px)}
   .sj-home .factory-view-btn{padding:0 8px; font-size:9px}
