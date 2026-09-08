@@ -88,7 +88,7 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
 .sj-home .hero .wrap{position:relative; z-index:1}
 .sj-home .hero-layout{display:grid; grid-template-columns:minmax(0,4.5fr) minmax(0,5.5fr); gap:28px; align-items:center; max-width:1240px}
 .sj-home .hero-copy{min-width:0}
-.sj-home .hero h1{font-size:clamp(27px,3.2vw,40px); letter-spacing:.02em; margin-bottom:24px}
+.sj-home .hero h1{font-size:clamp(27px,3.1vw,38px); letter-spacing:.02em; margin-bottom:24px}
 .sj-home .hero p{max-width:640px; color:var(--muted); margin-bottom:40px; font-size:0.85rem; line-height:1.85}
 .sj-home .btns{display:flex; gap:16px; flex-wrap:wrap}
 .sj-home .btn{display:inline-block; padding:14px 34px; border-radius:8px; font-size:15px; font-weight:600}
