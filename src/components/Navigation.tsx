@@ -33,14 +33,14 @@ const Navigation = () => {
         isScrolled ? 'bg-elevated/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="w-full px-[clamp(16px,4vw,64px)]">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 hover-scale">
             <img src={logo} alt="Sprint Japan Logo" className="h-8" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-[clamp(16px,2.5vw,36px)]">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -73,7 +73,7 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden pb-4 animate-fade-in">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 px-[clamp(16px,4vw,64px)]">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}

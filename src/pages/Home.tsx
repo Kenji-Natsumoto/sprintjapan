@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <div className="sj-home">
       <header>
-        <div className="wrap nav">
+        <div className="nav-wrap nav">
           <Link to="/">
             <img src={logo} alt="スプリントジャパン株式会社" />
           </Link>
