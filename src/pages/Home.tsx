@@ -52,7 +52,7 @@ const Home = () => {
         <div className="wrap hero-layout">
           <div className="hero-copy">
             <span className="label">AI-Native Company / Forward Deployed Engineering</span>
-            <h1>企業に寄り添い、<br />経営に答えを出せるAI。</h1>
+            <h1>経営に、答えが出せるAIを。<br />現場に、自動で動くAIを。</h1>
             <p>
               SPRINT Japanは、AIの「導入」で終わらせず、経営の判断と現場の業務にAIを実装する会社です。経営者への1対1伴走から、現場に入り込むFDE（Forward Deployed Engineering）まで——動く仕組みになるまで並走します。
             </p>

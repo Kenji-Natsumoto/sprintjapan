@@ -88,8 +88,8 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
 .sj-home .hero .wrap{position:relative; z-index:1}
 .sj-home .hero-layout{display:grid; grid-template-columns:minmax(0,2fr) minmax(0,3fr); gap:28px; align-items:center; max-width:1240px}
 .sj-home .hero-copy{min-width:0}
-.sj-home .hero h1{font-size:clamp(34px,4vw,50px); letter-spacing:.02em; margin-bottom:28px}
-.sj-home .hero p{max-width:640px; color:var(--muted); margin-bottom:40px}
+.sj-home .hero h1{font-size:clamp(27px,3.2vw,40px); letter-spacing:.02em; margin-bottom:24px}
+.sj-home .hero p{max-width:640px; color:var(--muted); margin-bottom:40px; font-size:0.85rem; line-height:1.85}
 .sj-home .btns{display:flex; gap:16px; flex-wrap:wrap}
 .sj-home .btn{display:inline-block; padding:14px 34px; border-radius:8px; font-size:15px; font-weight:600}
 .sj-home .btn-primary{background:var(--accent); color:#fff}
@@ -215,8 +215,8 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
 @media (max-width:768px){
   .sj-home .hero{padding:48px 0 28px}
   .sj-home .hero-layout{grid-template-columns:1fr; gap:28px}
-  .sj-home .hero h1{font-size:30px; line-height:1.55; margin-bottom:22px}
-  .sj-home .hero p{font-size:14px; line-height:1.8; margin-bottom:26px}
+  .sj-home .hero h1{font-size:24px; line-height:1.55; margin-bottom:18px}
+  .sj-home .hero p{font-size:12px; line-height:1.8; margin-bottom:26px}
   .sj-home .hero .btns{gap:10px; flex-wrap:nowrap}
   .sj-home .hero .btn{padding:12px 21px; font-size:13px; white-space:nowrap}
   .sj-home .factory-visual{height:390px; width:calc(100% + 48px); margin-left:-24px}
