@@ -215,8 +215,8 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
 @media (max-width:768px){
   .sj-home .hero{padding:48px 0 28px}
   .sj-home .hero-layout{grid-template-columns:1fr; gap:28px}
-  .sj-home .hero h1{font-size:30px; line-height:1.55; margin-bottom:22px}
-  .sj-home .hero p{font-size:14px; line-height:1.8; margin-bottom:26px}
+  .sj-home .hero h1{font-size:24px; line-height:1.55; margin-bottom:18px}
+  .sj-home .hero p{font-size:12px; line-height:1.8; margin-bottom:26px}
   .sj-home .hero .btns{gap:10px; flex-wrap:nowrap}
   .sj-home .hero .btn{padding:12px 21px; font-size:13px; white-space:nowrap}
   .sj-home .factory-visual{height:390px; width:calc(100% + 48px); margin-left:-24px}
