@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Factory } from 'lucide-react';
 import logo from '@/assets/spj-logo.png';
 import './home.css';
 
 const THEME_KEY = 'sj-theme';
+const FutureFactoryHero = lazy(() => import('@/components/FutureFactoryHero'));
 
 const Home = () => {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
@@ -48,16 +49,26 @@ const Home = () => {
       </header>
 
       <div className="hero">
-        <div className="wrap">
-          <span className="label">AI-Native Company / Forward Deployed Engineering</span>
-          <h1>企業に、考えるAIを。<br />現場に、動くAIを。</h1>
-          <p>
-            SPRINT Japanは、AIの「導入」で終わらせず、経営の判断と現場の業務にAIを実装する会社です。経営者への1対1伴走から、現場に入り込むFDE（Forward Deployed Engineering）まで——動く仕組みになるまで並走します。
-          </p>
-          <div className="btns">
-            <a href="#services" className="btn btn-primary">サービスを見る</a>
-            <Link to="/contact" className="btn btn-ghost">お問い合わせ</Link>
+        <div className="wrap hero-layout">
+          <div className="hero-copy">
+            <span className="label">AI-Native Company / Forward Deployed Engineering</span>
+            <h1>企業に、考えるAIを。<br />現場に、動くAIを。</h1>
+            <p>
+              SPRINT Japanは、AIの「導入」で終わらせず、経営の判断と現場の業務にAIを実装する会社です。経営者への1対1伴走から、現場に入り込むFDE（Forward Deployed Engineering）まで——動く仕組みになるまで並走します。
+            </p>
+            <div className="btns">
+              <a href="#services" className="btn btn-primary">サービスを見る</a>
+              <Link to="/contact" className="btn btn-ghost">お問い合わせ</Link>
+            </div>
           </div>
+          <Suspense fallback={(
+            <div className="factory-visual factory-suspense" aria-label="3D工場を読み込み中">
+              <Factory aria-hidden="true" />
+              <span>FACTORY SYSTEM 起動中</span>
+            </div>
+          )}>
+            <FutureFactoryHero />
+          </Suspense>
         </div>
       </div>
 
