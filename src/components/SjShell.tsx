@@ -32,7 +32,7 @@ const SjShell = ({ children }: { children: ReactNode }) => {
   return (
     <div className="sj-page">
       <header>
-        <div className="wrap nav">
+        <div className="nav-wrap nav">
           <Link to="/">
             <img src={logo} alt="スプリントジャパン株式会社" />
           </Link>

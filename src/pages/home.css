@@ -44,6 +44,7 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
 
 .sj-home *{margin:0;padding:0;box-sizing:border-box}
 .sj-home .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+.sj-home .nav-wrap{max-width:none; width:100%; margin:0 auto; padding:0 clamp(16px,4vw,64px); box-sizing:border-box}
 .sj-home .label{
   font-family:ui-monospace,"SF Mono",Menlo,monospace;
   font-size:11px; letter-spacing:.22em; text-transform:uppercase;
@@ -60,7 +61,7 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
 }
 .sj-home .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
 .sj-home .nav img{height:26px; display:block}
-.sj-home .nav ul{display:flex; gap:32px; list-style:none; align-items:center}
+.sj-home .nav ul{display:flex; gap:clamp(16px,2.5vw,36px); list-style:none; align-items:center}
 .sj-home .theme-btn{background:none; border:1px solid var(--line); color:var(--muted);
   border-radius:8px; padding:7px 14px; font-size:12px; cursor:pointer; font-family:inherit; white-space:nowrap}
 .sj-home .theme-btn .tlabel{margin-left:6px}

@@ -34,6 +34,7 @@ html[data-theme="light"] .sj-page .nav img{filter:invert(1)}
 
 .sj-page .sj-native *{margin:0;padding:0;box-sizing:border-box}
 .sj-page .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px; box-sizing:border-box}
+.sj-page .nav-wrap{max-width:none; width:100%; margin:0 auto; padding:0 clamp(16px,4vw,64px); box-sizing:border-box}
 .sj-page .sj-native a{color:var(--text); text-decoration:none}
 .sj-page .sj-native h1,.sj-page .sj-native h2,.sj-page .sj-native h3{font-weight:700; line-height:1.45}
 .sj-page .sj-native section{padding:80px 0}
@@ -50,7 +51,7 @@ html[data-theme="light"] .sj-page .nav img{filter:invert(1)}
 .sj-page header{position:sticky; top:0; z-index:30; background:var(--header-bg); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
 .sj-page .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
 .sj-page .nav img{height:26px; display:block}
-.sj-page .nav ul{display:flex; gap:24px; list-style:none; align-items:center}
+.sj-page .nav ul{display:flex; gap:clamp(16px,2.5vw,36px); list-style:none; align-items:center}
 .sj-page .nav ul a{font-size:14px; color:var(--muted); white-space:nowrap}
 .sj-page .nav ul a:hover{color:var(--text)}
 .sj-page .nav ul a.cta{color:var(--text); border:1px solid var(--line); padding:8px 18px; border-radius:8px}
