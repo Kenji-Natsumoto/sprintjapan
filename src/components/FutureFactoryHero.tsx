@@ -375,6 +375,15 @@ const FutureFactoryHero = () => {
           frameloop={isVisible ? 'always' : 'never'}
           gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
           onCreated={() => setIsReady(true)}
+          onPointerDown={() => {
+            if (!isMobile) setIsInteractive(true);
+          }}
+          onPointerUp={() => {
+            if (!isMobile) setIsInteractive(false);
+          }}
+          onPointerLeave={() => {
+            if (!isMobile) setIsInteractive(false);
+          }}
           aria-label="LOFと経営企画戦略室をつなぐ二階建て3D工場。ドラッグで回転、ホイールで拡大縮小できます。"
         >
           <FactoryScene
