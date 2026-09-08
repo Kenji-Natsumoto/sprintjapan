@@ -100,20 +100,28 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
 /* Interactive factory model */
 .sj-home .factory-visual{
   position:relative; width:100%; min-width:0; height:550px; isolation:isolate;
-  border-top:1px solid var(--factory-line); border-bottom:1px solid var(--factory-line);
-  background:linear-gradient(180deg,transparent,var(--factory-glass) 48%,transparent);
+  background:transparent;
   overflow:hidden;
 }
 .sj-home .factory-visual::before{
-  content:""; position:absolute; inset:13% 3% 15%; z-index:-1; pointer-events:none;
-  background:radial-gradient(ellipse at center,var(--hero-glow),transparent 68%);
+  content:""; position:absolute; inset:12% 5% 14%; z-index:0; pointer-events:none;
+  background:radial-gradient(ellipse at center,var(--hero-glow),transparent 70%);
+  filter:blur(34px); transform:scale(1.08);
 }
-.sj-home .factory-canvas{position:absolute!important; inset:0; width:100%!important; height:100%!important; opacity:1; transition:opacity .35s ease}
+.sj-home .factory-visual::after{
+  content:""; position:absolute; inset:-1px; z-index:3; pointer-events:none;
+  background:
+    linear-gradient(90deg,var(--bg) 0%,transparent 14%,transparent 90%,var(--bg) 100%),
+    linear-gradient(180deg,var(--bg) 0%,transparent 12%,transparent 82%,var(--bg) 100%),
+    radial-gradient(ellipse 86% 78% at 54% 48%,transparent 44%,color-mix(in srgb,var(--bg) 42%,transparent) 72%,var(--bg) 100%);
+}
+.sj-home .factory-canvas{position:absolute!important; z-index:1; inset:0; width:100%!important; height:100%!important; opacity:1; transition:opacity .35s ease}
 .sj-home .factory-visual:not(.is-interactive) .factory-canvas{touch-action:pan-y}
 .sj-home .factory-scan{
   position:absolute; inset:0; z-index:2; pointer-events:none; opacity:.42;
   background:linear-gradient(180deg,transparent 49.6%,var(--factory-line) 50%,transparent 50.4%);
-  background-size:100% 8px; mask-image:linear-gradient(to bottom,transparent 4%,#000 24%,#000 76%,transparent 96%);
+  background-size:100% 8px; mask-image:radial-gradient(ellipse 76% 70% at center,#000 34%,transparent 92%);
+  -webkit-mask-image:radial-gradient(ellipse 76% 70% at center,#000 34%,transparent 92%);
 }
 .sj-home .factory-toolbar{
   position:absolute; z-index:4; top:16px; left:16px; right:16px; display:flex; gap:4px;
@@ -210,6 +218,12 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
   .sj-home .hero .btns{gap:10px; flex-wrap:nowrap}
   .sj-home .hero .btn{padding:12px 21px; font-size:13px; white-space:nowrap}
   .sj-home .factory-visual{height:390px; width:calc(100% + 48px); margin-left:-24px}
+  .sj-home .factory-visual::after{
+    background:
+      linear-gradient(90deg,var(--bg) 0%,transparent 8%,transparent 92%,var(--bg) 100%),
+      linear-gradient(180deg,var(--bg) 0%,transparent 10%,transparent 84%,var(--bg) 100%),
+      radial-gradient(ellipse 94% 82% at 50% 48%,transparent 48%,color-mix(in srgb,var(--bg) 34%,transparent) 74%,var(--bg) 100%);
+  }
   .sj-home .factory-toolbar{top:10px; left:12px; right:12px; max-width:calc(100% - 24px)}
   .sj-home .factory-view-btn{padding:0 8px; font-size:9px}
   .sj-home .factory-view-btn svg{display:none}
