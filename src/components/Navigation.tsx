@@ -73,7 +73,7 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden pb-4 animate-fade-in">
-            <div className="flex flex-col gap-4 px-[clamp(16px,4vw,64px)]">
+            <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
