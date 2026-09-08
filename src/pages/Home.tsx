@@ -54,7 +54,7 @@ const Home = () => {
             <span className="label">AI-Native Company / Forward Deployed Engineering</span>
             <h1>経営に、答えが出せるAIを。<br />現場に、自動で動くAIを。</h1>
             <p>
-              SPRINT Japanのできることは、AIの「導入」ではありません。経営の判断と現場の業務をAIエージェント群によって直結し、期待以上のアウトカムを実現させることです。経営者への1対1AI伴走から、現場に深く入り込んでFDE（Forward Deployed Engineering）を実行することで、他社ではできない目標値を実現します。
+              SPRINT Japanのできることは、AIの「導入」ではありません。経営の判断と現場の業務をAIエージェント群によって直結し、期待以上のアウトカムを実現させることです。
             </p>
             <div className="btns">
               <a href="#services" className="btn btn-primary">サービスを見る</a>
