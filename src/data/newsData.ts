@@ -12,6 +12,7 @@ import traithPImage from "@/assets/news-2026-traith-p.png";
 import mtpMoonshotImage from "@/assets/news-2026-mtp-moonshot.png";
 import hidoriImage from "@/assets/news-2026-hidori.png";
 import siteRenewalImage from "@/assets/news-2026-site-renewal.png";
+import vibeRushImage from "@/assets/news-2026-viberush-japan.jpeg.asset.json";
 
 export interface NewsItem {
   id: string;
@@ -25,6 +26,26 @@ export interface NewsItem {
 }
 
 export const newsData: NewsItem[] = [
+  {
+    id: "viberush-japan-release",
+    title: "AIアプリのPRプラットフォーム「VibeRush Japan」を公開しました。",
+    date: "2026年09月13日",
+    readTime: "2分",
+    category: "プロダクト",
+    image: vibeRushImage.url,
+    excerpt: "日本の作者が作ったAIアプリやAIスキルを、名前と短い説明だけで公開できる無料のPRプラットフォーム「VibeRush Japan」を公開しました。",
+    content: `
+      <p>AIアプリのPRプラットフォーム「<a href="https://jp.viberush.io/" target="_blank" rel="noopener noreferrer">VibeRush Japan</a>」を公開しました。<b>日本の作者が作ったAIアプリやAIスキルを、気軽に公開・PRできる</b>プラットフォームです。</p>
+      <br />
+      <p>公開に必要なのは、<b>プロダクト名・短い説明・作者名</b>だけです。現在はアカウント登録も不要で、30秒ほどで掲載できます。詳しい情報やリンクは、あとから追加できます。</p>
+      <br />
+      <p>AIを使ってアプリやスキルを作れる人が増える一方で、完成したものを知ってもらう場所はまだ十分ではありません。<b>個人や非エンジニアの作品も、日本のメーカーの並びで見つけてもらえる場所</b>を目指しています。</p>
+      <br />
+      <p><b>掲載も利用も無料です。</b>プロダクトの権利は、すべて作者本人に残ります。</p>
+      <br />
+      <p>AIアプリやAIスキルを作った方は、ぜひ公開してみてください。<a href="https://jp.viberush.io/" target="_blank" rel="noopener noreferrer">https://jp.viberush.io/</a></p>
+    `,
+  },
   {
     id: "site-renewal-2026",
     title: "コーポレートサイトを刷新し、ニュースを常設しました。",
