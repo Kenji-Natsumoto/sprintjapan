@@ -12,7 +12,6 @@ import traithPImage from "@/assets/news-2026-traith-p.png";
 import mtpMoonshotImage from "@/assets/news-2026-mtp-moonshot.png";
 import hidoriImage from "@/assets/news-2026-hidori.png";
 import siteRenewalImage from "@/assets/news-2026-site-renewal.png";
-import vibeRushImage from "@/assets/news-2026-viberush-japan.jpeg.asset.json";
 
 export interface NewsItem {
   id: string;
@@ -32,7 +31,7 @@ export const newsData: NewsItem[] = [
     date: "2026年09月13日",
     readTime: "2分",
     category: "プロダクト",
-    image: vibeRushImage.url,
+    image: "https://mhngabubbfflsoeriglz.supabase.co/storage/v1/object/public/news-images/news-2026-viberush-japan.jpeg",
     excerpt: "日本の作者が作ったAIアプリやAIスキルを、名前と短い説明だけで公開できる無料のPRプラットフォーム「VibeRush Japan」を公開しました。",
     content: `
       <p>AIアプリのPRプラットフォーム「<a href="https://jp.viberush.io/" target="_blank" rel="noopener noreferrer">VibeRush Japan</a>」を公開しました。<b>日本の作者が作ったAIアプリやAIスキルを、気軽に公開・PRできる</b>プラットフォームです。</p>
