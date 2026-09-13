@@ -12,6 +12,7 @@ import traithPImage from "@/assets/news-2026-traith-p.png";
 import mtpMoonshotImage from "@/assets/news-2026-mtp-moonshot.png";
 import hidoriImage from "@/assets/news-2026-hidori.png";
 import siteRenewalImage from "@/assets/news-2026-site-renewal.png";
+import lumoraImage from "@/assets/news-2026-lumora.png";
 
 export interface NewsItem {
   id: string;
@@ -25,6 +26,26 @@ export interface NewsItem {
 }
 
 export const newsData: NewsItem[] = [
+  {
+    id: "lumora-release",
+    title: "パーソナル ヘルス レコード「Lumora（ルモーラ）」を公開しました。",
+    date: "2026年09月13日",
+    readTime: "2分",
+    category: "プロダクト",
+    image: lumoraImage,
+    excerpt: "音声で自律的に進行し、話すだけで日々の心身の状態を自動記録できるパーソナル ヘルス レコード「Lumora（ルモーラ）」を公開しました。",
+    content: `
+      <p>パーソナル ヘルス レコード「<a href="https://lumora-v2.replit.app/" target="_blank" rel="noopener noreferrer">Lumora（ルモーラ）</a>」を公開しました。<b>日々の心身の状態を、話すだけで記録できる</b>アプリです。</p>
+      <br />
+      <p>Lumoraが一問ずつ音声で問いかけ、会話を自律的に進めます。利用者は<b>音声で答えるだけ</b>。話した内容は自動的に文字と記録に整理されるため、入力画面に向かって文章を書く必要はありません。</p>
+      <br />
+      <p>日々の振り返りに加えて、施術やトレーニングのあとなど、その時々の状態も声で残せます。記録した内容は、あとから経過として振り返ったり、必要な情報をまとめたりできます。</p>
+      <br />
+      <p>自分の健康に関する変化を、無理なく継続して記録するためのパーソナル ヘルス レコードです。</p>
+      <br />
+      <p>Lumoraをぜひお試しください。<a href="https://lumora-v2.replit.app/" target="_blank" rel="noopener noreferrer">https://lumora-v2.replit.app/</a></p>
+    `,
+  },
   {
     id: "viberush-japan-release",
     title: "AIアプリのPRプラットフォーム「VibeRush Japan」を公開しました。",
