@@ -266,4 +266,8 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
   .sj-home .nav ul a.cta{padding:7px 10px}
   .sj-home .theme-btn{padding:6px 9px; font-size:12px}
   .sj-home .theme-btn .tlabel{display:none}
+  .sj-home .insight-cards{gap:16px}
+  .sj-home .insight-card{padding:22px}
+  .sj-home .insight-card .status-badge{position:static; margin-bottom:10px}
+  .sj-home .insight-card h3{padding-right:0}
 }
