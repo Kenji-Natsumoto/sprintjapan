@@ -1,8 +1,8 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Factory } from 'lucide-react';
+import { ExternalLink, Factory, FileText } from 'lucide-react';
 import logo from '@/assets/spj-logo.png';
-import { ACE_AGENDA } from '@/data/insightsData';
+import { insightsData, InsightStatus } from '@/data/insightsData';
 import './home.css';
 
 const THEME_KEY = 'sj-theme';
@@ -27,6 +27,13 @@ const Home = () => {
     const next = theme === 'dark' ? 'light' : 'dark';
     setTheme(next);
     localStorage.setItem(THEME_KEY, next);
+  };
+
+  const papers = insightsData.filter((i) => i.category === '論文');
+  const badgeClass = (status: InsightStatus) => {
+    if (status === 'v0.1 初稿') return 'badge-primary';
+    if (status === 'LOCKED') return 'badge-locked';
+    return 'badge-muted';
   };
 
   return (
@@ -172,18 +179,35 @@ const Home = () => {
       <section className="insight" id="insight">
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">Insight / Paper v0.1</span>
-            <h2>AI Centered Enterprise（ACE）― 二階建て工場</h2>
-            <p className="lead">意思決定と実行を、一つの構造へ。</p>
+            <span className="label">思想論文</span>
+            <h2>インサイト</h2>
           </div>
-          <ol className="agenda">
-            {ACE_AGENDA.map((item, i) => (
-              <li key={item}><span className="no">{String(i).padStart(2, '0')}</span>{item}</li>
+          <div className="insight-cards">
+            {papers.map((item, n) => (
+              <article key={item.id} className="insight-card">
+                <span className={`status-badge ${badgeClass(item.status)}`}>
+                  {item.status}
+                </span>
+                <p className="index">{String(n + 1).padStart(2, '0')}</p>
+                <h3>
+                  <Link to={item.path}>{item.title}</Link>
+                </h3>
+                <p className="subtitle">{item.subtitle}</p>
+                <p className="excerpt">{item.excerpt}</p>
+                <div className="card-foot">
+                  <Link to={item.path} className="read-link">
+                    <FileText size={16} aria-hidden="true" />
+                    論文を読む →
+                  </Link>
+                  <span className="meta">
+                    {item.floor} ・ {item.date}（{item.version}）
+                  </span>
+                </div>
+              </article>
             ))}
-          </ol>
+          </div>
           <div className="links">
-            <Link to="/insights/ace-two-story/#top" className="btn btn-primary">論文を読む →</Link>
-            <Link to="/insights/">インサイト一覧 →</Link>
+            <Link to="/insights/" className="btn btn-primary">インサイト一覧 →</Link>
           </div>
         </div>
       </section>

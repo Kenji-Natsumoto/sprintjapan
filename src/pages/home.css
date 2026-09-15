@@ -202,13 +202,27 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
 .sj-home .company th{color:var(--muted); font-weight:400; width:9em}
 .sj-home .company .links{margin-top:32px}
 
-/* S6b insight (agenda) */
+/* S6b insight cards (match /insights article cards) */
 .sj-home .insight{border-top:1px solid var(--line)}
-.sj-home .insight .sec-head .lead{color:var(--muted); margin-top:12px; font-size:16px}
-.sj-home .agenda{list-style:none; max-width:680px; border-top:1px solid var(--line)}
-.sj-home .agenda li{display:flex; gap:16px; align-items:baseline; padding:14px 8px; border-bottom:1px solid var(--line); font-size:15px}
-.sj-home .agenda .no{font-family:ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:.2em; color:var(--accent-text); min-width:2.5em}
-.sj-home .insight .links{margin-top:32px; display:flex; align-items:center; gap:24px; flex-wrap:wrap}
+.sj-home .insight-cards{display:flex; flex-direction:column; gap:24px; max-width:720px}
+.sj-home .insight-card{position:relative; background:var(--bg-card); border:1px solid var(--line); border-radius:12px; padding:28px 32px; transition:transform .2s ease, box-shadow .2s ease}
+.sj-home .insight-card:hover{transform:translateY(-2px); box-shadow:0 12px 32px rgba(0,0,0,.14)}
+.sj-home .insight-card .status-badge{position:absolute; top:20px; right:20px; display:inline-flex; align-items:center; padding:6px 12px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:.02em}
+.sj-home .insight-card .status-badge.badge-primary{background:var(--accent); color:#fff}
+.sj-home .insight-card .status-badge.badge-locked{border:1px solid color-mix(in srgb, var(--accent) 40%, transparent); color:var(--accent-text)}
+.sj-home .insight-card .status-badge.badge-muted{background:var(--line); color:var(--muted)}
+.sj-home .insight-card .index{font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:20px; font-weight:700; color:var(--accent); margin-bottom:8px}
+.sj-home .insight-card h3{font-size:clamp(18px,2vw,20px); font-weight:700; line-height:1.35; margin-bottom:6px; padding-right:90px}
+.sj-home .insight-card h3 a{color:var(--text)}
+.sj-home .insight-card h3 a:hover{color:var(--accent)}
+.sj-home .insight-card .subtitle{font-size:14px; color:var(--muted); margin-bottom:12px; line-height:1.6}
+.sj-home .insight-card .excerpt{font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:20px}
+.sj-home .insight-card .card-foot{display:flex; flex-wrap:wrap; align-items:center; gap:16px}
+.sj-home .insight-card .read-link{display:inline-flex; align-items:center; gap:6px; color:var(--accent-text); font-size:14px; font-weight:600}
+.sj-home .insight-card .read-link:hover{opacity:.8}
+.sj-home .insight-card .read-link svg{width:16px; height:16px}
+.sj-home .insight-card .meta{font-size:13px; color:var(--muted)}
+.sj-home .insight .links{margin-top:40px}
 .sj-home .insight .links .btn{margin-right:0}
 
 /* S7 contact */
@@ -252,4 +266,8 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
   .sj-home .nav ul a.cta{padding:7px 10px}
   .sj-home .theme-btn{padding:6px 9px; font-size:12px}
   .sj-home .theme-btn .tlabel{display:none}
+  .sj-home .insight-cards{gap:16px}
+  .sj-home .insight-card{padding:22px}
+  .sj-home .insight-card .status-badge{position:static; margin-bottom:10px}
+  .sj-home .insight-card h3{padding-right:0}
 }
