@@ -1,4 +1,4 @@
-import { ReactNode, useMemo } from 'react';
+import React, { ReactNode, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -16,6 +16,15 @@ interface InsightPaperProps {
 }
 
 const headingId = (n: number) => `sec-${n}`;
+
+// 目次リンク: 参考 UI（signity.sprintjapan.net/resources）と同じく、アンカーへゆっくり移動する。
+// ルーターの遷移（ScrollToTop の即時スクロール）を起こさないよう、既定動作を止めて自前でスクロールし、URL の # だけ差し替える。
+const smoothScrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  window.history.replaceState(null, '', `#${id}`);
+};
 
 const InsightPaper = ({ id, content, abstract, children }: InsightPaperProps) => {
   const item = insightsData.find((i) => i.id === id);
@@ -87,7 +96,14 @@ const InsightPaper = ({ id, content, abstract, children }: InsightPaperProps) =>
                 <ol className="space-y-2 text-sm">
                   {sections.map((title, n) => (
                     <li key={headingId(n)}>
-                      <a href={`#${headingId(n)}`} className="text-foreground/80 hover:text-primary transition-colors">
+                      <a
+                        href={`#${headingId(n)}`}
+                        className="text-foreground/80 hover:text-primary transition-colors"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          smoothScrollTo(headingId(n));
+                        }}
+                      >
                         {title}
                       </a>
                     </li>
@@ -119,11 +135,20 @@ const InsightPaper = ({ id, content, abstract, children }: InsightPaperProps) =>
                 hr: () => <hr className="my-8 border-border" />,
                 a: ({ node, href, ...props }) => {
                   const isInternal = href?.startsWith('/') || href?.startsWith('#');
+                  const isHash = href?.startsWith('#');
                   return (
                     <a
                       href={href}
                       className="text-primary underline underline-offset-2 hover:opacity-80"
                       {...(isInternal ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+                      {...(isHash
+                        ? {
+                            onClick: (e: React.MouseEvent) => {
+                              e.preventDefault();
+                              smoothScrollTo(href!.slice(1));
+                            },
+                          }
+                        : {})}
                       {...props}
                     />
                   );
