@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import SjShell from '@/components/SjShell';
+import InsightsNav from '@/components/InsightsNav';
 
 const content = `# AIエージェント集合体による「意思決定生成企業（Customer-Generating AI Company）」の提案
 
@@ -202,12 +203,16 @@ const AINativeCompany = () => {
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = `${window.location.origin}/ai-native-company/`;
+    canonical.href = `${window.location.origin}/insights/closed-loop/`;
   }, []);
 
   return (
     <SjShell>
       <main className="sj-paper flex-1 pt-16 pb-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <a href="/insights/" className="text-sm text-muted-foreground hover:text-primary transition-colors">← インサイト一覧へ</a>
+          <InsightsNav currentId="closed-loop" />
+        </div>
         <section className="container mx-auto px-4 max-w-3xl mb-16" aria-labelledby="latest-paper-title">
           <div className="glass-card-strong gradient-border p-6 md:p-10 relative overflow-hidden">
             <div className="mesh-gradient absolute inset-0 opacity-40 pointer-events-none" aria-hidden="true" />
@@ -290,28 +295,28 @@ const AINativeCompany = () => {
                   </li>
                   <li>
                     夏本健司『
-                    <a href="/ai-native-company/harness-infrastructure/" className="text-primary underline underline-offset-2 hover:opacity-80">
+                    <a href="/insights/harness-infrastructure/" className="text-primary underline underline-offset-2 hover:opacity-80">
                       AI-Native Company のためのハーネス・インフラ設計
                     </a>
                     』
                   </li>
                   <li>
                     夏本健司『
-                    <a href="/ai-native-company/effectiveness-over-efficiency/" className="text-primary underline underline-offset-2 hover:opacity-80">
+                    <a href="/insights/effectiveness-over-efficiency/" className="text-primary underline underline-offset-2 hover:opacity-80">
                       なぜ「AI業務効率化」は失敗するのか ― 効率性ではなく効果性を
                     </a>
                     』
                   </li>
                   <li>
                     夏本健司『
-                    <a href="/ai-native-company/organization-optimization/" className="text-primary underline underline-offset-2 hover:opacity-80">
+                    <a href="/insights/organization-optimization/" className="text-primary underline underline-offset-2 hover:opacity-80">
                       ジャック・ドーシーモデルのAIネイティブカンパニーへの応用
                     </a>
                     』
                   </li>
                   <li>
                     夏本健司『
-                    <a href="/ai-native-company/tool-integration-guide/" className="text-primary underline underline-offset-2 hover:opacity-80">
+                    <a href="/insights/tool-integration-guide/" className="text-primary underline underline-offset-2 hover:opacity-80">
                       AI-Nativeスタートアップ ツール連携設計ガイド
                     </a>
                     』
@@ -378,6 +383,9 @@ const AINativeCompany = () => {
           >
             {content}
           </ReactMarkdown>
+          <div className="mt-12 pt-6 border-t border-border">
+            <InsightsNav currentId="decision-generating-company" />
+          </div>
         </article>
       </main>
     </SjShell>

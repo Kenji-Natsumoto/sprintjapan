@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import SjShell from '@/components/SjShell';
+import InsightPaper from '@/components/InsightPaper';
 
 const content = `# AIカンパニー組織の最適化
 
@@ -714,81 +713,12 @@ const OrganizationOptimization = () => {
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = `${window.location.origin}/ai-native-company/organization-optimization/`;
+    canonical.href = `${window.location.origin}/insights/organization-optimization/`;
   }, []);
 
   return (
     <SjShell>
-      <main className="sj-paper flex-1 pt-16 pb-16">
-        <article className="container mx-auto px-4 max-w-3xl">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              h1: ({ node, ...props }) => <h1 className="text-3xl md:text-4xl font-bold mt-8 mb-6 leading-tight" {...props} />,
-              h2: ({ node, ...props }) => <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4 leading-tight" {...props} />,
-              h3: ({ node, ...props }) => <h3 className="text-xl md:text-2xl font-semibold mt-8 mb-3" {...props} />,
-              h4: ({ node, ...props }) => <h4 className="text-lg md:text-xl font-semibold mt-6 mb-2" {...props} />,
-              p: ({ node, ...props }) => <p className="my-4 leading-relaxed" {...props} />,
-              ul: ({ node, ...props }) => <ul className="list-disc pl-6 my-4 space-y-2" {...props} />,
-              ol: ({ node, ...props }) => <ol className="list-decimal pl-6 my-4 space-y-2" {...props} />,
-              li: ({ node, ...props }) => <li className="leading-relaxed" {...props} />,
-              blockquote: ({ node, ...props }) => (
-                <blockquote className="border-l-4 border-border pl-4 my-4 italic text-muted-foreground" {...props} />
-              ),
-              hr: () => <hr className="my-8 border-border" />,
-              a: ({ node, href, ...props }) => {
-                const isInternal = href?.startsWith('/');
-                return (
-                  <a
-                    href={href}
-                    className="text-primary underline underline-offset-2 hover:opacity-80"
-                    {...(isInternal ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-                    {...props}
-                  />
-                );
-              },
-              strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
-              em: ({ node, ...props }) => <em className="italic" {...props} />,
-              table: ({ node, ...props }) => (
-                <div className="my-6 overflow-x-auto">
-                  <table className="w-full border-collapse border border-border text-sm" {...props} />
-                </div>
-              ),
-              thead: ({ node, ...props }) => <thead className="bg-muted" {...props} />,
-              th: ({ node, ...props }) => <th className="border border-border px-3 py-2 text-left font-semibold" {...props} />,
-              td: ({ node, ...props }) => <td className="border border-border px-3 py-2 align-top" {...props} />,
-              code: ({ node, className, children, ...props }: any) => {
-                const isBlock = className?.includes('language-') || (typeof children === 'string' && children.includes('\n'));
-                if (isBlock) {
-                  return (
-                    <code className="block font-mono text-sm whitespace-pre" {...props}>
-                      {children}
-                    </code>
-                  );
-                }
-                return (
-                  <code className="font-mono text-sm bg-muted px-1.5 py-0.5 rounded" {...props}>
-                    {children}
-                  </code>
-                );
-              },
-              pre: ({ node, ...props }) => (
-                <pre className="my-6 p-4 bg-muted rounded-md overflow-x-auto text-sm leading-relaxed" {...props} />
-              ),
-            }}
-          >
-            {content}
-          </ReactMarkdown>
-          <div className="mt-12 pt-6 border-t border-border">
-            <a
-              href="/ai-native-company/"
-              className="text-primary underline underline-offset-2 hover:opacity-80"
-            >
-              ← 前のページに戻る
-            </a>
-          </div>
-        </article>
-      </main>
+      <InsightPaper id="organization-optimization" content={content} abstract="Block 社の組織変革モデル「From Hierarchy to Intelligence」を分析し、AI カンパニー理論と統合する。後半で 1-3 人で動く逆ドーシー・モデルを提示する。" />
     </SjShell>
   );
 };

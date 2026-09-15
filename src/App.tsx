@@ -22,6 +22,8 @@ import HarnessInfrastructure from "./pages/HarnessInfrastructure";
 import EffectivenessOverEfficiency from "./pages/EffectivenessOverEfficiency";
 import OrganizationOptimization from "./pages/OrganizationOptimization";
 import ToolIntegrationGuide from "./pages/ToolIntegrationGuide";
+import Insights from "./pages/Insights";
+import AceTwoStory from "./pages/insights/AceTwoStory";
 import AIDiscoveryHome from "./pages/ai-discovery/Home";
 import { Session1, Session2, Session3, Session4, Session5, Session6 } from "./pages/ai-discovery/Worksheet";
 import Chat from "./pages/Chat";
@@ -55,16 +57,31 @@ const App = () => (
           <Route path="/super-vibe-coding" element={<SuperVibeCoding />} />
           <Route path="/super-vibe-coding-full" element={<SuperVibeCodingV2 />} />
           <Route path="/profile/kenji_natsumoto" element={<ProfileNatsumoto />} />
-          <Route path="/ai-native-company" element={<AINativeCompany />} />
-          <Route path="/ai-native-company/" element={<AINativeCompany />} />
-          <Route path="/ai-native-company/harness-infrastructure" element={<HarnessInfrastructure />} />
-          <Route path="/ai-native-company/harness-infrastructure/" element={<HarnessInfrastructure />} />
-          <Route path="/ai-native-company/effectiveness-over-efficiency" element={<EffectivenessOverEfficiency />} />
-          <Route path="/ai-native-company/effectiveness-over-efficiency/" element={<EffectivenessOverEfficiency />} />
-          <Route path="/ai-native-company/organization-optimization" element={<OrganizationOptimization />} />
-          <Route path="/ai-native-company/organization-optimization/" element={<OrganizationOptimization />} />
-          <Route path="/ai-native-company/tool-integration-guide" element={<ToolIntegrationGuide />} />
-          <Route path="/ai-native-company/tool-integration-guide/" element={<ToolIntegrationGuide />} />
+          {/* インサイト（論文・設計ガイド）: 索引と7本。旧 /ai-native-company/* は転送のみ（消さない） */}
+          <Route path="/insights" element={<Insights />} />
+          <Route path="/insights/" element={<Insights />} />
+          <Route path="/insights/ace-two-story" element={<AceTwoStory />} />
+          <Route path="/insights/ace-two-story/" element={<AceTwoStory />} />
+          <Route path="/insights/closed-loop" element={<AINativeCompany />} />
+          <Route path="/insights/closed-loop/" element={<AINativeCompany />} />
+          <Route path="/insights/harness-infrastructure" element={<HarnessInfrastructure />} />
+          <Route path="/insights/harness-infrastructure/" element={<HarnessInfrastructure />} />
+          <Route path="/insights/effectiveness-over-efficiency" element={<EffectivenessOverEfficiency />} />
+          <Route path="/insights/effectiveness-over-efficiency/" element={<EffectivenessOverEfficiency />} />
+          <Route path="/insights/organization-optimization" element={<OrganizationOptimization />} />
+          <Route path="/insights/organization-optimization/" element={<OrganizationOptimization />} />
+          <Route path="/insights/tool-integration-guide" element={<ToolIntegrationGuide />} />
+          <Route path="/insights/tool-integration-guide/" element={<ToolIntegrationGuide />} />
+          <Route path="/ai-native-company" element={<Navigate to="/insights/" replace />} />
+          <Route path="/ai-native-company/" element={<Navigate to="/insights/" replace />} />
+          <Route path="/ai-native-company/harness-infrastructure" element={<Navigate to="/insights/harness-infrastructure/" replace />} />
+          <Route path="/ai-native-company/harness-infrastructure/" element={<Navigate to="/insights/harness-infrastructure/" replace />} />
+          <Route path="/ai-native-company/effectiveness-over-efficiency" element={<Navigate to="/insights/effectiveness-over-efficiency/" replace />} />
+          <Route path="/ai-native-company/effectiveness-over-efficiency/" element={<Navigate to="/insights/effectiveness-over-efficiency/" replace />} />
+          <Route path="/ai-native-company/organization-optimization" element={<Navigate to="/insights/organization-optimization/" replace />} />
+          <Route path="/ai-native-company/organization-optimization/" element={<Navigate to="/insights/organization-optimization/" replace />} />
+          <Route path="/ai-native-company/tool-integration-guide" element={<Navigate to="/insights/tool-integration-guide/" replace />} />
+          <Route path="/ai-native-company/tool-integration-guide/" element={<Navigate to="/insights/tool-integration-guide/" replace />} />
           <Route path="/ai-discovery-community" element={<AIDiscoveryHome />} />
           <Route path="/ai-discovery-community/" element={<AIDiscoveryHome />} />
           <Route path="/ai-discovery-community/worksheets/session-1" element={<Session1 />} />

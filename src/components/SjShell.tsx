@@ -43,6 +43,7 @@ const SjShell = ({ children }: { children: ReactNode }) => {
                 <span className="tlabel">{theme === 'dark' ? 'ライト' : 'ダーク'}</span>
               </button>
             </li>
+            <li><Link to="/insights/">インサイト</Link></li>
             <li><Link to="/company">会社情報</Link></li>
             <li><Link to="/news">ニュース</Link></li>
             <li><Link to="/contact" className="cta">お問い合わせ</Link></li>
@@ -55,6 +56,7 @@ const SjShell = ({ children }: { children: ReactNode }) => {
       <footer>
         <div className="wrap">
           <ul>
+            <li><Link to="/insights/">インサイト</Link></li>
             <li><Link to="/company">会社情報</Link></li>
             <li><Link to="/contact">お問い合わせ</Link></li>
           </ul>

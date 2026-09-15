@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import SjShell from '@/components/SjShell';
+import InsightPaper from '@/components/InsightPaper';
 
 const content = `# なぜ「AI業務効率化」は失敗するのか
 
@@ -353,62 +352,12 @@ const EffectivenessOverEfficiency = () => {
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = `${window.location.origin}/ai-native-company/effectiveness-over-efficiency/`;
+    canonical.href = `${window.location.origin}/insights/effectiveness-over-efficiency/`;
   }, []);
 
   return (
     <SjShell>
-      <main className="sj-paper flex-1 pt-16 pb-16">
-        <article className="container mx-auto px-4 max-w-3xl">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              h1: ({ node, ...props }) => <h1 className="text-3xl md:text-4xl font-bold mt-8 mb-6 leading-tight" {...props} />,
-              h2: ({ node, ...props }) => <h2 className="text-2xl md:text-3xl font-bold mt-10 mb-4 leading-tight" {...props} />,
-              h3: ({ node, ...props }) => <h3 className="text-xl md:text-2xl font-semibold mt-8 mb-3" {...props} />,
-              p: ({ node, ...props }) => <p className="my-4 leading-relaxed" {...props} />,
-              ul: ({ node, ...props }) => <ul className="list-disc pl-6 my-4 space-y-2" {...props} />,
-              ol: ({ node, ...props }) => <ol className="list-decimal pl-6 my-4 space-y-2" {...props} />,
-              li: ({ node, ...props }) => <li className="leading-relaxed" {...props} />,
-              blockquote: ({ node, ...props }) => (
-                <blockquote className="border-l-4 border-border pl-4 my-4 italic text-muted-foreground" {...props} />
-              ),
-              hr: () => <hr className="my-8 border-border" />,
-              a: ({ node, href, ...props }) => {
-                const isInternal = href?.startsWith('/');
-                return (
-                  <a
-                    href={href}
-                    className="text-primary underline underline-offset-2 hover:opacity-80"
-                    {...(isInternal ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-                    {...props}
-                  />
-                );
-              },
-              strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
-              em: ({ node, ...props }) => <em className="italic" {...props} />,
-              table: ({ node, ...props }) => (
-                <div className="my-6 overflow-x-auto">
-                  <table className="w-full border-collapse border border-border text-sm" {...props} />
-                </div>
-              ),
-              thead: ({ node, ...props }) => <thead className="bg-muted" {...props} />,
-              th: ({ node, ...props }) => <th className="border border-border px-3 py-2 text-left font-semibold" {...props} />,
-              td: ({ node, ...props }) => <td className="border border-border px-3 py-2 align-top" {...props} />,
-            }}
-          >
-            {content}
-          </ReactMarkdown>
-          <div className="mt-12 pt-6 border-t border-border">
-            <a
-              href="/ai-native-company/"
-              className="text-primary underline underline-offset-2 hover:opacity-80"
-            >
-              ← 前のページに戻る
-            </a>
-          </div>
-        </article>
-      </main>
+      <InsightPaper id="effectiveness-over-efficiency" content={content} abstract="「AI業務効率化」が失敗する構造的理由を解明し、効率性ではなく効果性を軸にした AI 時代の組織設計を提案する。経営者が答えるべき3つの問い。" />
     </SjShell>
   );
 };

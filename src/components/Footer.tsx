@@ -42,7 +42,7 @@ const Footer = () => {
               <Link to="/news" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 ニュース
               </Link>
-              <Link to="/ai-native-company/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/insights/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 インサイト
               </Link>
             </div>

@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Factory } from 'lucide-react';
 import logo from '@/assets/spj-logo.png';
+import { ACE_AGENDA } from '@/data/insightsData';
 import './home.css';
 
 const THEME_KEY = 'sj-theme';
@@ -41,6 +42,7 @@ const Home = () => {
                 {theme === 'dark' ? '○ ライト' : '○ ダーク'}
               </button>
             </li>
+            <li><Link to="/insights/">インサイト</Link></li>
             <li><Link to="/company">会社情報</Link></li>
             <li><Link to="/news">ニュース</Link></li>
             <li><Link to="/contact" className="cta">お問い合わせ</Link></li>
@@ -162,26 +164,26 @@ const Home = () => {
             <a href="https://signityos.io/ja" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
               Signity を見る <ExternalLink size={16} aria-hidden="true" />
             </a>
-            <Link to="/ai-native-company">AIネイティブ経営の実践 →</Link>
+            <Link to="/insights/">AIネイティブ経営の実践 →</Link>
           </div>
         </div>
       </section>
 
-      <section className="company">
+      <section className="insight" id="insight">
         <div className="wrap">
           <div className="sec-head">
-            <span className="label">Company</span>
-            <h2>会社情報</h2>
+            <span className="label">Insight / Paper v0.1</span>
+            <h2>AI Centered Enterprise（ACE）― 二階建て工場</h2>
+            <p className="lead">意思決定と実行を、一つの構造へ。</p>
           </div>
-          <table>
-            <tbody>
-              <tr><th>社名</th><td>スプリントジャパン株式会社</td></tr>
-              <tr><th>代表</th><td>夏本 健司</td></tr>
-              <tr><th>事業内容</th><td>企業向けAI実装（FDE）／経営者向けAIコーチング／AI実践教育</td></tr>
-            </tbody>
-          </table>
+          <ol className="agenda">
+            {ACE_AGENDA.map((item, i) => (
+              <li key={item}><span className="no">{String(i).padStart(2, '0')}</span>{item}</li>
+            ))}
+          </ol>
           <div className="links">
-            <Link to="/company">会社概要・代表プロフィール →</Link>
+            <Link to="/insights/ace-two-story/#top" className="btn btn-primary">論文を読む →</Link>
+            <Link to="/insights/">インサイト一覧 →</Link>
           </div>
         </div>
       </section>
@@ -197,6 +199,7 @@ const Home = () => {
       <footer>
         <div className="wrap">
           <ul>
+            <li><Link to="/insights/">インサイト</Link></li>
             <li><Link to="/company">会社情報</Link></li>
             <li><Link to="/contact">お問い合わせ</Link></li>
           </ul>
