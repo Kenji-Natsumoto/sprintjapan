@@ -183,6 +183,9 @@ const Home = () => {
             <span className="label">思想論文</span>
             <h2>インサイト</h2>
           </div>
+          <p className="insight-lead">
+            AIネイティブ経営の理論と実装。論文と設計ガイドを、版と日付つきで公開します。
+          </p>
           <div className="insight-cards">
             {papers.map((item, n) => (
               <article key={item.id} className="insight-card">
