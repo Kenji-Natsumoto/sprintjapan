@@ -29,7 +29,8 @@ const Home = () => {
     localStorage.setItem(THEME_KEY, next);
   };
 
-  const papers = insightsData.filter((i) => i.category === '論文');
+  const acePaper = insightsData.find((i) => i.id === 'ace-two-story');
+  const papers = acePaper ? [acePaper] : [];
   const badgeClass = (status: InsightStatus) => {
     if (status === 'v0.1 初稿') return 'badge-primary';
     if (status === 'LOCKED') return 'badge-locked';
@@ -182,6 +183,9 @@ const Home = () => {
             <span className="label">思想論文</span>
             <h2>インサイト</h2>
           </div>
+          <p className="insight-lead">
+            AIネイティブ経営の理論と実装。論文と設計ガイドを、版と日付つきで公開します。
+          </p>
           <div className="insight-cards">
             {papers.map((item, n) => (
               <article key={item.id} className="insight-card">

@@ -204,6 +204,7 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
 
 /* S6b insight cards (match /insights article cards) */
 .sj-home .insight{border-top:1px solid var(--line)}
+.sj-home .insight-lead{color:var(--muted); font-size:16px; line-height:1.8; max-width:720px; margin-bottom:40px}
 .sj-home .insight-cards{display:flex; flex-direction:column; gap:24px; max-width:720px}
 .sj-home .insight-card{position:relative; background:var(--bg-card); border:1px solid var(--line); border-radius:12px; padding:28px 32px; transition:transform .2s ease, box-shadow .2s ease}
 .sj-home .insight-card:hover{transform:translateY(-2px); box-shadow:0 12px 32px rgba(0,0,0,.14)}
