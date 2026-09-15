@@ -29,7 +29,8 @@ const Home = () => {
     localStorage.setItem(THEME_KEY, next);
   };
 
-  const papers = insightsData.filter((i) => i.category === '論文');
+  const acePaper = insightsData.find((i) => i.id === 'ace-two-story');
+  const papers = acePaper ? [acePaper] : [];
   const badgeClass = (status: InsightStatus) => {
     if (status === 'v0.1 初稿') return 'badge-primary';
     if (status === 'LOCKED') return 'badge-locked';
