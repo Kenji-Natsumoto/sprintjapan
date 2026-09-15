@@ -1,8 +1,8 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Factory } from 'lucide-react';
+import { ExternalLink, Factory, FileText } from 'lucide-react';
 import logo from '@/assets/spj-logo.png';
-import { ACE_AGENDA } from '@/data/insightsData';
+import { insightsData, InsightStatus } from '@/data/insightsData';
 import './home.css';
 
 const THEME_KEY = 'sj-theme';
