@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NatsumotoBotSessionState",
+  "description": "夏本BOT の 1 セッション分の状態。Lumora の「経過」に保存し、「渡し紙」の描画に使う。",
+  "type": "object",
+  "required": ["session_id", "client_id", "started_at", "stage", "sheet", "turns"],
+  "properties": {
+    "session_id": { "type": "string" },
+    "client_id": { "type": "string", "description": "MVP では固定値でよい。第 5 週以降にワークスペース ID になる" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "ended_at": { "type": ["string", "null"], "format": "date-time" },
+    "stage": {
+      "type": "string",
+      "enum": ["customer", "problem", "current", "concept", "name", "gate", "done", "answer"],
+      "description": "いま BOT がどの項目を埋めようとしているか。answer は明確な問いに答えるモード"
+    },
+    "sheet": {
+      "type": "object",
+      "description": "サービスアイデアシート。各項目は value と status を持つ",
+      "required": ["customer", "problem", "current", "concept", "name"],
+      "properties": {
+        "customer": { "$ref": "#/$defs/field" },
+        "problem": {
+          "allOf": [
+            { "$ref": "#/$defs/field" },
+            {
+              "properties": {
+                "situation": { "type": ["string", "null"], "description": "どんな状況の人が" },
+                "desire": { "type": ["string", "null"], "description": "どうなりたい" }
+              }
+            }
+          ]
+        },
+        "current": { "$ref": "#/$defs/field" },
+        "concept": {
+          "allOf": [
+            { "$ref": "#/$defs/field" },
+            {
+              "properties": {
+                "value_pattern": {
+                  "type": ["string", "null"],
+                  "enum": ["イ", "ロ", "ハ", "ニ", "ホ", "ヘ", "ト", "チ", "リ", "ヌ", "ル", null],
+                  "description": "11 の価値パターン"
+                }
+              }
+            }
+          ]
+        },
+        "name": { "$ref": "#/$defs/field" }
+      }
+    },
+    "todays_question": {
+      "type": ["string", "null"],
+      "description": "セッション末に手渡す「今日の問い」。例: 〇〇さんの△△は、お金を払ってでも解決したいほど切実か"
+    },
+    "next_action": {
+      "type": ["string", "null"],
+      "description": "次の一手。関門通過後は原則「同じ状況の 3 人にプロブレムインタビュー」"
+    },
+    "next_action_result": {
+      "type": ["string", "null"],
+      "description": "次回セッション冒頭で聞き取った結果。前回の next_action に対する答え"
+    },
+    "turns": {
+      "type": "array",
+      "description": "対話ログ。修正ログの元データになる",
+      "items": {
+        "type": "object",
+        "required": ["role", "content", "at"],
+        "properties": {
+          "role": { "type": "string", "enum": ["bot", "client"] },
+          "content": { "type": "string", "description": "client は音声認識後の文字。bot は speak" },
+          "text": { "type": ["string", "null"], "description": "bot のみ。画面に出した補足" },
+          "diagram": { "type": ["string", "null"], "description": "bot のみ。出した Mermaid" },
+          "stage": { "type": "string" },
+          "at": { "type": "string", "format": "date-time" },
+          "override": { "$ref": "#/$defs/override" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "field": {
+      "type": "object",
+      "required": ["value", "status"],
+      "properties": {
+        "value": { "type": ["string", "null"] },
+        "status": {
+          "type": "string",
+          "enum": ["empty", "tentative", "confirmed"],
+          "description": "tentative は三回深掘りしても出ず仮置きした状態"
+        },
+        "probe_count": { "type": "integer", "minimum": 0, "default": 0, "description": "この項目で深掘りした回数" }
+      }
+    },
+    "override": {
+      "type": ["object", "null"],
+      "description": "夏本本人による採点と修正。3 日目以降に埋める",
+      "properties": {
+        "score": { "type": "integer", "minimum": 1, "maximum": 5 },
+        "would_say": { "type": "string", "description": "夏本ならこう言う、の修正文" },
+        "reason": { "type": "string", "description": "なぜ違うか。一文" },
+        "modality_ok": { "type": "boolean", "description": "声・文・図の使い分けは正しかったか" },
+        "at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}
