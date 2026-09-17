@@ -20,6 +20,7 @@
 | `prompts/judgment-rules.md` | 判断規則の出典つき長文版。本人が直す場所 | 手動でシステムプロンプト第 7 節へ反映 |
 | `schema/idea-sheet.schema.json` | セッション状態の型。シート、今日の問い、次の一手、対話ログ、修正ログ | 「経過」の保存形式、「渡し紙」の描画元 |
 | `eval/day3-test-set.md` | 3 日目に本人が投げる 10 問と採点書式 | 修正ログ第 1 号 |
+| `lumora-day1-brief.md` | lumora-v2 側の 1 日目改修ブリーフ。単体で読める | `sprintjapan-hq/lumora-v2` のセッションに貼る |
 
 ## 3 日の割り当て
 
