@@ -127,8 +127,17 @@ const AIDiscoveryHome = () => {
           <aside className="rounded-3xl bg-gradient-to-br from-[#1c1610] to-[#2d2418] text-[#f5ecd8] p-7 md:p-8 shadow-2xl relative overflow-hidden">
             <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#ea580c]/20 blur-3xl" />
             <div className="relative">
-              <div className="text-[11px] tracking-wider uppercase text-[#d4a84c]">最終更新</div>
-              <div className="text-lg font-medium mt-1">2026年9月4日</div>
+              <div className="text-[11px] tracking-wider uppercase text-[#d4a84c]">次回開催日</div>
+              <div className="mt-3 space-y-3">
+                <div>
+                  <div className="text-[12px] text-[#d4a84c]">Aグループ</div>
+                  <div className="text-lg font-medium mt-0.5">10月7日（水）19:00〜21:00</div>
+                </div>
+                <div>
+                  <div className="text-[12px] text-[#d4a84c]">Bグループ</div>
+                  <div className="text-lg font-medium mt-0.5">10月4日（日）14:00〜16:00</div>
+                </div>
+              </div>
               <div className="my-6 h-px bg-white/10" />
               <ul className="space-y-3.5 text-[14px]">
                 {[
