@@ -182,7 +182,9 @@ const NewsDetail = () => {
                 [&>ul+h2]:mt-12
                 prose-strong:text-primary
                 [&>p]:mb-7
-                [&_h2]:!text-[32px] [&_h2]:!font-bold
+                [&_p]:leading-[1.8]
+                [&_h2]:!text-[26px] md:[&_h2]:!text-[30px] [&_h2]:!font-bold [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:leading-snug
+                [&_h3]:!text-[22px] md:[&_h3]:!text-[26px] [&_h3]:!font-bold [&_h3]:mt-10 [&_h3]:mb-4 [&_h3]:leading-snug
                 [&_a]:text-primary [&_a]:underline [&_a]:decoration-1 [&_a]:underline-offset-4
                 [&_a]:hover:text-primary/80 [&_a]:transition-colors
                 [&_a]:inline-flex [&_a]:items-center [&_a]:gap-1
