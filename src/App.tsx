@@ -30,6 +30,7 @@ import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 import ChatPopup from "./components/ChatPopup";
 import ScrollToTop from "./components/ScrollToTop";
+import { AnalyticsPageTracker } from "./hooks/useAnalytics";
 import { Navigate } from "react-router-dom";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <AnalyticsPageTracker />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/platform" element={<Platform />} />

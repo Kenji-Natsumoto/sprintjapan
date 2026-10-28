@@ -62,6 +62,12 @@ const NewsDetail = () => {
     content: dbArticle.content,
   } : null;
 
+  useEffect(() => {
+    if (news?.title) {
+      document.title = `${news.title}｜スプリントジャパン株式会社`;
+    }
+  }, [news?.title]);
+
   // Track PDF downloads and external links in article content
   useEffect(() => {
     const handleLinkClick = (e: MouseEvent) => {

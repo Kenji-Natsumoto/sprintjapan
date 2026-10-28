@@ -12,6 +12,7 @@ const Home = () => {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
+    document.title = "スプリントジャパン株式会社【公式】｜企業に、考えるAIを。現場に、動くAIを。";
     const saved = localStorage.getItem(THEME_KEY);
     if (saved === 'light' || saved === 'dark') setTheme(saved);
   }, []);

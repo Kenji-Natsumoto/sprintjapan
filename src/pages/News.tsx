@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { format } from "date-fns";
 import SjShell from "@/components/SjShell";
@@ -24,6 +24,9 @@ interface CombinedNews {
 
 const News = () => {
   const { articles, loading } = useNewsArticles();
+  useEffect(() => {
+    document.title = "ニュース｜スプリントジャパン株式会社";
+  }, []);
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Convert database articles to the same format as static newsData

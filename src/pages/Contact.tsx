@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Check, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -21,6 +21,9 @@ const contactSchema = z.object({
 
 const Contact = () => {
   const { toast } = useToast();
+  useEffect(() => {
+    document.title = 'お問い合わせ｜スプリントジャパン株式会社';
+  }, []);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
