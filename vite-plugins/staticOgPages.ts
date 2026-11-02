@@ -1,5 +1,5 @@
 /**
- * X などのSNSのリンクカード用に、指定したページだけ「head を書き換えた静的HTML」をビルド時に作る。
+ * X などのSNSのリンクカード用に、指定したページ（/ai-ops・記事・プロフィール）だけ「head を書き換えた静的HTML」をビルド時に作る。
  *
  * SNSのカード取得はJavaScriptを実行しないため、画面側（React）で入れた title / OGP は読まれない。
  * そこで dist/index.html を写し、<!-- seo:start --> 〜 <!-- seo:end --> の範囲をページ専用のタグに差し替えて
@@ -20,6 +20,7 @@ import {
   buildAiOpsPageJsonLd,
 } from '../src/data/aiOpsData';
 import { SITE_DEFAULT_DESCRIPTION, SITE_DEFAULT_TITLE } from '../src/data/siteMeta';
+import { PROFILE_PATH, profileMeta } from '../src/data/profileMeta';
 
 const SITE_ORIGIN = 'https://sprintjapan.net';
 const SITE_NAME = 'スプリントジャパン株式会社';
@@ -37,7 +38,9 @@ interface OgPage {
   ogDescription: string;
   twitterTitle: string;
   twitterDescription: string;
-  ogType: 'website' | 'article';
+  ogType: 'website' | 'article' | 'profile';
+  // ページ固有の画像（無ければ共通の image を使う）
+  image?: string;
   jsonLd?: { id: string; data: unknown }[];
 }
 
@@ -67,6 +70,18 @@ const pages = (): OgPage[] => [
     twitterTitle: aiOpsNewsArticle.title,
     twitterDescription: aiOpsNewsArticle.excerpt,
     ogType: 'article',
+  },
+  {
+    // 公開中のプロフィールのカードを維持（og:type は旧既定と同じ website）
+    route: PROFILE_PATH,
+    title: profileMeta.title,
+    description: profileMeta.description,
+    ogTitle: profileMeta.ogTitle,
+    ogDescription: profileMeta.ogDescription,
+    twitterTitle: profileMeta.twitterTitle,
+    twitterDescription: profileMeta.twitterDescription,
+    ogType: 'website',
+    image: profileMeta.ogImage,
   },
 ];
 
@@ -140,7 +155,7 @@ export const staticOgPages = (): Plugin => {
         (fs.existsSync(plannedFile) ? `${SITE_ORIGIN}${PLANNED_OG_IMAGE}` : readDefaultImage(html));
 
       for (const page of pages()) {
-        const out = replaceSeoBlock(html, renderHead(page, image));
+        const out = replaceSeoBlock(html, renderHead(page, page.image ?? image));
         const rel = page.route.replace(/^\//, '');
         const dirFile = path.join(outDir, rel, 'index.html');
         fs.mkdirSync(path.dirname(dirFile), { recursive: true });

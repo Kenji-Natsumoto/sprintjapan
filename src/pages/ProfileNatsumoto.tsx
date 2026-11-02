@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import SjShell from '@/components/SjShell';
 import natsumotoPortrait from '@/assets/instructor-natsumoto.png';
 import '@/styles/sj-profile.css';
+import { profileMeta } from '@/data/profileMeta';
 
 const NOTE_MAGAZINE = 'https://note.com/vibe_coding';
 
@@ -86,9 +87,9 @@ const ProfileNatsumoto = () => {
   }, []);
 
   useEffect(() => {
-    document.title = '夏本 健司｜スプリントジャパン株式会社 代表取締役';
+    document.title = profileMeta.title;
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute('content', '夏本健司（スプリントジャパン株式会社 代表取締役）。あなたの会社がAIネイティブに変わり、満足するアウトカムを創出するまで並走します。9年の事業開発・組織開発の現場と、自社をAIネイティブに作り替えた実装知で、経営者に伴走します。');
+    if (meta) meta.setAttribute('content', profileMeta.description);
   }, []);
 
   useEffect(() => {

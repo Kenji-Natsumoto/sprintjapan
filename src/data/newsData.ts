@@ -14,6 +14,7 @@ import hidoriImage from "@/assets/news-2026-hidori.png";
 import siteRenewalImage from "@/assets/news-2026-site-renewal.png";
 import lumoraImage from "@/assets/news-2026-lumora.png";
 import hybridOpsImage from "@/assets/news-2026-hybrid-ops.png";
+import aiOpsPageImage from "@/assets/news-2026-ai-ops-page.png";
 import { aiOpsNewsArticle } from "@/data/aiOpsData";
 
 export interface NewsItem {
@@ -35,8 +36,7 @@ export const newsData: NewsItem[] = [
     date: aiOpsNewsArticle.date,
     readTime: "2分",
     category: "企業情報",
-    // 【仮】サムネイルは既存の第1弾画像を流用中。専用画像（news-2026-ai-ops-page.png）ができたら差し替える
-    image: hybridOpsImage,
+    image: aiOpsPageImage,
     excerpt: aiOpsNewsArticle.excerpt,
     content: `
       <p>当社がこれまでに作った累計35個のアプリを、AIと人の分担でどう保守しているかをまとめた解説ページ<b>「<a href="/ai-ops" data-ga-event="aiops_link_click" data-ga-placement="news_ai_ops_body">AIと人のハイブリッド保守</a>」</b>を公開しました。</p>
