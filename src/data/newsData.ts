@@ -40,7 +40,7 @@ export const newsData: NewsItem[] = [
     image: hybridOpsImage,
     excerpt: "当社がこれまでに作った累計35個（稼働19・停止16）のアプリを、AIと人の分担でどう保守しているかをまとめた解説ページ「AIと人のハイブリッド保守」を公開しました。",
     content: `
-      <p>当社がこれまでに作った累計35個のアプリを、AIと人の分担でどう保守しているかをまとめた解説ページ<b>「<a href="/ai-ops" data-ga-event="aiops_link_click" data-ga-placement="news_ai_ops_body">AIと人のハイブリッド保守</a>」</b>を公開しました。</p>
+      <p>当社がこれまでに作った累計35個のアプリを、AIと人の分担でどう保守しているかをまとめた解説ページ<b>「<a href="/ai-ops" data-ga-event="ai_ops_click" data-ga-placement="news_ai_ops_body">AIと人のハイブリッド保守</a>」</b>を公開しました。</p>
       <br />
       <p>AIの力で、アプリは以前よりずっと速く作れるようになりました。一方で、数が増えるほど、毎日の点検や不具合への対応、更新の確認に人の時間が消えていきます。<b>「作ったあとのアプリを、誰がどう見るのか」</b>は、AIでアプリやツールを作り始めた多くの企業に共通する悩みです。</p>
       <br />
@@ -57,7 +57,7 @@ export const newsData: NewsItem[] = [
       <b>経営者向けAIコーチング</b>：「どこまでAIに任せ、どこを人が決めるか」の線引きを、経営者と一緒に決めます。<br />
       <b>AI実践教育</b>：作った人が自分で保守まで回せるよう、点検と判断の型をお伝えします。</p>
       <br />
-      <p>解説ページは<a href="/ai-ops" data-ga-event="aiops_link_click" data-ga-placement="news_ai_ops_body">こちら</a>からご覧いただけます。自社のAIアプリ・業務ツールの保守についてのご相談は、<a href="/contact" data-ga-event="contact_click" data-ga-placement="news_ai_ops">お問い合わせフォーム</a>よりお気軽にお寄せください。</p>
+      <p>解説ページは<a href="/ai-ops" data-ga-event="ai_ops_click" data-ga-placement="news_ai_ops_body">こちら</a>からご覧いただけます。自社のAIアプリ・業務ツールの保守についてのご相談は、<a href="/contact" data-ga-event="contact_click" data-ga-placement="news_ai_ops">お問い合わせフォーム</a>よりお気軽にお寄せください。</p>
     `,
   },
   {
