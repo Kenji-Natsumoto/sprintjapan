@@ -171,6 +171,19 @@ export const aiOpsClosing = {
   cta: 'AIアプリ・業務ツールの保守を相談する',
 };
 
+// /ai-ops 新設を伝えるニュース記事のうち、OGP（静的HTML）でも使う項目。本文は newsData.ts。
+// 画像の import を含まないので、ビルド時のプラグイン（vite-plugins/staticOgPages.ts）からも読める。
+export const aiOpsNewsArticle = {
+  id: 'ai-ops-page-launch',
+  title: '35個のアプリをAIと人でどう保守しているか、その仕組みを解説するページを公開しました。',
+  // 代替案B: '作ったAIアプリを止めずに守るには。35個（稼働19・停止16）を保守する当社の方法を公開しました。'
+  // 代替案C: '毎日の点検はAI、本番への判断は人。35個のアプリを支えるハイブリッド保守の解説ページを公開しました。'
+  // 【仮】公開日は /ai-ops と同日に差し替える
+  date: '2026年11月04日',
+  excerpt:
+    '当社がこれまでに作った累計35個（稼働19・停止16）のアプリを、AIと人の分担でどう保守しているかをまとめた解説ページ「AIと人のハイブリッド保守」を公開しました。',
+};
+
 // トップページの帯（入口）。SPJ企画の推奨案A。スマホではサブ文を省略する。
 export const aiOpsHomeBanner = {
   label: 'AI Ops',

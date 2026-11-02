@@ -14,6 +14,7 @@ import hidoriImage from "@/assets/news-2026-hidori.png";
 import siteRenewalImage from "@/assets/news-2026-site-renewal.png";
 import lumoraImage from "@/assets/news-2026-lumora.png";
 import hybridOpsImage from "@/assets/news-2026-hybrid-ops.png";
+import { aiOpsNewsArticle } from "@/data/aiOpsData";
 
 export interface NewsItem {
   id: string;
@@ -28,17 +29,15 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
-    id: "ai-ops-page-launch",
-    title: "35個のアプリをAIと人でどう保守しているか、その仕組みを解説するページを公開しました。",
-    // 代替案B: "作ったAIアプリを止めずに守るには。35個（稼働19・停止16）を保守する当社の方法を公開しました。",
-    // 代替案C: "毎日の点検はAI、本番への判断は人。35個のアプリを支えるハイブリッド保守の解説ページを公開しました。",
-    // 【仮】公開日は /ai-ops と同日に差し替える
-    date: "2026年11月04日",
+    // id・title・date・excerpt は aiOpsData.ts が正本（静的OGPページと共有）
+    id: aiOpsNewsArticle.id,
+    title: aiOpsNewsArticle.title,
+    date: aiOpsNewsArticle.date,
     readTime: "2分",
     category: "企業情報",
     // 【仮】サムネイルは既存の第1弾画像を流用中。専用画像（news-2026-ai-ops-page.png）ができたら差し替える
     image: hybridOpsImage,
-    excerpt: "当社がこれまでに作った累計35個（稼働19・停止16）のアプリを、AIと人の分担でどう保守しているかをまとめた解説ページ「AIと人のハイブリッド保守」を公開しました。",
+    excerpt: aiOpsNewsArticle.excerpt,
     content: `
       <p>当社がこれまでに作った累計35個のアプリを、AIと人の分担でどう保守しているかをまとめた解説ページ<b>「<a href="/ai-ops" data-ga-event="aiops_link_click" data-ga-placement="news_ai_ops_body">AIと人のハイブリッド保守</a>」</b>を公開しました。</p>
       <br />

@@ -20,6 +20,7 @@ import {
 } from '@/data/aiOpsData';
 import { trackAiOpsFaqOpen, trackAiOpsNewsClick, trackContactClick } from '@/hooks/useAnalytics';
 import { GA_PLACEMENTS } from '@/lib/gaEvents';
+import { SITE_DEFAULT_DESCRIPTION, SITE_DEFAULT_TITLE } from '@/data/siteMeta';
 
 const JSON_LD = [
   { id: 'ai-ops-faq-jsonld', build: buildAiOpsFaqJsonLd },
@@ -31,10 +32,23 @@ const useAiOpsHead = () => {
   useEffect(() => {
     const restores: Array<() => void> = [];
 
+    // 直接 /ai-ops を開いた場合、head には静的HTMLの /ai-ops 用の値が最初から入っている。
+    // その値を「元の値」として戻すと他ページに残るので、そのときはサイト既定値に戻す（canonical / og:url は外す）。
+    const defaults: Record<string, string | null> = {
+      title: SITE_DEFAULT_TITLE,
+      description: SITE_DEFAULT_DESCRIPTION,
+      'og:type': 'website',
+      'og:title': SITE_DEFAULT_TITLE,
+      'og:description': SITE_DEFAULT_DESCRIPTION,
+      'twitter:title': SITE_DEFAULT_TITLE,
+      'twitter:description': SITE_DEFAULT_DESCRIPTION,
+      'og:url': null,
+    };
+
     const prevTitle = document.title;
     document.title = aiOpsMeta.title;
     restores.push(() => {
-      document.title = prevTitle;
+      document.title = prevTitle === aiOpsMeta.title ? SITE_DEFAULT_TITLE : prevTitle;
     });
 
     const setMeta = (attr: 'name' | 'property', key: string, value: string) => {
@@ -44,8 +58,9 @@ const useAiOpsHead = () => {
         const prev = el.getAttribute('content');
         const target = el;
         restores.push(() => {
-          if (prev === null) target.removeAttribute('content');
-          else target.setAttribute('content', prev);
+          const fallback = prev === value && key in defaults ? defaults[key] : prev;
+          if (fallback === null) target.remove();
+          else target.setAttribute('content', fallback);
         });
       } else {
         el = document.createElement('meta');
@@ -75,7 +90,7 @@ const useAiOpsHead = () => {
       const prevHref = canonical.getAttribute('href');
       const target = canonical;
       restores.push(() => {
-        if (prevHref === null) target.removeAttribute('href');
+        if (prevHref === null || prevHref === AI_OPS_CANONICAL) target.remove();
         else target.setAttribute('href', prevHref);
       });
     } else {
