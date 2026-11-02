@@ -27,6 +27,7 @@ import AceTwoStory from "./pages/insights/AceTwoStory";
 import AIDiscoveryHome from "./pages/ai-discovery/Home";
 import { Session1, Session2, Session3, Session4, Session5, Session6 } from "./pages/ai-discovery/Worksheet";
 import Chat from "./pages/Chat";
+import AiOps from "./pages/AiOps";
 import NotFound from "./pages/NotFound";
 import ChatPopup from "./components/ChatPopup";
 import ScrollToTop from "./components/ScrollToTop";
@@ -92,6 +93,8 @@ const App = () => (
           <Route path="/ai-discovery-community/worksheets/session-4" element={<Session4 />} />
           <Route path="/ai-discovery-community/worksheets/session-5" element={<Session5 />} />
           <Route path="/ai-discovery-community/worksheets/session-6" element={<Session6 />} />
+          <Route path="/ai-ops" element={<AiOps />} />
+          <Route path="/ai-ops/" element={<AiOps />} />
           <Route path="/chat" element={<Chat />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

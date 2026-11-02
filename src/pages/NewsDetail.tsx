@@ -8,7 +8,8 @@ import { Calendar, Clock, ArrowLeft, ExternalLink, Share2 } from "lucide-react";
 import { newsData } from "@/data/newsData";
 import { supabase } from "@/integrations/supabase/client";
 import { NewsArticle } from "@/hooks/useNewsArticles";
-import { trackExternalLink, trackDownload } from "@/hooks/useAnalytics";
+import { trackExternalLink, trackDownload, sendGaEvent } from "@/hooks/useAnalytics";
+import { isGaEventName } from "@/lib/gaEvents";
 import { CATEGORY_PARAM } from "@/lib/newsCategories";
 
 const NewsDetail = () => {
@@ -77,6 +78,15 @@ const NewsDetail = () => {
 
       const href = link.getAttribute('href');
       if (!href) return;
+
+      // 記事本文のリンクに data-ga-event / data-ga-placement があれば、その名前で送る（名前は src/lib/gaEvents.ts）
+      const gaEvent = link.dataset.gaEvent;
+      if (isGaEventName(gaEvent)) {
+        sendGaEvent(gaEvent, {
+          placement: link.dataset.gaPlacement ?? '',
+          page_path: window.location.pathname,
+        });
+      }
 
       if (href.endsWith('.pdf')) {
         trackDownload(href.split('/').pop() || 'unknown.pdf');

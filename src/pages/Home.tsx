@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, Factory, FileText } from 'lucide-react';
 import logo from '@/assets/spj-logo.png';
 import { insightsData, InsightStatus } from '@/data/insightsData';
+import { aiOpsHomeBanner, AI_OPS_PATH } from '@/data/aiOpsData';
+import { trackAiOpsClick } from '@/hooks/useAnalytics';
+import { GA_PLACEMENTS } from '@/lib/gaEvents';
 import './home.css';
 
 const THEME_KEY = 'sj-theme';
@@ -97,6 +100,17 @@ const Home = () => {
             <b>5<small>大学以上</small></b>
             <span>教育・研究機関での実績</span>
           </div>
+        </div>
+      </div>
+
+      <div className="aiops-band">
+        <div className="wrap">
+          <Link to={AI_OPS_PATH} className="aiops-band-link" onClick={() => trackAiOpsClick(GA_PLACEMENTS.homeAiOpsBand)}>
+            <span className="label">{aiOpsHomeBanner.label}</span>
+            <span className="aiops-band-main">{aiOpsHomeBanner.main}</span>
+            <span className="aiops-band-sub">{aiOpsHomeBanner.sub}</span>
+            <span className="aiops-band-cta">{aiOpsHomeBanner.cta}</span>
+          </Link>
         </div>
       </div>
 

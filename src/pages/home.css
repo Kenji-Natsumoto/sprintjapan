@@ -187,6 +187,20 @@ html[data-theme="light"] .sj-home .nav img{filter:invert(1)}
 .sj-home .card dt{color:var(--muted); min-width:3.5em}
 .sj-home .card dd{color:var(--text)}
 
+/* S2b /ai-ops 入口の帯 */
+.sj-home .aiops-band{background:var(--panel); border-bottom:1px solid var(--line)}
+.sj-home .aiops-band-link{display:grid; grid-template-columns:1fr auto; column-gap:32px; align-items:center; padding:28px 0; color:var(--panel-text)}
+.sj-home .aiops-band .label{grid-column:1 / -1; color:var(--panel-link); margin-bottom:8px}
+.sj-home .aiops-band-main{grid-column:1; font-size:clamp(17px,2.2vw,22px); font-weight:700; line-height:1.5; color:var(--panel-text)}
+.sj-home .aiops-band-sub{grid-column:1; font-size:14px; color:var(--panel-muted)}
+.sj-home .aiops-band-cta{grid-column:2; grid-row:2 / span 2; white-space:nowrap; font-size:15px; font-weight:600; color:var(--panel-link)}
+.sj-home .aiops-band-link:hover .aiops-band-cta{text-decoration:underline}
+@media (max-width:768px){
+  .sj-home .aiops-band-link{grid-template-columns:1fr; padding:22px 0}
+  .sj-home .aiops-band-sub{display:none}
+  .sj-home .aiops-band-cta{grid-column:1; grid-row:auto; margin-top:8px}
+}
+
 /* S5 signity */
 .sj-home .signity{background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
 .sj-home .signity h2{font-size:clamp(22px,3vw,32px); margin-bottom:24px; color:var(--panel-text)}
