@@ -3,11 +3,11 @@
  * 名前を変えるときはこのファイルだけを直す。
  *
  * - /contact へのクリック  → contact_click
- * - /ai-ops へのクリック   → ai_ops_click
+ * - /ai-ops へのクリック   → aiops_link_click
  */
 export const GA_EVENTS = {
   contactClick: 'contact_click',
-  aiOpsClick: 'ai_ops_click',
+  aiOpsClick: 'aiops_link_click',
   // 任意の補助計測（必須ではない）
   aiOpsNewsClick: 'ai_ops_news_click',
   aiOpsFaqOpen: 'ai_ops_faq_open',
@@ -19,7 +19,7 @@ export const GA_PLACEMENTS = {
   aiOpsFaq: 'ai_ops_faq',
   aiOpsFooter: 'ai_ops_footer',
   newsAiOps: 'news_ai_ops',
-  // ai_ops_click 用
+  // aiops_link_click 用
   homeAiOpsBand: 'home_aiops_band',
   newsAiOpsBody: 'news_ai_ops_body',
   // ai_ops_news_click 用
