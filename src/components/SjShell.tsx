@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '@/assets/spj-logo.png';
+import SjNav from '@/components/SjNav';
 import '@/styles/sj-shell.css';
 
 const THEME_KEY = 'sj-theme';
@@ -36,19 +37,7 @@ const SjShell = ({ children }: { children: ReactNode }) => {
           <Link to="/">
             <img src={logo} alt="スプリントジャパン株式会社" />
           </Link>
-          <ul>
-            <li className="nav-theme">
-              <button className="theme-btn" onClick={toggleTheme} aria-label="テーマ切替">
-                {theme === 'dark' ? '○' : '●'}
-                <span className="tlabel">{theme === 'dark' ? 'ライト' : 'ダーク'}</span>
-              </button>
-            </li>
-            <li><Link to="/ai-ops">AI保守</Link></li>
-            <li><Link to="/insights/">インサイト</Link></li>
-            <li><Link to="/company">会社情報</Link></li>
-            <li><Link to="/news">ニュース</Link></li>
-            <li className="nav-cta"><Link to="/contact" className="cta">お問い合わせ</Link></li>
-          </ul>
+          <SjNav theme={theme} toggleTheme={toggleTheme} />
         </div>
       </header>
 
@@ -57,7 +46,7 @@ const SjShell = ({ children }: { children: ReactNode }) => {
       <footer>
         <div className="wrap">
           <ul>
-            <li><Link to="/ai-ops">AI保守</Link></li>
+            <li><Link to="/services">サービス</Link></li>
             <li><Link to="/insights/">インサイト</Link></li>
             <li><Link to="/company">会社情報</Link></li>
             <li><Link to="/contact">お問い合わせ</Link></li>

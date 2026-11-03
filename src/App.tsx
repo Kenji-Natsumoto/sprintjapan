@@ -12,6 +12,7 @@ import RFI from "./pages/RFI";
 import Contact from "./pages/Contact";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
+import Services from "./pages/Services";
 import VibeCodingLab from "./pages/VibeCodingLab";
 import SuperVibeCoding from "./pages/SuperVibeCoding";
 import SuperVibeCodingV2 from "./pages/SuperVibeCodingV2";
@@ -91,6 +92,7 @@ const App = () => (
           <Route path="/ai-discovery-community/worksheets/session-4" element={<Session4 />} />
           <Route path="/ai-discovery-community/worksheets/session-5" element={<Session5 />} />
           <Route path="/ai-discovery-community/worksheets/session-6" element={<Session6 />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/ai-ops" element={<AiOps />} />
           <Route path="/ai-ops/" element={<AiOps />} />
           <Route path="/chat" element={<Chat />} />

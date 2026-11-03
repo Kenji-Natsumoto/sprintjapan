@@ -1,0 +1,48 @@
+/* グローバルナビ（SjNav）— .sj-page / .sj-home の両方で使う。色は各シェルの変数に従う */
+:is(.sj-page,.sj-home) header{position:sticky}
+:is(.sj-page,.sj-home) .sjn-mobile{display:none}
+:is(.sj-page,.sj-home) .sjn-menu[hidden],
+:is(.sj-page,.sj-home) .sjn-dd-panel[hidden]{display:none}
+
+/* PC ドロップダウン */
+:is(.sj-page,.sj-home) .sjn-dd{position:relative; display:flex; align-items:center; gap:2px}
+:is(.sj-page,.sj-home) .sjn-dd-toggle{background:none; border:0; color:var(--muted); cursor:pointer; padding:4px; font-size:11px; line-height:1; border-radius:4px}
+:is(.sj-page,.sj-home) .sjn-dd-toggle:hover,
+:is(.sj-page,.sj-home) .sjn-dd.is-open .sjn-dd-toggle{color:var(--text)}
+:is(.sj-page,.sj-home) .sjn-dd.is-open > a{color:var(--text)}
+:is(.sj-page,.sj-home) .sjn-dd-panel{position:absolute; top:100%; left:-16px; margin-top:10px; min-width:260px;
+  background:var(--bg-card); border:1px solid var(--line); border-radius:12px; padding:8px;
+  box-shadow:0 16px 40px rgba(0,0,0,.35); display:flex; flex-direction:column; gap:2px; z-index:40}
+:is(.sj-page,.sj-home) .sjn-dd-panel::before{content:""; position:absolute; left:0; right:0; top:-12px; height:12px}
+:is(.sj-page,.sj-home) .nav .sjn-dd-item{display:flex; flex-direction:column; gap:2px; padding:10px 12px; border-radius:8px; color:var(--text); white-space:nowrap}
+:is(.sj-page,.sj-home) .nav .sjn-dd-item:hover,
+:is(.sj-page,.sj-home) .nav .sjn-dd-item:focus-visible{background:rgba(139,156,255,.10); color:var(--text)}
+:is(.sj-page,.sj-home) .sjn-dd-name{font-size:14px; font-weight:600}
+:is(.sj-page,.sj-home) .sjn-dd-sub{font-size:12px; color:var(--muted)}
+:is(.sj-page,.sj-home) .nav .sjn-dd-item.is-featured{border:1px solid rgba(139,156,255,.35)}
+:is(.sj-page,.sj-home) .nav .sjn-dd-item.is-featured .sjn-dd-name{color:var(--accent-text)}
+:is(.sj-page,.sj-home) .nav .sjn-dd-all{font-size:12.5px; padding:8px 12px 4px; color:var(--accent-text)}
+
+/* スマホ（768px以下）: ロゴ＋テーマ＋☰ の1行。メニューはヘッダー直下に全画面 */
+@media (max-width:768px){
+  :is(.sj-page,.sj-home) .sjn-desktop{display:none !important}
+  :is(.sj-page,.sj-home) .sjn-mobile{display:flex; align-items:center; gap:8px}
+  :is(.sj-page,.sj-home) .sjn-burger{background:none; border:1px solid var(--line); color:var(--text); border-radius:8px;
+    width:40px; height:36px; font-size:18px; line-height:1; cursor:pointer}
+  :is(.sj-page,.sj-home) .sjn-menu{position:absolute; top:100%; left:0; right:0; height:calc(100dvh - 64px);
+    overflow-y:auto; overscroll-behavior:contain; background:var(--bg); border-top:1px solid var(--line);
+    padding:20px clamp(16px,4vw,64px) 32px; box-sizing:border-box; display:flex; flex-direction:column; gap:16px; z-index:40}
+  :is(.sj-page,.sj-home) .sjn-menu-head{font-size:18px; font-weight:700; color:var(--text)}
+  :is(.sj-page,.sj-home) .sjn-menu-cards{display:grid; grid-template-columns:1fr; gap:10px}
+  :is(.sj-page,.sj-home) .sjn-menu-card{display:flex; flex-direction:column; gap:4px; padding:14px; border:1px solid var(--line);
+    border-radius:12px; background:var(--bg-card); color:var(--text)}
+  :is(.sj-page,.sj-home) .sjn-menu-card.is-featured{border-color:var(--accent);
+    background:linear-gradient(135deg, rgba(46,73,255,.22), rgba(46,73,255,.06))}
+  :is(.sj-page,.sj-home) .sjn-menu-en{font-size:10.5px; letter-spacing:.08em; color:var(--accent-text); text-transform:uppercase}
+  :is(.sj-page,.sj-home) .sjn-menu-name{font-size:17px; font-weight:700}
+  :is(.sj-page,.sj-home) .sjn-menu-card.is-featured .sjn-menu-name{font-size:20px}
+  :is(.sj-page,.sj-home) .sjn-menu-sub{font-size:12px; color:var(--muted)}
+  :is(.sj-page,.sj-home) .sjn-menu-links{display:flex; flex-direction:column; border-top:1px solid var(--line); margin-top:4px}
+  :is(.sj-page,.sj-home) .sjn-menu-links a{padding:14px 2px; border-bottom:1px solid var(--line); color:var(--text); font-size:15px}
+  :is(.sj-page,.sj-home) .sjn-menu-cta{display:block; text-align:center; padding:14px; border-radius:10px; background:var(--accent); color:#fff; font-weight:600}
+}

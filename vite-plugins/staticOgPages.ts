@@ -21,6 +21,7 @@ import {
 } from '../src/data/aiOpsData';
 import { SITE_DEFAULT_DESCRIPTION, SITE_DEFAULT_TITLE } from '../src/data/siteMeta';
 import { PROFILE_PATH, profileMeta } from '../src/data/profileMeta';
+import { SERVICES_PATH, servicesMeta } from '../src/data/servicesData';
 
 const SITE_ORIGIN = 'https://sprintjapan.net';
 const SITE_NAME = 'スプリントジャパン株式会社';
@@ -41,10 +42,23 @@ interface OgPage {
   ogType: 'website' | 'article' | 'profile';
   // ページ固有の画像（無ければ共通の image を使う）
   image?: string;
+  // true なら index.html 既定のカード画像を使う（/ai-ops 用の画像にしない）
+  siteDefaultImage?: boolean;
   jsonLd?: { id: string; data: unknown }[];
 }
 
 const pages = (): OgPage[] => [
+  {
+    route: SERVICES_PATH,
+    title: servicesMeta.title,
+    description: servicesMeta.description,
+    ogTitle: servicesMeta.title,
+    ogDescription: servicesMeta.description,
+    twitterTitle: servicesMeta.title,
+    twitterDescription: servicesMeta.description,
+    ogType: 'website',
+    siteDefaultImage: true,
+  },
   {
     route: AI_OPS_PATH,
     title: aiOpsMeta.title,
@@ -155,7 +169,7 @@ export const staticOgPages = (): Plugin => {
         (fs.existsSync(plannedFile) ? `${SITE_ORIGIN}${PLANNED_OG_IMAGE}` : readDefaultImage(html));
 
       for (const page of pages()) {
-        const out = replaceSeoBlock(html, renderHead(page, page.image ?? image));
+        const out = replaceSeoBlock(html, renderHead(page, page.image ?? (page.siteDefaultImage ? readDefaultImage(html) : image)));
         const rel = page.route.replace(/^\//, '');
         const dirFile = path.join(outDir, rel, 'index.html');
         fs.mkdirSync(path.dirname(dirFile), { recursive: true });

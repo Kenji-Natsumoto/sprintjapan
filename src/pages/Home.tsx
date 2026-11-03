@@ -1,7 +1,8 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ExternalLink, Factory, FileText } from 'lucide-react';
 import logo from '@/assets/spj-logo.png';
+import SjNav from '@/components/SjNav';
 import { insightsData, InsightStatus } from '@/data/insightsData';
 import { aiOpsHomeBanner, AI_OPS_PATH } from '@/data/aiOpsData';
 import { trackAiOpsClick } from '@/hooks/useAnalytics';
@@ -13,6 +14,14 @@ const FutureFactoryHero = lazy(() => import('@/components/FutureFactoryHero'));
 
 const Home = () => {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const location = useLocation();
+
+  // /#services など、ほかのページから見出しへ来たときにその位置へ移る
+  useEffect(() => {
+    if (!location.hash) return;
+    const el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (el) requestAnimationFrame(() => el.scrollIntoView({ block: 'start' }));
+  }, [location.hash]);
 
   useEffect(() => {
     document.title = "スプリントジャパン株式会社【公式】｜企業に、考えるAIを。現場に、動くAIを。";
@@ -48,18 +57,7 @@ const Home = () => {
           <Link to="/">
             <img src={logo} alt="スプリントジャパン株式会社" />
           </Link>
-          <ul>
-            <li className="nav-theme">
-              <button className="theme-btn" onClick={toggleTheme} aria-label="テーマ切替">
-                {theme === 'dark' ? '○ ライト' : '○ ダーク'}
-              </button>
-            </li>
-            <li><Link to="/ai-ops">AI保守</Link></li>
-            <li><Link to="/insights/">インサイト</Link></li>
-            <li><Link to="/company">会社情報</Link></li>
-            <li><Link to="/news">ニュース</Link></li>
-            <li className="nav-cta"><Link to="/contact" className="cta">お問い合わせ</Link></li>
-          </ul>
+          <SjNav theme={theme} toggleTheme={toggleTheme} />
         </div>
       </header>
 
@@ -243,7 +241,7 @@ const Home = () => {
       <footer>
         <div className="wrap">
           <ul>
-            <li><Link to="/ai-ops">AI保守</Link></li>
+            <li><Link to="/services">サービス</Link></li>
             <li><Link to="/insights/">インサイト</Link></li>
             <li><Link to="/company">会社情報</Link></li>
             <li><Link to="/contact">お問い合わせ</Link></li>
