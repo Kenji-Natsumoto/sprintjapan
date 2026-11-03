@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { supabase } from "@/integrations/supabase/client";
+import { chatSupabase as supabase, getChatSessionId } from "@/integrations/supabase/chatClient";
 import { useToast } from "@/hooks/use-toast";
 
 type Message = { role: "user" | "assistant"; content: string };
@@ -17,14 +17,7 @@ type Conversation = {
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat`;
 
-const getSessionId = () => {
-  let sessionId = localStorage.getItem("chat_session_id");
-  if (!sessionId) {
-    sessionId = crypto.randomUUID();
-    localStorage.setItem("chat_session_id", sessionId);
-  }
-  return sessionId;
-};
+const getSessionId = getChatSessionId;
 
 const Chat = () => {
   const [messages, setMessages] = useState<Message[]>([]);
