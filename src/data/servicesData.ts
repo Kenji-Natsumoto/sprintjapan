@@ -24,7 +24,7 @@ export const services: ServiceItem[] = [
   },
   {
     id: 'coaching',
-    navLabel: 'AIコーチング',
+    navLabel: '経営者向けAIコーチング',
     name: '経営者向けAIコーチング',
     en: 'Executive AI Coaching',
     description: '経営者ご本人が、事業を動かすAIチームを持てるよう、1対1で伴走します。',
