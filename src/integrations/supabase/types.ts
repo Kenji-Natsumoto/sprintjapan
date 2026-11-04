@@ -147,8 +147,10 @@ export type Database = {
           id: string
           landing_path: string | null
           name: string
+          notify_email_id: string | null
           opt_in: boolean
           papers: string
+          reply_email_id: string | null
           role: string | null
           token_expires_at: string
           token_max_uses: number
@@ -169,8 +171,10 @@ export type Database = {
           id?: string
           landing_path?: string | null
           name: string
+          notify_email_id?: string | null
           opt_in?: boolean
           papers: string
+          reply_email_id?: string | null
           role?: string | null
           token_expires_at?: string
           token_max_uses?: number
@@ -191,8 +195,10 @@ export type Database = {
           id?: string
           landing_path?: string | null
           name?: string
+          notify_email_id?: string | null
           opt_in?: boolean
           papers?: string
+          reply_email_id?: string | null
           role?: string | null
           token_expires_at?: string
           token_max_uses?: number
