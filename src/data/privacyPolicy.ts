@@ -1,4 +1,4 @@
-// /privacy の本文（案）v3。第4項は主な委託先だけを書く（健司さん決定 11/4 18:21）。
+// /privacy の本文v3。第4項は主な委託先だけを書く（健司さん決定 11/4 18:21）。
 // 同じ本文を健司さん確認用のメモにも書き出している（文言を変えるときは両方を直す）。
 export type PrivacyBlock = string | string[];
 export interface PrivacySection { h: string; blocks: PrivacyBlock[] }
@@ -109,5 +109,5 @@ export const privacyPolicy: { title: string; intro: string[]; sections: PrivacyS
       ]
     }
   ],
-  "footer": "制定日：【公開日】"
+  "footer": "制定日：2026年11月5日"
 };
