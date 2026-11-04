@@ -3,7 +3,7 @@ export interface ServiceItem {
   id: string;
   navLabel: string; // ナビ用の短い名前
   name: string; // カードの見出し
-  navSub?: string; // ナビの説明行（なければ name）
+  navSub?: string; // サブタイトル（ナビの説明行・カードの小見出し。なければ name）
   en: string;
   description: string; // 何をするか（1行）
   to: string;
@@ -16,8 +16,9 @@ export const SERVICES_PATH = '/services';
 export const services: ServiceItem[] = [
   {
     id: 'fde',
-    navLabel: 'FDE',
+    navLabel: '企業のAI実装（FDE）',
     name: '企業のAI実装（FDE）',
+    navSub: '成果の出せる伴走支援',
     en: 'Enterprise AI FDE',
     description: '経営と現場のあいだに入り、業務にAIを組み込むところから運用・改善まで、同じチームで伴走します。',
     to: '/#services',
@@ -27,7 +28,7 @@ export const services: ServiceItem[] = [
     id: 'coaching',
     navLabel: '経営者向けAIコーチング',
     name: '経営者向けAIコーチング',
-    navSub: 'メンタルと技術の総合支援',
+    navSub: '適用能力と成長支援',
     en: 'Executive AI Coaching',
     description: '経営者ご本人が、事業を動かすAIチームを持てるよう、1対1で伴走します。',
     to: '/#services',
@@ -35,8 +36,9 @@ export const services: ServiceItem[] = [
   },
   {
     id: 'education',
-    navLabel: 'AI実践教育',
-    name: 'AI実践教育・コミュニティ',
+    navLabel: 'AI実践コミュニティ',
+    name: 'AI実践コミュニティ',
+    navSub: '仲間を作って高め合う場',
     en: 'AI Education & Community',
     description: '経営とAIの実践知を学び合う場を運営しています。学びから実装へつながる入口です。',
     to: '/ai-discovery-community/',
@@ -44,8 +46,9 @@ export const services: ServiceItem[] = [
   },
   {
     id: 'ai-ops',
-    navLabel: 'AI保守',
-    name: 'AIと人のハイブリッド保守',
+    navLabel: 'アプリのAI運用保守',
+    name: 'アプリのAI運用保守',
+    navSub: '効果的な次世代運用保守',
     en: 'AI Ops',
     description: 'AIで作ったアプリを、公開後も安心して使い続けられるよう、AIと人の分担で保守します。当社の累計35個（稼働22・停止13）のアプリもこの形で守っています。',
     to: '/ai-ops',
@@ -56,5 +59,5 @@ export const services: ServiceItem[] = [
 
 export const servicesMeta = {
   title: 'サービス｜スプリントジャパン株式会社',
-  description: 'スプリントジャパンのサービス一覧。企業のAI実装（FDE）、経営者向けAIコーチング、AI実践教育、AIと人のハイブリッド保守を提供しています。',
+  description: 'スプリントジャパンのサービス一覧。企業のAI実装（FDE）、経営者向けAIコーチング、AI実践コミュニティ、アプリのAI運用保守を提供しています。',
 };

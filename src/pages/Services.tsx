@@ -36,6 +36,7 @@ const Services = () => {
                     {String(i + 1).padStart(2, '0')} / {s.en}
                   </span>
                   <h2>{s.name}</h2>
+                  {s.navSub && <p className="svc-sub">{s.navSub}</p>}
                   <p>{s.description}</p>
                   <Link to={s.to} className="svc-link">
                     {s.linkLabel} <span aria-hidden="true">→</span>
