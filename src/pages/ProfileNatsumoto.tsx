@@ -187,7 +187,7 @@ const ProfileNatsumoto = () => {
               </div>
               <div>
                 <span className="no">03 / AI Education</span>
-                <h3>AI実践教育・コミュニティ</h3>
+                <h3>AI実践コミュニティ</h3>
                 <p>湯川塾分科会をはじめ、経営とAIの実践知を学び合う場を運営しています。</p>
               </div>
             </div>
@@ -339,7 +339,7 @@ const ProfileNatsumoto = () => {
         <section className="contact">
           <div className="wrap">
             <h2>まずは、いまの経営課題を<br />お聞かせください。</h2>
-            <p>企業のAI実装（FDE）、経営者向けAIコーチング、AI実践教育に関するご相談を承っています。ご紹介・情報交換からのご連絡も歓迎です。</p>
+            <p>企業のAI実装（FDE）、経営者向けAIコーチング、AI実践コミュニティに関するご相談を承っています。ご紹介・情報交換からのご連絡も歓迎です。</p>
             <Link to="/contact" className="btn btn-primary">お問い合わせ</Link>
           </div>
         </section>

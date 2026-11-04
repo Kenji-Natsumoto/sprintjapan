@@ -54,7 +54,7 @@ export const newsData: NewsItem[] = [
       <p>この保守の考え方は、先日開始した<a href="/news/ai-human-hybrid-ops-service">「AI アプリのAI / 人間ハイブリッド運用保守サービス」</a>として、お客様にも提供しています。あわせて、当社の3つの事業を通じて現場に届けます。</p>
       <p><b>企業のAI実装（FDE）</b>：社内で作ったAIアプリや業務ツールを、点検と分担の考え方で守れるよう、現場に合わせて一緒に作ります。<br />
       <b>経営者向けAIコーチング</b>：「どこまでAIに任せ、どこを人が決めるか」の線引きを、経営者と一緒に決めます。<br />
-      <b>AI実践教育</b>：作った人が自分で保守まで回せるよう、点検と判断の考え方をお伝えします。</p>
+      <b>AI実践コミュニティ</b>：作った人が自分で保守まで回せるよう、点検と判断の考え方をお伝えします。</p>
       <br />
       <p>解説ページは<a href="/ai-ops" data-ga-event="aiops_link_click" data-ga-placement="news_ai_ops_body">こちら</a>からご覧いただけます。自社のAIアプリ・業務ツールの保守についてのご相談は、<a href="/contact" data-ga-event="contact_click" data-ga-placement="news_ai_ops">お問い合わせフォーム</a>よりお気軽にお寄せください。</p>
     `,

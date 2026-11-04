@@ -166,7 +166,7 @@ const Home = () => {
             </div>
             <div className="card">
               <span className="no">03 / AI Education &amp; Community</span>
-              <h3>AI実践教育・コミュニティ</h3>
+              <h3>AI実践コミュニティ</h3>
               <p>湯川塾分科会をはじめ、経営とAIの実践知を学び合う場を運営しています。学びから実装へつながる入口です。</p>
               <dl>
                 <div><dt>対象</dt><dd>経営とAIを学びたい方</dd></div>
