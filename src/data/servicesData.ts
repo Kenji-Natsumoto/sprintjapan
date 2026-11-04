@@ -3,6 +3,7 @@ export interface ServiceItem {
   id: string;
   navLabel: string; // ナビ用の短い名前
   name: string; // カードの見出し
+  navSub?: string; // ナビの説明行（なければ name）
   en: string;
   description: string; // 何をするか（1行）
   to: string;
@@ -26,6 +27,7 @@ export const services: ServiceItem[] = [
     id: 'coaching',
     navLabel: '経営者向けAIコーチング',
     name: '経営者向けAIコーチング',
+    navSub: 'メンタルと技術の総合支援',
     en: 'Executive AI Coaching',
     description: '経営者ご本人が、事業を動かすAIチームを持てるよう、1対1で伴走します。',
     to: '/#services',

@@ -127,7 +127,7 @@ const SjNav = ({ theme, toggleTheme }: Props) => {
             {services.map((s) => (
               <Link key={s.id} to={s.to} className={`sjn-dd-item${s.featured ? ' is-featured' : ''}`}>
                 <span className="sjn-dd-name">{s.navLabel}</span>
-                <span className="sjn-dd-sub">{s.name}</span>
+                <span className="sjn-dd-sub">{s.navSub ?? s.name}</span>
               </Link>
             ))}
             <Link to={SERVICES_PATH} className="sjn-dd-all">サービス一覧へ →</Link>
@@ -171,7 +171,7 @@ const SjNav = ({ theme, toggleTheme }: Props) => {
             <Link key={s.id} to={s.to} className={`sjn-menu-card${s.featured ? ' is-featured' : ''}`}>
               <span className="sjn-menu-en">{s.en}</span>
               <span className="sjn-menu-name">{s.navLabel}</span>
-              <span className="sjn-menu-sub">{s.name}</span>
+              <span className="sjn-menu-sub">{s.navSub ?? s.name}</span>
             </Link>
           ))}
         </div>
