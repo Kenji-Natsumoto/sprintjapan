@@ -2,7 +2,7 @@
 // 同じ本文を健司さん確認用のメモにも書き出している（文言を変えるときは両方を直す）。
 export type PrivacyBlock = string | string[];
 export interface PrivacySection { h: string; blocks: PrivacyBlock[] }
-export const PRIVACY_IS_DRAFT = true;
+export const PRIVACY_IS_DRAFT = false;
 export const privacyPolicy: { title: string; intro: string[]; sections: PrivacySection[]; footer: string } = {
   "title": "プライバシーポリシー",
   "intro": [
