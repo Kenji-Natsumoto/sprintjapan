@@ -17,4 +17,4 @@
   .sj-page .sj-native .svc-list{padding-top:40px}
 }
 
-.sj-page .sj-native .svc-sub{margin:-4px 0 10px; font-size:14px; font-weight:600; color:var(--accent-text)}
+.sj-page .sj-native .svc-card p.svc-sub{flex:none; margin:-4px 0 4px; font-size:14px; font-weight:600; line-height:1.6; color:var(--accent-text); white-space:nowrap}

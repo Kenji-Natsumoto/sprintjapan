@@ -18,7 +18,7 @@ export const services: ServiceItem[] = [
     id: 'fde',
     navLabel: '企業のAI実装（FDE）',
     name: '企業のAI実装（FDE）',
-    navSub: '成果の出せる伴走支援',
+    navSub: '短期間で成果を出せる伴走支援',
     en: 'Enterprise AI FDE',
     description: '経営と現場のあいだに入り、業務にAIを組み込むところから運用・改善まで、同じチームで伴走します。',
     to: '/#services',

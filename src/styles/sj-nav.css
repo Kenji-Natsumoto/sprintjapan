@@ -18,7 +18,7 @@
 :is(.sj-page,.sj-home) .nav .sjn-dd-item:hover,
 :is(.sj-page,.sj-home) .nav .sjn-dd-item:focus-visible{background:rgba(139,156,255,.10); color:var(--text)}
 :is(.sj-page,.sj-home) .sjn-dd-name{font-size:14px; font-weight:600}
-:is(.sj-page,.sj-home) .sjn-dd-sub{font-size:12px; color:var(--muted)}
+:is(.sj-page,.sj-home) .sjn-dd-sub{font-size:12px; color:var(--muted); white-space:nowrap}
 :is(.sj-page,.sj-home) .nav .sjn-dd-item.is-featured{border:1px solid rgba(139,156,255,.35)}
 :is(.sj-page,.sj-home) .nav .sjn-dd-item.is-featured .sjn-dd-name{color:var(--accent-text)}
 :is(.sj-page,.sj-home) .nav .sjn-dd-all{font-size:12.5px; padding:8px 12px 4px; color:var(--accent-text)}
@@ -41,7 +41,7 @@
   :is(.sj-page,.sj-home) .sjn-menu-en{font-size:10.5px; letter-spacing:.08em; color:var(--accent-text); text-transform:uppercase}
   :is(.sj-page,.sj-home) .sjn-menu-name{font-size:17px; font-weight:700}
   :is(.sj-page,.sj-home) .sjn-menu-card.is-featured .sjn-menu-name{font-size:20px}
-  :is(.sj-page,.sj-home) .sjn-menu-sub{font-size:12px; color:var(--muted)}
+  :is(.sj-page,.sj-home) .sjn-menu-sub{font-size:12px; color:var(--muted); white-space:nowrap}
   :is(.sj-page,.sj-home) .sjn-menu-links{display:flex; flex-direction:column; border-top:1px solid var(--line); margin-top:4px}
   :is(.sj-page,.sj-home) .sjn-menu-links a{padding:14px 2px; border-bottom:1px solid var(--line); color:var(--text); font-size:15px}
   :is(.sj-page,.sj-home) .sjn-menu-cta{display:block; text-align:center; padding:14px; border-radius:10px; background:var(--accent); color:#fff; font-weight:600}
