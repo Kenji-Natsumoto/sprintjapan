@@ -11,3 +11,9 @@ verify_jwt = false
 
 [functions.send-supervibecoding-email]
 verify_jwt = false
+
+[functions.submit-whitepaper-request]
+verify_jwt = false
+
+[functions.get-whitepaper-access]
+verify_jwt = false
