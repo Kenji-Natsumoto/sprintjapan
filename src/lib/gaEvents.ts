@@ -4,6 +4,9 @@
  *
  * - /contact へのクリック  → contact_click
  * - /ai-ops へのクリック   → aiops_link_click
+ * - 資料申込の送信         → generate_lead（papers, cta_id）
+ * - 資料のダウンロード     → file_download（file_name, cta_id）
+ * - 限定動画の再生開始     → video_start（cta_id）
  */
 export const GA_EVENTS = {
   contactClick: 'contact_click',
@@ -11,6 +14,11 @@ export const GA_EVENTS = {
   // 任意の補助計測（必須ではない）
   aiOpsNewsClick: 'ai_ops_news_click',
   aiOpsFaqOpen: 'ai_ops_faq_open',
+  // 資料申込ページ（/ai-discovery-community/start）。GA4 の推奨イベント名に合わせる。
+  // 名前・メールアドレスは決して送らない（papers と cta_id だけ）。
+  wpLead: 'generate_lead',
+  wpFileDownload: 'file_download',
+  wpVideoStart: 'video_start',
 } as const;
 
 export const GA_PLACEMENTS = {

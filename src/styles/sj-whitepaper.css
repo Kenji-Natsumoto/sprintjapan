@@ -1,0 +1,109 @@
+/* 資料申込（/ai-discovery-community/start）・受け取りページ・/privacy — sj-shell.css のトークンを使う */
+.sj-page .sj-wp .nb{display:inline-block}
+.sj-page .sj-wp .phero h1{max-width:900px}
+.sj-page .sj-wp .wp-lead{margin-top:18px; color:var(--muted); font-size:clamp(15px,1.9vw,17px); line-height:1.85; max-width:760px}
+.sj-page .sj-wp .wp-chip{display:inline-block; margin-top:18px; padding:4px 12px; border:1px solid var(--line); border-radius:999px;
+  font-size:13px; color:var(--accent-text); white-space:nowrap}
+.sj-page .sj-wp .wp-status{display:flex; gap:12px; align-items:baseline; margin-top:22px; color:var(--muted); font-size:14px; line-height:1.75; max-width:720px}
+.sj-page .sj-wp .wp-status b{flex:none; font-size:12px; font-weight:700; letter-spacing:.06em; color:var(--accent-text);
+  border:1px solid var(--accent); border-radius:6px; padding:1px 8px; white-space:nowrap}
+.sj-page .sj-wp .wp-hero-btn{margin-top:30px}
+.sj-page .sj-wp .wp-note{color:var(--muted); font-size:14px; margin-top:12px}
+.sj-page .sj-wp .wp-link{color:var(--accent-text); font-size:15px; font-weight:600}
+.sj-page .sj-wp .wp-link:hover{text-decoration:underline}
+
+/* 2つの資料 */
+.sj-page .sj-wp .wp-papers{padding-top:56px}
+.sj-page .sj-wp .wp-cards{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px}
+.sj-page .sj-wp .wp-card{display:flex; flex-direction:column; gap:10px; padding:28px; border:1px solid var(--line); border-radius:14px; background:var(--bg-card)}
+.sj-page .sj-wp .wp-card-no{font-size:12px; letter-spacing:.1em; color:var(--accent-text); font-weight:700}
+.sj-page .sj-wp .wp-aud{font-size:13px; color:var(--muted)}
+.sj-page .sj-wp .wp-card h2{font-size:clamp(17px,2vw,20px)}
+.sj-page .sj-wp .wp-body{color:var(--muted); font-size:14.5px; line-height:1.8; flex:1}
+.sj-page .sj-wp .wp-spec{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin-top:6px; padding-top:14px; border-top:1px solid var(--line)}
+.sj-page .sj-wp .wp-spec dt{font-size:12px; color:var(--muted)}
+.sj-page .sj-wp .wp-spec dd{font-size:13px; font-weight:600; white-space:nowrap}
+.sj-page .sj-wp .wp-dl{align-self:flex-start; margin-top:8px}
+.sj-page .sj-wp .wp-dl-note{margin-top:20px}
+
+/* 書いた人 */
+.sj-page .sj-wp .wp-author{padding:24px 0 56px}
+.sj-page .sj-wp .wp-author-box{border-left:2px solid var(--accent); padding:4px 0 4px 20px; max-width:760px}
+.sj-page .sj-wp .wp-author-name{font-weight:700; margin-bottom:8px}
+.sj-page .sj-wp .wp-author-box p{color:var(--muted); font-size:15px; margin-bottom:12px}
+.sj-page .sj-wp .wp-author-box p.wp-author-name{color:var(--text)}
+
+/* フォーム */
+.sj-page .sj-wp .wp-form-sec{background:var(--bg-card); border-top:1px solid var(--line); border-bottom:1px solid var(--line); scroll-margin-top:64px}
+.sj-page .sj-wp .wp-form-sec .sec-head{margin-bottom:28px}
+.sj-page .sj-wp .wp-form{max-width:640px; display:flex; flex-direction:column; gap:22px}
+.sj-page .sj-wp .wp-field{display:flex; flex-direction:column; gap:8px; border:none; min-width:0}
+.sj-page .sj-wp .wp-field > label,.sj-page .sj-wp .wp-field legend{font-size:14px; font-weight:600}
+.sj-page .sj-wp .wp-field legend{margin-bottom:8px}
+.sj-page .sj-wp .wp-field em{font-style:normal; font-size:11px; font-weight:700; color:#fff; background:var(--accent); border-radius:4px; padding:1px 6px; margin-left:6px; vertical-align:2px; white-space:nowrap}
+.sj-page .sj-wp .wp-field i{font-style:normal; font-size:11px; color:var(--muted); border:1px solid var(--line); border-radius:4px; padding:0 6px; margin-left:6px; vertical-align:2px; white-space:nowrap}
+.sj-page .sj-wp .wp-field input[type=text],.sj-page .sj-wp .wp-field input[type=email],.sj-page .sj-wp .wp-field select{
+  width:100%; font:inherit; font-size:16px; color:var(--text); background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:11px 14px; line-height:1.5}
+.sj-page .sj-wp .wp-field input:focus,.sj-page .sj-wp .wp-field select:focus{outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent)}
+.sj-page .sj-wp .wp-choices{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px}
+.sj-page .sj-wp .wp-choices:focus{outline:none}
+.sj-page .sj-wp .wp-choice{display:flex; align-items:center; justify-content:center; gap:8px; border:1px solid var(--line); border-radius:8px; padding:11px 8px; cursor:pointer; background:var(--bg); font-size:15px; white-space:nowrap}
+.sj-page .sj-wp .wp-choice.is-on{border-color:var(--accent); background:rgba(46,73,255,.12)}
+.sj-page .sj-wp .wp-choice input{accent-color:var(--accent)}
+.sj-page .sj-wp .wp-check label{display:flex; gap:10px; align-items:flex-start; font-size:14.5px; font-weight:400; cursor:pointer; line-height:1.7}
+.sj-page .sj-wp .wp-check input{margin-top:5px; width:18px; height:18px; flex:none; accent-color:var(--accent)}
+.sj-page .sj-wp .wp-check a{color:var(--accent-text); text-decoration:underline}
+.sj-page .sj-wp .has-err input[type=text],.sj-page .sj-wp .has-err input[type=email],.sj-page .sj-wp .has-err .wp-choice{border-color:#E5484D}
+.sj-page .sj-wp .wp-err{color:#FF6B70; font-size:13px}
+html[data-theme="light"] .sj-page .sj-wp .wp-err{color:#C62A2F}
+.sj-page .sj-wp .wp-err-summary{border:1px solid #E5484D; border-radius:8px; padding:10px 14px; font-size:14px; color:var(--text); background:rgba(229,72,77,.08)}
+.sj-page .sj-wp .wp-submit{border:none; cursor:pointer; font-family:inherit; align-self:flex-start; padding:15px 40px}
+.sj-page .sj-wp .wp-submit:disabled{opacity:.6; cursor:wait}
+.sj-page .sj-wp .wp-hp{position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden}
+.sj-page .sj-wp .wp-mock-note{font-size:13px; color:var(--accent-text); border:1px dashed var(--accent); border-radius:8px; padding:8px 12px; margin-bottom:20px; max-width:640px}
+
+/* FAQ（/ai-ops と同じ見た目） */
+.sj-page .sj-wp .wp-faq-list{max-width:820px}
+.sj-page .sj-wp .wp-faq details{border-bottom:1px solid var(--line); padding:18px 0}
+.sj-page .sj-wp .wp-faq summary{cursor:pointer; list-style:none; display:flex; justify-content:space-between; gap:16px}
+.sj-page .sj-wp .wp-faq summary::-webkit-details-marker{display:none}
+.sj-page .sj-wp .wp-faq summary h3{font-size:16px}
+.sj-page .sj-wp .wp-faq summary::after{content:"＋"; color:var(--accent-text); flex:none}
+.sj-page .sj-wp .wp-faq details[open] summary::after{content:"－"}
+.sj-page .sj-wp .wp-faq details p{color:var(--muted); font-size:15px; margin-top:12px}
+
+/* 受け取りページ */
+.sj-page .sj-wp .wp-loading{color:var(--muted)}
+.sj-page .sj-wp .wp-denied .btn{margin-top:28px}
+.sj-page .sj-wp .wp-video{border-top:1px solid var(--line)}
+.sj-page .sj-wp .wp-video-player{width:100%; max-width:860px; aspect-ratio:16/9; background:#000; border-radius:12px}
+.sj-page .sj-wp .wp-video-empty{max-width:860px; aspect-ratio:16/9; border:1px dashed var(--line); border-radius:12px; display:flex; align-items:center; justify-content:center; padding:16px}
+.sj-page .sj-wp .wp-video-empty .wp-status{margin-top:0}
+.sj-page .sj-wp .wp-next{border-top:1px solid var(--line); padding:48px 0}
+
+/* /privacy */
+.sj-page .sj-privacy .wp-draft{display:inline-block; margin-top:16px; font-size:13px; font-weight:700; color:#fff; background:#C62A2F; border-radius:6px; padding:3px 10px}
+.sj-page .sj-privacy .pp-body .wrap{max-width:820px}
+.sj-page .sj-privacy .pp-body{padding-top:48px}
+.sj-page .sj-privacy .pp-body p{color:var(--muted); font-size:15px; margin-bottom:14px; overflow-wrap:anywhere}
+.sj-page .sj-privacy .pp-sec{padding:0; margin-top:36px}
+.sj-page .sj-privacy .pp-sec h2{font-size:clamp(17px,2.2vw,20px); margin-bottom:12px}
+.sj-page .sj-privacy .pp-sec ul{list-style:disc; margin:0 0 14px 1.3em; color:var(--muted); font-size:15px}
+.sj-page .sj-privacy .pp-sec li{margin-bottom:6px; overflow-wrap:anywhere}
+.sj-page .sj-privacy .pp-body a{color:var(--accent-text); text-decoration:underline}
+.sj-page .sj-privacy .pp-todo{color:#E8A33D !important; font-weight:600}
+.sj-page .sj-privacy .pp-footer{margin-top:40px}
+
+@media (max-width:768px){
+  .sj-page .sj-wp .wp-cards{grid-template-columns:1fr; gap:14px}
+  .sj-page .sj-wp .wp-card{padding:22px}
+  .sj-page .sj-wp .wp-papers{padding-top:40px}
+  .sj-page .sj-wp .wp-submit{align-self:stretch}
+}
+@media (max-width:360px){
+  .sj-page .sj-wp .wp-choice{font-size:14px; padding:10px 4px}
+}
+
+/* 見出しを句ごとに折り返す（句の途中で折れないよう、狭い画面では文字を小さくする） */
+.sj-page .sj-native.sj-wp .phero h1{font-size:clamp(20px,6.4vw,44px)}
+@media (min-width:769px){ .sj-page .sj-native.sj-wp .phero h1{font-size:clamp(28px,4.4vw,44px)} }

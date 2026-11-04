@@ -28,6 +28,9 @@ import AIDiscoveryHome from "./pages/ai-discovery/Home";
 import { Session1, Session2, Session3, Session4, Session5, Session6 } from "./pages/ai-discovery/Worksheet";
 import Chat from "./pages/Chat";
 import AiOps from "./pages/AiOps";
+import WhitepaperStart from "./pages/whitepaper/WhitepaperStart";
+import WhitepaperThanks from "./pages/whitepaper/WhitepaperThanks";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import ChatPopup from "./components/ChatPopup";
 import ScrollToTop from "./components/ScrollToTop";
@@ -86,6 +89,11 @@ const App = () => (
           <Route path="/ai-native-company/tool-integration-guide/" element={<Navigate to="/insights/tool-integration-guide/" replace />} />
           <Route path="/ai-discovery-community" element={<AIDiscoveryHome />} />
           <Route path="/ai-discovery-community/" element={<AIDiscoveryHome />} />
+          {/* 資料（ホワイトペーパー）申込の入口と受け取りページ。所属は未定（第5のサービスか、コミュニティの中か） */}
+          <Route path="/ai-discovery-community/start" element={<WhitepaperStart />} />
+          <Route path="/ai-discovery-community/start/" element={<WhitepaperStart />} />
+          <Route path="/ai-discovery-community/start/thanks" element={<WhitepaperThanks />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="/ai-discovery-community/worksheets/session-1" element={<Session1 />} />
           <Route path="/ai-discovery-community/worksheets/session-2" element={<Session2 />} />
           <Route path="/ai-discovery-community/worksheets/session-3" element={<Session3 />} />

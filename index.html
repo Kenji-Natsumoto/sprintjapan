@@ -8,7 +8,11 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-YH49PVVMSN');
+      // 資料受け取りページの合い鍵（?k=）だけは GA4 に送らない
+      var sjLoc = location.href;
+      try { var sjU = new URL(location.href); if (sjU.searchParams.has('k')) { sjU.searchParams.delete('k'); sjLoc = sjU.toString(); } } catch (e) {}
+      if (sjLoc === location.href) { gtag('config', 'G-YH49PVVMSN'); }
+      else { gtag('config', 'G-YH49PVVMSN', { page_location: sjLoc, page_referrer: document.referrer }); }
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
