@@ -88,14 +88,19 @@ async function sha256Hex(s: string): Promise<string> {
   return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
-async function sendMail(apiKey: string, payload: Record<string, unknown>): Promise<boolean> {
+// 送れたら Resend の送信ID、失敗なら null を返す
+async function sendMail(apiKey: string, payload: Record<string, unknown>): Promise<string | null> {
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
     body: JSON.stringify({ from: FROM, ...payload }),
   });
-  if (!res.ok) console.error("Resend error:", res.status, await res.text());
-  return res.ok;
+  if (!res.ok) {
+    console.error("Resend error:", res.status, await res.text());
+    return null;
+  }
+  const data = await res.json().catch(() => null);
+  return typeof data?.id === "string" ? data.id : null;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -158,7 +163,7 @@ const handler = async (req: Request): Promise<Response> => {
     const expiresAt = new Date(now.getTime() + TOKEN_DAYS * 24 * 60 * 60 * 1000);
 
     const db = createClient(SUPABASE_URL, SERVICE_ROLE, { auth: { persistSession: false } });
-    const { error: insertError } = await db.from("whitepaper_requests").insert({
+    const { data: inserted, error: insertError } = await db.from("whitepaper_requests").insert({
       name,
       email,
       company,
@@ -173,7 +178,7 @@ const handler = async (req: Request): Promise<Response> => {
       token_expires_at: expiresAt.toISOString(),
       token_uses: 0,
       token_max_uses: TOKEN_MAX_USES,
-    });
+    }).select("id").single();
     if (insertError) {
       console.error("Insert failed:", insertError.message);
       throw new Error("Insert failed");
@@ -210,7 +215,7 @@ const handler = async (req: Request): Promise<Response> => {
     ].join("\n");
 
     // (a) 通知: Main Bot の受信箱へ1通（写し kn@）。最初の通知には全項目を載せてよい（健司さん決定）
-    await sendMail(RESEND_API_KEY, {
+    const notifyEmailId = await sendMail(RESEND_API_KEY, {
       to: NOTIFY_TO,
       cc: NOTIFY_CC,
       subject: `【資料申込】${PAPER_LABEL[papers]}・${subjectCta}`,
@@ -237,7 +242,7 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     // (b) 申込者への自動返信（受け取りページへのリンク）
-    await sendMail(RESEND_API_KEY, {
+    const replyEmailId = await sendMail(RESEND_API_KEY, {
       to: [email],
       subject: "資料のお申し込みを受け付けました - Sprint Japan",
       html: `
@@ -250,6 +255,13 @@ const handler = async (req: Request): Promise<Response> => {
         <p style="margin-top:30px;">スプリントジャパン株式会社<br>${SITE_ORIGIN}</p>
       `,
     });
+
+    // 送信IDを記録する（失敗しても申込そのものは受け付け済み）
+    const { error: updateError } = await db
+      .from("whitepaper_requests")
+      .update({ notify_email_id: notifyEmailId, reply_email_id: replyEmailId })
+      .eq("id", inserted.id);
+    if (updateError) console.error("Email id update failed:", updateError.message);
 
     return json(200, { success: true, token });
   } catch (error) {
