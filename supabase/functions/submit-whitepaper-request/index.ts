@@ -37,7 +37,7 @@ function formatJst(d: Date): string {
   return `${j.getUTCFullYear()}-${p(j.getUTCMonth() + 1)}-${p(j.getUTCDate())} ${p(j.getUTCHours())}:${p(j.getUTCMinutes())} JST`;
 }
 const PAPER_TITLE: Record<Papers, string> = {
-  A: "資料A「複数アプリを企画管理する仕組み（仮）」",
+  A: "資料A「複数アプリを企画・管理するための考え方（仮）」",
   B: "資料B「バイブコーディングのマーケティング方法（仮）」",
   both: "資料A・資料Bの両方",
 };
