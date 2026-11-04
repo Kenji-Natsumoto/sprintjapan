@@ -10,7 +10,7 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.5"
+    PostgrestVersion: "13.0.5"
   }
   public: {
     Tables: {
@@ -136,12 +136,91 @@ export type Database = {
         }
         Relationships: []
       }
+      whitepaper_requests: {
+        Row: {
+          access_token: string
+          company: string | null
+          consented_at: string
+          created_at: string
+          cta_id: string | null
+          email: string
+          id: string
+          landing_path: string | null
+          name: string
+          opt_in: boolean
+          papers: string
+          role: string | null
+          token_expires_at: string
+          token_max_uses: number
+          token_uses: number
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+        }
+        Insert: {
+          access_token: string
+          company?: string | null
+          consented_at: string
+          created_at?: string
+          cta_id?: string | null
+          email: string
+          id?: string
+          landing_path?: string | null
+          name: string
+          opt_in?: boolean
+          papers: string
+          role?: string | null
+          token_expires_at?: string
+          token_max_uses?: number
+          token_uses?: number
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Update: {
+          access_token?: string
+          company?: string | null
+          consented_at?: string
+          created_at?: string
+          cta_id?: string | null
+          email?: string
+          id?: string
+          landing_path?: string | null
+          name?: string
+          opt_in?: boolean
+          papers?: string
+          role?: string | null
+          token_expires_at?: string
+          token_max_uses?: number
+          token_uses?: number
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      chat_session_id: { Args: never; Returns: string }
+      consume_whitepaper_token: {
+        Args: { p_token_hash: string }
+        Returns: {
+          res_cta_id: string
+          res_max_uses: number
+          res_papers: string
+          res_status: string
+          res_uses: number
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
